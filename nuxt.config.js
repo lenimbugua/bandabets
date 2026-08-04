@@ -58,6 +58,69 @@ const phase2Placeholders = [
   { name: "withdraw", path: "/withdraw" },
 ];
 
+// The four real stub pages (their own .vue files under app/pages/, created
+// in an earlier triage round because the shared chrome references these
+// names directly) are placeholders too and must never be indexed either.
+const phase2RealStubPaths = ["/login", "/signup", "/casino-home", "/my-bets"];
+
+const NOINDEX_HEADERS = { "X-Robots-Tag": "noindex, nofollow" };
+
+// vue-router path syntax (":name", optional "?", regex-fused segments like
+// ":matchSlug(.*)-:id") isn't valid Nitro/radix3 routeRules-key syntax.
+// Convert each phase2Placeholders path to one or more radix3-safe patterns:
+// static segments pass through untouched; any segment containing ":" or "("
+// becomes a same-position "*" (a single-segment wildcard, not "**", so
+// pattern DEPTH is preserved — this is what keeps match-details'
+// /sports/*/*/*/* from ever matching the 4-segment country route
+// /sports/[sport]/[country]/[league]). A trailing "?" (vue-router's
+// optional-param marker, e.g. share-bets' ":code?") has no radix3
+// equivalent, so it's expanded into two patterns: with and without that
+// segment.
+function toNitroPatterns(routerPath) {
+  const segments = routerPath.split("/").filter(Boolean);
+  const isWildcardSegment = (s) => /[:()]/.test(s);
+  const last = segments.at(-1) || "";
+  if (last.endsWith("?")) {
+    const base = segments.slice(0, -1).map((s) => (isWildcardSegment(s) ? "*" : s));
+    return [`/${base.join("/")}`, `/${[...base, "*"].join("/")}`];
+  }
+  return [`/${segments.map((s) => (isWildcardSegment(s) ? "*" : s)).join("/")}`];
+}
+
+// Every scaffold route (placeholders + the four real stub pages), keyed to
+// { headers: { "X-Robots-Tag": "noindex, nofollow" } } — generated from the
+// same phase2Placeholders/phase2RealStubPaths source of truth used by the
+// pages:extend hook below, so the route list and the noindex list can't
+// drift apart. An HTTP header (unlike useSeoHead's <meta name="robots">,
+// which lives in a <script setup> that never executes server-side for
+// mode:"client" pages — Nuxt's pageToClientOnly returns ServerPlaceholder
+// on the server) is JS-independent and reaches crawlers regardless.
+//
+// EXCEPTION: "match-details" is deliberately skipped here. Its path
+// (/sports/:sport/:country/:league/:matchSlug(.*)-:id) is dynamic AND
+// shares the /sports/ prefix with three real, currently-working SEO
+// routes. Nitro's routeRules matcher (radix3's toRouteMatcher) does not
+// respect segment-count depth for dynamic patterns — verified directly: a
+// "/sports/*/*/*/*" routeRules entry also matched "/sports/football" and
+// "/sports/live/football" when queried, which would have wrongly
+// noindexed those live routes. match-details gets its header from
+// server/middleware/phase2-match-details-noindex.js instead, via precise
+// regex segment-counting — see that file for the full root-cause trace.
+// Every OTHER dynamic placeholder path here (games, promotion-details,
+// share-bets) is safe despite the same matcher looseness because nothing
+// real shares their URL prefix (/casino/**, /promotion-details/**,
+// /share-bets/**) — there's nothing there to accidentally noindex.
+const phase2NoindexRouteRules = {};
+for (const { name, path } of phase2Placeholders) {
+  if (name === "match-details") continue;
+  for (const pattern of toNitroPatterns(path)) {
+    phase2NoindexRouteRules[pattern] = { headers: NOINDEX_HEADERS };
+  }
+}
+for (const path of phase2RealStubPaths) {
+  phase2NoindexRouteRules[path] = { ssr: false, headers: NOINDEX_HEADERS };
+}
+
 export default defineNuxtConfig({
   compatibilityDate: "2026-08-04",
   devtools: { enabled: true },
@@ -104,12 +167,10 @@ export default defineNuxtConfig({
     "/leagues": { ssr: true },
     "/promotions": { ssr: true },
     "/sports/**": { ssr: true },
-    // Minimal Phase-2 placeholders (login/signup/casino-home/my-bets) —
-    // private/account routes, per spec §5.3: ssr:false, not indexed.
-    "/login": { ssr: false },
-    "/signup": { ssr: false },
-    "/casino-home": { ssr: false },
-    "/my-bets": { ssr: false },
+    // Every Phase-2 placeholder path (scaffold + the four real stub pages)
+    // generated above: ssr:false where applicable plus an X-Robots-Tag
+    // noindex header on all of them. See phase2NoindexRouteRules.
+    ...phase2NoindexRouteRules,
   },
 
   app: {
