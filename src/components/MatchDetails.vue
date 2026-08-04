@@ -1,0 +1,253 @@
+<script setup>
+import { Tab, TabGroup, TabList } from "@headlessui/vue";
+import { ChevronDownIcon } from "@heroicons/vue/24/outline";
+import { storeToRefs } from "pinia";
+import { ref, toRefs } from "vue";
+import { useMatchesStore } from "../stores/matches";
+import { useBetslipStore } from "../stores/sports-betslip";
+import EarlyPayoutBadge from "./EarlyPayoutBadge.vue";
+import EarlyWinIcon from "./EarlyWinIcon.vue";
+import TheButton from "./TheButton.vue";
+import TwoUpIcon from "./TwoUpIcon.vue";
+
+const { toggleMarketOutcomes, fetchMatchDetailsSubtype } = useMatchesStore();
+const { betslip } = storeToRefs(useBetslipStore());
+
+const {
+  matchDetails,
+  marketGroups,
+  subtypePending,
+  subTypeId,
+  matchDetailIsLive,
+} = toRefs(useMatchesStore());
+
+const formCustomId = (parent_match_id, sub_type_id, outcome_name, index) => {
+  return `${parent_match_id}${sub_type_id}${outcome_name}${index}`;
+};
+
+function hasMatches(matchDetail) {
+  const outcomes = matchDetail?.matchOutcomes;
+  if (!outcomes) {
+    return false;
+  }
+  return outcomes.length > 0;
+}
+function fetchMatches(market, index) {
+  if (hasMatches(market)) {
+    toggleMarketOutcomes(index);
+    return;
+  }
+
+  fetchMatchDetailsSubtype(market.subTypeId, index);
+}
+
+function isOpened(index) {
+  const matchDetail = matchDetails?.value?.markets[index];
+  if (!matchDetail) {
+    return false;
+  }
+
+  if (matchDetail["isOpened"]) {
+    return matchDetail.isOpened;
+  }
+  return hasMatches(matchDetail);
+}
+
+function subtypeIsLoading(subType) {
+  return subtypePending.value && subTypeId.value === subType;
+}
+
+const selectedGroup = ref(0);
+
+function setSelectedgroup(groupId) {
+  selectedGroup.value = groupId;
+}
+
+function filterByGroupId(dataArray, groupId) {
+  if (selectedGroup.value == 0) {
+    return dataArray;
+  }
+  return dataArray.filter((item) => item.groupId === groupId);
+}
+
+function marketHasSelection(market) {
+  return betslip.value.some(
+    (item) =>
+      item.parentMatchId === matchDetails.value?.parentMatchId &&
+      item.subTypeId === parseInt(market.subTypeId)
+  );
+}
+</script>
+<template>
+  <div class="px-3 pb-4">
+    <!-- Market group filter pills -->
+    <div
+      class="sticky top-[5.5rem] md:top-[10rem] z-55 rounded-xl mb-3 filter-bar"
+    >
+      <TabGroup>
+        <TabList
+          aria-label="Match market filters"
+          class="flex gap-1.5 px-3 py-2.5 w-full scrollbar-hide overflow-x-auto"
+        >
+          <Tab v-slot="{ selected }" as="template" @click="setSelectedgroup(0)">
+            <button
+              :class="[
+                selected
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
+                  : 'text-muted-foreground hover:bg-surface-interactive hover:text-foreground',
+              ]"
+              class="px-3.5 py-1.5 rounded-lg text-[0.65rem] font-medium whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-hidden"
+            >
+              All
+            </button>
+          </Tab>
+          <Tab
+            v-for="tab in marketGroups"
+            :key="tab.groupId"
+            v-slot="{ selected }"
+            as="template"
+            @click="setSelectedgroup(tab.groupId)"
+          >
+            <button
+              :class="[
+                selected
+                  ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
+                  : 'text-muted-foreground hover:bg-surface-interactive hover:text-foreground',
+              ]"
+              class="px-3.5 py-1.5 rounded-lg text-[0.65rem] font-medium whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-hidden"
+            >
+              {{ tab.groupName }}
+            </button>
+          </Tab>
+        </TabList>
+      </TabGroup>
+    </div>
+
+    <!-- Market cards -->
+    <div class="space-y-2">
+      <div
+        v-for="(market, index) in filterByGroupId(
+          matchDetails.markets,
+          selectedGroup
+        )"
+        :key="market.name"
+        class="market-card rounded-xl overflow-hidden"
+        :class="[
+          marketHasSelection(market) ? 'ring-1 ring-brand-bright/15' : '',
+        ]"
+      >
+        <!-- Market header -->
+        <div
+          class="market-header flex items-center justify-between px-3 py-2 cursor-pointer select-none"
+          @click="fetchMatches(market, index)"
+        >
+          <div class="flex items-center gap-2 min-w-0">
+            <span
+              v-if="marketHasSelection(market)"
+              class="w-1 h-1 rounded-full bg-brand-bright shrink-0"
+            ></span>
+            <span class="text-[0.62rem] font-medium text-gray-500 dark:text-white/60 truncate leading-tight uppercase tracking-wide">
+              {{ market.oddType }}
+            </span>
+            <div
+              v-if="market?.twoGoalUpActive"
+              class="flex items-center gap-0.5 shrink-0"
+            >
+              <EarlyWinIcon />
+              <EarlyPayoutBadge />
+              <TwoUpIcon />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5 shrink-0">
+            <span
+              v-if="isOpened(index) && market.matchOutcomes"
+              class="text-[0.5rem] font-medium text-gray-400 dark:text-white/50 tabular-nums"
+            >
+              {{ market.matchOutcomes.length }}
+            </span>
+            <ChevronDownIcon
+              :class="isOpened(index) ? 'rotate-180' : ''"
+              class="w-3 h-3 text-gray-400 dark:text-white/50 transition-transform duration-200"
+            />
+          </div>
+        </div>
+
+        <!-- Loading skeleton -->
+        <div v-if="subtypeIsLoading(market.subTypeId)" class="px-3.5 py-3">
+          <AnimatePulse :rows="1" />
+        </div>
+
+        <!-- Outcomes grid -->
+        <div
+          v-if="isOpened(index)"
+          class="grid gap-1.5 px-3 pb-3 pt-1"
+          :class="[
+            market.matchOutcomes.length % 3 === 0
+              ? 'grid-cols-3'
+              : 'grid-cols-2',
+          ]"
+        >
+          <TheButton
+            v-for="outcome in market.matchOutcomes"
+            :key="
+              formCustomId(
+                matchDetails.parentMatchId,
+                market.subTypeId,
+                outcome.outcomeName,
+                outcome.outcomeId
+              )
+            "
+            :outcome="outcome"
+            :season-id="matchDetails.homeTeam"
+            :home-team="matchDetails.homeTeam"
+            :custom-id="
+              formCustomId(
+                matchDetails.parentMatchId,
+                market.subTypeId,
+                outcome.outcomeName,
+                outcome.outcomeId
+              )
+            "
+            :away-team="matchDetails.awayTeam"
+            :start-time="matchDetails.startTime"
+            :sport-id="matchDetails.sportId"
+            :competition-id="matchDetails.competitionId"
+            :sub-type-id="parseInt(market.subTypeId)"
+            :parent-match-id="matchDetails.parentMatchId"
+            :competition-name="matchDetails.competitionName"
+            :country-name="matchDetails.countryName"
+            :two-goal-up-active="market?.twoGoalUpActive"
+            :sport-name="matchDetails.sportName"
+            :is-match-detail="true"
+            :live="matchDetailIsLive ? 1 : 0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <EmptyState v-if="!matchDetails" />
+</template>
+
+<style scoped>
+.filter-bar {
+  background: oklch(98% 0.005 258 / 0.9);
+  backdrop-filter: blur(12px);
+}
+[data-theme="dark"] .filter-bar {
+  background: oklch(19% 0.055 258 / 0.9);
+}
+
+.market-card {
+  background: white;
+  box-shadow: 0 1px 2px oklch(0% 0 0 / 0.03);
+}
+[data-theme="dark"] .market-card {
+  background: var(--card);
+  box-shadow: none;
+}
+
+.market-header {
+  background: transparent;
+}
+</style>

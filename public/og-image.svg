@@ -1,0 +1,114 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#220722"/>
+      <stop offset="100%" style="stop-color:#3B0E39"/>
+    </linearGradient>
+    <linearGradient id="purple-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#A321A3;stop-opacity:0.28"/>
+      <stop offset="50%" style="stop-color:#A321A3;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#A321A3;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="green-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#24B401;stop-opacity:0.14"/>
+      <stop offset="100%" style="stop-color:#24B401;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="accent-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#A321A3"/>
+      <stop offset="100%" style="stop-color:#24B401"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative glow circles -->
+  <circle cx="200" cy="315" r="300" fill="url(#purple-glow)" opacity="0.7"/>
+  <circle cx="1000" cy="200" r="250" fill="url(#green-glow)" opacity="0.5"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="0.3" opacity="0.04"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent-line)"/>
+
+  <!-- Logo mark -->
+  <rect x="80" y="80" width="56" height="56" rx="14" fill="#A321A3" opacity="0.2"/>
+  <text x="108" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#D96AD9" text-anchor="middle" dominant-baseline="middle">N</text>
+
+  <!-- Brand name next to logo -->
+  <text x="152" y="104" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="0.5">Naibet</text>
+  <text x="152" y="122" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="white" opacity="0.35" letter-spacing="3">KENYA</text>
+
+  <!-- Main headline -->
+  <text x="80" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="62" font-weight="800" fill="white" letter-spacing="-1">Bet on All Sports</text>
+  <text x="80" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="62" font-weight="800" fill="white" letter-spacing="-1">&amp; Top Odds</text>
+
+  <!-- Accent underline -->
+  <rect x="80" y="340" width="120" height="4" rx="2" fill="#A321A3"/>
+
+  <!-- Subheading -->
+  <text x="80" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" fill="white" opacity="0.55">Bet from as low as KSh 10. Instant M-Pesa payouts.</text>
+
+  <!-- Feature pills -->
+  <!-- Pill 1: Live Betting -->
+  <rect x="80" y="440" width="150" height="38" rx="19" fill="white" opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="104" cy="459" r="4" fill="#EF4444"/>
+  <text x="115" y="464" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white" opacity="0.7">Live Betting</text>
+
+  <!-- Pill 2: Casino -->
+  <rect x="245" y="440" width="120" height="38" rx="19" fill="white" opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="269" cy="459" r="4" fill="#A321A3"/>
+  <text x="280" y="464" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white" opacity="0.7">Casino</text>
+
+  <!-- Pill 3: Jackpots -->
+  <rect x="380" y="440" width="130" height="38" rx="19" fill="white" opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="404" cy="459" r="4" fill="#D4941A"/>
+  <text x="415" y="464" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white" opacity="0.7">Jackpots</text>
+
+  <!-- Pill 4: Virtuals -->
+  <rect x="525" y="440" width="120" height="38" rx="19" fill="white" opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="549" cy="459" r="4" fill="#24B401"/>
+  <text x="560" y="464" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="white" opacity="0.7">Virtuals</text>
+
+  <!-- Right side: decorative odds card -->
+  <rect x="820" y="280" width="300" height="220" rx="20" fill="white" opacity="0.04" stroke="white" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- Odds card content -->
+  <text x="850" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="white" opacity="0.3" letter-spacing="2">FEATURED MATCH</text>
+
+  <text x="850" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="white" opacity="0.8">Arsenal vs Chelsea</text>
+  <text x="850" y="374" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="white" opacity="0.3">Premier League • Today 21:00</text>
+
+  <!-- Odds boxes -->
+  <rect x="850" y="395" width="80" height="50" rx="10" fill="#24B401" opacity="0.14" stroke="#24B401" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="890" y="415" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" fill="white" opacity="0.4" text-anchor="middle">1</text>
+  <text x="890" y="435" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#24B401" text-anchor="middle">1.85</text>
+
+  <rect x="940" y="395" width="80" height="50" rx="10" fill="white" opacity="0.04" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="980" y="415" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" fill="white" opacity="0.4" text-anchor="middle">X</text>
+  <text x="980" y="435" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="white" opacity="0.8" text-anchor="middle">3.40</text>
+
+  <rect x="1030" y="395" width="80" height="50" rx="10" fill="white" opacity="0.04" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="1070" y="415" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" fill="white" opacity="0.4" text-anchor="middle">2</text>
+  <text x="1070" y="435" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="white" opacity="0.8" text-anchor="middle">4.20</text>
+
+  <!-- Live badge on card -->
+  <rect x="1042" y="305" width="55" height="22" rx="11" fill="#EF4444" opacity="0.15"/>
+  <circle cx="1055" cy="316" r="3" fill="#EF4444"/>
+  <text x="1063" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#EF4444">LIVE</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="560" width="1200" height="70" fill="black" opacity="0.3"/>
+  <text x="80" y="600" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="white" opacity="0.35">naibet.com</text>
+
+  <!-- 18+ badge -->
+  <rect x="1060" y="580" width="44" height="28" rx="6" fill="#EF4444" opacity="0.15" stroke="#EF4444" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="1082" y="599" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900" fill="#EF4444" text-anchor="middle">18+</text>
+
+  <!-- Licence -->
+  <text x="600" y="600" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="white" opacity="0.22" text-anchor="middle">Licensed by BCLB • BK 0001255 • PG 0001254 • Gamble Responsibly</text>
+</svg>

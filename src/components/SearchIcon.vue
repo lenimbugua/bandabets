@@ -1,0 +1,26 @@
+<script setup>
+import { useModalStore } from "@/stores/modal";
+
+import { useModalTypes } from "@/composables/useModalTypes";
+
+const { search } = useModalTypes();
+
+const { openModal } = useModalStore();
+</script>
+
+<template>
+  <button aria-label="Open search" class="cursor-pointer" @click="openModal(search)">
+    <svg
+      class="dark:text-white text-gray-950 fill-current"
+      width="30"
+      fill="#000"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3 5.91 3 3 5.91 3 9.5 3 13.09 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0C7.01 14 5 11.99 5 9.5 5 7.01 7.01 5 9.5 5 11.99 5 14 7.01 14 9.5c0 2.49-2.01 4.5-4.5 4.5Z"
+      ></path>
+      <path fill="none" d="M0 0h24v24H0Z"></path>
+    </svg>
+  </button>
+</template>

@@ -1,0 +1,40 @@
+# robots.txt – Naibet (https://naibet.com)
+
+User-agent: *
+
+# Public pages – allowed by default (no need to list)
+
+# Auth-required / user-specific pages
+Disallow: /profile
+Disallow: /profile/exclude
+Disallow: /my-bets
+Disallow: /bet-details
+Disallow: /bet-placed
+Disallow: /deposit
+Disallow: /sort-deposit
+Disallow: /withdraw
+Disallow: /leaderboard
+Disallow: /join-affiliate
+
+# Auth flows
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /change-password
+Disallow: /verify-account
+
+# Query-parameter traps (faceted/session URLs)
+Disallow: /*?*utm_
+Disallow: /*?*session=
+Disallow: /*?*sort=
+Disallow: /*?*page=
+
+# Assets crawlers don't need
+Disallow: /assets/
+
+# Crawl rate – be polite
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://naibet.com/sitemap.xml

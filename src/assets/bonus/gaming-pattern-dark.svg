@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="360">
+  <g fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Dice -->
+    <rect x="25" y="22" width="17" height="17" rx="2.5"/>
+    <circle cx="30" cy="27" r="1.3" fill="rgba(255,255,255,0.045)"/>
+    <circle cx="37" cy="34" r="1.3" fill="rgba(255,255,255,0.045)"/>
+    <circle cx="30" cy="34" r="1.3" fill="rgba(255,255,255,0.045)"/>
+
+    <!-- Lightning bolt -->
+    <path d="M195 18l-6 10h6l-6 10"/>
+
+    <!-- Crown -->
+    <path d="M320 35l5-13 5 9 5-9 5 13z"/>
+    <line x1="320" y1="35" x2="340" y2="35"/>
+
+    <!-- Football -->
+    <circle cx="130" cy="75" r="9"/>
+    <path d="M124 69l4 4.5h4l4-4.5"/>
+    <path d="M123 78l4.5-2 2.5 3.5 2.5-3.5 4.5 2"/>
+
+    <!-- Heart (card suit) -->
+    <path d="M42 145c-3.5-7-13-7-13 0 0 9 13 17 13 17s13-8 13-17c0-7-9.5-7-13 0"/>
+
+    <!-- Poker chip -->
+    <circle cx="210" cy="140" r="11"/>
+    <circle cx="210" cy="140" r="6"/>
+    <line x1="210" y1="129" x2="210" y2="133"/>
+    <line x1="210" y1="147" x2="210" y2="151"/>
+    <line x1="199" y1="140" x2="203" y2="140"/>
+    <line x1="217" y1="140" x2="221" y2="140"/>
+
+    <!-- Gamepad -->
+    <rect x="310" y="128" width="28" height="16" rx="5"/>
+    <line x1="320" y1="132" x2="320" y2="140"/>
+    <line x1="316" y1="136" x2="324" y2="136"/>
+    <circle cx="332" cy="133" r="1.5" fill="rgba(255,255,255,0.045)"/>
+    <circle cx="332" cy="139" r="1.5" fill="rgba(255,255,255,0.045)"/>
+
+    <!-- Coin -->
+    <circle cx="340" cy="72" r="8"/>
+    <text x="336.5" y="76" font-size="11" fill="rgba(255,255,255,0.045)" stroke="none" font-weight="bold">$</text>
+
+    <!-- Star -->
+    <path d="M55 270l3.5 7 7.5 1.1-5.4 5.3 1.3 7.5-6.9-3.6-6.9 3.6 1.3-7.5-5.4-5.3 7.5-1.1z"/>
+
+    <!-- Spade (card suit) -->
+    <path d="M135 240c0 0-11 9-11 15 0 4 3 5.5 5.5 4.5 1.8-.7 3.5-3 5.5-5.5 2 2.5 3.7 4.8 5.5 5.5 2.5 1 5.5-.5 5.5-4.5 0-6-11-15-11-15z"/>
+    <line x1="135" y1="260" x2="135" y2="265"/>
+
+    <!-- Trophy -->
+    <path d="M190 265h16v11c0 3.5-3.5 6-8 6s-8-2.5-8-6v-11z"/>
+    <path d="M190 268c-5 0-6 5-1 7"/>
+    <path d="M206 268c5 0 6 5 1 7"/>
+    <line x1="195" y1="282" x2="201" y2="282"/>
+
+    <!-- Diamond -->
+    <path d="M345 275l-9 9 9 9 9-9z"/>
+  </g>
+</svg>
