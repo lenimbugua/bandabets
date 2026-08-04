@@ -7,10 +7,6 @@ import { useBetslipStore } from "./sports-betslip";
 
 const { fireErrorToast, fireSuccessToast, positionTopRight } = useToast();
 
-import { useTimestamp } from "@vueuse/core";
-
-const timestamp = useTimestamp({ offset: 0 });
-
 // const data = {
 //   status: "ok",
 //   message: "success",
@@ -425,7 +421,14 @@ export const useShareBetStore = defineStore("share-bet-store", {
         competitionName: item.competitionName,
         countryName: item.countryName,
         sportName: item.sportName,
-        timestamp: timestamp.value,
+        // Was `useTimestamp({ offset: 0 }).value` from a module-scope VueUse
+        // ref (SSR hazard: process-wide, shared across concurrent requests).
+        // Nothing downstream (freebet.js, sports-betslip.js) reads this
+        // reactively — it's carried through as a plain snapshot value on a
+        // payload object — so a one-shot Date.now() is exactly equivalent
+        // and avoids starting a per-request rAF/interval timer that would
+        // never be torn down after the SSR response is sent.
+        timestamp: Date.now(),
         clickIsToSelectOutcome: true,
       };
 

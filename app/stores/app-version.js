@@ -14,6 +14,7 @@ export const useAppVersionStore = defineStore("app-version-store", {
      * Appends a unique query param so the WebView HTTP cache is bypassed.
      */
     safeReload() {
+      if (import.meta.server) return;
       const url = new URL(window.location.href);
       url.searchParams.set("_v", Date.now());
       window.location.replace(url.toString());
@@ -25,6 +26,7 @@ export const useAppVersionStore = defineStore("app-version-store", {
      * - Max 2 reload attempts per version (prevents infinite loops when cache can't be busted)
      */
     canReload(targetVersion) {
+      if (import.meta.server) return false;
       const lastTs = Number(localStorage.getItem(LS_RELOAD_TS) || 0);
       const count = Number(localStorage.getItem(LS_RELOAD_COUNT) || 0);
       const lastTarget = localStorage.getItem(LS_RELOAD_VERSION);
@@ -42,6 +44,7 @@ export const useAppVersionStore = defineStore("app-version-store", {
     },
 
     markReload(targetVersion) {
+      if (import.meta.server) return;
       const lastTarget = localStorage.getItem(LS_RELOAD_VERSION);
       const count = Number(localStorage.getItem(LS_RELOAD_COUNT) || 0);
 
@@ -56,6 +59,7 @@ export const useAppVersionStore = defineStore("app-version-store", {
     },
 
     async clearAppCaches() {
+      if (import.meta.server) return;
       try {
         // Unregister all service workers so they don't serve stale assets
         if (navigator.serviceWorker) {
@@ -74,6 +78,7 @@ export const useAppVersionStore = defineStore("app-version-store", {
     },
 
     async checkVersion() {
+      if (import.meta.server) return;
       try {
         const res = await fetch(`/version.json?_t=${Date.now()}`, {
           cache: "no-store",
