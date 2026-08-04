@@ -7,18 +7,21 @@ const { otpPending, responseOK, countdownSeconds, resendOTP, msisdn } =
   storeToRefs(useRegisterStore());
 
 const { resendOtp, resetError, decreaseCount, resetCount } = useRegisterStore();
-let intervalId = null;
+// A per-instance ref, not a bare `let` — makes it explicit this timer
+// handle belongs to this component instance and can't be clobbered by a
+// second simultaneously-mounted <ResendOTP> instance.
+const intervalId = ref(null);
 
 const startCountdown = () => {
-  if (intervalId) {
-    clearInterval(intervalId);
+  if (intervalId.value) {
+    clearInterval(intervalId.value);
   }
 
-  intervalId = setInterval(() => {
+  intervalId.value = setInterval(() => {
     decreaseCount();
 
     if (countdownSeconds.value === 0) {
-      clearInterval(intervalId);
+      clearInterval(intervalId.value);
     }
   }, 1000);
 };
@@ -29,7 +32,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  clearInterval(intervalId);
+  clearInterval(intervalId.value);
   resetCount();
   resetError();
 });

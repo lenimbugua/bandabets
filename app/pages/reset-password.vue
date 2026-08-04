@@ -1,5 +1,18 @@
 <script setup>
-import NewPassword from "../components/NewPassword.vue";
+// NewPassword auto-imports (unplugin-vue-components), matching the sibling
+// ChangePassword page — the original ../components/NewPassword.vue import
+// was already a dead path into the deleted src/components/.
+definePageMeta({
+  name: "reset-password",
+  layout: "auth",
+});
+
+useSeoHead({
+  title: "Reset Password | Naibet Secure Login",
+  description:
+    "Create a new password and restore your Naibet access quickly with our secure reset process.",
+  robots: "noindex,nofollow",
+});
 </script>
 
 <template>

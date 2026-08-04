@@ -46,10 +46,8 @@ const phase2RequiresAuthNames = new Set([
 const phase2Placeholders = [
   { name: "aviator", path: "/aviator" },
   { name: "bet-details", path: "/bet-details" },
-  { name: "change-password", path: "/change-password" },
   { name: "countries", path: "/sports/soccer/countries" },
   { name: "deposit", path: "/deposit" },
-  { name: "forgot-password", path: "/forgot-password" },
   // "games" has no entry in the old router at all (nearest analog was
   // "play-casino-games" at /casino/:name, which is what this mirrors) —
   // a judgment call, not a sourced path. Flagged in task-10-report.md.
@@ -66,13 +64,11 @@ const phase2Placeholders = [
   { name: "playon", path: "/virtual-games/playon" },
   { name: "profile", path: "/profile" },
   { name: "promotion-details", path: "/promotion-details/:name" },
-  { name: "reset-password", path: "/reset-password" },
   { name: "self-exclusion", path: "/profile/exclude" },
   { name: "share-bets", path: "/share-bets/:code?" },
   { name: "share-feedback", path: "/share-feedback" },
   { name: "share-happiness", path: "/share-happiness" },
   { name: "sort-deposit", path: "/sort-deposit" },
-  { name: "verify-account", path: "/verify-account" },
   { name: "welcome-gift", path: "/welcome-gift" },
   { name: "withdraw", path: "/withdraw" },
 ];
@@ -221,6 +217,21 @@ export default defineNuxtConfig({
     "/terms-and-conditions": { ssr: true },
     "/privacy-policy": { ssr: true },
     "/responsible-gambling": { ssr: true },
+
+    // --- Batch B: auth — permanent noindex, ssr:false ------------------------
+    // change-password / forgot-password / reset-password / verify-account
+    // just left phase2Placeholders (removed above), so they no longer get a
+    // generated noindex routeRule. useSeoHead({robots:"noindex,nofollow"})
+    // inside these pages is NOT a substitute — under ssr:false Nuxt's
+    // pageToClientOnly returns ServerPlaceholder and <script setup> never
+    // runs server-side, so no <meta name="robots"> reaches a crawler.
+    // These four permanent rules are the only thing that actually keeps
+    // them out of the index — mirrors what phase2RealStubPaths already does
+    // for /login and /signup (untouched, still real: not scaffolding).
+    "/change-password": { ssr: false, headers: NOINDEX_HEADERS },
+    "/forgot-password": { ssr: false, headers: NOINDEX_HEADERS },
+    "/reset-password": { ssr: false, headers: NOINDEX_HEADERS },
+    "/verify-account": { ssr: false, headers: NOINDEX_HEADERS },
 
     // Every Phase-2 placeholder path (scaffold + the four real stub pages)
     // generated above: ssr:false where applicable plus an X-Robots-Tag

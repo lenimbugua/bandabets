@@ -24,6 +24,12 @@ const { token, profileSid } = storeToRefs(useLoginStore());
 
 const router = useRouter();
 
+// Hoisted to setup scope (was previously called inside submit()).
+// usePropellarAds() calls useRuntimeConfig() in its body, which throws
+// "nuxt instance unavailable" outside a valid Nuxt context — setup is a
+// valid context, an async click-handler is not.
+const { trackPropellerConversion } = usePropellarAds();
+
 function successfulVerifyDataLayer() {
   const signUpMethod = "msisdn";
 
@@ -51,11 +57,12 @@ async function submit() {
   if (responseOK.value) {
     successfulVerifyDataLayer();
 
-    window.gtag("event", "conversion", {
-      send_to: "AW-16789345990/VjbrCNvQgoIaEMat5MU-",
-    });
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-16789345990/VjbrCNvQgoIaEMat5MU-",
+      });
+    }
 
-    const { trackPropellerConversion } = usePropellarAds();
     trackPropellerConversion();
 
     // FREEBET DISABLED — the welcome-gift route is commented out, so verified
