@@ -4,20 +4,20 @@ import { useRouter } from "vue-router";
 import { useKiron } from "../composables/useKiron";
 const { slugify } = formatStuff();
 
-const {
-  hakiLeagueRouteName,
-  hakiTurboRouteName,
-  hakiJackpotRouteName,
-  hakiLeagueGameId,
-  hakiTurboGameId,
-  hakiJackpotGameId,
-} = useKiron();
-
 export const virtualGamesRouteName = "virtuals-games";
 export const crashGamesRouteName = "crash-games";
 export const casinoGamesRouteName = "casino";
 
 export function useCasino() {
+  const {
+    hakiLeagueRouteName,
+    hakiTurboRouteName,
+    hakiJackpotRouteName,
+    hakiLeagueGameId,
+    hakiTurboGameId,
+    hakiJackpotGameId,
+  } = useKiron();
+
   const initialCategories = [
     {
       id: "",

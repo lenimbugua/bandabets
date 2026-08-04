@@ -1,17 +1,25 @@
 import { defineStore } from "pinia";
 import { usePopular } from "../composables/usePopular";
-const { games, newGames } = usePopular();
+
 export const usePopularStore = defineStore("popular-store", {
-  state: () => ({
-    games: games,
-    newGames: newGames,
-  }),
+  // state() is a factory invoked when the store is instantiated (inside a
+  // component/plugin setup), which is a valid context for useRuntimeConfig()
+  // — unlike the previous module-scope `const { games } = usePopular();`.
+  state: () => {
+    const { games, newGames } = usePopular();
+    return {
+      games,
+      newGames,
+    };
+  },
 
   actions: {
     reset() {
+      const { games } = usePopular();
       this.games = games;
     },
     getGamesByProvider(providerId) {
+      const { games } = usePopular();
       if (providerId == "all") {
         this.games = games;
         return;
@@ -20,6 +28,7 @@ export const usePopularStore = defineStore("popular-store", {
     },
 
     getGamesByCategory(categoryId) {
+      const { games } = usePopular();
       if (categoryId == "all") {
         this.games = games;
         return;
