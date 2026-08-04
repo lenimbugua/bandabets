@@ -324,7 +324,11 @@ This is the change that moves Place Bet, Join Now and the betslip orb off green.
   /* Brand ramp aliases */
   --brand-bright: var(--palette-gold-500);
   --brand-dark: var(--palette-gold-800);
-  --brand-selected: var(--palette-gold-500);
+  /* Not the selected-odds token despite the name — real selected odds use
+     bg-primary/text-primary-foreground. Its nine consumers are brand buttons,
+     seven of which put near-white text on it, so it must stay dark: gold-500
+     would be 2.11:1, gold-800 is 8.86:1. */
+  --brand-selected: var(--palette-gold-800);
   --brand-mid: var(--palette-gold-600);
   --brand-forest: var(--palette-coffee-950);
   --brand-teal: var(--palette-coffee-700);
@@ -456,7 +460,7 @@ Replace the entire body of `[data-theme="light"] { … }` with:
 
   --brand-bright: var(--palette-gold-700);
   --brand-dark: var(--palette-gold-900);
-  --brand-selected: var(--palette-gold-500);
+  --brand-selected: var(--palette-gold-800);
   --brand-mid: var(--palette-gold-700);
   --brand-forest: var(--palette-coffee-950);
   --brand-teal: var(--palette-coffee-700);
@@ -480,7 +484,7 @@ Replace the entire body of `[data-theme="light"] { … }` with:
   --elevation-alpha-3: 0.14;
 ```
 
-`--brand-selected` stays gold-500 in light because it is a *fill* behind gold-900 text (selected odds cells), not a text colour.
+`--brand-selected` is gold-800 in both themes — see the note in Task 2 Step 4. It never carries gold-900 text.
 
 - [ ] **Step 2: Verify both themes declare the same token set**
 
@@ -574,7 +578,7 @@ cd /Users/leonardmbugua/Desktop/bandabet
 awk '/\[data-theme="light"\]/,/^}/' app/assets/css/style.css | grep -nE 'gold-500'
 ```
 
-Expected: exactly two hits — `--bet:` and `--brand-selected:`. Both are fills carrying gold-900 text. A hit on `--primary`, `--warning`, `--gold`, or any `*-foreground` token is a contrast bug.
+Expected: exactly one hit — `--bet:`, a fill carrying gold-900 text. A hit on `--primary`, `--warning`, `--gold`, `--brand-selected`, or any `*-foreground` token is a contrast bug.
 
 - [ ] **Step 3: Start the dev server**
 
