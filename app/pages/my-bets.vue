@@ -7,6 +7,9 @@
 // in nuxt.config.js.
 definePageMeta({
   name: "my-bets",
+  // Carried requiresAuth: true in the baseline router (git show
+  // 81ae85f:src/router/index.js) — see app/middleware/auth.global.js.
+  requiresAuth: true,
 });
 
 useSeoHead({

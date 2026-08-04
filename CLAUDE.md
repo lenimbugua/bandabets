@@ -13,7 +13,7 @@ Naibet UI — a Vue 3 sports betting and casino web application for the Kenyan m
 - **Production build:** `pnpm build` (outputs to `.output/`)
 - **Preview build:** `pnpm preview`
 - **Start production server:** `node .output/server/index.mjs` (port 3000, `PORT` overrides)
-- **Lint:** `npx eslint app/ server/`
+- **Lint:** `npx eslint app/ server/` — currently reports ~186 errors and 2 warnings, essentially all `no-undef` against Nuxt's auto-imports (`defineNuxtRouteMiddleware`, `useRuntimeConfig`, `defineStore`, `storeToRefs`, …). `eslint.config.js` was never updated with Nuxt's globals when the project migrated from Vite, so the command runs but is not currently a useful signal — treat a clean run as a Phase 2 TODO (add `globals` for the Nuxt/Nitro auto-import surface, or bring in `eslint-plugin-nuxt`/the auto-generated `.nuxt/eslint.config.mjs`), not as something already working.
 
 No test framework is configured.
 

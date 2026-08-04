@@ -9,27 +9,34 @@ import { useModalStore } from "../stores/modal";
 import { useLoginStore } from "./login";
 import { useUtmStore } from "./utm";
 
-const depositAmounts = [
-  { amount: 49, bonus: 5 },
-  { amount: 100, bonus: 10 },
-  { amount: 200, bonus: 15 },
-  { amount: 300, bonus: 20 },
-  { amount: 400, bonus: 25 },
-  { amount: 500, bonus: 30 },
-  { amount: 1000, bonus: 50 },
-  { amount: 2000, bonus: 50 },
-];
+// Factory, not a module-scope literal: state() calls this on every store
+// instantiation so each store instance (and, on the server, each concurrent
+// request) gets its own array rather than a shared reference that a
+// mutation from one user's session could leak into every other request.
+function createDepositAmounts() {
+  return [
+    { amount: 49, bonus: 5 },
+    { amount: 100, bonus: 10 },
+    { amount: 200, bonus: 15 },
+    { amount: 300, bonus: 20 },
+    { amount: 400, bonus: 25 },
+    { amount: 500, bonus: 30 },
+    { amount: 1000, bonus: 50 },
+    { amount: 2000, bonus: 50 },
+  ];
+}
 
 export const useDepositStore = defineStore("deposit-store", {
-  /*************  ✨ Windsurf Command ⭐  *************/
-  /*******  5840d845-c2c5-4fe0-8199-aad675389cfe  *******/
-  state: () => ({
-    depositAmounts,
-    pending: false,
-    responseOK: false,
-    deposit: depositAmounts[2].amount,
-    statusMessage: null,
-  }),
+  state: () => {
+    const depositAmounts = createDepositAmounts();
+    return {
+      depositAmounts,
+      pending: false,
+      responseOK: false,
+      deposit: depositAmounts[2].amount,
+      statusMessage: null,
+    };
+  },
 
   actions: {
     async makeDeposit() {
@@ -307,7 +314,7 @@ export const useDepositStore = defineStore("deposit-store", {
       this.deposit = payload;
     },
     resetDeposit() {
-      this.deposit = depositAmounts[2].amount;
+      this.deposit = this.depositAmounts[2].amount;
     },
   },
 });

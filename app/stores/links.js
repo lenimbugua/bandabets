@@ -1,5 +1,10 @@
 
-const links = [
+// Factory, not a module-scope literal: state() calls this on every store
+// instantiation so each store instance (and, on the server, each concurrent
+// request) gets its own array rather than a shared reference that a
+// mutation from one user's session could leak into every other request.
+function createLinks() {
+  return [
   {
     path: "sports",
     name: "Sports",
@@ -51,13 +56,17 @@ const links = [
     icon: "countries",
     iconCss: "h-5 w-5 text-brand-bright fill-current",
   },
-];
+  ];
+}
 
 export const useLinksStore = defineStore("links-store", {
-  state: () => ({
-    links: links,
-    selectedLink: links[0].path,
-  }),
+  state: () => {
+    const links = createLinks();
+    return {
+      links,
+      selectedLink: links[0].path,
+    };
+  },
 
   actions: {
     isSelected(path) {

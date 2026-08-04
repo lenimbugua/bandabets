@@ -1,3 +1,4 @@
+import { effectScope } from "vue";
 import { useMediaQuery } from "@vueuse/core";
 
 // Cache key for the refs stashed on the current Nuxt app instance (see
@@ -33,12 +34,24 @@ export function useScreenSizes() {
   const nuxtApp = useNuxtApp();
 
   if (!nuxtApp[SCREEN_SIZES_KEY]) {
-    nuxtApp[SCREEN_SIZES_KEY] = {
+    // useMediaQuery() registers a watchEffect (plus, client-side, a
+    // matchMedia listener) that Vue expects an active EffectScope to own
+    // so it can be torn down. The first call here can happen outside any
+    // component's setup (see point 3 above — usually it IS inside
+    // default.vue's setup, but callers aren't required to guarantee
+    // that), which means there is no such scope by default. A detached
+    // effectScope(true) ("detached" so it isn't itself absorbed into
+    // whatever scope happens to be active at call time) gives these refs
+    // an explicit owner without changing the memoisation above: it's
+    // created and run once, on first access, and the resulting refs are
+    // cached on nuxtApp exactly as before.
+    const scope = effectScope(true);
+    nuxtApp[SCREEN_SIZES_KEY] = scope.run(() => ({
       isSmallScreen: useMediaQuery("(min-width: 100px)"), // Phones and above
       isMediumScreen: useMediaQuery("(min-width: 768px)"), // Tablets and above
       isLargeScreen: useMediaQuery("(min-width: 1024px)"), // Desktops and above
       isPreferredDark: useMediaQuery("(prefers-color-scheme: dark)"),
-    };
+    }));
   }
 
   return nuxtApp[SCREEN_SIZES_KEY];

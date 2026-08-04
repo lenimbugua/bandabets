@@ -34,12 +34,19 @@ delete or gate this file when the real page ships.
 
 ## b. `pages:extend` scaffold — 28 placeholder routes, one path inferred
 
-`nuxt.config.js`'s `pages:extend` hook registers 28 placeholder route names
-(27 in `phase2Placeholders` + `match-details`, which is one of the 27) against
-`app/components/PhaseTwoPlaceholder.vue`, so `vue-router`'s `resolve()` for
-`RouterLink`/`router.push()` calls throughout the shared chrome doesn't throw.
-As Phase 2 ports each real page, delete its entry from the array — the list
-should shrink to empty over time.
+`nuxt.config.js`'s `pages:extend` hook registers 28 placeholder route names —
+all 28 entries of the `phase2Placeholders` array, `match-details` among them,
+not an addition to it — against `app/components/PhaseTwoPlaceholder.vue`, so
+`vue-router`'s `resolve()` for `RouterLink`/`router.push()` calls throughout
+the shared chrome doesn't throw. As Phase 2 ports each real page, delete its
+entry from the array — the list should shrink to empty over time.
+
+Counting the 4 real stub pages too (`app/pages/login.vue`, `signup.vue`,
+`casino-home.vue`, `my-bets.vue` — placeholders in substance even though
+they're real `.vue` files, per `docs/PHASE-2-NOTES.md`'s own framing and
+`phase2RealStubPaths` in `nuxt.config.js`), Phase 1 ships **32** total
+placeholder routes. `docs/INFRA-HANDOFF.md`'s verification table curled 12
+of those 32 — see that file's note on the claim's actual scope.
 
 All paths were sourced from the deleted `src/router/index.js`
 (`git show 81ae85f:src/router/index.js`) with **one exception**: the `games`
@@ -90,7 +97,7 @@ confirm the intended URL for `games` before porting it.**
   again.
 - **Circular ES-module import, pre-existing at baseline.**
   `app/composables/useCasino.js:1` imports `useCasinoStore` from
-  `app/stores/casino.js`, and `app/stores/casino.js:7` imports `useCasino`
+  `app/stores/casino.js`, and `app/stores/casino.js:6` imports `useCasino`
   back from `app/composables/useCasino.js`. This worked under Vite's SPA
   bundling and continues to work under Nuxt/Nitro, but it's fragile —
   module-evaluation order changes (e.g. from future refactors, different
@@ -109,10 +116,15 @@ which mounts on every route — because only inside `setup()` can VueUse read
 the SSR width injected by `app/plugins/ssr-width.js` (`provideSSRWidth(390,
 nuxtApp.vueApp)`).
 
-Verified safe as of Phase 1's end: no `app/middleware/*` global middleware
-touches the casino, kiron, haki-league, or casino-query-params stores (the
-ones most likely to indirectly call `useScreenSizes()`) before the layout
-mounts.
+Verified safe as of Phase 1's end: two global middlewares now exist —
+`tracking.global.js` (added in Task 10) and `auth.global.js` (added for
+spec §6.4's auth guard, this fix round) — and neither touches the casino,
+kiron, haki-league, or casino-query-params stores (the ones most likely to
+indirectly call `useScreenSizes()`) before the layout mounts. The correct
+guard condition going forward is therefore "no `app/middleware/` entry
+reaches those stores before `app/layouts/default.vue`'s `setup()` runs",
+not "no `app/middleware/` exists" — that condition is now false and was
+restated here rather than left to silently go stale.
 
 **Risk for Phase 2:** any future global middleware or Nitro/Nuxt plugin that
 touches those stores (or otherwise calls `useScreenSizes()`) before the
@@ -153,3 +165,65 @@ Phase 2, `src/` should not exist.
 nothing under `app/` may ever import from `src/`. `src/` is legacy,
 unbuilt-from-here scaffolding, not a live dependency. Verified clean as of
 this task: no `app/` file imports from `src/`.
+
+## h. Auth guard ported (spec §6.4) — 13 baseline route names, 2 not yet real routes
+
+`app/middleware/auth.global.js` ports the old router's `beforeEach` auth
+check (`git show 81ae85f:src/router/index.js`, guard around line 942):
+routes whose meta carries `requiresAuth: true` open the login modal and
+stash an after-login callback instead of redirecting, exactly as before.
+`import.meta.server` returns early — see the file's header comment for why
+that's correct rather than a shortcut.
+
+Grepping the baseline router for uncommented `requiresAuth: true` found
+**13** route names, not the 12 originally estimated for this task: `profile`,
+`my-bets`, `bet-details`, `join-affiliate`, `deposit`, `withdraw`,
+`pari-league`, `pari-turbo`, `pari-virtual-jackpot`, `self-exclusion`,
+`virtual-league`, `playon`, `bet-placed`. 11 of the 13 are wired with
+`requiresAuth: true` in Phase 1 (10 via `phase2RequiresAuthNames` in
+`nuxt.config.js`'s `pages:extend` hook, plus `my-bets` via its own
+`definePageMeta`). **`virtual-league` and `bet-placed` are not registered as
+routes anywhere in Phase 1** — neither in `phase2Placeholders` nor as a real
+stub page, so there's nothing in the codebase today to attach `requiresAuth`
+meta to. The guard itself is generic (checks `to.matched`/`meta` on
+whatever route is being visited), so it needs no further change — Phase 2
+must simply set `requiresAuth: true` in each page's meta when it creates
+`virtual-league` and `bet-placed` (or registers them as placeholders first).
+
+## i. `sportMetaMap` and `scrollBehavior` — dropped when `src/router/index.js` was deleted, recorded here rather than silently lost
+
+Both lived in the baseline router (`git show 81ae85f:src/router/index.js`)
+and had no home to move to when the router file was deleted. Neither was
+restored in Phase 1 — recorded here as a deliberate, known gap rather than
+a silent loss:
+
+- **`sportMetaMap`** (baseline lines ~794–910) — a per-sport-key
+  title/description lookup (soccer, basketball, tennis, …, 23 sports) used
+  by the old `afterEach` hook to override the default SEO title/description
+  on `/sports/:sport` and `/sports/live/:sport` routes. Phase 1's six SEO
+  routes include `/sports/football` and `/sports/live/football`, but their
+  titles/descriptions are set directly in each page's `useSeoHead()` call
+  (see `app/pages/sports/[sport].vue` and `app/pages/sports/live/[sport].vue`)
+  rather than through a shared map — correct for the one sport Phase 1
+  ships, but any *other* sport routed through those same dynamic pages today
+  would fall back to the site default title/description instead of a
+  sport-specific one. Not restored now because doing it faithfully means
+  porting all 23 entries and wiring them into both dynamic pages' SEO
+  logic — real work, not a one-line fix, and out of scope for this fix
+  round. Phase 2 should port `sportMetaMap` (verbatim content is in the
+  baseline commit) into a composable (e.g. `useSportMeta.js`) and call it
+  from both sport pages' `useSeoHead()`.
+- **`scrollBehavior`** (baseline lines ~920–937) — restored `savedPosition`
+  on back/forward, suppressed auto-scroll on the home/sports routes
+  (including when arriving from `match-details`, to let that component
+  handle scroll restoration itself), and scrolled to top everywhere else.
+  Nuxt's file-based router config has a direct equivalent
+  (`app/router.options.js` exporting a `scrollBehavior` function, same
+  vue-router signature) but it was not added in Phase 1 — no page in the
+  six-route SEO set exercises the home/sports special case in a way that's
+  currently observable (there's no `match-details` page yet to navigate
+  *from*), so the gap is inert today. Phase 2 must add
+  `app/router.options.js` with this logic before/while porting
+  `match-details`, or scroll position will silently misbehave (default
+  vue-router behaviour is no scroll restoration at all) the moment that
+  route exists.

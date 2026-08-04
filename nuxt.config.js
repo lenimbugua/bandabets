@@ -5,6 +5,31 @@ const phase2PlaceholderFile = fileURLToPath(
   new URL("./app/components/PhaseTwoPlaceholder.vue", import.meta.url),
 );
 
+// Route names that carried `meta: { requiresAuth: true }` in the deleted
+// baseline router (`git show 81ae85f:src/router/index.js`), sourced by
+// grepping every uncommented `requiresAuth: true` and reading the enclosing
+// route object's `name`. app/middleware/auth.global.js checks
+// `to.matched.some(r => r.meta?.requiresAuth)` on every navigation — it's
+// generic and needs no per-route wiring beyond this meta flag being set. Of
+// the 13 names found, 11 are registered as routes in Phase 1 (10 here, plus
+// "my-bets" which has its own real stub page — see app/pages/my-bets.vue).
+// "virtual-league" and "bet-placed" are NOT registered as routes anywhere in
+// Phase 1 (neither here nor as a real page) — see docs/PHASE-2-NOTES.md for
+// that gap; there is nothing to attach `requiresAuth` to until Phase 2
+// creates those pages.
+const phase2RequiresAuthNames = new Set([
+  "bet-details",
+  "deposit",
+  "join-affiliate",
+  "pari-league",
+  "pari-turbo",
+  "pari-virtual-jackpot",
+  "playon",
+  "profile",
+  "self-exclusion",
+  "withdraw",
+]);
+
 // Phase 1 route-name scaffold. DELETE EACH ENTRY as Phase 2 ports the real
 // page for that name — this list should shrink to empty over time.
 //
@@ -138,7 +163,10 @@ export default defineNuxtConfig({
           // routeRule below (match-details and countries both live under
           // /sports/**).
           mode: "client",
-          meta: { robots: "noindex,nofollow" },
+          meta: {
+            robots: "noindex,nofollow",
+            ...(phase2RequiresAuthNames.has(name) && { requiresAuth: true }),
+          },
         });
       }
     },

@@ -8,61 +8,72 @@ import englishFlag from "@/assets/img/england.png";
 import italianFlag from "@/assets/img/italy.png";
 import kenyanFlag from "@/assets/img/kenya.png";
 import spanishFlag from "@/assets/img/spain.png";
-const competitions = [
-  {
-    name: "english",
-    flag: englishFlag,
-    id: "41303",
-  },
-  {
-    name: "spanish",
-    flag: spanishFlag,
-    id: "41309",
-  },
-  {
-    name: "kenyan",
-    flag: kenyanFlag,
-    id: "13367",
-  },
-  {
-    name: "italian",
-    flag: italianFlag,
-    id: "41307",
-  },
-];
+// Factories, not module-scope literals: state() calls these on every store
+// instantiation so each store instance (and, on the server, each concurrent
+// request) gets its own array/object rather than a shared reference that a
+// mutation from one user's session could leak into every other request.
+function createCompetitions() {
+  return [
+    {
+      name: "english",
+      flag: englishFlag,
+      id: "41303",
+    },
+    {
+      name: "spanish",
+      flag: spanishFlag,
+      id: "41309",
+    },
+    {
+      name: "kenyan",
+      flag: kenyanFlag,
+      id: "13367",
+    },
+    {
+      name: "italian",
+      flag: italianFlag,
+      id: "41307",
+    },
+  ];
+}
 
-const defaultMarket = {
-  market_id: "Match_Result",
-  market_name: "1X2",
-};
+function createDefaultMarket() {
+  return {
+    market_id: "Match_Result",
+    market_name: "1X2",
+  };
+}
 
 export const useInstantStore = defineStore("instant-store", {
-  state: () => ({
-    outcomesCount: 3,
-    competitions,
-    competitionIsLoading: false,
-    error: null,
-    responseOK: false,
-    pending: false,
-    matches: [],
-    markets: [],
-    selectedCompetition: competitions[0],
-    selectedMarket: defaultMarket,
+  state: () => {
+    const competitions = createCompetitions();
+    return {
+      outcomesCount: 3,
+      competitions,
+      competitionIsLoading: false,
+      error: null,
+      responseOK: false,
+      pending: false,
+      matches: [],
+      markets: [],
+      selectedCompetition: competitions[0],
+      selectedMarket: createDefaultMarket(),
 
-    liveMatches: [],
-    meta: null,
-    kickOffs: [],
+      liveMatches: [],
+      meta: null,
+      kickOffs: [],
 
-    viewToDisplay: "instantHome",
+      viewToDisplay: "instantHome",
 
-    count: 0,
-    endedTime: 90,
-    halfTime: 45,
-    timeToShowWonModal: 100,
-    resetCountTime: 120,
+      count: 0,
+      endedTime: 90,
+      halfTime: 45,
+      timeToShowWonModal: 100,
+      resetCountTime: 120,
 
-    won: 0,
-  }),
+      won: 0,
+    };
+  },
 
   getters: {
     hasKickOff: (state) => {
@@ -145,7 +156,7 @@ export const useInstantStore = defineStore("instant-store", {
       this.selectedMarket = payload;
     },
     resetSelectedMarket() {
-      this.selectedMarket = defaultMarket;
+      this.selectedMarket = createDefaultMarket();
     },
     setCompetitionIsLoading(payload) {
       this.competitionIsLoading = payload;

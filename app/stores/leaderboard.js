@@ -1,19 +1,27 @@
 import API, { affiliateBaseURL } from "../services/API";
 
-const categories = ["sport", "casino"];
-const selected = categories[0];
+// Factory, not a module-scope literal: state() calls this on every store
+// instantiation so each store instance (and, on the server, each concurrent
+// request) gets its own array rather than a shared reference that a
+// mutation from one user's session could leak into every other request.
+function createCategories() {
+  return ["sport", "casino"];
+}
 
 export const useLeaderboardStore = defineStore("leaderboard-store", {
-  state: () => ({
-    pending: false,
-    leaderboard: [],
-    prizes: [],
-    games: [],
-    eligibleGames: [],
-    responseOK: false,
-    categories: categories,
-    selected: selected,
-  }),
+  state: () => {
+    const categories = createCategories();
+    return {
+      pending: false,
+      leaderboard: [],
+      prizes: [],
+      games: [],
+      eligibleGames: [],
+      responseOK: false,
+      categories,
+      selected: categories[0],
+    };
+  },
 
   getters: {
     isSelected: (state) => {

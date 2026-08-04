@@ -1,7 +1,15 @@
 import API, { betBaseURL } from "../services/API";
 import { useLoginStore } from "./login";
 
-const categories = [
+// Factory functions, not module-scope literals: state() below calls these
+// on every store instantiation so each store instance (and, on the server,
+// each concurrent request) gets its own fresh array/object rather than a
+// shared reference. A plain `const categories = [...]` here would be
+// evaluated once per server process and then aliased into every request's
+// reactive state — a mutation from one user's session would be visible to
+// every other concurrent request.
+function createCategories() {
+  return [
   {
     id: 1,
     name: "Top Leagues",
@@ -66,7 +74,8 @@ const categories = [
     description:
       "Epic comebacks, high-flying dunks—every game is a showstopper.",
   },
-];
+  ];
+}
 
 // const bethub = {
 //   status: "ok",
@@ -205,7 +214,8 @@ const categories = [
 //   ],
 // };
 
-const slip = [
+function createSlip() {
+  return [
   {
     homeTeam: "Athletic Bilbao",
     awayTeam: "Barcelona",
@@ -238,17 +248,20 @@ const slip = [
     oddValue: 31.56,
     outcomeName: "Over 1.5",
   },
-];
+  ];
+}
 
-const selection = {
-  totalOdds: 997.7,
-  slip,
-};
+function createSelection() {
+  return {
+    totalOdds: 997.7,
+    slip: createSlip(),
+  };
+}
 
 export const useBookedBetsStore = defineStore("booked-bets-store", {
   state: () => ({
-    bookedBets: selection,
-    categories: categories,
+    bookedBets: createSelection(),
+    categories: createCategories(),
     bethub: null,
     pending: false,
   }),

@@ -6,23 +6,35 @@ const depositRoadBlock = "depositRoadBlock";
 const aviatorRoadBlock = "aviatorRoadBlock";
 const jetxRoadBlock = "jetxRoadBlock";
 
-const roadblockList = [depositRoadBlock, aviatorRoadBlock, jetxRoadBlock];
+// Factory, not a module-scope literal: state() calls this on every store
+// instantiation so each store instance (and, on the server, each concurrent
+// request) gets its own array rather than a shared reference that a
+// mutation from one user's session could leak into every other request.
+// (depositRoadBlock/aviatorRoadBlock/jetxRoadBlock themselves are primitive
+// strings, so placing them directly in state is fine — only the array
+// wrapping them needs this treatment.)
+function createRoadblockList() {
+  return [depositRoadBlock, aviatorRoadBlock, jetxRoadBlock];
+}
 
 export const useRoadblockStore = defineStore("roadblock-store", {
-  state: () => ({
-    depositRoadBlock,
-    aviatorRoadBlock,
-    jetxRoadBlock,
+  state: () => {
+    const roadblockList = createRoadblockList();
+    return {
+      depositRoadBlock,
+      aviatorRoadBlock,
+      jetxRoadBlock,
 
-    roadblockList,
-    intervalId: null,
+      roadblockList,
+      intervalId: null,
 
-    roadBlockImage: null,
-    roadBlockClickAction: null,
-    currentIndex: 0,
-    currentRoadblock: roadblockList[0],
-    lastLaunchTime: null,
-  }),
+      roadBlockImage: null,
+      roadBlockClickAction: null,
+      currentIndex: 0,
+      currentRoadblock: roadblockList[0],
+      lastLaunchTime: null,
+    };
+  },
 
   actions: {
     setImage(imageSRC) {
@@ -34,8 +46,8 @@ export const useRoadblockStore = defineStore("roadblock-store", {
 
     rotate(route) {
       const { openRoadBlockModal } = useRoadBlocks();
-      this.currentIndex = (this.currentIndex + 1) % roadblockList.length;
-      this.currentRoadblock = roadblockList[this.currentIndex];
+      this.currentIndex = (this.currentIndex + 1) % this.roadblockList.length;
+      this.currentRoadblock = this.roadblockList[this.currentIndex];
       this.lastLaunchTime = Date.now();
       openRoadBlockModal(route, this.currentRoadblock);
     },
@@ -45,7 +57,7 @@ export const useRoadblockStore = defineStore("roadblock-store", {
       const now = Date.now();
       if (!this.lastLaunchTime) {
         this.rotate(route); // first time
-        openRoadBlockModal(route, roadblockList[0]);
+        openRoadBlockModal(route, this.roadblockList[0]);
       } else if (now - this.lastLaunchTime >= ROTATION_INTERVAL) {
         this.rotate(route);
         return;

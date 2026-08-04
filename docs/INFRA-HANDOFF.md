@@ -2,6 +2,17 @@
 
 The app is no longer a static bundle. It is a Node server.
 
+**What Phase 1 server-renders, precisely:** page chrome and SEO
+metadata — headings, JSON-LD, canonical link, Open Graph tags — for the six
+routes listed below. It does **not** server-render odds, markets, or any
+other data fetched from the backend services (matches, bet, casino, …):
+data fetching in those six pages is not `await`ed during SSR, so the HTML
+Nitro sends down contains the page shell and SEO tags but not the fetched
+data — that data arrives client-side after hydration, same as the old SPA.
+A reader of the route table below could reasonably assume odds are in the
+server-rendered HTML; they are not. Making data fetching SSR-aware (so it
+resolves before the response is sent) is Phase 2 work.
+
 ## What changed
 
 | | Before | After |
@@ -10,7 +21,7 @@ The app is no longer a static bundle. It is a Node server.
 | Serve | Nginx static files | `node .output/server/index.mjs` |
 | Port | 80 (Nginx) | 3000 (`PORT` env var overrides) |
 | Build command | `pnpm build` | `pnpm build` (unchanged) |
-| Env substitution | build-time `sed` in `docker/config/app/entrypoint.sh` | **not needed** |
+| Env substitution | build-time `sed` in `docker/config/app/entrypoint.sh` (that directory no longer exists in this repo — infra-owned, referenced here only to describe the *old* mechanism) | **not needed** |
 | Health check | any static path | `GET /version.json` → `{"version":"…"}` |
 
 The container must run a Node process now — a static file server (Nginx serving
@@ -26,7 +37,12 @@ or `sed`-patching per environment — the same built `.output/` can be started
 with different env vars for dev/staging/prod.
 
 Verified against `runtimeConfig.public` in `nuxt.config.js` and `.env.example`:
-both list the same 33 keys, in the same order, with no discrepancies.
+both list the same 33 keys — the key **sets** match exactly, which is what
+matters for the app to boot with every var it needs. The **order** differs
+between the two files (e.g. `AFFILIATE_API_URL` is the 28th key in
+`.env.example` but the 12th in `nuxt.config.js`), which is harmless — env
+var lookup isn't order-dependent — but the two files should not be read as
+mirroring each other line-for-line.
 
 | Old (`VITE_*`) | New (`NUXT_PUBLIC_*`) |
 |---|---|
@@ -88,20 +104,39 @@ JSON-LD `@type`s = Organization, WebSite, BreadcrumbList, SearchAction,
 ContactPoint, ListItem. Param-derived titles work, e.g. `/sports/football` →
 "Football Betting in Kenya – Odds & Live Markets | Naibet".
 
-All Phase-2 placeholder routes (`/privacy-policy`, `/terms-and-conditions`,
+**12 of the ~32 Phase-2 placeholder routes** were actually curled and
+confirmed noindexed — not all of them, despite how this section previously
+read. The 12 sampled (`/privacy-policy`, `/terms-and-conditions`,
 `/responsible-gambling`, `/deposit`, `/login`, `/signup`, `/casino-home`,
 `/my-bets`, `/profile`, `/withdraw`, `/aviator`, and the match-details shape
-`/sports/football/kenya/premier-league/arsenal-vs-chelsea-12345`) returned
-`200` with `X-Robots-Tag: noindex, nofollow`, so none of them can be indexed
-while they're stubs.
+`/sports/football/kenya/premier-league/arsenal-vs-chelsea-12345`) all
+returned `200` with `X-Robots-Tag: noindex, nofollow`. The remaining ~20
+placeholder routes were not individually curled; they share the same
+`phase2Placeholders`/`phase2RealStubPaths` → `phase2NoindexRouteRules`
+generation path in `nuxt.config.js` as the 12 that were (see
+`docs/PHASE-2-NOTES.md` §b for the full count and generation mechanism), so
+the same header is expected, but that is inference from shared code, not a
+per-route confirmation.
 
 Zero SSR errors (`nuxt instance unavailable`, `window is not defined`,
 `ReferenceError`, `No match for`) appeared in the server log across the run.
 
-**Not verified — requires a real browser and real credentials, which neither
-an automated check nor this handoff can provide:** that a logged-in session
-survives a hard refresh with no logged-out flash (Phase 1 exit criterion 3).
-This needs a manual check by the team before Phase 2 begins.
+**Not verified — requires a real browser, which neither an automated check
+nor this handoff can provide:**
+
+- **Exit criterion 2 (zero hydration warnings).** This was never actually
+  run. Checking it means opening a real browser console and watching for
+  Vue's hydration-mismatch warnings on each route; only server logs were
+  grepped (for `nuxt instance unavailable`, `window is not defined`,
+  `ReferenceError`, `No match for`, all of which came back clean — see
+  above), which is a different, narrower signal than a browser console.
+  Do not read the clean server log as this criterion having passed.
+- **Exit criterion 3 (logged-in session survives a hard refresh with no
+  logged-out flash).** Also requires real credentials, which neither an
+  automated check nor this handoff can provide.
+
+Both need a manual check by the team, in a real browser, before Phase 2
+begins.
 
 ## Notes for the infra team
 
