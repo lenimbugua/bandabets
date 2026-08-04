@@ -27,6 +27,12 @@ export default defineNuxtConfig({
     "/leagues": { ssr: true },
     "/promotions": { ssr: true },
     "/sports/**": { ssr: true },
+    // Minimal Phase-2 placeholders (login/signup/casino-home/my-bets) —
+    // private/account routes, per spec §5.3: ssr:false, not indexed.
+    "/login": { ssr: false },
+    "/signup": { ssr: false },
+    "/casino-home": { ssr: false },
+    "/my-bets": { ssr: false },
   },
 
   app: {
