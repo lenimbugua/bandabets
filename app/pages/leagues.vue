@@ -16,6 +16,8 @@ const { isLargeScreen } = useScreenSizes();
 </script>
 
 <template>
+  <h1 class="sr-only">Football Leagues &amp; Fixtures – Naibet Sportsbook</h1>
+
   <!-- Desktop -->
   <DesktopSportsLayout
     v-if="isLargeScreen"

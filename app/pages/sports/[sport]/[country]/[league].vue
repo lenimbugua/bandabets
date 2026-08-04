@@ -29,6 +29,7 @@ getMatches();
 </script>
 
 <template>
+  <h1 class="sr-only">{{ leagueName }}{{ leagueName && countryName ? " – " : "" }}{{ countryName }} Sports Betting – Leagues &amp; Fixtures | Naibet</h1>
   <DesktopSportsLayout
     v-if="isLargeScreen"
     seo-title="Sports Betting by Country"

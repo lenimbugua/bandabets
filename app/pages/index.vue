@@ -16,5 +16,6 @@ useSeoHead({
 </script>
 
 <template>
+  <h1 class="sr-only">Best Online Sports Betting in Kenya – Naibet</h1>
   <TheLanding />
 </template>
