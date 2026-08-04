@@ -62,7 +62,7 @@ async function bet() {
       <div class="flex grow">
         <button
           v-if="betslipHasDeactivatedItems"
-          class="bg-brand-selected/80 rounded-md text-red-200 capitalize tracking-wide font-extrabold text-sm w-full justify-center items-center rounded-0 shadow-sm px-2 py-2.5"
+          class="bg-brand-selected/80 rounded-md text-gray-50 capitalize tracking-wide font-extrabold text-sm w-full justify-center items-center rounded-0 shadow-sm px-2 py-2.5"
           @click="removeDeactivatedMatches"
         >
           <TheButtonSpin v-if="pending" />
@@ -72,7 +72,7 @@ async function bet() {
         </button>
         <div
           v-else-if="!isAuthenticated"
-          class="bg-brand-selected/80 flex cursor-pointer rounded-md hover:bg-brand-bright/70 text-primary-foreground uppercase tracking-wide font-semibold text-sm w-full justify-center items-center rounded-0 shadow-sm px-2 py-2.5"
+          class="bg-brand-selected/80 flex cursor-pointer rounded-md hover:bg-brand-bright/70 text-gray-50 uppercase tracking-wide font-semibold text-sm w-full justify-center items-center rounded-0 shadow-sm px-2 py-2.5"
           @click="openLogin"
         >
           Login To Place Bet
@@ -80,7 +80,7 @@ async function bet() {
         <button
           v-else
           type="submit"
-          class="bg-brand-selected/80 rounded-md hover:bg-brand-bright/70 text-primary-foreground uppercase tracking-wide font-extrabold text-sm w-full justify-center items-center rounded-0 shadow-sm px-2 py-2.5"
+          class="bg-brand-selected/80 rounded-md hover:bg-brand-bright/70 text-gray-50 uppercase tracking-wide font-extrabold text-sm w-full justify-center items-center rounded-0 shadow-sm px-2 py-2.5"
         >
           <TheButtonSpin v-if="pending" />
           <span v-else>Place Bet</span>

@@ -130,7 +130,7 @@ const handleRoadBlockClick = () => {
                   Cancel
                 </button>
                 <button
-                  class="bg-brand-bright w-1/2 text-lime-50 py-2"
+                  class="bg-brand-bright w-1/2 text-gold-foreground py-2"
                   @click="handleRoadBlockClick"
                 >
                   Continue

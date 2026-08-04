@@ -46,7 +46,7 @@ async function cancelTheBet() {
     </div>
     <div class="flex justify-center space-x-3 py-3">
       <button
-        class="bg-brand-bright shadow-sm p-2 text-lime-100 rounded-md"
+        class="bg-brand-bright shadow-sm p-2 text-gold-foreground rounded-md"
         @click="closeModal()"
       >
         No Thanks

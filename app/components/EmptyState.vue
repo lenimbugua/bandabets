@@ -13,7 +13,7 @@ import { MagnifyingGlassIcon } from "@heroicons/vue/24/outline";
       <div class="flex items-center gap-2">
         <RouterLink
           to="/"
-          class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
+          class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
         >
           Browse matches
         </RouterLink>

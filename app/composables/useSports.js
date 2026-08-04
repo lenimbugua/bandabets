@@ -135,7 +135,7 @@ const games = ref([
   {
     name: "Golf",
     icon: golf,
-    iconColor: "text-brand-teal",
+    iconColor: "text-emerald-700 dark:text-emerald-400",
     id: 12,
     link: "/",
   },

@@ -103,7 +103,7 @@ onBeforeUnmount(() => {
             <span class="text-gray-600 dark:text-gray-300 font-medium truncate">{{ w.game }}</span>
           </div>
           <button
-            class="shrink-0 bg-primary text-white text-[0.65rem] font-bold px-2.5 py-1 rounded-md hover:bg-primary/90 transition-colors"
+            class="shrink-0 bg-primary text-primary-foreground text-[0.65rem] font-bold px-2.5 py-1 rounded-md hover:bg-primary/90 transition-colors"
             @click="emit('play', w.game)"
           >
             Play Now

@@ -104,7 +104,7 @@ function copyBookingCode() {
         </button>
       </ShareBet>
       <div class="flex-1">
-        <button class="w-full flex items-center justify-center gap-2 h-10 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <button class="w-full flex items-center justify-center gap-2 h-10 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors">
           <TheRebet :bet-id="parseInt(afterBetDetails?.betId)" />
         </button>
       </div>

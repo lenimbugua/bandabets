@@ -108,7 +108,7 @@ const freeBetDetails = [
 
       <!-- CTA Section -->
       <div class="bg-card p-6 rounded-lg text-center">
-        <h3 class="text-2xl font-bold text-primary-foreground mb-4">Ready to Start?</h3>
+        <h3 class="text-2xl font-bold text-foreground mb-4">Ready to Start?</h3>
         <p class="mb-6 text-lg dark:text-white">
           Join HakiLeague Freebets today and experience risk-free betting!
         </p>

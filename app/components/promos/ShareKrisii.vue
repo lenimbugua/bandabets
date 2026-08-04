@@ -125,7 +125,7 @@
             class="w-full text-center table-auto rounded-lg overflow-hidden shadow-xl"
           >
             <thead>
-              <tr class="bg-yellow-500 text-white text-lg font-bold">
+              <tr class="bg-yellow-500 text-bet-foreground text-lg font-bold">
                 <th class="p-3 w-1/4">Rank Position</th>
                 <th class="p-3 w-3/4">Prize Reward</th>
               </tr>
@@ -191,7 +191,7 @@
         <div class="text-center">
           <RouterLink
             :to="{ name: 'share-happiness' }"
-            class="inline-block px-12 py-4 text-lg font-bold uppercase rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl bg-yellow-500 text-white shadow-yellow-600/50"
+            class="inline-block px-12 py-4 text-lg font-bold uppercase rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl bg-yellow-500 text-bet-foreground shadow-yellow-600/50"
           >
             GET MY REFERRAL LINK
           </RouterLink>

@@ -145,7 +145,7 @@ function isActive(routeName) {
         </div>
         <span
           class="text-[0.6rem] font-semibold mt-0.5"
-          :class="betslipLength > 0 ? 'text-bet-bright' : 'text-gray-500 dark:text-gray-500'"
+          :class="betslipLength > 0 ? 'text-gold-bright' : 'text-gray-500 dark:text-gray-500'"
         >Betslip</span>
       </div>
 
