@@ -1,3 +1,16 @@
+<script setup>
+definePageMeta({
+  name: "privacy-policy",
+  layout: false,
+});
+
+useSeoHead({
+  title: "Privacy Policy | Data Protection | Naibet",
+  description:
+    "Learn how Naibet protects your data under Kenya’s Data Protection Act and ensures secure transactions.",
+});
+</script>
+
 <template>
   <HeaderLinks />
 

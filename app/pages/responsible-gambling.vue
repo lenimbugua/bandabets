@@ -1,3 +1,16 @@
+<script setup>
+definePageMeta({
+  name: "responsible-gambling",
+  layout: false,
+});
+
+useSeoHead({
+  title: "Responsible Gambling | Stay Safe with Naibet",
+  description:
+    "Naibet promotes safe gaming. Access tools and support to gamble responsibly and stay in control.",
+});
+</script>
+
 <template>
   <HeaderLinks />
 

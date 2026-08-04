@@ -64,20 +64,14 @@ const phase2Placeholders = [
   { name: "pari-turbo", path: "/virtual-games/nai-turbo" },
   { name: "pari-virtual-jackpot", path: "/virtual-games/nai-virtual-jackpot" },
   { name: "playon", path: "/virtual-games/playon" },
-  { name: "privacy-policy", path: "/privacy-policy" },
   { name: "profile", path: "/profile" },
   { name: "promotion-details", path: "/promotion-details/:name" },
   { name: "reset-password", path: "/reset-password" },
-  // Not in the coordinator's enumerated 27 — found independently while
-  // tracing Footer.vue's legalLinks array. Still blocks all six SEO
-  // routes without it, so it's included here anyway.
-  { name: "responsible-gambling", path: "/responsible-gambling" },
   { name: "self-exclusion", path: "/profile/exclude" },
   { name: "share-bets", path: "/share-bets/:code?" },
   { name: "share-feedback", path: "/share-feedback" },
   { name: "share-happiness", path: "/share-happiness" },
   { name: "sort-deposit", path: "/sort-deposit" },
-  { name: "terms-and-conditions", path: "/terms-and-conditions" },
   { name: "verify-account", path: "/verify-account" },
   { name: "welcome-gift", path: "/welcome-gift" },
   { name: "withdraw", path: "/withdraw" },
@@ -200,6 +194,34 @@ export default defineNuxtConfig({
     "/leagues": { ssr: true },
     "/promotions": { ssr: true },
     "/sports/**": { ssr: true },
+
+    // --- Batch A: legal trio — indexable, SSR (not build-time prerendered) --
+    // Live, already-indexed URLs. Removed from phase2Placeholders above, so
+    // they no longer get a generated noindex routeRule; these three must
+    // stay fully indexable.
+    //
+    // DEVIATION FROM PLAN: the plan specifies `{ prerender: true }`. That is
+    // not usable today — `pnpm build` fails prerendering ANY route in this
+    // app (verified against the already-shipped, unrelated `/promotions`
+    // page, not just these three new pages): Nitro's build-time prerender
+    // crawl throws "Cannot read properties of undefined (reading 'state')"
+    // out of @pinia/nuxt's `app:rendered` hook (`nuxtApp.$pinia` is
+    // undefined at that point, specifically inside the separate
+    // `.nuxt/prerender/` bundle Nitro builds for the crawl) — reproducible
+    // with a single prerender route, so it isn't a concurrency race either.
+    // This is a pre-existing incompatibility between this repo's pinia
+    // (^4.0.2) / @pinia/nuxt (1.0.1) / nitropack (2.13.4) versions and
+    // Nitro's prerender crawler, not something Batch A introduced — no
+    // routeRules anywhere in this codebase used `prerender: true` before.
+    // `ssr: true` (identical to `/`, `/leagues`, `/promotions`, `/sports/**`
+    // above) produces the same fully server-rendered, indexable HTML per
+    // request and is sufficient to satisfy the urgent requirement (real
+    // <title>, canonical, no noindex). Revisit `prerender: true` once the
+    // upstream bug is fixed or the pinia/nitro versions are updated.
+    "/terms-and-conditions": { ssr: true },
+    "/privacy-policy": { ssr: true },
+    "/responsible-gambling": { ssr: true },
+
     // Every Phase-2 placeholder path (scaffold + the four real stub pages)
     // generated above: ssr:false where applicable plus an X-Robots-Tag
     // noindex header on all of them. See phase2NoindexRouteRules.

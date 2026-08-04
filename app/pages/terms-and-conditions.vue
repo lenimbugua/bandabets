@@ -1,3 +1,16 @@
+<script setup>
+definePageMeta({
+  name: "terms-and-conditions",
+  layout: false,
+});
+
+useSeoHead({
+  title: "Terms & Conditions | Naibet Kenya",
+  description:
+    "Read Naibet’s terms and conditions to understand our rules, fair play policy, and legal requirements.",
+});
+</script>
+
 <template>
   <HeaderLinks />
   <div class="max-w-5xl mx-auto px-3 dark:text-slate-300">
