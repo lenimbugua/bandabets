@@ -188,9 +188,11 @@ Expected: a line starting `OK —`. The count it reports is 66 before the rename
 
 - [ ] **Step 9: Verify no literal colour leaked below layer 2**
 
+Anchor on the layer 3 header comment rather than a line number — line numbers drift as you edit.
+
 ```bash
 cd /Users/leonardmbugua/Desktop/bandabet
-awk 'NR>300 && /#[0-9a-fA-F]{3,8}\b/ {print NR": "$0}' app/assets/css/style.css
+awk '/LAYER 3 — BINDINGS/{on=1} on && /#[0-9a-fA-F]{3,8}\b/ {print NR": "$0}' app/assets/css/style.css
 ```
 
 Expected: no output.
