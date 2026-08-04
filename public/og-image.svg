@@ -40,7 +40,7 @@
   <text x="108" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#D96AD9" text-anchor="middle" dominant-baseline="middle">N</text>
 
   <!-- Brand name next to logo -->
-  <text x="152" y="104" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="0.5">Naibet</text>
+  <text x="152" y="104" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="0.5">Bandabets</text>
   <text x="152" y="122" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="white" opacity="0.35" letter-spacing="3">KENYA</text>
 
   <!-- Main headline -->
@@ -103,7 +103,7 @@
 
   <!-- Bottom bar -->
   <rect x="0" y="560" width="1200" height="70" fill="black" opacity="0.3"/>
-  <text x="80" y="600" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="white" opacity="0.35">naibet.com</text>
+  <text x="80" y="600" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="white" opacity="0.35">bandabets.com</text>
 
   <!-- 18+ badge -->
   <rect x="1060" y="580" width="44" height="28" rx="6" fill="#EF4444" opacity="0.15" stroke="#EF4444" stroke-opacity="0.2" stroke-width="1"/>

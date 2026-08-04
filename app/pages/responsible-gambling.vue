@@ -5,9 +5,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Responsible Gambling | Stay Safe with Naibet",
+  title: "Responsible Gambling | Stay Safe with Bandabets",
   description:
-    "Naibet promotes safe gaming. Access tools and support to gamble responsibly and stay in control.",
+    "Bandabets promotes safe gaming. Access tools and support to gamble responsibly and stay in control.",
 });
 </script>
 
@@ -18,10 +18,10 @@ useSeoHead({
     class="p-6 max-w-[1680px] mx-auto bg-gray-50 dark:bg-surface-sunken text-gray-800 dark:text-gray-300"
   >
     <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-200 mb-4">
-      Naibet Responsible Gaming Policy
+      Bandabets Responsible Gaming Policy
     </h1>
     <p class="mb-6">
-      At Naibet, we are dedicated to fostering a safe and responsible gaming
+      At Bandabets, we are dedicated to fostering a safe and responsible gaming
       environment. We understand that gambling can be an enjoyable pastime but
       acknowledge the potential risks it carries. Our commitment is to ensure
       that all our users have access to tools and resources that encourage
@@ -33,7 +33,7 @@ useSeoHead({
         1. 18+ Age Restriction
       </h2>
       <p class="mb-4">
-        Naibet is strictly for users aged 18 and above. We enforce stringent
+        Bandabets is strictly for users aged 18 and above. We enforce stringent
         age verification measures to prevent underage gambling. Access to our
         platform is restricted for anyone below the legal gambling age.
       </p>
@@ -80,8 +80,8 @@ useSeoHead({
         <li>
           <p>
             Please contact us via email:
-            <a href="mailto:care@naibet.com" class="text-blue-600 underline">
-              care@naibet.com
+            <a href="mailto:care@bandabets.com" class="text-blue-600 underline">
+              care@bandabets.com
             </a>
             and give clear written instructions of the self-exclusion measure
             and the period of exclusion you would like implemented on your
@@ -139,8 +139,8 @@ useSeoHead({
 
         <li>
           <p>
-            Naibet reserves the right to exclude a customer for a longer
-            period at our discretion. This may include instances where Naibet
+            Bandabets reserves the right to exclude a customer for a longer
+            period at our discretion. This may include instances where Bandabets
             is informed by legitimate sources or the requesting customer has
             cited addiction issues (e.g., regulators, other authorities,
             authorized professional organizations, authorized medical
@@ -178,7 +178,7 @@ useSeoHead({
         5. Support for Problem Gamblers
       </h2>
       <p class="mb-4">
-        Naibet partners with reputable organizations to provide help and
+        Bandabets partners with reputable organizations to provide help and
         support for gambling-related issues:
       </p>
       <ul class="list-disc pl-6 mb-4 space-y-2">
@@ -266,10 +266,10 @@ useSeoHead({
 
     <div>
       <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-2">
-        8. Naibet’s Commitment
+        8. Bandabets’s Commitment
       </h2>
       <p class="mb-4">
-        As a responsible operator, Naibet is committed to upholding the
+        As a responsible operator, Bandabets is committed to upholding the
         highest ethical standards in gambling. We continuously strive to improve
         our platform and ensure a secure and safe environment for all our
         players.
@@ -277,19 +277,19 @@ useSeoHead({
       <p>
         If you have any concerns or need further assistance, please reach out to
         us at
-        <a href="mailto:support@naibet.com" class="text-blue-600 underline"
-          >support@naibet.com</a
+        <a href="mailto:support@bandabets.com" class="text-blue-600 underline"
+          >support@bandabets.com</a
         >
         or visit our
         <a
-          href="https://naibet.com/responsible-gambling"
+          href="https://bandabets.com/responsible-gambling"
           class="text-blue-600 underline"
           target="_blank"
           >Responsible Gaming Page</a
         >.
       </p>
       <p class="mt-4 font-bold">
-        Gamble responsibly and stay in control.<br />Naibet: Entertainment
+        Gamble responsibly and stay in control.<br />Bandabets: Entertainment
         with Responsibility
       </p>
     </div>

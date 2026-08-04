@@ -5,9 +5,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Register on Naibet – Create Account & Start Betting",
+  title: "Register on Bandabets – Create Account & Start Betting",
   description:
-    "Sign up with Naibet and enjoy Kenya’s leading sports betting and casino experience. Quick, secure registration.",
+    "Sign up with Bandabets and enjoy Kenya’s leading sports betting and casino experience. Quick, secure registration.",
   robots: "noindex,nofollow",
 });
 </script>

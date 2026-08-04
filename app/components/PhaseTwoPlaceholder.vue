@@ -13,7 +13,7 @@ const label = computed(() => {
 });
 
 useSeoHead({
-  title: `${label.value} | Naibet`,
+  title: `${label.value} | Bandabets`,
   robots: "noindex,nofollow",
 });
 </script>

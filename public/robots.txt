@@ -1,4 +1,4 @@
-# robots.txt – Naibet (https://naibet.com)
+# robots.txt – Bandabets (https://bandabets.com)
 
 User-agent: *
 
@@ -37,4 +37,4 @@ Disallow: /assets/
 Crawl-delay: 2
 
 # Sitemap
-Sitemap: https://naibet.com/sitemap.xml
+Sitemap: https://bandabets.com/sitemap.xml

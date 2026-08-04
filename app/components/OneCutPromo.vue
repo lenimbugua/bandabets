@@ -30,7 +30,7 @@ function goToSports() {
 </script>
 
 <template>
-  <PromoDetailShell :img="promo?.img" alt="Naibet One Cut promotion">
+  <PromoDetailShell :img="promo?.img" alt="Bandabets One Cut promotion">
     <!-- Intro -->
     <PromoDetailSection
       tone="forest"
@@ -39,7 +39,7 @@ function goToSports() {
     >
       <p>
         We've all been there: a massive multi-bet with 10 legs, and just one team
-        lets you down. With <strong>Naibet One Cut</strong>, that heartbreak is
+        lets you down. With <strong>Bandabets One Cut</strong>, that heartbreak is
         over. If your multi-bet falls short by exactly one game, we give you a 50%
         cash refund, real cash you can withdraw immediately, with no annoying
         bonus restrictions.
@@ -127,7 +127,7 @@ function goToSports() {
           Exclusions: void selections, cashed-out bets, system bets, same-game
           multiples, or bets placed using bonus funds and free bets.
         </li>
-        <li>Naibet may modify or terminate the promotion. Standard terms apply.</li>
+        <li>Bandabets may modify or terminate the promotion. Standard terms apply.</li>
       </ul>
     </PromoDetailSection>
 

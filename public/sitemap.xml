@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://naibet.com/</loc>
+    <loc>https://bandabets.com/</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -10,145 +10,145 @@
 
   <!-- Sports Betting -->
   <url>
-    <loc>https://naibet.com/leagues</loc>
+    <loc>https://bandabets.com/leagues</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/soccer</loc>
+    <loc>https://bandabets.com/sports/soccer</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/basketball</loc>
+    <loc>https://bandabets.com/sports/basketball</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/tennis</loc>
+    <loc>https://bandabets.com/sports/tennis</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/cricket</loc>
+    <loc>https://bandabets.com/sports/cricket</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/rugby</loc>
+    <loc>https://bandabets.com/sports/rugby</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/volleyball</loc>
+    <loc>https://bandabets.com/sports/volleyball</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/handball</loc>
+    <loc>https://bandabets.com/sports/handball</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/tableTennis</loc>
+    <loc>https://bandabets.com/sports/tableTennis</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/iceHockey</loc>
+    <loc>https://bandabets.com/sports/iceHockey</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/americanFootball</loc>
+    <loc>https://bandabets.com/sports/americanFootball</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/boxing</loc>
+    <loc>https://bandabets.com/sports/boxing</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/eSoccer</loc>
+    <loc>https://bandabets.com/sports/eSoccer</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/baseball</loc>
+    <loc>https://bandabets.com/sports/baseball</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/golf</loc>
+    <loc>https://bandabets.com/sports/golf</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/darts</loc>
+    <loc>https://bandabets.com/sports/darts</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/snooker</loc>
+    <loc>https://bandabets.com/sports/snooker</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/motorSport</loc>
+    <loc>https://bandabets.com/sports/motorSport</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/badminton</loc>
+    <loc>https://bandabets.com/sports/badminton</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/cycling</loc>
+    <loc>https://bandabets.com/sports/cycling</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/futsal</loc>
+    <loc>https://bandabets.com/sports/futsal</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/horseRacing</loc>
+    <loc>https://bandabets.com/sports/horseRacing</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/aussieRules</loc>
+    <loc>https://bandabets.com/sports/aussieRules</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/hockey</loc>
+    <loc>https://bandabets.com/sports/hockey</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -156,19 +156,19 @@
 
   <!-- Live Betting -->
   <url>
-    <loc>https://naibet.com/sports/live/soccer</loc>
+    <loc>https://bandabets.com/sports/live/soccer</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>always</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/live/basketball</loc>
+    <loc>https://bandabets.com/sports/live/basketball</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/live/tennis</loc>
+    <loc>https://bandabets.com/sports/live/tennis</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
@@ -176,19 +176,19 @@
 
   <!-- Casino -->
   <url>
-    <loc>https://naibet.com/casino-home</loc>
+    <loc>https://bandabets.com/casino-home</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naibet.com/casino/popular-games</loc>
+    <loc>https://bandabets.com/casino/popular-games</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naibet.com/casino/new-games</loc>
+    <loc>https://bandabets.com/casino/new-games</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -196,31 +196,31 @@
 
   <!-- Popular Crash Games -->
   <url>
-    <loc>https://naibet.com/crash/aviator</loc>
+    <loc>https://bandabets.com/crash/aviator</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/crash/jetx</loc>
+    <loc>https://bandabets.com/crash/jetx</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/crash/aviatrix</loc>
+    <loc>https://bandabets.com/crash/aviatrix</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/crash/crash-royale</loc>
+    <loc>https://bandabets.com/crash/crash-royale</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://naibet.com/crash/footballx</loc>
+    <loc>https://bandabets.com/crash/footballx</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -228,25 +228,25 @@
 
   <!-- Virtual Games -->
   <url>
-    <loc>https://naibet.com/virtual-games</loc>
+    <loc>https://bandabets.com/virtual-games</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naibet.com/virtual-games/nai-league</loc>
+    <loc>https://bandabets.com/virtual-games/nai-league</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/virtual-games/nai-turbo</loc>
+    <loc>https://bandabets.com/virtual-games/nai-turbo</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naibet.com/virtual-games/nai-virtual-jackpot</loc>
+    <loc>https://bandabets.com/virtual-games/nai-virtual-jackpot</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -254,7 +254,7 @@
 
   <!-- Promotions -->
   <url>
-    <loc>https://naibet.com/promotions</loc>
+    <loc>https://bandabets.com/promotions</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -262,19 +262,19 @@
 
   <!-- Info Pages -->
   <url>
-    <loc>https://naibet.com/terms-and-conditions</loc>
+    <loc>https://bandabets.com/terms-and-conditions</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://naibet.com/responsible-gambling</loc>
+    <loc>https://bandabets.com/responsible-gambling</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://naibet.com/privacy-policy</loc>
+    <loc>https://bandabets.com/privacy-policy</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
@@ -282,25 +282,25 @@
 
   <!-- Utility Pages -->
   <url>
-    <loc>https://naibet.com/sort-deposit</loc>
+    <loc>https://bandabets.com/sort-deposit</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://naibet.com/share-feedback</loc>
+    <loc>https://bandabets.com/share-feedback</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://naibet.com/share-bets</loc>
+    <loc>https://bandabets.com/share-bets</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://naibet.com/sports/soccer/countries</loc>
+    <loc>https://bandabets.com/sports/soccer/countries</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

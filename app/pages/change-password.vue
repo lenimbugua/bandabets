@@ -9,9 +9,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Change Password | Naibet Security Settings",
+  title: "Change Password | Bandabets Security Settings",
   description:
-    "Update your password for better account security. Protect your funds and data on Naibet Kenya.",
+    "Update your password for better account security. Protect your funds and data on Bandabets Kenya.",
   robots: "noindex,nofollow",
 });
 </script>

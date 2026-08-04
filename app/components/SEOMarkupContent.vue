@@ -6,27 +6,27 @@ const isExpanded = ref(false);
 const sections = [
   {
     title: "Global Soccer Betting",
-    text: "Whether you call it soccer or football, the beautiful game draws crowds and punters from around the globe. Place an online bet on almost any professional football league worldwide with Naibet.",
+    text: "Whether you call it soccer or football, the beautiful game draws crowds and punters from around the globe. Place an online bet on almost any professional football league worldwide with Bandabets.",
     extra: "Follow us for great soccer betting tips, the latest football news, and predictions. Our expert information could make you the next millionaire in Kenya through online sports betting!",
   },
   {
     title: "English Premier League",
-    text: "There is a lot of English Premier League action on Naibet, guaranteeing many betting markets. Many Kenyan punters are EPL fans, as shown by Kenya's love for Arsenal and Manchester United.",
+    text: "There is a lot of English Premier League action on Bandabets, guaranteeing many betting markets. Many Kenyan punters are EPL fans, as shown by Kenya's love for Arsenal and Manchester United.",
     extra: "Customers can select from Arsenal, Manchester City, Chelsea, and Liverpool. With English Premier League action year-round, customers have many opportunities to win.",
   },
   {
     title: "Local Team Support",
-    text: "Naibet proudly supports Kenyan football. We feature local teams in our sports markets, allowing you to bet on the Kenyan Premier League — from AFC Leopards to Gor Mahia, fans have impressive odds for their favourite teams.",
+    text: "Bandabets proudly supports Kenyan football. We feature local teams in our sports markets, allowing you to bet on the Kenyan Premier League — from AFC Leopards to Gor Mahia, fans have impressive odds for their favourite teams.",
   },
 ];
 
 const steps = [
   "You must be at least 18 years old to register.",
-  "Visit naibet.com on your PC or phone.",
+  "Visit bandabets.com on your PC or phone.",
   "Click the Join icon at the top right of the website.",
   "Enter your phone number and a secure password.",
   "Verify your account with the OTP code sent to your phone.",
-  "Accept Naibet's terms and conditions to activate your account.",
+  "Accept Bandabets's terms and conditions to activate your account.",
 ];
 </script>
 
@@ -71,10 +71,10 @@ const steps = [
             <!-- Hero intro -->
             <div class="px-4 pt-5 pb-4">
               <h2 class="text-base sm:text-lg font-bold text-gray-800 dark:text-white/80 mb-2">
-                Sports Betting at Naibet
+                Sports Betting at Bandabets
               </h2>
               <p class="text-[0.75rem] leading-relaxed text-gray-500 dark:text-white/40">
-                Join our community of soccer betting fans with Naibet. Register and deposit money in your wallet to bet on your favourite football teams across the world.
+                Join our community of soccer betting fans with Bandabets. Register and deposit money in your wallet to bet on your favourite football teams across the world.
               </p>
             </div>
 
@@ -100,10 +100,10 @@ const steps = [
             <!-- CTA banner -->
             <div class="mx-4 mb-4 p-4 rounded-xl bg-gradient-to-r from-brand-bright/8 to-brand-bright/3 dark:from-brand-bright/10 dark:to-brand-bright/[0.02] border border-brand-bright/10">
               <h3 class="text-[0.75rem] font-bold text-gray-800 dark:text-white/70 mb-1.5">
-                Open a Naibet Account
+                Open a Bandabets Account
               </h3>
               <p class="text-[0.7rem] leading-relaxed text-gray-500 dark:text-white/40">
-                Register for a betting account with Naibet to enjoy higher odds and massive wins. Our secure portal ensures safe transactions, including instant deposits and withdrawals.
+                Register for a betting account with Bandabets to enjoy higher odds and massive wins. Our secure portal ensures safe transactions, including instant deposits and withdrawals.
               </p>
             </div>
 

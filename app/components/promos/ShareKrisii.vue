@@ -226,11 +226,11 @@
 
         <ol class="list-decimal pl-5 space-y-1">
           <li>
-            Naibet reserves the right to modify, suspend, or terminate the
+            Bandabets reserves the right to modify, suspend, or terminate the
             Promotion at any time without prior notice.
           </li>
           <li>
-            All decisions by Naibet regarding rankings, eligibility, and prize
+            All decisions by Bandabets regarding rankings, eligibility, and prize
             distribution are final.
           </li>
           <li>
@@ -251,16 +251,16 @@
           Dispute Resolution.
         </h3>
         <p class="italic mb-2">
-          Naibet is committed to maintaining a fair and transparent
+          Bandabets is committed to maintaining a fair and transparent
           relationship.
         </p>
         <ol class="list-decimal pl-5 space-y-1">
           <li>
             Informal Resolution: Contact Support Team at
             <a
-              href="mailto:info@naibet.com"
+              href="mailto:info@bandabets.com"
               class="text-red-500 hover:underline"
-              >info@naibet.com</a
+              >info@bandabets.com</a
             >. Resolution targeted within 10 business days.
           </li>
           <li>

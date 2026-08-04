@@ -6,7 +6,7 @@
       <!-- Header -->
       <header class="text-center space-y-3">
         <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark">
-          Naibet Aviator Welcome Bonus
+          Bandabets Aviator Welcome Bonus
         </h1>
         <p class="text-lg md:text-xl font-medium text-gold-bright">
           Supercharge your first week with up to KES 250 in free Aviator bets!
@@ -17,7 +17,7 @@
       <div
         class="bg-gray-50 dark:bg-surface-sunken rounded-2xl shadow-lg p-6 space-y-4"
       >
-        <h2 class="text-2xl font-bold text-brand-dark">Welcome to Naibet!</h2>
+        <h2 class="text-2xl font-bold text-brand-dark">Welcome to Bandabets!</h2>
         <p>
           We're excited to offer new players an incredible opportunity to
           explore one of our most popular games with minimal risk and maximum
@@ -137,9 +137,9 @@
         <div
           class="bg-brand-dark/10 dark:bg-brand-dark/20 rounded-2xl p-6 space-y-3"
         >
-          <h3 class="font-semibold text-gold-bright">Naibet's Rights</h3>
+          <h3 class="font-semibold text-gold-bright">Bandabets's Rights</h3>
           <p class="text-sm">
-            Naibet may void winnings, suspend accounts, or withdraw this offer
+            Bandabets may void winnings, suspend accounts, or withdraw this offer
             at any time if suspicious activity or breaches are detected.
           </p>
         </div>

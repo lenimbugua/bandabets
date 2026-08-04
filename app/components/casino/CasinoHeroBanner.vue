@@ -8,7 +8,7 @@ let interval = null;
 
 const slides = [
   {
-    title: "Naibet Aviator Karibu Bonus",
+    title: "Bandabets Aviator Karibu Bonus",
     subtitle: "UP TO 50 FREE BETS",
     description: "Register today and get up to 50 FREE Aviator Bets instantly!",
     cta: "Claim Now",
@@ -31,7 +31,7 @@ const slides = [
     icon: "gift",
   },
   {
-    title: "NAIBET AVIATOR FREE RAINS",
+    title: "BANDABETS AVIATOR FREE RAINS",
     subtitle: "WIN OVER KSH 200,000",
     description:
       "Daily opportunity to win over KSH 200,000 in free bets on Aviator!",

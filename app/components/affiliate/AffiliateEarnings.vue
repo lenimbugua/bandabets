@@ -23,7 +23,7 @@
 
     <div class="text-gray-600 dark:text-gray-400">
       <p>
-        Refer Naibet to your friends and earn money through Laki Affiliate
+        Refer Bandabets to your friends and earn money through Laki Affiliate
         Program! You will receive a Commission for every user that registers
         using Your link and you can withdraw funds to your Mpesa every week!
       </p>

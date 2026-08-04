@@ -20,7 +20,7 @@ export function useShareToSocials() {
     () =>
       `I just booked a bet! Code: ${bookingCode.value}. Place yours now 🤑🎉`
   ); // Short and engaging text
-  const affiliateText = `Welcome to Naibet – Kenya’s Premier Betting Destination! Start winning today with an exclusive FREEBET Bonus just for signing up. Enjoy thrilling Aviator cash drops, generous deposit cashback, and unbeatable rewards every time you play. Join now and turn your bets into big wins!`; // Short and engaging text
+  const affiliateText = `Welcome to Bandabets – Kenya’s Premier Betting Destination! Start winning today with an exclusive FREEBET Bonus just for signing up. Enjoy thrilling Aviator cash drops, generous deposit cashback, and unbeatable rewards every time you play. Join now and turn your bets into big wins!`; // Short and engaging text
 
   const generateShareLink = (platform, url, text) => {
     const encodedUrl = encodeURIComponent(url);

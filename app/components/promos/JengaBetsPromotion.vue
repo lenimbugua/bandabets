@@ -20,12 +20,12 @@
         ⚽ Football Special
       </div>
       <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
-        Naibet <span class="text-brand-bright">Jenga Bet</span>
+        Bandabets <span class="text-brand-bright">Jenga Bet</span>
       </h1>
       <p
         class="mt-4 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed"
       >
-        Naibet Jenga Bet lets you create your own customized football bet just
+        Bandabets Jenga Bet lets you create your own customized football bet just
         the way you like it! Combine your favorite football markets into a
         single bet — with your odds automatically calculated as you go.
       </p>
@@ -53,7 +53,7 @@
       <h2
         class="text-2xl font-bold text-center mb-10 flex items-center justify-center gap-2"
       >
-        🛠️ <span>How to Build Your Naibet Jenga Bet</span>
+        🛠️ <span>How to Build Your Bandabets Jenga Bet</span>
       </h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -64,7 +64,7 @@
             1. Navigate
           </h3>
           <p class="text-sm text-gray-700 dark:text-gray-300">
-            Go to your preferred fixture or event from the Naibet Sportsbook.
+            Go to your preferred fixture or event from the Bandabets Sportsbook.
           </p>
         </div>
         <div
@@ -146,7 +146,7 @@
       >
         <li>
           <span class="font-semibold">1Cut</span> feature is not available with
-          Naibet Jenga Bet.
+          Bandabets Jenga Bet.
         </li>
         <li>Live Betting and Cashout are not supported.</li>
         <li>
@@ -156,19 +156,19 @@
           Jenga Bet may not be available for all football matches or markets.
         </li>
         <li>
-          Naibet is not responsible for unavailability due to technical
+          Bandabets is not responsible for unavailability due to technical
           issues.
         </li>
         <li>
-          Naibet reserves the right to reverse any Jenga Bet settlement
+          Bandabets reserves the right to reverse any Jenga Bet settlement
           processed incorrectly.
         </li>
         <li>
-          Naibet reserves the right to accept or decline any Jenga Bet across
+          Bandabets reserves the right to accept or decline any Jenga Bet across
           any market or event.
         </li>
         <li>
-          Naibet may amend, suspend, or remove the Jenga Bet feature at any
+          Bandabets may amend, suspend, or remove the Jenga Bet feature at any
           time.
         </li>
         <li>Access may be restricted for misuse or abuse of the feature.</li>

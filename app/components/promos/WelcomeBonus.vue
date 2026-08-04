@@ -14,7 +14,7 @@ const promo = promos.find((p) => p.name === welcomeBonusPromo);
   <PromoDetailShell
     :img="promo?.img"
     to="signup"
-    alt="Naibet Welcome Bonus promotion"
+    alt="Bandabets Welcome Bonus promotion"
   >
     <!-- Intro -->
     <PromoDetailSection
@@ -23,7 +23,7 @@ const promo = promos.find((p) => p.name === welcomeBonusPromo);
       title="Zero risk. Pure reward. Play for free."
     >
       <p>
-        New to Naibet? We are rolling out the red carpet for you. Get a taste of
+        New to Bandabets? We are rolling out the red carpet for you. Get a taste of
         the action with our signature <strong>Deposit-Free Sportsbook Welcome
         Bonus</strong>. You don't need to spend a single shilling to start
         winning.
@@ -38,7 +38,7 @@ const promo = promos.find((p) => p.name === welcomeBonusPromo);
     >
       <div class="grid gap-3 sm:grid-cols-3">
         <PromoStep badge="1" title="Sign up">
-          Create a new Naibet account, verified by phone number or ID.
+          Create a new Bandabets account, verified by phone number or ID.
         </PromoStep>
         <PromoStep badge="2" title="Place your free bet">
           Pick your favourite game. No deposit needed to play.

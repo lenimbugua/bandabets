@@ -24,10 +24,10 @@ const sportMeta = computed(() => getSportMeta(route.params.sport));
 useSeoHead({
   title:
     sportMeta.value?.title ??
-    `Live ${sportName.value} Betting – Real-Time Odds & Matches | Naibet`,
+    `Live ${sportName.value} Betting – Real-Time Odds & Matches | Bandabets`,
   description:
     sportMeta.value?.description ??
-    `Follow live ${sportName.value} games and place in-play bets with dynamic odds. Experience real-time sports betting excitement on Naibet.`,
+    `Follow live ${sportName.value} games and place in-play bets with dynamic odds. Experience real-time sports betting excitement on Bandabets.`,
 });
 
 const { pollLiveMatches } = useNewLiveStore();
@@ -55,7 +55,7 @@ const { isLargeScreen } = useScreenSizes();
 </script>
 <template>
   <div>
-    <h1 class="sr-only">Live Betting – Real-Time Odds & Matches | Naibet</h1>
+    <h1 class="sr-only">Live Betting – Real-Time Odds & Matches | Bandabets</h1>
     <div v-if="isLargeScreen">
       <HeaderLinks />
       <div class="max-w-[1680px] mx-auto px-3">

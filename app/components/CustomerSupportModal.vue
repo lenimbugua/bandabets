@@ -21,7 +21,7 @@ const { closeModal } = useModalStore();
 // const { openTawkChat } = useSupport();
 
 // Same contacts the organisation schema and T&Cs publish.
-const supportEmail = "support@naibet.com";
+const supportEmail = "support@bandabets.com";
 const supportPhone = "+254 711 082 800";
 
 const showDialog = computed(() => {

@@ -7,21 +7,21 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Football Leagues & Fixtures | Naibet Sportsbook",
+  title: "Football Leagues & Fixtures | Bandabets Sportsbook",
   description:
-    "Browse upcoming football leagues and fixtures. Bet pre-match or live on your favorite teams at Naibet Kenya.",
+    "Browse upcoming football leagues and fixtures. Bet pre-match or live on your favorite teams at Bandabets Kenya.",
 });
 
 const { isLargeScreen } = useScreenSizes();
 </script>
 
 <template>
-  <h1 class="sr-only">Football Leagues &amp; Fixtures – Naibet Sportsbook</h1>
+  <h1 class="sr-only">Football Leagues &amp; Fixtures – Bandabets Sportsbook</h1>
 
   <!-- Desktop -->
   <DesktopSportsLayout
     v-if="isLargeScreen"
-    seo-title="Football Leagues & Fixtures | Naibet Sportsbook"
+    seo-title="Football Leagues & Fixtures | Bandabets Sportsbook"
   >
     <template #content>
       <div class="rounded-xl leagues-card overflow-hidden">
@@ -33,7 +33,7 @@ const { isLargeScreen } = useScreenSizes();
   <!-- Mobile -->
   <MobileSportsLayout
     v-else
-    seo-title="Football Leagues & Fixtures | Naibet Sportsbook"
+    seo-title="Football Leagues & Fixtures | Bandabets Sportsbook"
   >
     <template #content>
       <div class="px-2">

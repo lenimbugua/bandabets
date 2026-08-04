@@ -179,7 +179,7 @@ const legalLinks = [
           Bandabets Kenya is authorized and regulated by the GRA (Gambling Regulatory Authority) under the Gambling Control Act, 2025, Laws of Kenya.
         </p>
         <!-- Hidden until the Bandabets licence numbers are confirmed — the
-             pair below are Naibet's and must not ship under the new brand.
+             pair below are Bandabets's and must not ship under the new brand.
         <p class="mt-1.5 text-[10px] font-semibold tabular-nums text-muted-foreground/60">
           License Numbers: BK 0001255 and PG 0001254
         </p>

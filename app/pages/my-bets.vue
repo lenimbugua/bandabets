@@ -13,7 +13,7 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "My Bets | Naibet History & Results",
+  title: "My Bets | Bandabets History & Results",
   robots: "noindex,nofollow",
 });
 </script>

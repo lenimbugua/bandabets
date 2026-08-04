@@ -35,7 +35,7 @@ export function usePromos() {
       id: 2113384545646,
       name: oneCutPromo,
       routeName: "home",
-      title: "Naibet One Cut: 50% Cashback 🛡️",
+      title: "Bandabets One Cut: 50% Cashback 🛡️",
       img: "2c0722b1-5c47-4d12-e1f2-35f5975fdb00",
       samary: `Even When You Lose, You Win! If your multi-bet falls short by exactly one game, we give you a 50% cash refund — real cash you can withdraw immediately (up to KES 10,000).`,
     },
@@ -53,7 +53,7 @@ export function usePromos() {
       routeName: "home",
       title: "Multibet Boost — Supercharge Your Wins 🚀",
       img: "4a5c473e-27af-40ed-de17-483985220000",
-      samary: `Maximize Your Winning Potential with Naibet's exclusive Multibet Boost! Combine multiple selections and watch your winnings grow with our tiered boost system that rewards bigger combinations with even bigger returns.`,
+      samary: `Maximize Your Winning Potential with Bandabets's exclusive Multibet Boost! Combine multiple selections and watch your winnings grow with our tiered boost system that rewards bigger combinations with even bigger returns.`,
     },
   ];
 
@@ -62,13 +62,13 @@ export function usePromos() {
       id: 211336345,
       name: aviatorKaribuBonus,
       routeName: "aviator",
-      title: "Naibet Aviator Karibu Bonus.",
+      title: "Bandabets Aviator Karibu Bonus.",
       img: "87601caa-79a3-4162-173d-7a54df140b00",
       bg: "bg-linear-to-r from-red-700 to-yellow-700",
       samary: `Register today and get up to 50 FREE Aviator Bets!
 ✅ Create an account
 ✅ Make your first deposit
-✅ Enjoy free Naibet Aviator Bets Instantly!
+✅ Enjoy free Bandabets Aviator Bets Instantly!
 `,
     },
     {
@@ -87,7 +87,7 @@ export function usePromos() {
       title: "DEPOSIT BONUS",
       img: "76660817-13e0-485c-748b-5e8073392e00",
       bg: "bg-linear-to-r from-red-700 to-purple-800",
-      samary: `Naibet provides a daily bonus to customers for their first deposit(s) of the day.`,
+      samary: `Bandabets provides a daily bonus to customers for their first deposit(s) of the day.`,
     },
     {
       id: 0,
@@ -112,10 +112,10 @@ money.`,
       id: 2,
       name: aviatorPromo,
       routeName: "aviator",
-      title: "NAIBET AVIATOR FREE RAINS",
+      title: "BANDABETS AVIATOR FREE RAINS",
       img: "a2dc155a-7835-43ab-f67d-e2879860cb00",
       bg: "bg-linear-to-l from-sky-700 to-purple-800",
-      samary: `Naibet Aviator Rains Promotion offers Aviator players a daily opportunity to win over KSH
+      samary: `Bandabets Aviator Rains Promotion offers Aviator players a daily opportunity to win over KSH
 200,000 in free bets.`,
     },
     {
@@ -125,7 +125,7 @@ money.`,
       title: "Multibet Boost - Supercharge Your Wins!",
       img: "0b1e5c5c-aa2f-4864-5ec5-646b3f34ea00",
       bg: "bg-linear-to-r from-cyan-700 to-red-800",
-      samary: `Maximize Your Winning Potential with Naibet's exclusive Multibet Boost!
+      samary: `Maximize Your Winning Potential with Bandabets's exclusive Multibet Boost!
         Combine multiple selections and watch your winnings grow with our tiered boost system that rewards bigger combinations with even bigger returns.`,
     },
     {
@@ -135,7 +135,7 @@ money.`,
       title: " 2UP – Get Paid in Full When Your Team Goes 2 Goals Up",
       img: "2d4f1cd5-abe0-4781-87af-41f1f4917400",
       bg: "bg-linear-to-r from-fuchsia-700 to-pink-800",
-      samary: `Experience football betting without the heartbreak of late comebacks! With Naibet 2UP, when your team takes a 2-goal lead, we pay out in full instantly – no waiting, no reduced odds.`,
+      samary: `Experience football betting without the heartbreak of late comebacks! With Bandabets 2UP, when your team takes a 2-goal lead, we pay out in full instantly – no waiting, no reduced odds.`,
     },
     {
       id: 2113384545646,
@@ -144,7 +144,7 @@ money.`,
       title: "🏆Miss One, Still Win Cash Back!",
       img: "aa0e65f2-e0f0-48f8-80ac-2b770019a700",
       bg: "bg-linear-to-r from-amber-700 to-blue-800",
-      samary: `Experience smarter betting with Naibet One Cut! Even the best bettors can have one selection let them down. That’s why we created the ultimate safety net – when your multibet falls short by just one game, you still win real cash back.`,
+      samary: `Experience smarter betting with Bandabets One Cut! Even the best bettors can have one selection let them down. That’s why we created the ultimate safety net – when your multibet falls short by just one game, you still win real cash back.`,
     },
 
     {

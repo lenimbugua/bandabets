@@ -1,14 +1,14 @@
-// Canonical brand facts — mirrored from the live naibet.com <head>.
+// Canonical brand facts — mirrored from the live bandabets.com <head>.
 // Keep these in sync with index.html and the Footer social links.
-const BRAND_NAME = "Naibet";
-const SITE_NAME = "Naibet Kenya";
+const BRAND_NAME = "Bandabets";
+const SITE_NAME = "Bandabets Kenya";
 const BRAND_LOGO =
   "https://storage.googleapis.com/banners-2bf8f4b514188a55/d41c4d19-1c17-455e-89a7-30f7adeeaf26-naibet_logo.png";
 // Kept in step with the footer's socials list. Only profiles that exist.
 const BRAND_SAME_AS = [
-  "https://www.facebook.com/NaibetKE",
-  "https://x.com/naibetke",
-  "https://www.instagram.com/naibetke",
+  "https://www.facebook.com/BANDABETS",
+  "https://x.com/bandabets",
+  "https://www.instagram.com/bandabets",
 ];
 const BRAND_CONTACT_POINT = {
   "@type": "ContactPoint",
@@ -18,7 +18,7 @@ const BRAND_CONTACT_POINT = {
   availableLanguage: "en",
 };
 const BRAND_DESCRIPTION =
-  "Bet from as low as KSh 10 and win big with Naibet! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.";
+  "Bet from as low as KSh 10 and win big with Bandabets! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.";
 
 export function useOrganizationSchema() {
   // Build breadcrumbs dynamically based on the current route path
@@ -69,7 +69,7 @@ export function useOrganizationSchema() {
           publisher: {
             "@type": "Organization",
             name: BRAND_NAME,
-            alternateName: "naibet.com",
+            alternateName: "bandabets.com",
             url: baseUrl,
             logo: BRAND_LOGO,
             contactPoint: BRAND_CONTACT_POINT,
@@ -86,13 +86,13 @@ export function useOrganizationSchema() {
         return {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: "Sports Betting - Naibet",
+          name: "Sports Betting - Bandabets",
           description:
-            "Bet on football, basketball, tennis, and other sports with live odds and instant updates on Naibet.",
+            "Bet on football, basketball, tennis, and other sports with live odds and instant updates on Bandabets.",
           url: canonicalUrl,
           about: {
             "@type": "SportsOrganization",
-            name: "Naibet Sportsbook",
+            name: "Bandabets Sportsbook",
             sport: "Football, Basketball, Tennis, Rugby, Cricket",
           },
         };
@@ -149,11 +149,11 @@ export function useOrganizationSchema() {
             validFrom: new Date().toISOString(),
             description: `Bet on ${matchSlug
               ?.replace(/-/g, " ")
-              ?.replace(/\b\w/g, (c) => c.toUpperCase())} on Naibet.`,
+              ?.replace(/\b\w/g, (c) => c.toUpperCase())} on Bandabets.`,
           },
           organizer: {
             "@type": "Organization",
-            name: "Naibet",
+            name: "Bandabets",
             url: baseUrl,
             logo: `${baseUrl}/logo.png`,
           },
@@ -163,7 +163,7 @@ export function useOrganizationSchema() {
         return {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Live Betting - Naibet",
+          name: "Live Betting - Bandabets",
           description:
             "Enjoy live betting on ongoing sports matches with real-time odds and cash out options.",
           url: canonicalUrl,
@@ -179,13 +179,13 @@ export function useOrganizationSchema() {
         return {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Online Casino - Naibet",
+          name: "Online Casino - Bandabets",
           description:
-            "Play exciting online casino games including slots, roulette, and aviator at Naibet.",
+            "Play exciting online casino games including slots, roulette, and aviator at Bandabets.",
           url: canonicalUrl,
           mainEntity: {
             "@type": "Game",
-            name: "Naibet Casino Games",
+            name: "Bandabets Casino Games",
             applicationCategory: "Game",
             operatingSystem: "Web",
           },
@@ -195,9 +195,9 @@ export function useOrganizationSchema() {
         return {
           "@context": "https://schema.org",
           "@type": "OfferCatalog",
-          name: "Naibet Promotions & Bonuses",
+          name: "Bandabets Promotions & Bonuses",
           description:
-            "Explore Naibet promotions including free bets, deposit bonuses, and cashback offers.",
+            "Explore Bandabets promotions including free bets, deposit bonuses, and cashback offers.",
           url: canonicalUrl,
           itemListElement: [
             {
@@ -219,14 +219,14 @@ export function useOrganizationSchema() {
         return {
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Contact Naibet Support",
+          name: "Contact Bandabets Support",
           description:
-            "Get help and support for your Naibet account, deposits, withdrawals, and betting issues.",
+            "Get help and support for your Bandabets account, deposits, withdrawals, and betting issues.",
           url: canonicalUrl,
           mainEntity: {
             "@type": "Organization",
             name: BRAND_NAME,
-            alternateName: "naibet.com",
+            alternateName: "bandabets.com",
             url: baseUrl,
             logo: BRAND_LOGO,
             contactPoint: BRAND_CONTACT_POINT,

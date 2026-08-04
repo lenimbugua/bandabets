@@ -65,7 +65,7 @@ const otherCategories = computed(() => {
 <template>
   <LazyInfinityScroll v-if="isLargeScreen" class="bg-gray-50 dark:bg-background">
     <DesktopSportsLayout
-      seo-title="Sports Betting - Live Odds & Matches | Naibet Kenya"
+      seo-title="Sports Betting - Live Odds & Matches | Bandabets Kenya"
       show-sports-tabs
     >
       <template #hero>

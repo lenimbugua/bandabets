@@ -8,7 +8,7 @@ import { RouterLink } from "vue-router";
   >
     <!-- Main Title -->
     <h2 class="text-2xl font-bold text-center text-brand-dark">
-      🎉 NAIBET AVIATOR KARIBU BONUS
+      🎉 BANDABETS AVIATOR KARIBU BONUS
     </h2>
     <p class="text-center text-lg">
       Register today and get up to
@@ -21,7 +21,7 @@ import { RouterLink } from "vue-router";
       <ul class="list-disc pl-6 space-y-1">
         <li>✅ Create an account</li>
         <li>✅ Make your first deposit</li>
-        <li>✅ Enjoy free Naibet Aviator Bets instantly</li>
+        <li>✅ Enjoy free Bandabets Aviator Bets instantly</li>
       </ul>
     </div>
 
@@ -80,7 +80,7 @@ import { RouterLink } from "vue-router";
 
       <h4 class="text-lg font-semibold text-gold-bright mt-4">Eligibility</h4>
       <p>
-        This bonus is only available to new NAIBET customers who register and
+        This bonus is only available to new BANDABETS customers who register and
         make their first deposit.
       </p>
 
@@ -112,7 +112,7 @@ import { RouterLink } from "vue-router";
 
       <h4 class="text-lg font-semibold text-gold-bright mt-4">General</h4>
       <p>
-        NAIBET reserves the right to suspend, modify, or cancel this promotion
+        BANDABETS reserves the right to suspend, modify, or cancel this promotion
         at any time without prior notice. By taking part, you agree to all the
         above terms.
       </p>

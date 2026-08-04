@@ -7,9 +7,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Naibet Promotions – Free Bets, Cashbacks & Bonuses",
+  title: "Bandabets Promotions – Free Bets, Cashbacks & Bonuses",
   description:
-    "Discover exciting Naibet offers including free bets, cashback, and deposit bonuses. Claim rewards every week.",
+    "Discover exciting Bandabets offers including free bets, cashback, and deposit bonuses. Claim rewards every week.",
 });
 </script>
 
@@ -19,7 +19,7 @@ useSeoHead({
     <div class="w-full">
       <CategoryPills :sticky="false" />
     </div>
-    <h1 class="sr-only">Promotions – Free Bets, Cashbacks & Bonuses | Naibet</h1>
+    <h1 class="sr-only">Promotions – Free Bets, Cashbacks & Bonuses | Bandabets</h1>
     <div class="flex-col grow">
       <!-- <ThePromos2 /> -->
       <ThePromos />

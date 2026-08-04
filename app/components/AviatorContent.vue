@@ -16,10 +16,10 @@ const isHidden = ref(true);
         <!-- Header Section -->
         <header class="w-full bg-surface-interactive text-white text-center py-8">
           <h1 class="text-3xl font-bold">
-            The Aviator Free Bet Rains at Naibet
+            The Aviator Free Bet Rains at Bandabets
           </h1>
           <p class="text-lg mt-2">
-            Win guaranteed free bets daily with Naibet Aviator!
+            Win guaranteed free bets daily with Bandabets Aviator!
           </p>
           <div v-if="isHidden" class="text-red-400 font-bold py-3">More</div>
           <div v-if="!isHidden" class="text-red-400 font-bold py-3">Less</div>
@@ -34,7 +34,7 @@ const isHidden = ref(true);
               Overview
             </h2>
             <p>
-              Naibet is running a promotion dubbed **"ENDA EXTRA ROUND na
+              Bandabets is running a promotion dubbed **"ENDA EXTRA ROUND na
               Aviator Free Rain"** to give Aviator players a chance to claim
               free bet rains. With this promotion, players can win from a daily
               pool of <strong>KSH 100,000</strong> in guaranteed free bets while
@@ -48,7 +48,7 @@ const isHidden = ref(true);
               How It Works
             </h2>
             <p>
-              The promotion is open to all customers playing Naibet Aviator.
+              The promotion is open to all customers playing Bandabets Aviator.
               Free Bet Rain will appear randomly in the chat after a
               notification during gameplay. Players can claim free bets ranging
               from <strong>KSH 30</strong> to <strong>KSH 1000</strong> by being
@@ -138,7 +138,7 @@ const isHidden = ref(true);
                 void winnings.
               </li>
               <li>
-                Naibet reserves the right to modify or void the promotion at
+                Bandabets reserves the right to modify or void the promotion at
                 its discretion.
               </li>
             </ul>
@@ -150,9 +150,9 @@ const isHidden = ref(true);
               Conclusion
             </h2>
             <p>
-              Naibet provides this promotion "as is," without warranties of
+              Bandabets provides this promotion "as is," without warranties of
               any kind. The promotion terms may be amended periodically. For
-              more details, refer to the Naibet General Terms and Conditions
+              more details, refer to the Bandabets General Terms and Conditions
               and Privacy Policy.
             </p>
           </section>

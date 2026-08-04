@@ -36,7 +36,7 @@ import AuthTopBar from "@/components/AuthTopBar.vue";
                 Kenya's Premier<br />Betting Destination.
               </h2>
               <p class="text-sm text-white/50 mt-3 leading-relaxed">
-                Join thousands of Kenyans who trust Naibet for sports betting, Aviator, and instant M-Pesa payouts.
+                Join thousands of Kenyans who trust Bandabets for sports betting, Aviator, and instant M-Pesa payouts.
               </p>
             </div>
 

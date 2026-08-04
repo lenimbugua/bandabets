@@ -5,9 +5,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Privacy Policy | Data Protection | Naibet",
+  title: "Privacy Policy | Data Protection | Bandabets",
   description:
-    "Learn how Naibet protects your data under Kenya’s Data Protection Act and ensures secure transactions.",
+    "Learn how Bandabets protects your data under Kenya’s Data Protection Act and ensures secure transactions.",
 });
 </script>
 
@@ -19,7 +19,7 @@ useSeoHead({
       <h1 class="text-2xl font-bold mb-4">Privacy Policy</h1>
 
       <p class="mb-4">
-        Naibet will treat the data that you provide us with as strictly private
+        Bandabets will treat the data that you provide us with as strictly private
         and it shall only be used in accordance with this privacy statement by
         us, by a member of our Group and/or by a selected third party who
         complies with our high standards of data protection in order to manage
@@ -68,17 +68,17 @@ useSeoHead({
       <p class="mb-4">
         Should you believe that any personal information we hold for you is
         incorrect, please email our customer services on
-        <a href="mailto:info@naibet.com" class="text-blue-600"
-          >info@naibet.com</a
+        <a href="mailto:info@bandabets.com" class="text-blue-600"
+          >info@bandabets.com</a
         >
         and we will amend any information found to be incorrect.
       </p>
 
       <h2 class="text-xl font-semibold mt-6 mb-2">Promotional Messages</h2>
       <p class="mb-4">
-        By registering and/or signing up for a Naibet account or updating your
-        Naibet account, and using an account or this service, players agree
-        that Naibet, and its business partners may use the details provided by
+        By registering and/or signing up for a Bandabets account or updating your
+        Bandabets account, and using an account or this service, players agree
+        that Bandabets, and its business partners may use the details provided by
         the player to contact them about its products and services and for
         marketing and promotional purposes.
       </p>
@@ -91,7 +91,7 @@ useSeoHead({
 
       <p class="mb-4">
         We use the email address which you have provided us with to send you an
-        email welcoming you to Naibet.
+        email welcoming you to Bandabets.
       </p>
 
       <p class="mb-4">
@@ -170,7 +170,7 @@ useSeoHead({
       </p>
 
       <p class="mb-4">
-        Naibet is committed to taking all necessary steps to ensure that
+        Bandabets is committed to taking all necessary steps to ensure that
         whenever personal data is transmitted, such transmission takes place
         solely within the Group and the Group's select partners in which
         companies the standards of privacy and confidentiality should be of an
@@ -178,13 +178,13 @@ useSeoHead({
       </p>
 
       <p class="mb-4">
-        Naibet shall in no manner whatsoever be held responsible for the manner
+        Bandabets shall in no manner whatsoever be held responsible for the manner
         in which third parties process and/or store the personal data of our
         customers.
       </p>
 
       <p class="mb-4">
-        Naibet shall only be responsible for its own Privacy Policy and it does
+        Bandabets shall only be responsible for its own Privacy Policy and it does
         not warrant the standard of the privacy policies of any of the third
         parties who may have links placed on our Sites.
       </p>
@@ -230,8 +230,8 @@ useSeoHead({
       </p>
 
       <p class="mb-4">
-        Any minor who is found to be gambling on Naibet shall have his/her
-        Account immediately blocked. Naibet reserves the right to conduct a
+        Any minor who is found to be gambling on Bandabets shall have his/her
+        Account immediately blocked. Bandabets reserves the right to conduct a
         security review to validate your identity and age. Acceptance of our
         Privacy Policy authorizes us to conduct such security reviews supplied
         by you against third party databases.
@@ -239,13 +239,13 @@ useSeoHead({
 
       <h2 class="text-xl font-semibold mt-6 mb-2">Security</h2>
       <p class="mb-4">
-        Naibet uses its best endeavors to protect the confidentiality of your
+        Bandabets uses its best endeavors to protect the confidentiality of your
         personal data and to prevent any unauthorized external or internal users
         from accessing such information without your consent.
       </p>
 
       <p class="mb-4">
-        However, Naibet shall take no responsibility whatsoever for events
+        However, Bandabets shall take no responsibility whatsoever for events
         beyond its control inclusive of, but not limited to, acts of god or
         natural disasters and including power cuts and strikes.
       </p>

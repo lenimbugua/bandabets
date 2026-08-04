@@ -18,8 +18,8 @@ const leagueName = computed(() =>
 );
 
 useSeoHead({
-  title: `${countryName.value} Sports Betting – Leagues & Fixtures | Naibet`,
-  description: `Bet on ${leagueName.value} and other ${countryName.value} leagues and matches with top odds and live stats only on Naibet.`,
+  title: `${countryName.value} Sports Betting – Leagues & Fixtures | Bandabets`,
+  description: `Bet on ${leagueName.value} and other ${countryName.value} leagues and matches with top odds and live stats only on Bandabets.`,
 });
 
 const { getMatches } = useMatches2Store();
@@ -29,7 +29,7 @@ getMatches();
 </script>
 
 <template>
-  <h1 class="sr-only">{{ leagueName }}{{ leagueName && countryName ? " – " : "" }}{{ countryName }} Sports Betting – Leagues &amp; Fixtures | Naibet</h1>
+  <h1 class="sr-only">{{ leagueName }}{{ leagueName && countryName ? " – " : "" }}{{ countryName }} Sports Betting – Leagues &amp; Fixtures | Bandabets</h1>
   <DesktopSportsLayout
     v-if="isLargeScreen"
     seo-title="Sports Betting by Country"

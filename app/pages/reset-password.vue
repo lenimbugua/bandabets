@@ -8,9 +8,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Reset Password | Naibet Secure Login",
+  title: "Reset Password | Bandabets Secure Login",
   description:
-    "Create a new password and restore your Naibet access quickly with our secure reset process.",
+    "Create a new password and restore your Bandabets access quickly with our secure reset process.",
   robots: "noindex,nofollow",
 });
 </script>

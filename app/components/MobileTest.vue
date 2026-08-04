@@ -45,7 +45,7 @@ const otherCategories = computed(() => {
 </script>
 
 <template>
-  <MobileSportsLayout seo-title="Sports Betting – Fixtures & Odds | Naibet">
+  <MobileSportsLayout seo-title="Sports Betting – Fixtures & Odds | Bandabets">
     <template #hero>
       <!-- FREEBET DISABLED — restore later
       New-player nudge: claim the welcome gift if not yet claimed

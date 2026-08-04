@@ -8,9 +8,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Verify Account | Naibet Kenya",
+  title: "Verify Account | Bandabets Kenya",
   description:
-    "Complete your Naibet verification to enable withdrawals, bonuses, and secure transactions.",
+    "Complete your Bandabets verification to enable withdrawals, bonuses, and secure transactions.",
   robots: "noindex,nofollow",
 });
 </script>

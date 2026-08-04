@@ -76,15 +76,15 @@ const casinoPoints = [
 const termsContent = [
   {
     title: "1. Introduction",
-    content: `1.1. These Terms and Conditions ("Terms") govern participation in the Naibet Weekly Leaderboard Promotion ("Promotion"), operated by Naibet ("the Company", "we", "us", or "our").\n\n1.2. By participating in the Promotion, you ("Participant", "Player", or "you") agree to be bound by these Terms, Naibet's General Terms and Conditions, and Privacy Policy.\n\n1.3. The Promotion consists of two separate leaderboards: the Sportsbook Leaderboard and the Casino Leaderboard, each with a weekly prize pool of KES 300,000.`,
+    content: `1.1. These Terms and Conditions ("Terms") govern participation in the Bandabets Weekly Leaderboard Promotion ("Promotion"), operated by Bandabets ("the Company", "we", "us", or "our").\n\n1.2. By participating in the Promotion, you ("Participant", "Player", or "you") agree to be bound by these Terms, Bandabets's General Terms and Conditions, and Privacy Policy.\n\n1.3. The Promotion consists of two separate leaderboards: the Sportsbook Leaderboard and the Casino Leaderboard, each with a weekly prize pool of KES 300,000.`,
   },
   {
     title: "2. Eligibility",
-    content: `2.1. To participate in the Promotion, you must:\na) Be at least 18 years of age or the legal gambling age in your jurisdiction;\nb) Hold a valid, verified Naibet account in good standing;\nc) Be a resident of Kenya or any other jurisdiction where participation is legally permitted;\nd) Not be an employee, director, or immediate family member of Naibet or its affiliates;\ne) Not have any pending disputes or unresolved issues with your Naibet account.\n\n2.2. Naibet reserves the right to verify the eligibility of any Participant at any time.`,
+    content: `2.1. To participate in the Promotion, you must:\na) Be at least 18 years of age or the legal gambling age in your jurisdiction;\nb) Hold a valid, verified Bandabets account in good standing;\nc) Be a resident of Kenya or any other jurisdiction where participation is legally permitted;\nd) Not be an employee, director, or immediate family member of Bandabets or its affiliates;\ne) Not have any pending disputes or unresolved issues with your Bandabets account.\n\n2.2. Bandabets reserves the right to verify the eligibility of any Participant at any time.`,
   },
   {
     title: "3. Promotion Period",
-    content: `3.1. The Promotion runs on a weekly cycle, commencing every Monday at 00:00 EAT and ending the following Sunday at 23:59:59 EAT.\n\n3.2. The leaderboard resets at the start of each new Promotion Period. Points do not carry over.\n\n3.3. Naibet reserves the right to modify, suspend, or terminate the Promotion at any time with reasonable notice.`,
+    content: `3.1. The Promotion runs on a weekly cycle, commencing every Monday at 00:00 EAT and ending the following Sunday at 23:59:59 EAT.\n\n3.2. The leaderboard resets at the start of each new Promotion Period. Points do not carry over.\n\n3.3. Bandabets reserves the right to modify, suspend, or terminate the Promotion at any time with reasonable notice.`,
   },
   {
     title: "4. Sportsbook Leaderboard Rules",
@@ -96,19 +96,19 @@ const termsContent = [
   },
   {
     title: "6. Leaderboard Updates",
-    content: `6.1. The leaderboard updates in real-time.\n\n6.2. View your position anytime via the Naibet app or website.\n\n6.3. Positions are indicative and subject to final verification.\n\n6.4. Naibet may make corrections at any time.`,
+    content: `6.1. The leaderboard updates in real-time.\n\n6.2. View your position anytime via the Bandabets app or website.\n\n6.3. Positions are indicative and subject to final verification.\n\n6.4. Bandabets may make corrections at any time.`,
   },
   {
     title: "7. Fair Play & Anti-Fraud",
-    content: `7.1. Naibet may disqualify participants engaging in fraudulent activity including multiple accounts, collusion, bots, or exploiting glitches.\n\n7.2. Disqualified participants forfeit prizes and may have accounts suspended.\n\n7.3. Naibet's decision on fair play matters is final.`,
+    content: `7.1. Bandabets may disqualify participants engaging in fraudulent activity including multiple accounts, collusion, bots, or exploiting glitches.\n\n7.2. Disqualified participants forfeit prizes and may have accounts suspended.\n\n7.3. Bandabets's decision on fair play matters is final.`,
   },
   {
     title: "8. General Terms",
-    content: `8.1. Naibet may modify, suspend, or terminate the Promotion at any time.\n\n8.2. In event of termination, prizes are awarded based on standings at time of termination.\n\n8.3. These Terms are governed by the laws of Kenya.\n\n8.4. Disputes are resolved through Naibet's standard dispute resolution process.`,
+    content: `8.1. Bandabets may modify, suspend, or terminate the Promotion at any time.\n\n8.2. In event of termination, prizes are awarded based on standings at time of termination.\n\n8.3. These Terms are governed by the laws of Kenya.\n\n8.4. Disputes are resolved through Bandabets's standard dispute resolution process.`,
   },
   {
     title: "9. Responsible Gambling",
-    content: `9.1. Naibet promotes responsible gambling. Participation should be for entertainment only.\n\n9.2. Set personal limits on deposits, wagers, and time spent gambling.\n\n9.3. Contact Naibet support if you believe you may have a gambling problem.\n\n9.4. Gambling is restricted to persons 18 years and above. Please gamble responsibly.`,
+    content: `9.1. Bandabets promotes responsible gambling. Participation should be for entertainment only.\n\n9.2. Set personal limits on deposits, wagers, and time spent gambling.\n\n9.3. Contact Bandabets support if you believe you may have a gambling problem.\n\n9.4. Gambling is restricted to persons 18 years and above. Please gamble responsibly.`,
   },
 ];
 </script>
@@ -133,7 +133,7 @@ const termsContent = [
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-bright/30 bg-brand-bright/10 dark:bg-brand-bright/20 mb-6"
         >
           <FireIcon class="w-4 h-4 text-brand-bright" />
-          <span class="text-sm font-medium text-brand-bright">NAIBET WEEKLY LEADERBOARD</span>
+          <span class="text-sm font-medium text-brand-bright">BANDABETS WEEKLY LEADERBOARD</span>
         </div>
 
         <h1 class="font-display text-xl md:text-xl lg:text-4xl font-bold leading-tight mb-6">
@@ -430,7 +430,7 @@ const termsContent = [
               Every Monday at 2:00 PM.
             </div>
             <p class="text-gray-700 dark:text-gray-300 max-w-lg mx-auto">
-              All prizes are credited automatically to winners' Naibet wallets.
+              All prizes are credited automatically to winners' Bandabets wallets.
               <span class="dark:text-white text-primary-foreground font-medium">No action required</span>
               — just play, win, and get paid!
             </p>
@@ -479,7 +479,7 @@ const termsContent = [
 
         <div class="text-center mt-8">
           <p class="text-xs text-gray-500 dark:text-gray-400 max-w-md mx-auto">
-            By participating in the Naibet Weekly Leaderboard Promotion, you acknowledge that you
+            By participating in the Bandabets Weekly Leaderboard Promotion, you acknowledge that you
             have read, understood, and agree to be bound by these Terms and Conditions.
           </p>
         </div>
@@ -494,7 +494,7 @@ const termsContent = [
           <span class="text-sm font-medium text-gold-bright">18+ | Gamble Responsibly</span>
         </div>
         <p class="text-xs text-gray-500 dark:text-gray-400">
-          &copy; {{ new Date().getFullYear() }} Naibet. All rights reserved.
+          &copy; {{ new Date().getFullYear() }} Bandabets. All rights reserved.
         </p>
       </div>
     </footer>

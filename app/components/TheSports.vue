@@ -18,13 +18,13 @@ onBeforeUnmount(() => {
     class="bg-gray-50 dark:bg-background"
   >
     <DesktopSportsLayout
-      seo-title="Sports Betting – Prematch Odds & Fixtures | Naibet"
+      seo-title="Sports Betting – Prematch Odds & Fixtures | Bandabets"
     />
   </LazyInfinityScroll>
 
   <!-- ==================== SMALL SCREEN (<768px) ==================== -->
   <MobileSportsLayout
     v-else
-    seo-title="Sports Betting – Prematch Odds & Fixtures | Naibet"
+    seo-title="Sports Betting – Prematch Odds & Fixtures | Bandabets"
   />
 </template>

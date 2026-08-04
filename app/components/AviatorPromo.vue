@@ -24,7 +24,7 @@ const promo = promos.find((p) => p.name === dailyAviatorCashback);
       title="Even a bad flight pays you back."
     >
       <p>
-        Don't let a rough round ground your fun. Every single day, loyal Naibet
+        Don't let a rough round ground your fun. Every single day, loyal Bandabets
         Aviator players are randomly rewarded with <strong>real cashback on their
         net losses</strong>. The more rounds you fly, the higher your chances of
         hitting the daily selection.

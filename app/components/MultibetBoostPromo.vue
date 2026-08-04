@@ -18,7 +18,7 @@
             ⚡ Promotion
           </span>
           <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-            Naibet Multibet Boost –
+            Bandabets Multibet Boost –
             <span class="text-gold-bright">Supercharge Your Wins!</span>
           </h1>
           <p class="text-base md:text-lg opacity-90 max-w-3xl mx-auto">
@@ -225,7 +225,7 @@
           >
             <h3 class="font-semibold">Eligibility Requirements</h3>
             <ul class="mt-2 text-sm space-y-1 opacity-90">
-              <li>• Available to all registered Naibet customers</li>
+              <li>• Available to all registered Bandabets customers</li>
               <li>• Valid on <strong>pre-match</strong> bets only</li>
               <li>
                 • All selections must be from
@@ -269,8 +269,8 @@
             <ul class="mt-2 text-sm space-y-1 opacity-90">
               <li>• Boost calculated automatically on placement</li>
               <li>• Winnings credited upon settlement</li>
-              <li>• Subject to Naibet’s standard terms & conditions</li>
-              <li>• Naibet may modify/terminate anytime</li>
+              <li>• Subject to Bandabets’s standard terms & conditions</li>
+              <li>• Bandabets may modify/terminate anytime</li>
               <li>• One multibet boost per customer per day</li>
               <li>• Suspicious patterns may void eligibility</li>
             </ul>
@@ -317,7 +317,7 @@
       >
         <h2 class="text-3xl font-extrabold">Ready to Boost Your Multibets?</h2>
         <p class="mt-2 opacity-95">
-          Turn smart combinations into amplified winnings with Naibet Multibet
+          Turn smart combinations into amplified winnings with Bandabets Multibet
           Boost.
         </p>
         <div

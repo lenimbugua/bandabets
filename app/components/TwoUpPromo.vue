@@ -9,7 +9,7 @@ import { RouterLink } from "vue-router";
       <!-- Header -->
       <div class="text-center space-y-4">
         <h1 class="text-3xl md:text-5xl font-bold">
-          ⚽ Naibet 2UP –
+          ⚽ Bandabets 2UP –
           <span class="text-gold-bright"
             >Get Paid in Full When Your Team Goes 2 Goals Up</span
           >
@@ -24,7 +24,7 @@ import { RouterLink } from "vue-router";
         <p class="leading-relaxed">
           Experience football betting without the heartbreak of late comebacks!
           With
-          <strong>Naibet 2UP</strong>, when your team takes a
+          <strong>Bandabets 2UP</strong>, when your team takes a
           <span class="text-gold-bright font-bold">2-goal lead</span>, we pay out
           in full instantly – no waiting, no reduced odds.
         </p>
@@ -36,7 +36,7 @@ import { RouterLink } from "vue-router";
 
       <!-- How It Works -->
       <section>
-        <h2 class="text-2xl font-bold mb-4">How Naibet 2UP Works</h2>
+        <h2 class="text-2xl font-bold mb-4">How Bandabets 2UP Works</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div
             class="bg-gray-50 dark:bg-surface-sunken p-6 rounded-2xl shadow-sm space-y-2"
@@ -47,7 +47,7 @@ import { RouterLink } from "vue-router";
                 Place your 1X2 Full Time bet on matches with the orange 2UP icon
               </li>
               <li>If your team goes 2 goals up → Instant payout</li>
-              <li>Funds credited to your Naibet account</li>
+              <li>Funds credited to your Bandabets account</li>
               <li>Final score doesn’t matter 🎉</li>
             </ul>
           </div>
@@ -109,7 +109,7 @@ import { RouterLink } from "vue-router";
       <!-- Unique Advantages -->
       <section>
         <h2 class="text-2xl font-bold mb-4">
-          🎯 Why Naibet 2UP Leads the Market
+          🎯 Why Bandabets 2UP Leads the Market
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-gray-50 dark:bg-surface-sunken p-6 rounded-2xl shadow-sm">
@@ -169,7 +169,7 @@ import { RouterLink } from "vue-router";
           class="bg-gray-50 dark:bg-surface-sunken p-6 rounded-2xl shadow-sm space-y-3 text-sm"
         >
           <p>
-            <strong>Eligibility:</strong> Open to Naibet Kenya customers,
+            <strong>Eligibility:</strong> Open to Bandabets Kenya customers,
             ongoing promo.
           </p>
           <p>
@@ -185,7 +185,7 @@ import { RouterLink } from "vue-router";
             comeback leads.
           </p>
           <p>
-            <strong>General:</strong> Naibet may change/cancel promo anytime.
+            <strong>General:</strong> Bandabets may change/cancel promo anytime.
             Must be 18+ to bet responsibly.
           </p>
         </div>
@@ -219,7 +219,7 @@ import { RouterLink } from "vue-router";
         class="text-center py-10 bg-brand-dark text-white rounded-2xl shadow-lg"
       >
         <h2 class="text-3xl font-bold">
-          🎉 Start Winning Early with Naibet 2UP
+          🎉 Start Winning Early with Bandabets 2UP
         </h2>
         <p class="mt-2">2 goals ahead means game over – in your favor!</p>
         <div class="mt-6 flex flex-col md:flex-row justify-center gap-4">

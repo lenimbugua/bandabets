@@ -50,7 +50,7 @@ export function useBetslipDataLayer() {
       event: viewCartEvent,
       expected_winnings: possibleWin.value,
       total_odds: totalOdds.value, //total odds
-      bet_cart_type: sportBetCartType, // options "all sports", "Naibet league", "midweek jp"
+      bet_cart_type: sportBetCartType, // options "all sports", "Bandabets league", "midweek jp"
       ecommerce: {
         currency,
         value: stake.value, // stake amount
@@ -119,7 +119,7 @@ export function useBetslipDataLayer() {
       event: beginCheckoutEvent,
       expected_winnings: possibleWin.value,
       total_odds: totalOdds.value, //total odds
-      bet_cart_type: sportBetCartType, // options "all sports", "Naibet league", "midweek jp"
+      bet_cart_type: sportBetCartType, // options "all sports", "Bandabets league", "midweek jp"
       ecommerce: {
         affiliation: "",
         coupon: "", //add promo code if applicable
@@ -150,7 +150,7 @@ export function useBetslipDataLayer() {
       event: purchaseEvent,
       expected_winnings: possibleWin.value,
       total_odds: totalOdds.value, //total odds
-      bet_cart_type: sportBetCartType, // options "all sports", "Naibet league", "midweek jp"
+      bet_cart_type: sportBetCartType, // options "all sports", "Bandabets league", "midweek jp"
       ecommerce: {
         affiliation: "",
         coupon: "", //add promo code if applicable

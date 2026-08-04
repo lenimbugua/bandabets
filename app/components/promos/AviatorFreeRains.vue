@@ -75,7 +75,7 @@ function goToRoute() {
     >
       <div class="grid gap-3 sm:grid-cols-3">
         <PromoStep badge="1" title="Open the chat">
-          Launch Naibet Aviator and keep your eye on the live chat box.
+          Launch Bandabets Aviator and keep your eye on the live chat box.
         </PromoStep>
         <PromoStep badge="2" title="Spot the rain">
           Throughout the day, Free Bet Rains drop randomly in the chat window.
@@ -120,7 +120,7 @@ function goToRoute() {
         </li>
         <li>You can claim once per Rain event.</li>
         <li>System errors or suspicious activity may lead to voided winnings.</li>
-        <li>Standard Naibet Aviator Terms &amp; Conditions apply.</li>
+        <li>Standard Bandabets Aviator Terms &amp; Conditions apply.</li>
       </ul>
     </PromoDetailSection>
 

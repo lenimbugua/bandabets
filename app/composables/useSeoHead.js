@@ -1,9 +1,9 @@
-const BASE_URL = "https://naibet.com";
-const DEFAULT_TITLE = "Naibet Kenya – Bet on All Sports & Top Odds";
+const BASE_URL = "https://bandabets.com";
+const DEFAULT_TITLE = "Bandabets Kenya – Bet on All Sports & Top Odds";
 const DEFAULT_DESC =
-  "Bet from as low as KSh 10 and win big with Naibet! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.";
+  "Bet from as low as KSh 10 and win big with Bandabets! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.";
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
-const OG_IMAGE_ALT = "Naibet Kenya – bet on all sports with top odds";
+const OG_IMAGE_ALT = "Bandabets Kenya – bet on all sports with top odds";
 
 const stripQuery = (p) => p.split("?")[0].replace(/\/{2,}/g, "/");
 const removeTrailingSlash = (p) =>

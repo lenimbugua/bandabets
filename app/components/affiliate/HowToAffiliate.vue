@@ -10,7 +10,7 @@ const steps = [
   },
   {
     title: "You earn on every play",
-    description: "Earn money every time your referrals play on Naibet.",
+    description: "Earn money every time your referrals play on Bandabets.",
   },
   {
     title: "Get paid weekly",

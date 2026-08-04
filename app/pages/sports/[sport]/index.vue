@@ -18,10 +18,10 @@ const sportMeta = computed(() => getSportMeta(route.params.sport));
 useSeoHead({
   title:
     sportMeta.value?.title ??
-    `${sportName.value} Betting in Kenya – Odds & Live Markets | Naibet`,
+    `${sportName.value} Betting in Kenya – Odds & Live Markets | Bandabets`,
   description:
     sportMeta.value?.description ??
-    `Bet on ${sportName.value} at Naibet Kenya. Competitive odds, live markets and instant M-Pesa deposits.`,
+    `Bet on ${sportName.value} at Bandabets Kenya. Competitive odds, live markets and instant M-Pesa deposits.`,
 });
 
 const { viewToDisplay } = toRefs(useSportsStore());
@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-  <h1 class="sr-only">Sports Betting – Live Odds & Fixtures | Naibet</h1>
+  <h1 class="sr-only">Sports Betting – Live Odds & Fixtures | Bandabets</h1>
   <TheSports v-if="viewToDisplay === 'sport'" />
   <TheLanding v-else-if="viewToDisplay === 'landing'" />
 </template>

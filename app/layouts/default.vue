@@ -8,7 +8,7 @@ import TheSidebar from "@/components/TheSidebar.vue";
 </script>
 
 <template>
-  <h1 class="sr-only">Sports Betting – Matches & Betslip | Naibet</h1>
+  <h1 class="sr-only">Sports Betting – Matches & Betslip | Bandabets</h1>
   <div
     v-if="isLargeScreen"
     class="min-h-dvh bg-gray-50 dark:bg-background"

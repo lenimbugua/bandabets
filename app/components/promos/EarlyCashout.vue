@@ -21,7 +21,7 @@ function goToSports() {
 <template>
   <PromoDetailShell
     :img="promo?.img"
-    alt="Naibet Early Cashout promotion"
+    alt="Bandabets Early Cashout promotion"
   >
     <!-- Intro -->
     <PromoDetailSection
@@ -75,7 +75,7 @@ function goToSports() {
           you cash out.
         </li>
         <li>
-          Naibet cannot guarantee the availability of Cashout on every market
+          Bandabets cannot guarantee the availability of Cashout on every market
           or event.
         </li>
       </ul>

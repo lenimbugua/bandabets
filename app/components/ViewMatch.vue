@@ -74,7 +74,7 @@ useHead({
       children: computed(() => {
         const m = matchDetails.value;
         if (!m) return "{}";
-        const baseUrl = "https://naibet.com";
+        const baseUrl = "https://bandabets.com";
         const slug = m.homeTeam && m.awayTeam
           ? `${m.homeTeam} vs ${m.awayTeam}`
           : "Sports Match";
@@ -93,7 +93,7 @@ useHead({
           ],
           organizer: {
             "@type": "Organization",
-            name: "Naibet",
+            name: "Bandabets",
             url: baseUrl,
           },
         });

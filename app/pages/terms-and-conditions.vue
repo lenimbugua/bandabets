@@ -5,9 +5,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Terms & Conditions | Naibet Kenya",
+  title: "Terms & Conditions | Bandabets Kenya",
   description:
-    "Read Naibet’s terms and conditions to understand our rules, fair play policy, and legal requirements.",
+    "Read Bandabets’s terms and conditions to understand our rules, fair play policy, and legal requirements.",
 });
 </script>
 
@@ -20,7 +20,7 @@ useSeoHead({
       Please ensure that You read and understand these terms prior to using the
       Service. Acceptance of these terms and conditions is a personal
       undertaking to be bound by these Terms. If you do not accept these Terms,
-      please do not use Naibet’s Services. The terms contain important
+      please do not use Bandabets’s Services. The terms contain important
       information about the legal agreement between You and Us and provide
       information about what other documents form part of our relationship with
       You.
@@ -29,18 +29,18 @@ useSeoHead({
     <ul class="list-disc pl-6">
       <li>In these Terms and Conditions (“hereinafter “The Terms”):</li>
       <li>
-        Reference to “Naibet” “We” “our” or “Us” is reference to Curtis and
+        Reference to “Bandabets” “We” “our” or “Us” is reference to Curtis and
         Fletcher IT solutions LTD, and or its successors in title and assigns;
       </li>
       <li>
-        Curtis and Fletcher IT solutions LTD, trading as Naibet, is licensed and
+        Curtis and Fletcher IT solutions LTD, trading as Bandabets, is licensed and
         regulated by the Betting Control and Licensing Board of Kenya (“BCLB”)
         for sports betting operations under the Betting, Lotteries and Gaming
         Act, Cap 131, Laws of Kenya, under License Numbers BK 0001255 and PG
         0001254;
       </li>
       <li>
-        Naibet is a licensed trademark owned and operated by Curtis and Fletcher
+        Bandabets is a licensed trademark owned and operated by Curtis and Fletcher
         IT solutions LTD and/or its affiliates and group companies. Curtis and
         Fletcher IT solutions LTD is a company registered under the Companies
         Act of Kenya, 2015 and having its registered address at K.P. Offices,
@@ -81,14 +81,14 @@ useSeoHead({
     <h2 class="text-xl font-bold py-3">1. INTRODUCTION</h2>
     <ul class="list-decimal py-3 pl-6">
       <li>
-        These Terms constitute a binding contract between You and Naibet.
-        These Terms apply to all services offered by Naibet as described in
+        These Terms constitute a binding contract between You and Bandabets.
+        These Terms apply to all services offered by Bandabets as described in
         paragraph 1.2. below.
       </li>
       <li>The Service includes:</li>
       <ul>
         <li>
-          Naibet’s Website (Naibet.com) and any other remote product We may
+          Bandabets’s Website (Bandabets.com) and any other remote product We may
           offer from time to time (“Website”);
         </li>
       </ul>
@@ -166,8 +166,8 @@ useSeoHead({
 
     <h2 class="text-xl font-bold py-3">Amendments to the terms</h2>
 
-    Naibet keeps these Terms under regular review. Previous versions of our
-    Terms can be obtained by contacting us at hello@naibet.com . Naibet
+    Bandabets keeps these Terms under regular review. Previous versions of our
+    Terms can be obtained by contacting us at hello@bandabets.com . Bandabets
     reserves the right to update the Terms from time to time in order to address
     legal and regulatory changes, to incorporate changes in our business or the
     services offered, or to improve the clarity of the Terms. All changes will
@@ -177,18 +177,18 @@ useSeoHead({
 
     <h2 class="text-xl font-bold py-3">2. Account Registration</h2>
     <p class="mb-4">
-      To register an account with Naibet, You must be at least 18 years old.
-      Naibet reserves the right to ask for proof of age from any customer and
+      To register an account with Bandabets, You must be at least 18 years old.
+      Bandabets reserves the right to ask for proof of age from any customer and
       suspend their account until satisfactory documentation is provided. You
       must keep your account registration details confidential and do not
       disclose the same to any third party. If You know or suspect that anyone
       other than You knows your username registration details or password, you
-      must promptly notify Us at hello@naibet.com.
+      must promptly notify Us at hello@bandabets.com.
     </p>
     <p class="mb-4">
-      Where an underage user is discovered, Naibet reserves the right to close
+      Where an underage user is discovered, Bandabets reserves the right to close
       the account indefinitely. ALL funds deposited in such account will be
-      forfeited. Naibet shall also report the incident to the BCLB, or any other
+      forfeited. Bandabets shall also report the incident to the BCLB, or any other
       relevant authority and the player shall suffer the consequences of such
       reporting.
     </p>
@@ -226,7 +226,7 @@ useSeoHead({
       You are required to keep Your registration details up to date at all
       times. If You change Your phone number or any other contact or personal
       information, please contact us in order to update Your account information
-      in accordance with clause 3.4. Naibet reserves the right to close the
+      in accordance with clause 3.4. Bandabets reserves the right to close the
       account when the information provided is deemed to be false or inaccurate.
     </p>
     <p class="mb-4">
@@ -254,7 +254,7 @@ useSeoHead({
       As you are responsible for all bets placed on your account, You must keep
       Your account access information (“Access Information”) including Your
       username, password, account number or any other information used to access
-      Your account secret and confidential. Naibet shall not be held liable in
+      Your account secret and confidential. Bandabets shall not be held liable in
       such cases.
     </p>
     <ul class="list-decimal pl-6">
@@ -302,7 +302,7 @@ useSeoHead({
       <li>Placement of a bet</li>
     </ol>
     <p class="font-medium">
-      After the expiry of six (6) months, Naibet reserves the right to close
+      After the expiry of six (6) months, Bandabets reserves the right to close
       Your account
     </p>
 
@@ -312,8 +312,8 @@ useSeoHead({
       <li>
         If You want to close Your account, You should inform Us in writing, by
         sending an email to
-        <a href="mailto:hello@naibet.com" class="text-blue-600 underline"
-          >hello@naibet.com</a
+        <a href="mailto:hello@bandabets.com" class="text-blue-600 underline"
+          >hello@bandabets.com</a
         >
         or by hand delivery to our office premises at Westpark, Westlands.
       </li>
@@ -332,16 +332,16 @@ useSeoHead({
       </li>
       <li>
         Before you send your request for account closure, make a withdrawal of
-        funds from your Naibet wallet to your mobile wallet.
+        funds from your Bandabets wallet to your mobile wallet.
       </li>
       <li>
         It is our policy not to close any accounts before all available funds
-        have been withdrawn from the account or Naibet wallet in question.
+        have been withdrawn from the account or Bandabets wallet in question.
       </li>
       <li>
         Ensure that in your written request you have provided a copy of your
         national ID, full name and the mobile number used to register your
-        Naibet account. In your account closure request, you will need to
+        Bandabets account. In your account closure request, you will need to
         declare that the mobile number, which is a unique identifier for your
         account, is registered in your name by the mobile services operator.
       </li>
@@ -352,7 +352,7 @@ useSeoHead({
       </li>
       <li>
         You agree to be diligent to ensure that the withdrawal has been made
-        from Your Naibet wallet and all the information and documentation
+        from Your Bandabets wallet and all the information and documentation
         above has been sent in full.
       </li>
       <li>
@@ -381,7 +381,7 @@ useSeoHead({
       </li>
     </ol>
 
-    <h2 class="text-xl font-bold py-3">6. BY NAIBET</h2>
+    <h2 class="text-xl font-bold py-3">6. BY BANDABETS</h2>
 
     <ol class="list-decimal pl-6">
       <li>
@@ -413,7 +413,7 @@ useSeoHead({
         Terms and Conditions.
       </li>
       <li>
-        Before a customer’s account is closed, Naibet will:
+        Before a customer’s account is closed, Bandabets will:
         <ul class="list-disc pl-6">
           <li>Investigate and confirm whether a Prohibited Act occurred;</li>
           <li>
@@ -544,13 +544,13 @@ useSeoHead({
         read in conjunction with these Terms.
       </li>
       <li>
-        Naibet specifically retains the rights, at any time and without
+        Bandabets specifically retains the rights, at any time and without
         notice, to remove, alter or add to promotions, tournaments, or similar
         and related activities without liability to You.
       </li>
       <li>
         We may from time to time offer special promotional offers (“Offers”).
-        Offer eligibility is determined by Naibet at its sole discretion and
+        Offer eligibility is determined by Bandabets at its sole discretion and
         we reserve the right to revoke an Offer and put your account on hold in
         the event that we determine you are not eligible.
       </li>
@@ -567,23 +567,23 @@ useSeoHead({
 
     <ol class="list-decimal pl-6">
       <li>
-        Please contact Customer Services via email: hello@naibet.com and
+        Please contact Customer Services via email: hello@bandabets.com and
         give clear written instructions of the self-exclusion measure, and the
         period of exclusion you would like implemented on your specific account.
       </li>
       <li>
         Before you send your request for self-exclusion, make a withdrawal of
-        funds from your Naibet wallet to your mobile wallet.
+        funds from your Bandabets wallet to your mobile wallet.
       </li>
       <li>
         It is our policy not to suspend or exclude any accounts before all
-        available funds have been withdrawn from the account or Naibet wallet
+        available funds have been withdrawn from the account or Bandabets wallet
         in question.
       </li>
       <li>
         Ensure that in your written request you have provided a copy of your
         national ID, full names and the mobile number used to register your
-        Naibet account. In your self-exclusion request, you will need to
+        Bandabets account. In your self-exclusion request, you will need to
         declare that the mobile number, which is a unique identifier for your
         account, is registered in your name by the mobile services operator.
       </li>
@@ -595,7 +595,7 @@ useSeoHead({
       </li>
       <li>
         The customer ought to be diligent to ensure that the withdrawal has been
-        made from their Naibet wallet and all the information and
+        made from their Bandabets wallet and all the information and
         documentation above has been sent in full.
       </li>
       <li>
@@ -634,7 +634,7 @@ useSeoHead({
       Where 6 months lapse with no transactions in Your account, Your account
       will lapse automatically. The automatic lapse shall only be rescinded by
       any positive action to transact or place any bets using Your respective
-      Naibet account.
+      Bandabets account.
     </p>
 
     <p>
@@ -665,8 +665,8 @@ useSeoHead({
     </p>
 
     <p>
-      Naibet reserves the right to exclude a Customer for a longer period at
-      our discretion. This may include instances where Naibet is informed by
+      Bandabets reserves the right to exclude a Customer for a longer period at
+      our discretion. This may include instances where Bandabets is informed by
       legitimate sources (e.g., regulators or other authorities, authorized
       professional organizations, authorized medical professional etc.) that may
       warrant extension of a customer’s self-exclusion period.
@@ -675,7 +675,7 @@ useSeoHead({
     <h2 class="text-xl font-bold py-3">10. PLACING BETS</h2>
     <ol class="list-decimal pl-6">
       <li>
-        You can only place a bet if You have been duly registered with Naibet
+        You can only place a bet if You have been duly registered with Bandabets
         and an account has been opened and assigned to You.
       </li>
       <li>
@@ -683,13 +683,13 @@ useSeoHead({
         out In the “How to Play” Section of the Website.
       </li>
       <li>
-        Naibet reserves the right to decline all, or part, of any bet
+        Bandabets reserves the right to decline all, or part, of any bet
         requested at our sole and absolute discretion. All bets are placed at
         your own risk and discretion.
       </li>
       <li>
         It is Your responsibility to ensure that Your bet details are accurate.
-        Naibet reserves the right to cancel any bet at any time.
+        Bandabets reserves the right to cancel any bet at any time.
       </li>
       <li>
         Without limiting our discretion to refuse or limit bets at our
@@ -714,14 +714,14 @@ useSeoHead({
     <h2 class="text-xl font-bold py-3">11. ERRORS</h2>
     <ol class="list-decimal pl-6">
       <li>
-        Naibet has incorrectly stated the relevant odds/spreads/handicap/total
+        Bandabets has incorrectly stated the relevant odds/spreads/handicap/total
         amounts;
       </li>
       <li>
-        Naibet incorrectly continues to accept bets on closed or suspended
+        Bandabets incorrectly continues to accept bets on closed or suspended
         markets;
       </li>
-      <li>Naibet incorrectly calculates or pays settlement amounts;</li>
+      <li>Bandabets incorrectly calculates or pays settlement amounts;</li>
       <li>
         Any error occurs in a random number generator or pay tables included,
         incorporated or used in any game or product.
@@ -748,7 +748,7 @@ useSeoHead({
 
     <ol class="list-decimal pl-6">
       <li>
-        You may deposit money into Your Naibet account through Your mobile
+        You may deposit money into Your Bandabets account through Your mobile
         money wallet.
       </li>
       <li>
@@ -758,13 +758,13 @@ useSeoHead({
     </ol>
 
     <p>
-      Naibet shall be entitled to suspend or close Your account if Naibet
+      Bandabets shall be entitled to suspend or close Your account if Bandabets
       reasonably considers or has reason to believe that You are depositing
       money without any intention of placing bets.
     </p>
 
     <p>
-      By depositing funds with Naibet You certify that the funds You deposit
+      By depositing funds with Bandabets You certify that the funds You deposit
       in Your account are not from an illegal source. You shall not use the
       Service for the purpose of transferring such funds from illegal sources.
       You will not use our Services for any illicit or fraudulent activity, or
@@ -804,7 +804,7 @@ useSeoHead({
       <li>
         Winnings from settled bets are added to the balance of your betting
         account. Any funds/winnings credited to an account in error are not
-        available for use and Naibet reserves the right to void any
+        available for use and Bandabets reserves the right to void any
         transactions involving such funds and/or withdraw the relevant amount
         from your account and/or reverse the transaction either at the time or
         retrospectively.
@@ -829,7 +829,7 @@ useSeoHead({
         shall be net of such deductions.
       </li>
       <li>
-        Naibet reserves the right to monitor any irregular activity. We
+        Bandabets reserves the right to monitor any irregular activity. We
         further reserve the right to withhold any withdrawals and/or confiscate
         all winnings which We reasonably believe to be related to irregular
         activity.
@@ -851,7 +851,7 @@ useSeoHead({
       </li>
       <li>
         The Customer shall observe all Applicable Laws. Under no circumstances
-        shall Naibet be held liable or responsible for Your failure to adhere
+        shall Bandabets be held liable or responsible for Your failure to adhere
         to all Applicable Laws. You agree that You will bear the results of any
         failure on Your part to adhere to the Applicable Laws.
       </li>
@@ -867,7 +867,7 @@ useSeoHead({
     <ol class="list-decimal pl-6">
       <li>
         If You have a complaint or experience any difficulties, please contact
-        our customer service center on hello@naibet.com or by way of
+        our customer service center on hello@bandabets.com or by way of
         telephone number +254 711 082 800.
       </li>
       <li>
@@ -916,14 +916,14 @@ useSeoHead({
         obtained by You.
       </li>
       <li>
-        Naibet reserves the right to suspend, modify or remove or add to our
+        Bandabets reserves the right to suspend, modify or remove or add to our
         Website any games or software at our sole discretion with immediate
         effect and without notice. Any stakes placed on markets affected by
         changes in software and games will be refunded immediately to the
-        customer. Naibet shall not be liable to customers for any anticipated
+        customer. Bandabets shall not be liable to customers for any anticipated
         loss of winnings suffered resulting from any changes or modification or
         suspension or discontinuance of the Service and shall have no claims
-        against Naibet in such regard.
+        against Bandabets in such regard.
       </li>
       <li>
         We do not take responsibility for computer malfunctions, failure of
@@ -976,7 +976,7 @@ useSeoHead({
     <p>
       All Intellectual Property Rights in the Services (including in the content
       of the website and mobile application and the software) arising in
-      connection with this agreement shall be the property of the Naibet.
+      connection with this agreement shall be the property of the Bandabets.
     </p>
 
     <ol class="list-decimal pl-6">
@@ -987,20 +987,20 @@ useSeoHead({
         content of our Service(s).
       </li>
       <li>
-        In provision of its Services, Naibet may use its pre-existing
+        In provision of its Services, Bandabets may use its pre-existing
         proprietary computer software, methodology, techniques, software
         libraries, tools, algorithms, materials, products, ideas, skills,
         designs, franchises, know-how or other intellectual property owned by
-        Naibet or its licensors/affiliates and Naibet may also create
+        Bandabets or its licensors/affiliates and Bandabets may also create
         additional intellectual property, in the performance of the Services
-        (all of the foregoing, the “Naibet Intellectual Property”). The
-        Customer agrees that any and all proprietary rights to the Naibet
+        (all of the foregoing, the “Bandabets Intellectual Property”). The
+        Customer agrees that any and all proprietary rights to the Bandabets
         Intellectual Property, as it existed as of the date hereof and as it may
         be modified or created in the course of providing the Services,
         including patent, copyright, trademark, and trade secret rights, to the
         extent they are available, are the sole and exclusive property of
-        Naibet, free from any claim or retention of rights thereto on the part
-        of the Customer, and the Customer hereby assigns to Naibet any rights
+        Bandabets, free from any claim or retention of rights thereto on the part
+        of the Customer, and the Customer hereby assigns to Bandabets any rights
         it may have in any of the foregoing.
       </li>
       <li>
@@ -1036,7 +1036,7 @@ useSeoHead({
     <h2 class="text-xl font-bold py-3">18. THIRD PARTY CONTENT</h2>
     <ol class="list-decimal pl-6">
       <li>
-        Naibet receives feeds, commentaries, and content from a number of
+        Bandabets receives feeds, commentaries, and content from a number of
         suppliers. Certain third-party product providers may require the
         Customer to agree to additional Terms and Conditions governing the use
         of their feeds, commentaries, and content. If the Customer does not
@@ -1045,13 +1045,13 @@ useSeoHead({
         or content.
       </li>
       <li>
-        Naibet does not accept any liability in respect of third-party feeds,
+        Bandabets does not accept any liability in respect of third-party feeds,
         commentaries, and content.
       </li>
       <li>
         Where links to third party resources appear on our Services and/or any
         other media/electronic platform, these links are provided for the
-        information of the Customer only. Naibet is not responsible and has no
+        information of the Customer only. Bandabets is not responsible and has no
         control over the content of third-party Websites sites or services
         offered therein, does not make any representations regarding the content
         or accuracy of materials on such third-party Websites and will accept no
@@ -1133,7 +1133,7 @@ useSeoHead({
       </li>
       <li>
         Any losses that were not foreseeable to both parties when the contract
-        between You and Naibet was formed;
+        between You and Bandabets was formed;
       </li>
       <li>
         Any losses arising from Your breach of these Terms and Conditions;
@@ -1280,9 +1280,9 @@ useSeoHead({
     <h2 class="text-xl font-bold py-3">23. ENTIRE AGREEMENT</h2>
     <p>
       These Terms and Conditions, including any document expressly referred to
-      in them, represent the entire agreement between You and Naibet and
+      in them, represent the entire agreement between You and Bandabets and
       replace any prior agreement, understanding or arrangement between You and
-      Naibet.
+      Bandabets.
     </p>
 
     <p>
@@ -1328,7 +1328,7 @@ useSeoHead({
     <p>
       Any notices required to be given in writing to us or any questions
       concerning these Terms & Conditions should be addressed to
-      support@naibet.com.
+      support@bandabets.com.
     </p>
 
     <h2 class="text-xl font-bold py-3">26. GOVERNING LAW AND JURISDICTION</h2>
@@ -1419,7 +1419,7 @@ useSeoHead({
       </li>
       <li>
         Take any further reasonable steps and actions deemed necessary by
-        Naibet to remedy the error, loss, or damages that Naibet stands to
+        Bandabets to remedy the error, loss, or damages that Bandabets stands to
         suffer as a result of an error leading to an incorrectly accepted bet.
       </li>
     </ul>

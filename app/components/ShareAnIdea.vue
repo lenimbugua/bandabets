@@ -69,7 +69,7 @@ function updateCharacterCount() {
             <span class="text-[11px] font-semibold text-brand-bright uppercase tracking-wider">Share Your Voice</span>
           </div>
           <h1 class="text-xl font-bold text-foreground leading-tight">
-            Help Shape Naibet
+            Help Shape Bandabets
           </h1>
           <p class="text-sm text-muted-foreground mt-1.5 max-w-xs">
             Your feedback drives what we build next. Every idea matters.

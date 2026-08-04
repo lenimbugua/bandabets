@@ -34,9 +34,9 @@ export const useAffiliateStore = defineStore("affiliate-store", {
         );
 
         this.responseOK = true;
-        // Fix: backend may return hakibets.com — replace with naibet.com
+        // Fix: backend may return hakibets.com — replace with bandabets.com
         const rawUrl = response.data.referral_url || "";
-        this.affiliateUrl = rawUrl.replace(/hakibets\.com/g, "naibet.com");
+        this.affiliateUrl = rawUrl.replace(/hakibets\.com/g, "bandabets.com");
       } catch (err) {
         console.error("Error fetching affiliate code:", err); // Better error logging
       } finally {

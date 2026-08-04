@@ -9,13 +9,13 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Best online sports betting in Kenya – Naibet",
+  title: "Best online sports betting in Kenya – Bandabets",
   description:
-    "Experience the best online sports betting and casino games with Naibet. Fast payouts, live odds, and instant deposits.",
+    "Experience the best online sports betting and casino games with Bandabets. Fast payouts, live odds, and instant deposits.",
 });
 </script>
 
 <template>
-  <h1 class="sr-only">Best Online Sports Betting in Kenya – Naibet</h1>
+  <h1 class="sr-only">Best Online Sports Betting in Kenya – Bandabets</h1>
   <TheLanding />
 </template>

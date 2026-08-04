@@ -13,7 +13,7 @@ const claimSteps = [
   {
     title: "Sign Up",
     description:
-      "Create an account on Naibet website or download the app and complete the registration process.",
+      "Create an account on Bandabets website or download the app and complete the registration process.",
   },
   {
     title: "Verify Your Account",
@@ -81,7 +81,7 @@ const features = [
           Elevate Your Betting Experience
         </h1>
         <p class="text-center text-lg md:text-xl max-w-3xl mx-auto opacity-90">
-          Discover how Naibet, one of Kenya's leading betting platforms,
+          Discover how Bandabets, one of Kenya's leading betting platforms,
           offers incredible opportunities for both new and existing users to
           enjoy free bets.
         </p>
@@ -145,10 +145,10 @@ const features = [
           </ul>
         </div>
 
-        <!-- Why Choose Naibet -->
+        <!-- Why Choose Bandabets -->
         <div class="bg-white dark:bg-surface-elevated rounded-2xl shadow-xl p-6">
           <TrophyIcon class="w-12 h-12 text-yellow-500 mb-4" />
-          <h2 class="text-2xl font-bold mb-4">Why Choose Naibet?</h2>
+          <h2 class="text-2xl font-bold mb-4">Why Choose Bandabets?</h2>
           <div class="grid gap-4">
             <div
               v-for="(feature, index) in features"
@@ -176,8 +176,8 @@ const features = [
       <div class="text-center mt-12 max-w-2xl mx-auto">
         <p class="text-gray-600 dark:text-gray-300">
           Free bets are an excellent way to enhance your betting experience on
-          Naibet. Remember to check the promotions regularly to make the most
-          of what Naibet has to offer. Happy betting!
+          Bandabets. Remember to check the promotions regularly to make the most
+          of what Bandabets has to offer. Happy betting!
         </p>
       </div>
     </div>

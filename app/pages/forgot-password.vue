@@ -8,9 +8,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Forgot Password | Naibet Account Recovery",
+  title: "Forgot Password | Bandabets Account Recovery",
   description:
-    "Reset your Naibet password easily and regain secure access to your betting account in minutes.",
+    "Reset your Bandabets password easily and regain secure access to your betting account in minutes.",
   robots: "noindex,nofollow",
 });
 </script>

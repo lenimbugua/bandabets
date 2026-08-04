@@ -286,7 +286,7 @@ export default defineNuxtConfig({
     "/instant/live": { redirect: { to: "/casino-home", statusCode: 301 } },
     "/welcome-promotions": { redirect: { to: "/promotions", statusCode: 301 } },
     "/freebet": { redirect: { to: "/promotions", statusCode: 301 } },
-    // The previous naibet.com served every page under a /ke country prefix.
+    // The previous bandabets.com served every page under a /ke country prefix.
     // Strip it so indexed URLs and bookmarks keep resolving after the
     // cutover. Only the bare "/ke" path is handled here as a static
     // routeRule; "/ke/:pathMatch(.*)*" (preserving query + hash) is a
@@ -300,7 +300,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: "en", class: "scroll-smooth scrollbar-hide" },
       bodyAttrs: { "data-theme": "dark" },
-      title: "Naibet Kenya – Bet on All Sports & Top Odds",
+      title: "Bandabets Kenya – Bet on All Sports & Top Odds",
       meta: [
         { charset: "UTF-8" },
         {
@@ -311,19 +311,19 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Bet from as low as KSh 10 and win big with Naibet! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.",
+            "Bet from as low as KSh 10 and win big with Bandabets! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.",
         },
         {
           name: "keywords",
           content:
             "bet, betting, online betting, online sports betting, sports betting",
         },
-        { name: "application-name", content: "Naibet" },
-        { property: "og:site_name", content: "Naibet Kenya" },
+        { name: "application-name", content: "Bandabets" },
+        { property: "og:site_name", content: "Bandabets Kenya" },
         { property: "og:locale", content: "en_KE" },
         { property: "fb:pages", content: "524814560726004" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@NaibetKe" },
+        { name: "twitter:site", content: "@Bandabets" },
         {
           name: "theme-color",
           content: "#1a120a",

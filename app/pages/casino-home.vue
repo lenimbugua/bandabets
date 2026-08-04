@@ -10,7 +10,7 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Naibet Casino",
+  title: "Bandabets Casino",
   robots: "noindex,nofollow",
 });
 </script>

@@ -10,7 +10,7 @@ const steps = [
   {
     num: 2,
     title: "Friend Signs Up",
-    desc: "Your friend registers on Naibet and deposits KSH 49 or more.",
+    desc: "Your friend registers on Bandabets and deposits KSH 49 or more.",
   },
   {
     num: 3,

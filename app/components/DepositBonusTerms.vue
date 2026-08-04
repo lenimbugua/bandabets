@@ -16,7 +16,7 @@
         <div class="flex gap-3">
           <span class="shrink-0 w-5 h-5 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-[0.6rem] font-bold text-gray-400 dark:text-white/30 tabular-nums">1</span>
           <p class="text-[0.75rem] text-gray-600 dark:text-white/50 leading-relaxed">
-            Available exclusively to <strong class="text-gray-900 dark:text-white font-semibold">active, registered</strong> Naibet users.
+            Available exclusively to <strong class="text-gray-900 dark:text-white font-semibold">active, registered</strong> Bandabets users.
           </p>
         </div>
         <div class="flex gap-3">
@@ -34,7 +34,7 @@
         <div class="flex gap-3">
           <span class="shrink-0 w-5 h-5 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-[0.6rem] font-bold text-gray-400 dark:text-white/30 tabular-nums">4</span>
           <p class="text-[0.75rem] text-gray-600 dark:text-white/50 leading-relaxed">
-            Naibet reserves the right to modify or terminate this transaction-fee refund program at any time.
+            Bandabets reserves the right to modify or terminate this transaction-fee refund program at any time.
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@
       <!-- Disclaimer -->
       <div class="mt-4 pt-3 border-t border-gray-100 dark:border-white/5">
         <p class="text-[0.65rem] text-gray-400 dark:text-white/20 leading-relaxed">
-          This product is provided "as is" without any warranties, whether express or implied. Only warranties implied by law and that cannot be excluded will apply, as stated in Naibet's General Terms and Conditions and Privacy Policy.
+          This product is provided "as is" without any warranties, whether express or implied. Only warranties implied by law and that cannot be excluded will apply, as stated in Bandabets's General Terms and Conditions and Privacy Policy.
         </p>
       </div>
     </div>

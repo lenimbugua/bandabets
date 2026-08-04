@@ -5,9 +5,9 @@ definePageMeta({
 });
 
 useSeoHead({
-  title: "Login to Naibet | Access Your Account",
+  title: "Login to Bandabets | Access Your Account",
   description:
-    "Log in to your Naibet account to continue betting, view your balance, and enjoy personalized promotions.",
+    "Log in to your Bandabets account to continue betting, view your balance, and enjoy personalized promotions.",
   robots: "noindex,nofollow",
 });
 </script>
