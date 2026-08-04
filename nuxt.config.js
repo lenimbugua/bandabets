@@ -326,18 +326,21 @@ export default defineNuxtConfig({
         { name: "twitter:site", content: "@NaibetKe" },
         {
           name: "theme-color",
-          content: "#0a0f1a",
+          content: "#1a120a",
           media: "(prefers-color-scheme: dark)",
         },
         {
           name: "theme-color",
-          content: "#f8fafc",
+          content: "#fdf8f3",
           media: "(prefers-color-scheme: light)",
         },
-        { name: "msapplication-TileColor", content: "#121826" },
+        { name: "msapplication-TileColor", content: "#1a120a" },
       ],
       link: [
         { rel: "icon", href: "/favicon.ico", sizes: "any" },
+        // Vector first — modern browsers prefer it and it stays crisp on
+        // hi-dpi tab strips; the PNG/ICO entries below are the fallback.
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },

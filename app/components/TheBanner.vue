@@ -1,33 +1,55 @@
 <script setup>
 import { useDefaultSport } from "@/composables/useDefaultSport";
-import formatStuff from "@/utilities/format-stuff";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-const { formCloudflareImage } = formatStuff();
+// formCloudflareImage is no longer needed — the BANDA banners are local files.
+// Restore `import formatStuff from "@/utilities/format-stuff"` with it if the
+// Cloudflare-hosted slide set comes back.
 const { initDefaultSport } = useDefaultSport();
 const router = useRouter();
 
 const modules = [Autoplay];
 const autoplayDelay = 8000;
 
-// Each slide drops the player straight into the game the offer is played on,
-// matching the primary CTA on the matching promo detail page.
-const sportsbook = { name: "sports", params: { sport: "soccer" } };
-
+// BANDA campaign artwork, served from /public. 3:1, so the frame below uses
+// the same ratio and nothing gets cropped.
 const items = [
-  { name: "One Cut", image: "ba71caf8-45e3-4dba-8563-2fd769e98800", to: sportsbook },
-  { name: "Welcome Bonus", image: "cdfc009d-fa81-4134-d165-3a1a0a463e00", to: sportsbook },
-  { name: "Daily Deposit Bonus", image: "47fad6b1-0048-4f18-90cd-100c01eba300", to: { name: "deposit" } },
-  { name: "Wagerless Rains", image: "c752f35f-37c3-42e8-03e1-11425ff4af00", to: { name: "playon" } },
-  { name: "Cashout", image: "1949af94-a569-4c2a-032f-005a5c0e9900", to: sportsbook },
-  { name: "Aviator Cashback", image: "3c60068d-b2cf-4ce2-0cab-4a65d691b700", to: { name: "aviator" } },
+  { name: "Starter Free Bet", image: "/banners/banda/starter-free-bet.jpg" },
+  { name: "Kick Off Bonus", image: "/banners/banda/kick-off-bonus.jpg" },
+  { name: "Kick Off Bonus terms", image: "/banners/banda/kick-off-bonus-terms.jpg" },
+  { name: "We serve you more action", image: "/banners/banda/we-serve-you-more-action.jpg" },
+  { name: "Promo menu", image: "/banners/banda/promo-menu.jpg" },
+  { name: "Real-time scores", image: "/banners/banda/real-time-scores.jpg" },
+  { name: "News that rides with you", image: "/banners/banda/news-that-rides-with-you.jpg" },
+  { name: "Wherever you are", image: "/banners/banda/wherever-you-are.jpg" },
 ];
 
+// The BANDA banners are brand artwork with no live offers behind them yet, so
+// every slide goes home. Flip this to false to restore per-banner routing —
+// the old slide set and its targets are kept below for that.
+const ROUTE_ALL_BANNERS_HOME = true;
+
+// Previous Cloudflare-hosted slides. Disabled, not deleted: these are the
+// image IDs and route targets to restore when the offers come back.
+// const sportsbook = { name: "sports", params: { sport: "soccer" } };
+// const legacyItems = [
+//   { name: "One Cut", image: "ba71caf8-45e3-4dba-8563-2fd769e98800", to: sportsbook },
+//   { name: "Welcome Bonus", image: "cdfc009d-fa81-4134-d165-3a1a0a463e00", to: sportsbook },
+//   { name: "Daily Deposit Bonus", image: "47fad6b1-0048-4f18-90cd-100c01eba300", to: { name: "deposit" } },
+//   { name: "Wagerless Rains", image: "c752f35f-37c3-42e8-03e1-11425ff4af00", to: { name: "playon" } },
+//   { name: "Cashout", image: "1949af94-a569-4c2a-032f-005a5c0e9900", to: sportsbook },
+//   { name: "Aviator Cashback", image: "3c60068d-b2cf-4ce2-0cab-4a65d691b700", to: { name: "aviator" } },
+// ];
+
 function openBanner(item) {
+  if (ROUTE_ALL_BANNERS_HOME) {
+    router.push({ name: "home" });
+    return;
+  }
   if (item.to.name === "sports") {
     initDefaultSport(true);
   }
@@ -51,7 +73,7 @@ function slideNext() {
 
 <template>
   <div class="w-full">
-    <div class="relative w-full aspect-[1366/331] overflow-hidden">
+    <div class="relative w-full aspect-[3/1] overflow-hidden">
       <swiper
         :slides-per-view="1"
         :slides-per-group="1"
@@ -71,9 +93,11 @@ function slideNext() {
             @click="openBanner(item)"
           >
             <img
-              :src="formCloudflareImage(item.image)"
+              :src="item.image"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               :alt="`${item.name} banner`"
+              loading="lazy"
+              decoding="async"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"

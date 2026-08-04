@@ -28,7 +28,9 @@ import AuthTopBar from "@/components/AuthTopBar.vue";
             <!-- Top: Logo + headline -->
             <div class="relative z-1">
               <RouterLink :to="{ name: 'home' }">
-                <TheLogo class="brightness-0 invert" />
+                <!-- Panel is dark in both themes, so the logo is pinned to
+                     its dark-background variant rather than the theme's. -->
+                <TheLogo class="[--logo-ink:var(--palette-white)]" />
               </RouterLink>
               <h2 class="mt-6 text-[1.75rem] font-extrabold text-white leading-tight tracking-tight">
                 Kenya's Premier<br />Betting Destination.

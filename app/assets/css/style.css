@@ -121,6 +121,10 @@
   /* Absolutes */
   --palette-white: #ffffff;
   --palette-black: #000000;
+
+  /* Brand-exact — the coffee the Bandabets lockup is drawn in. Not a UI
+     role and not part of the coffee ramp: only the logo may use it. */
+  --palette-brand-ink: #2d1306;
 }
 
 
@@ -176,6 +180,12 @@
   --gold-foreground: var(--palette-gold-900);
   --emerald: var(--palette-green-400);
   --dark-card: var(--palette-coffee-800);
+
+  /* Logo — the lockup's own two colours. "Banda" flips with the theme,
+     "bets" stays BANDA Gold in both. Override --logo-ink on a wrapper to
+     force the dark-background variant (e.g. the auth panel). */
+  --logo-ink: var(--palette-white);
+  --logo-accent: var(--palette-gold-500);
 
   /* Bet — the conversion CTAs (Join Now, Place Bet, betslip orb) and
      selected odds cells. BANDA Gold with gold-900 text: 5.9:1, AA at any
@@ -278,6 +288,10 @@
   --gold-foreground: var(--palette-white);
   --emerald: var(--palette-green-800);
   --dark-card: #f3ede7;
+
+  /* Logo — coffee wordmark on light, same BANDA Gold "bets". */
+  --logo-ink: var(--palette-brand-ink);
+  --logo-accent: var(--palette-gold-500);
 
   /* Bet — same gold fill and same dark text in both themes so the CTA
      never shifts hue; only the hover deepens rather than lifts. */

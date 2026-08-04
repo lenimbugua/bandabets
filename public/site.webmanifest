@@ -1,7 +1,7 @@
 {
-  "name": "Naibet Kenya – Bet on All Sports & Top Odds",
-  "short_name": "Naibet",
-  "description": "Bet from as low as KSh 10 and win big with Naibet! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.",
+  "name": "Bandabets Kenya – Bet on All Sports & Top Odds",
+  "short_name": "Bandabets",
+  "description": "Bet from as low as KSh 10 and win big with Bandabets! Enjoy on sports bets, thrilling casino games, huge jackpots, and virtual sports action.",
   "start_url": "/",
   "scope": "/",
   "icons": [
@@ -16,7 +16,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#220722",
-  "background_color": "#220722",
+  "theme_color": "#1a120a",
+  "background_color": "#1a120a",
   "display": "standalone"
 }

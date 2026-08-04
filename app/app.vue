@@ -2,7 +2,7 @@
 import CasinoSidebar from "@/components/CasinoSidebar.vue";
 import CollectAllModals from "@/components/CollectAllModals.vue";
 import OddsBar from "@/components/mobile/OddsBar.vue";
-import SiakaSplashLoader from "@/components/SiakaSplashLoader.vue";
+import BrandSplash from "@/components/BrandSplash.vue";
 import { useAppMode } from "@/composables/useAppMode";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useThemeSwitch } from "@/composables/useThemeSwitch";
@@ -35,7 +35,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="bg-white dark:bg-background">
-    <SiakaSplashLoader />
+    <BrandSplash />
     <div :class="currentMode === 'casino' ? 'lg:flex' : ''">
       <CasinoSidebar v-if="currentMode === 'casino'" />
       <div class="flex-1 min-w-0">
