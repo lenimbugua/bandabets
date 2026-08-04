@@ -4,7 +4,6 @@ import { usePoll } from "@/composables/usePoll";
 import { usePropellarAds } from "@/composables/usePropellarAds";
 import { useToast } from "@/composables/useToast";
 import { useProfileStore } from "@/stores/profile";
-import { defineStore, storeToRefs } from "pinia";
 import API, { authBaseURL } from "../services/API";
 import { useModalStore } from "../stores/modal";
 import { useLoginStore } from "./login";

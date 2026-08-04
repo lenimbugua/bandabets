@@ -1,9 +1,7 @@
 import { useMatches2Store } from "@/stores/matches2";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import { defineStore } from "pinia";
 import API from "../services/API";
 
-import { storeToRefs } from "pinia";
 
 export const useLiveMatchesStore = defineStore("live-matches-store", {
   state: () => ({

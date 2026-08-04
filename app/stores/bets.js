@@ -1,6 +1,5 @@
 import { useToast } from "@/composables/useToast";
 import { useProfileStore } from "@/stores/profile";
-import { defineStore, storeToRefs } from "pinia";
 import API, { betBaseURL } from "../services/API";
 import { useLoginStore } from "./login";
 const { fireErrorToast, fireSuccessToast, positionTopRight } = useToast();

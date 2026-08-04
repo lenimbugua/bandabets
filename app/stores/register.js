@@ -1,7 +1,6 @@
 import { useAuthStatus } from "@/composables/useAuthStatus";
 import { useToast } from "@/composables/useToast";
 import { useFreebetStore } from "@/stores/freebet";
-import { defineStore, storeToRefs } from "pinia";
 import API, { authBaseURL } from "../services/API";
 import { useLoginStore } from "./login";
 import { useUtmStore } from "./utm";

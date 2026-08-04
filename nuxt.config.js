@@ -6,6 +6,10 @@ export default defineNuxtConfig({
 
   modules: ["@pinia/nuxt", "pinia-plugin-persistedstate/nuxt", "@vueuse/nuxt"],
 
+  pinia: {
+    storesDirs: ["./app/stores/**"],
+  },
+
   css: ["~/assets/css/style.css"],
 
   app: {

@@ -1,6 +1,5 @@
 import { useCompetionsStore } from "@/stores/competitions";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import { defineStore, storeToRefs } from "pinia";
 import API from "../services/API";
 
 export const useMatches2Store = defineStore("matches2-store", {

@@ -4,7 +4,6 @@ import { useModalTypes } from "@/composables/useModalTypes";
 import { useToast } from "@/composables/useToast";
 import { useModalStore } from "@/stores/modal";
 import { useProfileStore } from "@/stores/profile";
-import { defineStore, storeToRefs } from "pinia";
 import API, { betBaseURL } from "../services/API";
 import { useDepositStore } from "./deposit";
 import { useLoginStore } from "./login";

@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import API, { betBaseURL } from "../services/API";
 import { useLoginStore } from "./login";
 import { FREEBET_AMOUNT } from "../composables/useDefinedConstants";

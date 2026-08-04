@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import API from "../services/API";
 
 export const useSearchStore = defineStore("search-store", {

@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 
 const LS_RELOAD_TS = "app_reload_ts";
 const LS_RELOAD_COUNT = "app_reload_count";

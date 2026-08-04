@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 
 export const useAppModeStore = defineStore("app-mode", {
   state: () => ({

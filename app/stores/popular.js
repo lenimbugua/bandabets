@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import { usePopular } from "../composables/usePopular";
 
 export const usePopularStore = defineStore("popular-store", {

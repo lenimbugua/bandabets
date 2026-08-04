@@ -3,7 +3,6 @@ import { useMixpanelTractActivity } from "@/composables/useMixpanelTrackActivity
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useThemeSwitch } from "@/composables/useThemeSwitch";
 import { useToast } from "@/composables/useToast";
-import { defineStore, storeToRefs } from "pinia";
 import API, { authBaseURL } from "../services/API";
 import { useModalStore } from "../stores/modal";
 import { useUtmStore } from "./utm";

@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import API, { cmsBaseURL } from "../services/API";
 
 export const useGamesStore = defineStore("games-store", {

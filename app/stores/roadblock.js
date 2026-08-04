@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import { useRoadBlocks } from "../composables/useRoadBlocks";
 
 const ROTATION_INTERVAL = 600000; // 1 minute

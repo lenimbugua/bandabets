@@ -1,5 +1,4 @@
 // import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import { defineStore } from "pinia";
 import API from "../services/API";
 import { useCompetionsStore } from "./competitions";
 

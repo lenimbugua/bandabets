@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 
 import { useScreenSizes } from "../composables/useScreenSizes";
 

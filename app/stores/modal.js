@@ -1,5 +1,4 @@
 import { useModalTypes } from "@/composables/useModalTypes";
-import { defineStore } from "pinia";
 
 const { betslip } = useModalTypes();
 

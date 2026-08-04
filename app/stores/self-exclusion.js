@@ -1,5 +1,4 @@
 import { useToast } from "@/composables/useToast";
-import { defineStore, storeToRefs } from "pinia";
 import API from "../services/API";
 import { useLoginStore } from "./login";
 

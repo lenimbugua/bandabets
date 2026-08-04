@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 
 export const useSportsStore = defineStore("sports-store", {
   state: () => ({

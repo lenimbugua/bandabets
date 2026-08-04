@@ -1,8 +1,6 @@
-import { defineStore } from "pinia";
 import API from "../services/API";
 // import { matchesBaseURL } from "../services/API";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import { storeToRefs } from "pinia";
 import { useSortTypes } from "../composables/useSortTypes";
 
 const { sortByTime, sortByLeague } = useSortTypes();

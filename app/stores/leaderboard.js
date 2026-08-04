@@ -1,4 +1,3 @@
-import { defineStore } from "pinia";
 import API, { affiliateBaseURL } from "../services/API";
 
 const categories = ["sport", "casino"];

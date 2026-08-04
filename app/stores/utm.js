@@ -1,5 +1,4 @@
 import { encryptData } from "@/composables/useEncryption";
-import { defineStore } from "pinia";
 
 export const useUtmStore = defineStore("utm-store", {
   state: () => ({

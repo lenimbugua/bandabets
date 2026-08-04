@@ -2,7 +2,6 @@ import { useToast } from "@/composables/useToast";
 import { useBetsStore } from "@/stores/bets";
 import { useModalStore } from "@/stores/modal";
 import { useProfileStore } from "@/stores/profile";
-import { defineStore, storeToRefs } from "pinia";
 import API, { betBaseURL } from "../services/API";
 import { useLoginStore } from "./login";
 
