@@ -5,7 +5,7 @@ import { InformationCircleIcon } from "@heroicons/vue/20/solid";
 import { ArrowPathIcon } from "@heroicons/vue/24/solid";
 import { useClipboard } from "@vueuse/core";
 import { ref, toRefs } from "vue";
-import { useAffiliateV2Store } from "../../stores/affiliate-v2";
+import { useAffiliateV2Store } from "@/stores/affiliate-v2";
 
 const { affiliateText } = useShareToSocials();
 

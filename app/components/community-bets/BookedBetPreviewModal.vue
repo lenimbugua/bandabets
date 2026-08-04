@@ -1,4 +1,6 @@
 <script setup>
+import BookedBetDetails from "@/components/community-bets/BookedBetDetails.vue";
+import ExampleBet from "@/components/community-bets/ExampleBet.vue";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useModalStore } from "@/stores/modal";
 import { useShareBetStore } from "@/stores/sharebet";

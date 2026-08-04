@@ -8,6 +8,8 @@ import {
 } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
+import CopyCode from "@/components/community-bets/CopyCode.vue";
+import ShareToSocials from "@/components/community-bets/ShareToSocials.vue";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useShareToSocials } from "@/composables/useShareToSocials";
 import { useModalStore } from "@/stores/modal";

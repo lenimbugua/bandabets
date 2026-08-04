@@ -1,5 +1,50 @@
+<script setup>
+import CasinoSidebar from "@/components/CasinoSidebar.vue";
+import CollectAllModals from "@/components/CollectAllModals.vue";
+import OddsBar from "@/components/mobile/OddsBar.vue";
+import SiakaSplashLoader from "@/components/SiakaSplashLoader.vue";
+import { useAppMode } from "@/composables/useAppMode";
+import { useModalTypes } from "@/composables/useModalTypes";
+import { useThemeSwitch } from "@/composables/useThemeSwitch";
+import { useModalStore } from "@/stores/modal";
+import { useRoadblockStore } from "@/stores/roadblock";
+import { useAppVersionStore } from "@/stores/app-version";
+
+const appVersionStore = useAppVersionStore();
+const { openModal } = useModalStore();
+const { stopRoadblockRotationTimer } = useRoadblockStore();
+const { notification } = useModalTypes();
+const { switchToDark } = useThemeSwitch();
+const { currentMode } = useAppMode();
+
+onBeforeMount(() => switchToDark());
+
+onMounted(() => {
+  appVersionStore.checkVersion();
+
+  const nav = performance.getEntriesByType("navigation")[0];
+  if (nav?.type !== "reload") {
+    openModal(notification);
+  }
+});
+
+onBeforeUnmount(() => {
+  stopRoadblockRotationTimer();
+});
+</script>
+
 <template>
-  <div class="bg-card text-foreground p-4">
-    <h1 class="text-headline-lg">Nuxt boots</h1>
+  <div class="bg-white dark:bg-background">
+    <SiakaSplashLoader />
+    <div :class="currentMode === 'casino' ? 'lg:flex' : ''">
+      <CasinoSidebar v-if="currentMode === 'casino'" />
+      <div class="flex-1 min-w-0">
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </div>
+    </div>
+    <OddsBar class="xl:hidden" />
+    <CollectAllModals />
   </div>
 </template>

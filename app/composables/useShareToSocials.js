@@ -11,7 +11,7 @@ export function useShareToSocials() {
   const link = "link";
 
   const { bookingCode } = storeToRefs(useShareBetStore());
-  const originUrl = window.location.origin;
+  const originUrl = useRequestURL().origin;
   const shareBetUrl = computed(
     () => `${originUrl}/share-bets/${bookingCode.value}`
   );

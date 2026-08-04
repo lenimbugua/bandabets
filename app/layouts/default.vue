@@ -1,10 +1,10 @@
 <script setup>
-import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
-import { useScreenSizes } from "../composables/useScreenSizes";
+import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
+import { useScreenSizes } from "@/composables/useScreenSizes";
 const { isSmallScreen, isMediumScreen, isLargeScreen } = useScreenSizes();
 
-import SportsBetslipPanel from "../components/SportsBetslipPanel.vue";
-import TheSidebar from "../components/TheSidebar.vue";
+import SportsBetslipPanel from "@/components/SportsBetslipPanel.vue";
+import TheSidebar from "@/components/TheSidebar.vue";
 </script>
 
 <template>
@@ -20,7 +20,7 @@ import TheSidebar from "../components/TheSidebar.vue";
           <TheSidebar />
         </div>
         <div class="flex-1 min-w-0 max-w-200 lg:max-w-250 py-3">
-          <RouterView />
+          <slot />
         </div>
         <div class="shrink-0">
           <SportsBetslipPanel />
@@ -38,7 +38,7 @@ import TheSidebar from "../components/TheSidebar.vue";
           <TheSidebar />
         </div>
         <div class="flex-1 min-w-0 py-3">
-          <RouterView />
+          <slot />
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ import TheSidebar from "../components/TheSidebar.vue";
       <HeaderLinks />
     </div>
     <div class="w-full grow px-2 py-3">
-      <RouterView />
+      <slot />
     </div>
     <Footer />
     <MobileFooterV2 />

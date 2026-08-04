@@ -8,6 +8,7 @@ import {
 } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
+import ShareToSocials from "@/components/community-bets/ShareToSocials.vue";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useModalStore } from "@/stores/modal";
 import { storeToRefs } from "pinia";
