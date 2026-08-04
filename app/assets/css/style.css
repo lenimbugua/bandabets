@@ -110,89 +110,90 @@
 /* ── Dark theme (default) ────────────────────────────────────────────────── */
 :root {
   /* Base */
-  --background: var(--palette-coffee-950);
+  --background: var(--palette-coffee-900);
   --foreground: var(--palette-coffee-100);
 
-  --card: var(--palette-coffee-900);
+  --card: var(--palette-coffee-800);
   --card-foreground: var(--palette-coffee-100);
 
-  --popover: #151c2c;
+  --popover: var(--palette-coffee-700);
   --popover-foreground: var(--palette-coffee-100);
 
-  /* Primary — Naibet Purple, lifted one step so it reads on charcoal */
+  /* Primary — BANDA Gold. Carries gold-900 text, never white: white on
+     this gold is 2.1:1. */
   --primary: var(--palette-gold-500);
-  --primary-foreground: var(--palette-white);
+  --primary-foreground: var(--palette-gold-900);
 
-  /* Secondary — Action Green. Charcoal text per the Success/Bet spec. */
-  --secondary: var(--palette-green-400);
-  --secondary-foreground: var(--palette-coffee-900);
+  /* Secondary — the spec's warm peach. */
+  --secondary: #edbca6;
+  --secondary-foreground: #47291a;
 
   /* Tertiary — informational */
-  --tertiary: var(--palette-tertiary-500);
-  --tertiary-foreground: var(--palette-tertiary-100);
+  --tertiary: var(--palette-tertiary-300);
+  --tertiary-foreground: var(--palette-tertiary-900);
 
-  --muted: var(--palette-coffee-800);
-  --muted-foreground: var(--palette-coffee-400);
+  --muted: var(--palette-coffee-700);
+  --muted-foreground: var(--palette-coffee-300);
 
-  /* Accent — the subtle interactive surface (hover rows, tinted panels).
-     Purple-tinted so it reads as branded at low opacity, but quiet enough
-     to carry --foreground text at full strength. Brand fills use --primary. */
-  --accent: #2a2038;
+  /* Accent — the quiet interactive surface (hover rows, tinted panels).
+     One tonal step above card so it reads as a lift, not a colour. */
+  --accent: var(--palette-coffee-600);
   --accent-foreground: var(--foreground);
 
-  --destructive: var(--palette-red-500);
-  --destructive-foreground: var(--palette-white);
+  --destructive: var(--palette-red-200);
+  --destructive-foreground: var(--palette-red-950);
 
   --success: var(--palette-green-400);
   --warning: var(--palette-gold-400);
 
-  --border: #1e2739;
-  --input: #151c2c;
+  --border: var(--palette-coffee-400);
+  --input: var(--palette-coffee-800);
   --ring: var(--palette-gold-500);
 
-  --gold: var(--palette-gold-400);
-  --gold-foreground: var(--palette-gold-950);
+  --gold: var(--palette-gold-500);
+  --gold-foreground: var(--palette-gold-900);
   --emerald: var(--palette-green-400);
-  --dark-card: var(--palette-coffee-900);
+  --dark-card: var(--palette-coffee-800);
 
-  /* Bet — the conversion CTAs (Join Now, Place Bet, betslip orb). Action
-     Green. Carries charcoal text, never white: white on this green is 2.4:1.
+  /* Bet — the conversion CTAs (Join Now, Place Bet, betslip orb) and
+     selected odds cells. BANDA Gold with gold-900 text: 5.9:1, AA at any
+     size, and identical in both themes so the CTA never shifts hue.
      bright/deep are the lift and the edge, for glows, borders and shadows. */
-  --bet: var(--palette-green-400);
-  --bet-foreground: var(--palette-coffee-900);
-  --bet-hover: var(--palette-green-300);
-  --bet-bright: var(--palette-green-300);
-  --bet-deep: var(--palette-green-600);
+  --bet: var(--palette-gold-500);
+  --bet-foreground: var(--palette-gold-900);
+  --bet-hover: var(--palette-gold-400);
+  --bet-bright: var(--palette-gold-300);
+  --bet-deep: var(--palette-gold-700);
 
   /* Surfaces — tonal layers, deepest to most-raised */
-  --surface-deepest: #070b14;
-  --surface-sunken: var(--palette-coffee-950);
-  --surface-elevated: var(--palette-coffee-900);
-  --surface-interactive: var(--palette-coffee-800);
-  --surface-active: #2a3648;
+  --surface-deepest: var(--palette-coffee-950);
+  --surface-sunken: var(--palette-coffee-900);
+  --surface-elevated: var(--palette-coffee-800);
+  --surface-interactive: var(--palette-coffee-600);
+  --surface-active: var(--palette-coffee-500);
 
   /* Brand ramp aliases */
   --brand-bright: var(--palette-gold-500);
   --brand-dark: var(--palette-gold-800);
-  --brand-selected: var(--palette-gold-600);
+  --brand-selected: var(--palette-gold-500);
   --brand-mid: var(--palette-gold-600);
-  --brand-forest: var(--palette-gold-900);
-  --brand-teal: var(--palette-gold-700);
+  --brand-forest: var(--palette-coffee-950);
+  --brand-teal: var(--palette-coffee-700);
 
   /* Gold aliases */
   --gold-bright: var(--palette-gold-300);
-  --gold-deep: var(--palette-gold-600);
-  --gold-muted: var(--palette-gold-500);
-  --bronze: var(--palette-gold-700);
+  --gold-deep: var(--palette-gold-700);
+  --gold-muted: var(--palette-gold-400);
+  --bronze: var(--palette-gold-800);
 
   /* Borders */
-  --border-subtle: #161e2d;
-  --border-strong: #2e3a50;
-  --border-darkest: #070b14;
+  --border-subtle: var(--palette-coffee-700);
+  --border-strong: var(--palette-coffee-300);
+  --border-darkest: var(--palette-coffee-950);
 
   /* Text */
-  --text-muted-alt: var(--palette-coffee-500);
-  --text-subtle: var(--palette-coffee-300);
+  --text-muted-alt: var(--palette-coffee-300);
+  --text-subtle: var(--palette-coffee-200);
 
   /* Shape — Soft 4px base */
   --radius: 0.25rem;
