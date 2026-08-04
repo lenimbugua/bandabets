@@ -203,7 +203,8 @@ export function useCasino() {
       routeToKironLiteGame(router, gameId);
       return;
     }
-    const aviatorGameId = import.meta.env.VITE_AVIATOR_GAME_ID;
+    const { public: config } = useRuntimeConfig();
+    const aviatorGameId = config.aviatorGameId;
 
     if (parseInt(gameId) === parseInt(aviatorGameId)) {
       setLaunchGameMeta("Aviator", providerName || "Spribe");

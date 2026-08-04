@@ -21,9 +21,6 @@ function getAuthHeaders() {
 const { initialCategories, providers, categories, getGames, meta } =
   useCasino();
 
-// Soft-gaming tenant. Drives the sg-* casino endpoints.
-const tenantCode = import.meta.env.VITE_TENANT_CODE;
-
 const HIDDEN_GAMES = ["pari league", "pari jackpot", "haki league", "haki jackpot"];
 function filterHiddenGames(games) {
   if (!games) return [];
@@ -116,6 +113,9 @@ export const useCasinoStore = defineStore("casino-store", {
       try {
         this.categoriesLoading = true;
         const { headers } = getAuthHeaders();
+        // Soft-gaming tenant. Drives the sg-* casino endpoints.
+        const { public: config } = useRuntimeConfig();
+        const tenantCode = config.tenantCode;
         const response = await API(casinoBaseURL).get(
           `/api/v1/sg-categories/tenant/${tenantCode}`,
           { headers }
@@ -137,6 +137,8 @@ export const useCasinoStore = defineStore("casino-store", {
     async fetchProviders() {
       try {
         const { headers } = getAuthHeaders();
+        const { public: config } = useRuntimeConfig();
+        const tenantCode = config.tenantCode;
         const response = await API(casinoBaseURL).get(
           `/api/v1/sg-games/providers?tenantCode=${tenantCode}`,
           { headers }

@@ -1,24 +1,30 @@
 import axios from "axios";
 
-export const matchesBaseURL = import.meta.env.VITE_MATCHES_URL;
-export const instantBaseURL = import.meta.env.VITE_INSTANT_URL;
-export const authBaseURL = import.meta.env.VITE_AUTH_URL;
-export const betBaseURL = import.meta.env.VITE_BET_URL;
-export const casinoBaseURL = import.meta.env.VITE_CASINO_URL;
-export const virtualBaseURL = import.meta.env.VITE_VIRTUAL_URL;
-export const virtualLeaguesBaseURL = import.meta.env.VITE_VIRTUAL_LEAGUES_URL;
-export const kironLiteBaseURL = import.meta.env.VITE_KIRON_LITE_URL;
-export const affiliateBaseURL = import.meta.env.VITE_AFFILIATE_URL;
-export const cmsBaseURL = import.meta.env.VITE_CMS_URL;
-export const affiliateApiBaseURL = import.meta.env.VITE_AFFILIATE_API_URL;
+// These are runtime-config keys, not URLs. `API()` resolves them at call
+// time so the server can be reconfigured without a rebuild. Every call site
+// passes them straight to API(), so the identifiers are unchanged.
+export const matchesBaseURL = "matchesUrl";
+export const instantBaseURL = "instantUrl";
+export const authBaseURL = "authUrl";
+export const betBaseURL = "betUrl";
+export const casinoBaseURL = "casinoUrl";
+export const virtualBaseURL = "virtualUrl";
+export const virtualLeaguesBaseURL = "virtualLeaguesUrl";
+export const kironLiteBaseURL = "kironLiteUrl";
+export const affiliateBaseURL = "affiliateUrl";
+export const cmsBaseURL = "cmsUrl";
+export const affiliateApiBaseURL = "affiliateApiUrl";
 
-// const tenantCode = import.meta.env.VITE_TENANT_CODE;
+export default (service = matchesBaseURL) => {
+  const config = useRuntimeConfig();
+  const baseURL = config.public[service];
 
-export default (url = matchesBaseURL) => {
-  return axios.create({
-    baseURL: url,
-    // headers: {
-    //   "X-Tenant": tenantCode,
-    // },
-  });
+  if (!baseURL) {
+    throw new Error(
+      `API(): no runtime config value for "${service}". ` +
+        `Set NUXT_PUBLIC_${service.replace(/[A-Z]/g, (c) => "_" + c).toUpperCase()}.`,
+    );
+  }
+
+  return axios.create({ baseURL });
 };

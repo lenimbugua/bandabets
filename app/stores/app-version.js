@@ -85,7 +85,8 @@ export const useAppVersionStore = defineStore("app-version-store", {
         const { version: latest } = await res.json();
         if (!latest) return;
 
-        const current = import.meta.env.VITE_APP_VERSION;
+        const { public: config } = useRuntimeConfig();
+        const current = config.appVersion;
         if (!current) return;
 
         if (latest === current) {

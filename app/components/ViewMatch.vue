@@ -113,8 +113,9 @@ function performInitialFetch() {
 
 performInitialFetch();
 
-const pollFrequency = parseInt(import.meta.env.VITE_LIVE_POLL_INTERVAL)
-  ? parseInt(import.meta.env.VITE_LIVE_POLL_INTERVAL)
+const { public: config } = useRuntimeConfig();
+const pollFrequency = parseInt(config.livePollInterval)
+  ? parseInt(config.livePollInterval)
   : 10000;
 
 let intervalId = null;

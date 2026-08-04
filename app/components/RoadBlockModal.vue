@@ -17,7 +17,8 @@ import { useModalTypes } from "@/composables/useModalTypes";
 
 import { useRouter } from "vue-router";
 const { launchCasino } = useCasino();
-const jetXId = import.meta.env.VITE_JETX_GAME_ID;
+const { public: config } = useRuntimeConfig();
+const jetXId = config.jetxGameId;
 const router = useRouter();
 
 const { roadblock } = useModalTypes();

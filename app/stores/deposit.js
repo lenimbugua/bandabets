@@ -220,12 +220,13 @@ export const useDepositStore = defineStore("deposit-store", {
       const { msisdn } = storeToRefs(useLoginStore());
       const { startPolling } = usePoll();
       const { getProfileInfo, pushToDatalayerIfDeposit } = useProfileStore();
+      const { public: config } = useRuntimeConfig();
       // AlipayJSBridge
       try {
         window.AlipayJSBridge.call(
           "payBill",
           {
-            businessID: import.meta.env.VITE_PAYBILL_NO, //paybill number
+            businessID: config.paybillNo, //paybill number
             billReference: `${msisdn.value}`,
             amount: `${this.deposit}`,
             currency: "KES", // currencyCode to be used - only KES supported for now

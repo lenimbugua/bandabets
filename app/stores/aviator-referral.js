@@ -3,7 +3,6 @@ import { defineStore, storeToRefs } from "pinia";
 import API, { affiliateApiBaseURL } from "../services/API";
 import { useLoginStore } from "./login";
 
-const tenantCode = import.meta.env.VITE_TENANT_CODE;
 const { fireErrorToast, fireSuccessToast, positionTopRight } = useToast();
 
 export const useAviatorReferralStore = defineStore("aviator-referral-store", {
@@ -24,6 +23,8 @@ export const useAviatorReferralStore = defineStore("aviator-referral-store", {
       this.responseOK = false;
 
       const { profileSid } = storeToRefs(useLoginStore());
+      const { public: config } = useRuntimeConfig();
+      const tenantCode = config.tenantCode;
 
       try {
         const response = await API(affiliateApiBaseURL).post(

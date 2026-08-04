@@ -21,7 +21,7 @@ const { getProfileInfo } = useProfileStore();
 getProfileInfo();
 
 const showBalance = ref(true);
-// const withdrawTax = import.meta.env.VITE_WITHDRAW_TAX;
+// const withdrawTax = useRuntimeConfig().public.withdrawTax;
 
 const { formattedNumber } = formatStuff();
 

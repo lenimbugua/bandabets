@@ -3,7 +3,8 @@ import { useModalStore } from "@/stores/modal";
 
 const { closeModal } = useModalStore();
 
-const paybillNo = import.meta.env.VITE_PAYBILL_NO;
+const { public: config } = useRuntimeConfig();
+const paybillNo = config.paybillNo;
 
 </script>
 

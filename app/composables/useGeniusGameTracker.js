@@ -4,7 +4,8 @@ import { useSportsStore } from "../stores/sports";
 import { useSports } from "./useSports";
 
 export function useGeniusGameTracker(fixtureId) {
-  const geniusGameTrackerURL = import.meta.env.VITE_GENIUS_GAME_TRACKER_URL;
+  const { public: config } = useRuntimeConfig();
+  const geniusGameTrackerURL = config.geniusGameTrackerUrl;
   const productName = "siakabet";
   const geniusGameTrackerEndpoint = `${geniusGameTrackerURL}/multisportgametracker?productName=${productName}&fixtureId=${fixtureId}`;
   const geniusScoreBoardEndpoint = `${geniusGameTrackerURL}/multisportscoreboard?productName=${productName}&fixtureId=${fixtureId}`;

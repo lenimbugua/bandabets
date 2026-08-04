@@ -5,10 +5,11 @@ export function useMainCategories() {
     hakiLeagueRouteName,
     // hakiTurboRouteName
   } = useKiron();
-  const jetXId = import.meta.env.VITE_JETX_GAME_ID;
+  const { public: config } = useRuntimeConfig();
+  const jetXId = config.jetxGameId;
 
-  const virtualId = import.meta.env.VITE_VIRTUAL_GAME_ID;
-  const aviatorId = import.meta.env.VITE_AVIATOR_GAME_ID;
+  const virtualId = config.virtualGameId;
+  const aviatorId = config.aviatorGameId;
 
   const categories = ref([
     {

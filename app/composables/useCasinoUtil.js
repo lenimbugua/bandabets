@@ -4,12 +4,13 @@ import { useCasino } from "./useCasino";
 export function useCasinoUtil() {
   const router = useRouter();
 
-  const aviatrixId = import.meta.env.VITE_AVIATRIX_GAME_ID;
-  const aviatorGameId = import.meta.env.VITE_AVIATOR_GAME_ID;
-  const jetXId = import.meta.env.VITE_JETX_GAME_ID;
-  const maestroGameId = import.meta.env.VITE_MAESTRO_GAME_ID;
-  const crashRoyalGameId = import.meta.env.VITE_CRASH_ROYALE_GAME_ID;
-//   const hakiTurboGameId = import.meta.env.VITE_HAKI_TURBO_GAME_ID;
+  const { public: config } = useRuntimeConfig();
+  const aviatrixId = config.aviatrixGameId;
+  const aviatorGameId = config.aviatorGameId;
+  const jetXId = config.jetxGameId;
+  const maestroGameId = config.maestroGameId;
+  const crashRoyalGameId = config.crashRoyaleGameId;
+//   const hakiTurboGameId = config.hakiTurboGameId;
 
   const goToHakiLeague = () => {
     // navigate to haki league page

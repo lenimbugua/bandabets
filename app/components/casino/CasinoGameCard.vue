@@ -7,8 +7,9 @@ const props = defineProps({
 
 defineEmits(["play"]);
 
-const hakiLeagueGameId = import.meta.env.VITE_HAKI_LEAGUE_GAME_ID;
-const hakiJackpotGameId = import.meta.env.VITE_KIRON_JACKPOT_GAME_ID;
+const { public: config } = useRuntimeConfig();
+const hakiLeagueGameId = config.hakiLeagueGameId;
+const hakiJackpotGameId = config.kironJackpotGameId;
 
 const overrides = {
   "haki league": {

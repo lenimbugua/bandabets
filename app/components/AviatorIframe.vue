@@ -6,7 +6,8 @@ import { useCasinoStore } from "../stores/casino";
 
 const { setLaunchGameId, setLaunchGameMeta } = useCasinoStore();
 
-setLaunchGameId(import.meta.env.VITE_AVIATOR_GAME_ID);
+const { public: config } = useRuntimeConfig();
+setLaunchGameId(config.aviatorGameId);
 setLaunchGameMeta("Aviator", "Spribe");
 
 const { setView } = useAviatorStore();

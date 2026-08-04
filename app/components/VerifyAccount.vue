@@ -9,7 +9,8 @@ import { useLoginStore } from "../stores/login";
 import { useRegisterStore } from "../stores/register";
 import MobileInput from "./MobileInput.vue";
 
-const ussdActivate = import.meta.env.VITE_USSD_ACTIVATE_ACCOUNT;
+const { public: config } = useRuntimeConfig();
+const ussdActivate = config.ussdActivateAccount;
 
 const { pushDataLayerToGoogle } = useGoogleDataLayers();
 

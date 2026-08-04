@@ -4,9 +4,6 @@ import {
   virtualGamesRouteName,
 } from "./useCasino";
 
-const hakiLeagueGameId = import.meta.env.VITE_HAKI_LEAGUE_GAME_ID;
-const hakiJackpotGameId = import.meta.env.VITE_KIRON_JACKPOT_GAME_ID;
-
 const categories = [
   {
     category_id: "all",
@@ -56,6 +53,10 @@ const providers = [
 ];
 
 export function usePopular() {
+  const { public: config } = useRuntimeConfig();
+  const hakiLeagueGameId = config.hakiLeagueGameId;
+  const hakiJackpotGameId = config.kironJackpotGameId;
+
   const games = [
     {
       id: 2,

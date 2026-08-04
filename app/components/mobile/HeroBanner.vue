@@ -17,7 +17,8 @@ const router = useRouter();
 
 const modules = [Autoplay];
 
-const aviatorGameId = import.meta.env.VITE_AVIATOR_GAME_ID;
+const { public: config } = useRuntimeConfig();
+const aviatorGameId = config.aviatorGameId;
 const depositId = 1000;
 const homeId = 100001777;
 const affiliateId = 1000014;

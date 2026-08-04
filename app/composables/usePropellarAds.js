@@ -1,6 +1,3 @@
-const PROPELLER_AID = import.meta.env.VITE_PROPELLER_AID;
-const PROPELLER_TID = import.meta.env.VITE_PROPELLER_TID;
-const CONVERSION_BASE = `https://ad.propellerads.com/conversion.php?aid=${PROPELLER_AID}&tid=${PROPELLER_TID}`;
 const FTD_FLAG_PREFIX = "prop_ftd_done_";
 
 function readVisitorId() {
@@ -32,14 +29,17 @@ function fireConversion(url) {
   xhr.send();
 }
 
-function buildUrl({ goal, visitorId, payout }) {
+function buildUrl({ goal, visitorId, payout, conversionBase }) {
   const params = new URLSearchParams({ visitor_id: visitorId });
   if (goal != null) params.set("goal", String(goal));
   if (payout != null) params.set("payout", String(payout));
-  return `${CONVERSION_BASE}&${params.toString()}`;
+  return `${conversionBase}&${params.toString()}`;
 }
 
 export function usePropellarAds() {
+  const { public: config } = useRuntimeConfig();
+  const conversionBase = `https://ad.propellerads.com/conversion.php?aid=${config.propellerAid}&tid=${config.propellerTid}`;
+
   function initPropellerAds() {
     const value = new URL(location.href).searchParams.get("PROPELLER");
     if (value) {
@@ -57,7 +57,7 @@ export function usePropellarAds() {
   function trackPropellerConversion() {
     const visitorId = readVisitorId();
     if (!visitorId) return;
-    fireConversion(buildUrl({ visitorId }));
+    fireConversion(buildUrl({ visitorId, conversionBase }));
   }
 
   function trackPropellerDeposit(amount) {
@@ -65,7 +65,7 @@ export function usePropellarAds() {
     if (!visitorId) return;
     const isFtd = !hasFiredFtd(visitorId);
     fireConversion(
-      buildUrl({ goal: isFtd ? 2 : 3, visitorId, payout: amount })
+      buildUrl({ goal: isFtd ? 2 : 3, visitorId, payout: amount, conversionBase })
     );
     if (isFtd) markFtdFired(visitorId);
   }

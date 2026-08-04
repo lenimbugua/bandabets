@@ -3,7 +3,8 @@ import { crashGamesRouteName, useCasino } from "./useCasino";
 
 export function useSecondaryNavGames() {
   const aviatorRoute = "aviator";
-  const aviatorId = import.meta.env.VITE_AVIATOR_GAME_ID;
+  const { public: config } = useRuntimeConfig();
+  const aviatorId = config.aviatorGameId;
 
   const useRouterLauncher = "useRouterLauncher";
   const useCasinoLauncher = "useCasinoLauncher";
