@@ -37,6 +37,8 @@ Six ramps, keeping the existing `--palette-{family}-{50..950}` shape.
 
 **Two families are renamed**, because a variable called `slate` holding brown values is a trap for the next person: `--palette-slate-*` → `--palette-coffee-*`, and `--palette-purple-*` → `--palette-gold-*`. This means updating every reference in layers 2 and 3 (a mechanical find-and-replace; layer 3 holds ~60 such lines across the `gray`/`zinc`/`neutral`/`stone`/`purple`/`violet`/`fuchsia` remap blocks). The *Tailwind-facing* names in layer 3 do not change — `--color-gray-800` still exists, it just points at `--palette-coffee-800` — so no component class breaks.
 
+The purple → gold rename is a **merge, not a collision**: `--palette-gold-*` already exists (the old amber ramp), and the spec folds it into BANDA Gold. So the 74 former `--palette-purple-*` references and the 57 former `--palette-gold-*` references end up pointing at one ramp. Layer 1 finishes with **five** ramps instead of six — coffee, gold, green, red, tertiary.
+
 The `green`, `red`, and `tertiary` family names are unchanged; only their values move.
 
 ### Coffee (neutral) — replaces Charcoal Slate
@@ -184,11 +186,28 @@ Derived, since the spec ships no light tokens.
 
 ### Contrast rules — the risky part of a gold system
 
-`#fa9602` on white is **2.2:1** and is never used as light-mode text. The rules:
+`#fa9602` on white is **2.23:1** and is never used as light-mode text. Measured ratios (WCAG 2.1 relative luminance):
 
-- **Light theme:** gold-700 `#8a5100` for all text, links and borders (5.9:1 on white). gold-500 appears only as a *fill* carrying gold-900 `#4a2800` text — 8.4:1, comfortably AA at any size.
-- **Dark theme:** gold-300 `#ffbc77` for text on coffee (9.1:1 on `#1a120a`). gold-500 fills carry gold-900 text.
-- **CTA fill in both themes:** gold-500 background + gold-900 text, so the money buttons never shift hue between themes and never drop below 8:1.
+| Pair | Ratio | Verdict |
+|---|---|---|
+| gold-500 on white | 2.23 | **banned** as text |
+| gold-700 `#8a5100` on white | 6.45 | AA all sizes |
+| gold-500 fill + gold-900 `#4a2800` text | 5.91 | AA all sizes |
+| gold-300 `#ffbc77` on coffee-900 | 11.20 | AAA |
+| coffee-100 on coffee-900 (body text) | 14.29 | AAA |
+| coffee-300 `#a28d7a` muted on coffee-800 card | 5.40 | AA all sizes |
+| emerald-400 on coffee-900 | 7.30 | AAA |
+| red-200 on coffee-900 | 10.90 | AAA |
+| emerald-800 on white | 7.68 | AAA |
+| secondary `#edbca6` + on-secondary `#47291a` | 7.72 | AAA |
+
+The rules that follow:
+
+- **Light theme:** gold-700 for all text, links and borders. gold-500 appears only as a *fill* carrying gold-900 text.
+- **Dark theme:** gold-300 for text on coffee. gold-500 fills carry gold-900 text.
+- **CTA fill in both themes:** gold-500 background + gold-900 text, so the money buttons never shift hue between themes and never drop below 5.9:1.
+
+`--border` coffee-400 on coffee-900 is 1.99:1 — that is intentional and correct for a hairline (WCAG's 3:1 non-text minimum applies to meaningful UI boundaries, not decorative dividers); the spec's Level 1 elevation is explicitly "a 1px inner stroke, low opacity."
 
 ## Out of scope — known residue
 
