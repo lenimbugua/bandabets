@@ -18,7 +18,7 @@ resolves before the response is sent) is Phase 2 work.
 | | Before | After |
 |---|---|---|
 | Build output | `dist/` (static) | `.output/` |
-| Serve | Nginx static files | `node .output/server/index.mjs` |
+| Serve | Nginx static files | `NODE_ENV=production node .output/server/index.mjs` |
 | Port | 80 (Nginx) | 3000 (`PORT` env var overrides) |
 | Build command | `pnpm build` | `pnpm build` (unchanged) |
 | Env substitution | build-time `sed` in `docker/config/app/entrypoint.sh` (that directory no longer exists in this repo — infra-owned, referenced here only to describe the *old* mechanism) | **not needed** |
