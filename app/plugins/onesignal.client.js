@@ -38,4 +38,10 @@ const OneSignalWrapper = {
   },
 };
 
-export default OneSignalWrapper;
+export default defineNuxtPlugin(() => {
+  const { public: config } = useRuntimeConfig();
+
+  OneSignalWrapper.init(config.onesignalAppId);
+
+  return { provide: { oneSignal: OneSignalWrapper } };
+});
