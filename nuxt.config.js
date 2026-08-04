@@ -1,8 +1,85 @@
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
+
+const phase2PlaceholderFile = fileURLToPath(
+  new URL("./app/components/PhaseTwoPlaceholder.vue", import.meta.url),
+);
+
+// Phase 1 route-name scaffold. DELETE EACH ENTRY as Phase 2 ports the real
+// page for that name — this list should shrink to empty over time.
+//
+// These route names are referenced by RouterLink/router.push calls in the
+// shared chrome (Footer's legalLinks, TheDepositBar, HeaderLinks, ...) and
+// in views not yet converted to Nuxt pages. vue-router 4 THROWS
+// "No match for {name: ...}" when resolving an unmatched name — not just a
+// console warning — which was aborting SSR for every page that mounts that
+// chrome (i.e. all of them, via app/layouts/default.vue and auth.vue).
+// Registering name + a real path here is enough to satisfy resolve()
+// without porting the real view yet. Paths are sourced from the deleted
+// src/router/index.js (`git show 81ae85f:src/router/index.js`), not
+// invented, so Phase 2 can swap in the real page without changing URLs.
+const phase2Placeholders = [
+  { name: "aviator", path: "/aviator" },
+  { name: "bet-details", path: "/bet-details" },
+  { name: "change-password", path: "/change-password" },
+  { name: "countries", path: "/sports/soccer/countries" },
+  { name: "deposit", path: "/deposit" },
+  { name: "forgot-password", path: "/forgot-password" },
+  // "games" has no entry in the old router at all (nearest analog was
+  // "play-casino-games" at /casino/:name, which is what this mirrors) —
+  // a judgment call, not a sourced path. Flagged in task-10-report.md.
+  { name: "games", path: "/casino/:name" },
+  { name: "join-affiliate", path: "/join-affiliate" },
+  { name: "leaderboard", path: "/leaderboard" },
+  {
+    name: "match-details",
+    path: "/sports/:sport/:country/:league/:matchSlug(.*)-:id",
+  },
+  { name: "pari-league", path: "/virtual-games/nai-league" },
+  { name: "pari-turbo", path: "/virtual-games/nai-turbo" },
+  { name: "pari-virtual-jackpot", path: "/virtual-games/nai-virtual-jackpot" },
+  { name: "playon", path: "/virtual-games/playon" },
+  { name: "privacy-policy", path: "/privacy-policy" },
+  { name: "profile", path: "/profile" },
+  { name: "promotion-details", path: "/promotion-details/:name" },
+  { name: "reset-password", path: "/reset-password" },
+  // Not in the coordinator's enumerated 27 — found independently while
+  // tracing Footer.vue's legalLinks array. Still blocks all six SEO
+  // routes without it, so it's included here anyway.
+  { name: "responsible-gambling", path: "/responsible-gambling" },
+  { name: "self-exclusion", path: "/profile/exclude" },
+  { name: "share-bets", path: "/share-bets/:code?" },
+  { name: "share-feedback", path: "/share-feedback" },
+  { name: "share-happiness", path: "/share-happiness" },
+  { name: "sort-deposit", path: "/sort-deposit" },
+  { name: "terms-and-conditions", path: "/terms-and-conditions" },
+  { name: "verify-account", path: "/verify-account" },
+  { name: "welcome-gift", path: "/welcome-gift" },
+  { name: "withdraw", path: "/withdraw" },
+];
 
 export default defineNuxtConfig({
   compatibilityDate: "2026-08-04",
   devtools: { enabled: true },
+
+  hooks: {
+    "pages:extend"(pages) {
+      for (const { name, path } of phase2Placeholders) {
+        pages.push({
+          name,
+          path,
+          file: phase2PlaceholderFile,
+          // Client-only: these are placeholders, never meant to be
+          // server-rendered or indexed. Precise per-route rendering mode,
+          // so it isn't at the mercy of the "/sports/**": { ssr: true }
+          // routeRule below (match-details and countries both live under
+          // /sports/**).
+          mode: "client",
+          meta: { robots: "noindex,nofollow" },
+        });
+      }
+    },
+  },
 
   modules: ["@pinia/nuxt", "pinia-plugin-persistedstate/nuxt", "@vueuse/nuxt"],
 
