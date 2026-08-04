@@ -1,97 +1,91 @@
 ---
-name: Naibet Core Design System
+name: BANDA High-Velocity Design System
 colors:
-  surface: '#f7f9fb'
-  surface-dim: '#d8dadc'
-  surface-bright: '#f7f9fb'
-  surface-container-lowest: '#ffffff'
-  surface-container-low: '#f2f4f6'
-  surface-container: '#eceef0'
-  surface-container-high: '#e6e8ea'
-  surface-container-highest: '#e0e3e5'
-  on-surface: '#191c1e'
-  on-surface-variant: '#50434e'
-  inverse-surface: '#2d3133'
-  inverse-on-surface: '#eff1f3'
-  outline: '#82727f'
-  outline-variant: '#d4c1d0'
-  surface-tint: '#923899'
-  primary: '#6f1378'
-  on-primary: '#ffffff'
-  primary-container: '#8a3192'
-  on-primary-container: '#ffb6fe'
-  inverse-primary: '#fea9ff'
-  secondary: '#0e6e08'
-  on-secondary: '#ffffff'
-  secondary-container: '#9cf986'
-  on-secondary-container: '#187411'
-  tertiary: '#364154'
-  on-tertiary: '#ffffff'
-  tertiary-container: '#4d586c'
-  on-tertiary-container: '#c3cee6'
-  error: '#ba1a1a'
-  on-error: '#ffffff'
-  error-container: '#ffdad6'
-  on-error-container: '#93000a'
-  primary-fixed: '#ffd6fb'
-  primary-fixed-dim: '#fea9ff'
-  on-primary-fixed: '#36003d'
-  on-primary-fixed-variant: '#761c7f'
-  secondary-fixed: '#9cf986'
-  secondary-fixed-dim: '#81dc6d'
-  on-secondary-fixed: '#002200'
-  on-secondary-fixed-variant: '#005300'
-  tertiary-fixed: '#d8e3fb'
-  tertiary-fixed-dim: '#bcc7de'
-  on-tertiary-fixed: '#111c2d'
-  on-tertiary-fixed-variant: '#3c475a'
-  background: '#f7f9fb'
-  on-background: '#191c1e'
-  surface-variant: '#e0e3e5'
+  surface: '#1a120a'
+  surface-dim: '#1a120a'
+  surface-bright: '#42372e'
+  surface-container-lowest: '#140d06'
+  surface-container-low: '#231a11'
+  surface-container: '#271e15'
+  surface-container-high: '#32281f'
+  surface-container-highest: '#3d3329'
+  on-surface: '#f1dfd1'
+  on-surface-variant: '#dbc2ad'
+  inverse-surface: '#f1dfd1'
+  inverse-on-surface: '#392e25'
+  outline: '#a28d7a'
+  outline-variant: '#544434'
+  surface-tint: '#ffb86f'
+  primary: '#ffbc77'
+  on-primary: '#4a2800'
+  primary-container: '#fa9602'
+  on-primary-container: '#613700'
+  inverse-primary: '#8a5100'
+  secondary: '#edbca6'
+  on-secondary: '#47291a'
+  secondary-container: '#613e2e'
+  on-secondary-container: '#dbab95'
+  tertiary: '#c9c9c9'
+  on-tertiary: '#2f3131'
+  tertiary-container: '#adaeae'
+  on-tertiary-container: '#404242'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#ffdcbd'
+  primary-fixed-dim: '#ffb86f'
+  on-primary-fixed: '#2c1600'
+  on-primary-fixed-variant: '#693c00'
+  secondary-fixed: '#ffdbcc'
+  secondary-fixed-dim: '#edbca6'
+  on-secondary-fixed: '#2f1407'
+  on-secondary-fixed-variant: '#613e2e'
+  tertiary-fixed: '#e2e2e2'
+  tertiary-fixed-dim: '#c6c6c7'
+  on-tertiary-fixed: '#1a1c1c'
+  on-tertiary-fixed-variant: '#454747'
+  background: '#1a120a'
+  on-background: '#f1dfd1'
+  surface-variant: '#3d3329'
 typography:
-  display-lg:
-    fontFamily: Montserrat
-    fontSize: 48px
-    fontWeight: '700'
-    lineHeight: 56px
-    letterSpacing: -0.02em
-  headline-lg:
-    fontFamily: Montserrat
+  h1:
+    fontFamily: Poppins
     fontSize: 32px
     fontWeight: '700'
     lineHeight: 40px
-    letterSpacing: -0.01em
-  headline-lg-mobile:
-    fontFamily: Montserrat
+    letterSpacing: -0.02em
+  h1-mobile:
+    fontFamily: Poppins
     fontSize: 24px
     fontWeight: '700'
     lineHeight: 32px
-  headline-md:
-    fontFamily: Montserrat
+  h2:
+    fontFamily: Poppins
     fontSize: 20px
-    fontWeight: '600'
+    fontWeight: '700'
     lineHeight: 28px
-  body-lg:
-    fontFamily: Inter
-    fontSize: 18px
-    fontWeight: '400'
-    lineHeight: 28px
-  body-md:
-    fontFamily: Inter
+  odds-display:
+    fontFamily: Poppins
     fontSize: 16px
-    fontWeight: '400'
-    lineHeight: 24px
-  label-md:
-    fontFamily: Inter
-    fontSize: 14px
     fontWeight: '600'
     lineHeight: 20px
-    letterSpacing: 0.05em
-  label-sm:
-    fontFamily: Inter
+  body-main:
+    fontFamily: Poppins
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+  data-compact:
+    fontFamily: Poppins
     fontSize: 12px
     fontWeight: '500'
     lineHeight: 16px
+  label-caps:
+    fontFamily: Poppins
+    fontSize: 10px
+    fontWeight: '700'
+    lineHeight: 12px
+    letterSpacing: 0.05em
 rounded:
   sm: 0.125rem
   DEFAULT: 0.25rem
@@ -100,86 +94,90 @@ rounded:
   xl: 0.75rem
   full: 9999px
 spacing:
-  base: 4px
+  unit: 4px
   xs: 4px
   sm: 8px
-  md: 16px
-  lg: 24px
-  xl: 48px
-  container-max: 1280px
-  gutter: 24px
+  md: 12px
+  lg: 16px
+  xl: 24px
+  gutter: 8px
+  margin-mobile: 12px
+  margin-desktop: 24px
 ---
 
 ## Brand & Style
+This design system is engineered for high-stakes, high-density environments where data speed and visual clarity are paramount. The brand personality is aggressive, prestigious, and energetic, blending the luxury of "Gold" with the grounded intensity of "Coffee." 
 
-This design system is built on the principles of **Modern Corporate Precision**. It bridges the high-stakes energy of professional betting with the sobriety and security of a fintech platform. The aesthetic is clean, high-contrast, and "premium-utilitarian," prioritizing clarity of information and structural integrity.
+The design style is **Modern Corporate with High-Density** influences. It prioritizes information density to ensure users can view maximum betting markets and casino options without excessive scrolling. The aesthetic uses sharp hierarchy, subtle depth, and vibrant status indicators to create a "Live" atmosphere that feels responsive and urgent. 
 
-The brand personality is authoritative yet vibrant. By balancing a deep, saturated purple with a high-visibility lime green against a backdrop of sophisticated charcoals, the UI communicates a sense of "elite performance." The visual mood is focused and reliable, designed to instill confidence during complex transactional workflows.
+Targeting a high-frequency user base, the UI evokes a sense of professional-grade tooling—efficient, reliable, and premium.
 
 ## Colors
+The palette is centered around the "BANDA Gold" (#fa9602), used strictly for primary actions, critical highlights, and winning states. "Coffee" (#2d1306) serves as the core structural color, providing a sophisticated alternative to standard blacks or grays.
 
-The color palette is anchored by the signature **Naibet Purple** (Primary) and **Action Green** (Secondary). 
+**Dark Mode (Default):** Uses a deep "Coffee-Black" for backgrounds to reduce eye strain during long sessions, with surfaces layered in lighter Coffee tones.
+**Light Mode:** Flips the hierarchy using White and Light Gray surfaces, maintaining Coffee and Gold for typography and brand accents.
 
-- **Primary Purple (#8A3192):** Used for primary brand moments, active states, and key navigational elements.
-- **Secondary Green (#63BC52):** Reserved for "Success" states, confirmation actions, and positive financial indicators.
-- **Deep Charcoal (#121826):** Serves as the high-contrast foundation for text and structural borders, providing a premium feel.
-- **Slate Grays (#64748B):** Utilized for secondary information, metadata, and iconography to maintain a balanced hierarchy.
-- **Off-White (#F8FAFC):** The primary background surface, ensuring the interface feels airy and modern rather than clinical.
+**Functional Accents:**
+- **Live:** A high-vibrancy Red for active match states.
+- **Win/Up:** A bright Emerald Green for successful bets or increasing odds.
+- **Loss/Down:** A muted Rose for decreasing odds or settled losses.
 
 ## Typography
+The typography system utilizes **Poppins** across all roles to maintain a clean, modern geometric feel. 
 
-The typographic system utilizes a dual-font approach to maximize readability while maintaining a distinctive character.
-
-**Montserrat** is used for headings and display text. Its geometric precision and wide stance lend an air of confidence and modernity to the platform's architecture.
-
-**Inter** is the workhorse for all body copy, inputs, and data tables. It is chosen for its exceptional legibility at small sizes and its neutral, systematic feel which is essential for dense financial or betting data.
-
-Key hierarchy is achieved through weight variance—using SemiBold and Bold for "Actionable" items and Medium for "Instructional" content.
+- **Headings:** Bold weights (700) are used for headers and section titles to provide a strong anchor for the eye amidst dense data.
+- **Odds & Data:** Medium weights (500/600) are applied to betting odds and prices. This ensures legibility at small sizes while distinguishing interactive data from static labels.
+- **High Density:** Line heights are kept tight (1.2x to 1.4x) to facilitate the "packed" layout requirement. 
+- **Caps:** Small uppercase labels are used for secondary metadata (e.g., "MATCH TIME", "MARKET TYPE") to save vertical space.
 
 ## Layout & Spacing
+This design system employs a **High-Density Fluid Grid**. The base spacing unit is 4px, allowing for granular control over tight data tables and grid layouts.
 
-This design system employs a **12-column fluid grid** for desktop and a **4-column grid** for mobile. The layout philosophy is centered on "Information Density Control."
-
-- **Desktop:** 12 columns, 24px gutters, and 48px side margins. Content is housed in a centered container with a max-width of 1280px to maintain readability on ultra-wide monitors.
-- **Mobile:** 4 columns, 16px gutters, and 16px side margins. 
-- **Spacing Scale:** A strict 8px linear scale is used for all internal component spacing (padding/margins) to ensure mathematical harmony and visual rhythm. Use 4px for tight groupings like icon-and-label pairs.
+- **Desktop:** 12-column grid with narrow 8px gutters to maximize horizontal real estate for side-by-side market views.
+- **Mobile:** 4-column grid with 12px margins. 
+- **Density Rules:** Standard padding for betting "cells" is 8px (sm) horizontally and 4px (xs) vertically. This allows more markets to be visible above the fold. 
+- **Reflow:** In desktop view, the "Bet Slip" is pinned to the right as a persistent sidebar, while the left sidebar handles navigation.
 
 ## Elevation & Depth
+In this high-density environment, depth is primarily conveyed through **Tonal Layering** rather than heavy shadows, to prevent the UI from feeling cluttered.
 
-To maintain a professional and "flat-plus" aesthetic, depth is conveyed through **Tonal Layers** and **Micro-Shadows**.
-
-1.  **Level 0 (Background):** #F8FAFC (Off-White).
-2.  **Level 1 (Cards/Containers):** Pure White (#FFFFFF) with a 1px border in #E2E8F0. No shadow.
-3.  **Level 2 (Hover/Active):** Pure White with a "Soft Slate" shadow: `0px 4px 12px rgba(15, 23, 42, 0.08)`.
-4.  **Level 3 (Modals/Popovers):** Pure White with a pronounced "Elevated" shadow: `0px 12px 32px rgba(15, 23, 42, 0.12)`.
-
-This system avoids heavy blurs or skeuomorphism, relying instead on crisp lines and subtle value shifts to define hierarchy.
+- **Level 0 (Background):** Deepest Coffee tone.
+- **Level 1 (Cards/Containers):** Lighter Coffee surface with a 1px inner stroke (low opacity white) to define edges.
+- **Level 2 (Odds/Buttons):** Interactive elements use a subtle gradient or a slightly lifted background color.
+- **Focus/Active:** Gold shadows are reserved exclusively for "Win" celebrations or primary call-to-action focus states.
+- **Interactions:** Use a 2px elevation shift (subtle drop shadow) only on hover for clickable market cells.
 
 ## Shapes
+Following the **ROUND_FOUR** (Soft) logic, the shape language uses a conservative corner radius to maximize internal space for text.
 
-The design system uses a **Soft (0.25rem / 4px)** base roundedness. 
+- **Standard Elements (Buttons, Inputs):** 4px (0.25rem) radius.
+- **Containers (Cards, Modals):** 8px (0.5rem) radius.
+- **Small Elements (Tags, Badges):** 2px or 4px radius depending on context.
 
-This specific radius provides a "professional-modern" feel—it is more approachable than sharp 90-degree corners but avoids the playfulness of fully rounded UI. 
-
-- **Standard Elements (Inputs, Buttons, Cards):** 4px radius.
-- **Large Elements (Modals, Large Sections):** 8px radius (`rounded-lg`).
-- **Interactive Indicators (Pills, Badges):** Full roundedness (999px) for status chips.
+The 4px radius strikes a balance between professional rigidity and modern approachability, ensuring that table cells and grids align cleanly without excessive "dead air" in the corners.
 
 ## Components
 
 ### Buttons
-- **Primary:** Solid #8A3192 (Purple) with White text. Bold weight.
-- **Secondary:** Outlined 1px #8A3192 with Purple text.
-- **Success/Bet:** Solid #63BC52 (Green) with Deep Charcoal (#121826) text for maximum legibility and contrast during "win" states.
+- **Primary:** Gold background with Coffee text. Heavy bold weight.
+- **Secondary:** Coffee background with 1px Gold border.
+- **Ghost:** Transparent background with White or Gold text for utility actions.
 
-### Input Fields
-- **Default:** White background, 1px #CBD5E1 border, 4px corner radius.
-- **Focus:** 1px #8A3192 border with a subtle 2px Purple glow at 10% opacity.
-- **Labels:** Inter Medium, 12px, #64748B (Slate Gray).
+### Market Cells (Odds)
+- **State - Neutral:** Surface color background, White text for odds.
+- **State - Selected:** Gold background, Coffee text.
+- **State - Up/Down:** Brief flash of Green/Red background when odds change.
 
-### Cards & Lists
-- Cards use a 1px #E2E8F0 border. List items should have a 1px bottom border for clear separation in data-heavy views.
-- Active list items (e.g., a selected betting market) use a 4px left-accent bar in Primary Purple.
+### Inputs
+- **Bet Amount:** Compact height (32px), monospace-adjacent numerical entry, Coffee background with White border.
 
 ### Chips & Badges
-- **Status Badges:** Small, uppercase, bold. Use light tinted backgrounds (e.g., 10% Green background for "Won" with 100% Green text).
+- **Live Badge:** Red background, white text, pulsing dot icon.
+- **Sport Category:** Pill-shaped, Coffee background with subtle icon.
+
+### Casino Cards
+- **High-Ratio:** 3:4 aspect ratio cards with minimal internal padding. Titles are overlaid on a bottom-third dark gradient to ensure image-to-edge visibility.
+
+### Tables (Data)
+- **High-Density Rows:** 32px height, alternating row stripes for legibility. No borders between columns, only subtle horizontal dividers.
