@@ -18,9 +18,6 @@ function getAuthHeaders() {
   return { headers, profileSid };
 }
 
-const { initialCategories, providers, categories, getGames, meta } =
-  useCasino();
-
 const HIDDEN_GAMES = ["pari league", "pari jackpot", "haki league", "haki jackpot"];
 function filterHiddenGames(games) {
   if (!games) return [];
@@ -36,37 +33,43 @@ function normalizeGame(game) {
 }
 
 export const useCasinoStore = defineStore("casino-store", {
-  state: () => ({
-    error: null,
-    pending: false,
-    categoryIsPending: false,
-    responseOK: false,
+  // state() is a factory invoked when the store is instantiated (inside a
+  // component/plugin setup), which is a valid context for useRuntimeConfig()
+  // — unlike the previous module-scope `const { categories, ... } = useCasino();`.
+  state: () => {
+    const { initialCategories, providers, categories, meta } = useCasino();
+    return {
+      error: null,
+      pending: false,
+      categoryIsPending: false,
+      responseOK: false,
 
-    casinosGames: [],
+      casinosGames: [],
 
-    casinoCategories: categories,
-    initialCategories: initialCategories,
-    providers: providers,
+      casinoCategories: categories,
+      initialCategories: initialCategories,
+      providers: providers,
 
-    categoriesWithGames: [],
-    categoriesLoading: false,
+      categoriesWithGames: [],
+      categoriesLoading: false,
 
-    activeCategoryGames: [],
-    activeCategoryLoading: false,
+      activeCategoryGames: [],
+      activeCategoryLoading: false,
 
-    selectedCategory: null,
+      selectedCategory: null,
 
-    launchData: null,
-    gameIdToLaunch: null,
-    gameNameToLaunch: null,
-    gameProviderToLaunch: null,
-    gameImageToLaunch: null,
+      launchData: null,
+      gameIdToLaunch: null,
+      gameNameToLaunch: null,
+      gameProviderToLaunch: null,
+      gameImageToLaunch: null,
 
-    meta: meta,
-    isDemo: 0,
+      meta: meta,
+      isDemo: 0,
 
-    searchTerm: "",
-  }),
+      searchTerm: "",
+    };
+  },
 
   getters: {
     searchByName: (state) =>
@@ -80,6 +83,7 @@ export const useCasinoStore = defineStore("casino-store", {
       this.searchTerm = term;
     },
     async getAllCasinos() {
+      const { getGames } = useCasino();
       if (this.selectedCategory.cat_binomen) {
         this.casinosGames = getGames(this.selectedCategory.cat_binomen);
         return;
