@@ -3,7 +3,7 @@ import { useScreenSizes } from "../composables/useScreenSizes";
 
 definePageMeta({
   name: "leagues",
-  layout: "default",
+  layout: false,
 });
 
 useSeoHead({

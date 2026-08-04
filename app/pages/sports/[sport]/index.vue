@@ -4,7 +4,7 @@ import { useSportsStore } from "@/stores/sports";
 
 const route = useRoute();
 
-definePageMeta({ name: "sports", layout: "default" });
+definePageMeta({ name: "sports", layout: false });
 
 const sportName = computed(() =>
   String(route.params.sport || "")

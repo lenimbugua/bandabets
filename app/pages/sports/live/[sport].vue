@@ -10,7 +10,7 @@ import { useNewLiveStore } from "@/stores/new-live";
 
 const route = useRoute();
 
-definePageMeta({ name: "live", layout: "default" });
+definePageMeta({ name: "live", layout: false });
 
 const sportName = computed(() =>
   String(route.params.sport || "")

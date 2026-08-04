@@ -3,7 +3,7 @@ import CategoryPills from "@/components/mobile/CategoryPills.vue";
 
 definePageMeta({
   name: "promotions",
-  layout: "default",
+  layout: false,
 });
 
 useSeoHead({

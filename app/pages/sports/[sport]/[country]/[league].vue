@@ -4,7 +4,7 @@ import { useScreenSizes } from "@/composables/useScreenSizes";
 
 const route = useRoute();
 
-definePageMeta({ name: "country", layout: "default" });
+definePageMeta({ name: "country", layout: false });
 
 const countryName = computed(() =>
   String(route.params.country || "")

@@ -5,7 +5,7 @@
 // page file. This page just supplies the route meta and SEO tags.
 definePageMeta({
   name: "home",
-  layout: "default",
+  layout: false,
 });
 
 useSeoHead({
