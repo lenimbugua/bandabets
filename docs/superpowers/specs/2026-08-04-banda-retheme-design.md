@@ -144,7 +144,7 @@ The old separate gold ramp is folded into BANDA Gold; the `--gold` / `--gold-bri
 --bet-deep:       gold-700
 ```
 
-Place Bet, Join Now, and the betslip orb all move from green to gold. Selected odds cells likewise (`--brand-selected` → gold-500), matching the spec's Market Cells section.
+Place Bet, Join Now, and the betslip orb all move from green to gold. Selected odds cells likewise, matching the spec's Market Cells section — but note those cells use `--primary`/`--primary-foreground`, not `--brand-selected`. Despite its name `--brand-selected` is a brand *button* fill: seven of its nine consumers put near-white text on it, so it is gold-800 (8.86:1), not gold-500 (2.11:1).
 
 ### Surface ladder
 
@@ -158,7 +158,7 @@ Place Bet, Join Now, and the betslip orb all move from green to gold. Selected o
 
 ### Brand aliases
 
-`--brand-bright` → gold-500, `--brand-mid` → gold-600, `--brand-selected` → gold-500, `--brand-dark` → gold-800, `--brand-forest` → coffee-950, `--brand-teal` → coffee-700.
+`--brand-bright` → gold-500, `--brand-mid` → gold-600, `--brand-selected` → gold-800 (dark: it carries near-white text — see above), `--brand-dark` → gold-800, `--brand-forest` → coffee-950, `--brand-teal` → coffee-700.
 
 ### Elevation
 

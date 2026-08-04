@@ -48,7 +48,7 @@ The whole visual system lives in **`app/assets/css/style.css`** (moved from `src
 3. **Bindings** — `@theme` / `@theme inline` expose layers 1–2 as Tailwind utilities. Tailwind's stock ramps are **remapped onto the BANDA palette**, so legacy `bg-gray-800`, `text-blue-600`, `border-amber-400` etc. resolve to design-system colours automatically — `bg-purple-*` and `bg-amber-*` both resolve to gold, `bg-gray-*` to coffee. There is no off-system Tailwind colour.
 4. **Utilities** — composite classes (`elevation-1/2/3`, `accent-bar`, `badge-tint-*`, `bg-gradient-*`, `card-hover-lift`) built from the layers above.
 
-**To retheme the app, edit layer 1 only.** Everything downstream — components, gradients, glows, datepicker, toasts, logos, keyframes — resolves through it. Editing layer 2 changes what a role *means* per theme (e.g. which purple step is `--primary` in dark).
+**To retheme the app, edit layer 1 only.** Everything downstream — components, gradients, glows, datepicker, toasts, logos, keyframes — resolves through it. Editing layer 2 changes what a role *means* per theme (e.g. which gold step is `--primary` in dark).
 Gold-500 `#fa9602` is 2.2:1 on white and must never be light-theme text — see the contrast rules in `docs/superpowers/specs/2026-08-04-banda-retheme-design.md`.
 
 Other conventions:

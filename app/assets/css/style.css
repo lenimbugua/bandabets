@@ -4,8 +4,8 @@
 @plugin "@tailwindcss/typography";
 
 /* ============================================================================
-   NAIBET CORE DESIGN SYSTEM
-   Modern Corporate Precision — see DESIGN.md
+   BANDA CORE DESIGN SYSTEM
+   Warm Coffee & Gold — see DESIGN.md
 
    Four layers, in order. Change a theme by editing layer 1 or 2 ONLY.
 
@@ -41,6 +41,19 @@
   --palette-coffee-900: #1a120a;   /* surface / background */
   --palette-coffee-950: #140d06;   /* surface-container-lowest */
 
+  /* Coffee mid-tones. The spec's surface tokens compress this ramp's
+     midrange — 400/500/600 are all near-black surface fills, so they read
+     as backgrounds, not as text. But Tailwind's neutral steps 400-600 are
+     this codebase's secondary-text idiom (step 400 alone is used as text
+     260 times against 3 background uses), and they need real mid-tones to
+     stay legible. These three are luminance-matched to the pre-BANDA slate
+     ramp so the neutral text scale behaves exactly as it did before the
+     retheme. Layer 3's neutral remap points steps 400/500/600 here; every
+     other step still resolves to the spec surface token above. */
+  --palette-coffee-450: #b39e8d;   /* L .3596 — parity with old slate-400 .3595 */
+  --palette-coffee-550: #82705e;   /* L .1714 — parity with old slate-500 .1706 */
+  --palette-coffee-650: #625140;   /* L .0885 — parity with old slate-600 .0886 */
+
   /* BANDA Gold — brand, primary action, jackpots, selected odds.
      Eight of eleven steps are verbatim spec tokens; 50, 200 and 600 are
      interpolated to keep the ramp evenly spaced. */
@@ -55,6 +68,15 @@
   --palette-gold-800: #693c00;   /* on-primary-fixed-variant */
   --palette-gold-900: #4a2800;   /* on-primary */
   --palette-gold-950: #2c1600;   /* on-primary-fixed */
+
+  /* Gold mid-tone, same reason as coffee-450/550/650. Layer 3 points
+     Tailwind's purple/violet/fuchsia/indigo families at this ramp, and those
+     families' steps 500-600 are used as inline text on white cards. The gold
+     ramp jumps from .2967 luminance at 600 straight to .1129 at 700, so
+     neither step lands where the old purple ramp did. This one is
+     luminance-matched to the pre-BANDA purple-500; step 600 needs no new
+     token because gold-700 is already within .016 of old purple-600. */
+  --palette-gold-650: #9e5b00;   /* L .1475 — parity with old purple-500 .1476 */
 
   /* Emerald — win / odds-up status only. No longer a brand or CTA colour;
      cooled from the old Action Green so it separates from gold on coffee. */
@@ -278,7 +300,10 @@
   --brand-forest: var(--palette-coffee-950);
   --brand-teal: var(--palette-coffee-700);
 
-  --gold-bright: var(--palette-gold-600);
+  /* gold-700, not gold-600: `text-gold-bright` is inline emphasis text in 61
+     places and gold-600 is only 2.84:1 on the light background. gold-700 is
+     6.04:1. Light theme uses gold-700 for anything that carries text. */
+  --gold-bright: var(--palette-gold-700);
   --gold-deep: var(--palette-gold-800);
   --gold-muted: var(--palette-gold-700);
   --bronze: var(--palette-gold-800);
@@ -301,7 +326,7 @@
 /* ============================================================================
    LAYER 3 — BINDINGS
    Semantics and palette become Tailwind utilities.
-   Tailwind's stock ramps are remapped onto the Naibet palette so that legacy
+   Tailwind's stock ramps are remapped onto the BANDA palette so that legacy
    `bg-gray-800` / `text-purple-500` usage stays inside the design system.
    ========================================================================= */
 
@@ -393,18 +418,23 @@
 
 @theme {
   /* ── Palette ramps ──────────────────────────────────────────────────────
-     Tailwind's neutral families all resolve to Charcoal Slate, and the
-     chromatic families to the Naibet ramps. This keeps ~1600 legacy
-     `*-gray-*` / `*-green-*` class usages inside the system for free.   */
+     Tailwind's neutral families all resolve to Coffee, and the chromatic
+     families to the BANDA ramps. This keeps ~1600 legacy `*-gray-*` /
+     `*-green-*` class usages inside the system for free.
 
-  /* Charcoal Slate → slate / gray / zinc / neutral / stone */
+     Steps 400/500/600 of the neutral families point at coffee-450/550/650
+     rather than the same-numbered coffee steps: those are the spec's
+     near-black surface tokens, and these three families' mid steps are
+     overwhelmingly used as secondary *text*. See layer 1.               */
+
+  /* Coffee → slate / gray / zinc / neutral / stone */
   --color-slate-50:  var(--palette-coffee-50);
   --color-slate-100: var(--palette-coffee-100);
   --color-slate-200: var(--palette-coffee-200);
   --color-slate-300: var(--palette-coffee-300);
-  --color-slate-400: var(--palette-coffee-400);
-  --color-slate-500: var(--palette-coffee-500);
-  --color-slate-600: var(--palette-coffee-600);
+  --color-slate-400: var(--palette-coffee-450);
+  --color-slate-500: var(--palette-coffee-550);
+  --color-slate-600: var(--palette-coffee-650);
   --color-slate-700: var(--palette-coffee-700);
   --color-slate-800: var(--palette-coffee-800);
   --color-slate-900: var(--palette-coffee-900);
@@ -414,9 +444,9 @@
   --color-gray-100: var(--palette-coffee-100);
   --color-gray-200: var(--palette-coffee-200);
   --color-gray-300: var(--palette-coffee-300);
-  --color-gray-400: var(--palette-coffee-400);
-  --color-gray-500: var(--palette-coffee-500);
-  --color-gray-600: var(--palette-coffee-600);
+  --color-gray-400: var(--palette-coffee-450);
+  --color-gray-500: var(--palette-coffee-550);
+  --color-gray-600: var(--palette-coffee-650);
   --color-gray-700: var(--palette-coffee-700);
   --color-gray-800: var(--palette-coffee-800);
   --color-gray-900: var(--palette-coffee-900);
@@ -426,9 +456,9 @@
   --color-zinc-100: var(--palette-coffee-100);
   --color-zinc-200: var(--palette-coffee-200);
   --color-zinc-300: var(--palette-coffee-300);
-  --color-zinc-400: var(--palette-coffee-400);
-  --color-zinc-500: var(--palette-coffee-500);
-  --color-zinc-600: var(--palette-coffee-600);
+  --color-zinc-400: var(--palette-coffee-450);
+  --color-zinc-500: var(--palette-coffee-550);
+  --color-zinc-600: var(--palette-coffee-650);
   --color-zinc-700: var(--palette-coffee-700);
   --color-zinc-800: var(--palette-coffee-800);
   --color-zinc-900: var(--palette-coffee-900);
@@ -438,9 +468,9 @@
   --color-neutral-100: var(--palette-coffee-100);
   --color-neutral-200: var(--palette-coffee-200);
   --color-neutral-300: var(--palette-coffee-300);
-  --color-neutral-400: var(--palette-coffee-400);
-  --color-neutral-500: var(--palette-coffee-500);
-  --color-neutral-600: var(--palette-coffee-600);
+  --color-neutral-400: var(--palette-coffee-450);
+  --color-neutral-500: var(--palette-coffee-550);
+  --color-neutral-600: var(--palette-coffee-650);
   --color-neutral-700: var(--palette-coffee-700);
   --color-neutral-800: var(--palette-coffee-800);
   --color-neutral-900: var(--palette-coffee-900);
@@ -450,22 +480,25 @@
   --color-stone-100: var(--palette-coffee-100);
   --color-stone-200: var(--palette-coffee-200);
   --color-stone-300: var(--palette-coffee-300);
-  --color-stone-400: var(--palette-coffee-400);
-  --color-stone-500: var(--palette-coffee-500);
-  --color-stone-600: var(--palette-coffee-600);
+  --color-stone-400: var(--palette-coffee-450);
+  --color-stone-500: var(--palette-coffee-550);
+  --color-stone-600: var(--palette-coffee-650);
   --color-stone-700: var(--palette-coffee-700);
   --color-stone-800: var(--palette-coffee-800);
   --color-stone-900: var(--palette-coffee-900);
   --color-stone-950: var(--palette-coffee-950);
 
-  /* Naibet Purple → purple / violet / fuchsia */
+  /* BANDA Gold → purple / violet / fuchsia. The old brand was purple, so
+     these families carry legacy brand usage; they follow gold now. Steps
+     500/600 point at gold-650/gold-700 rather than gold-500/600 because
+     they are used as inline text on white cards — see layer 1.          */
   --color-purple-50:  var(--palette-gold-50);
   --color-purple-100: var(--palette-gold-100);
   --color-purple-200: var(--palette-gold-200);
   --color-purple-300: var(--palette-gold-300);
   --color-purple-400: var(--palette-gold-400);
-  --color-purple-500: var(--palette-gold-500);
-  --color-purple-600: var(--palette-gold-600);
+  --color-purple-500: var(--palette-gold-650);
+  --color-purple-600: var(--palette-gold-700);
   --color-purple-700: var(--palette-gold-700);
   --color-purple-800: var(--palette-gold-800);
   --color-purple-900: var(--palette-gold-900);
@@ -476,8 +509,8 @@
   --color-violet-200: var(--palette-gold-200);
   --color-violet-300: var(--palette-gold-300);
   --color-violet-400: var(--palette-gold-400);
-  --color-violet-500: var(--palette-gold-500);
-  --color-violet-600: var(--palette-gold-600);
+  --color-violet-500: var(--palette-gold-650);
+  --color-violet-600: var(--palette-gold-700);
   --color-violet-700: var(--palette-gold-700);
   --color-violet-800: var(--palette-gold-800);
   --color-violet-900: var(--palette-gold-900);
@@ -488,14 +521,15 @@
   --color-fuchsia-200: var(--palette-gold-200);
   --color-fuchsia-300: var(--palette-gold-300);
   --color-fuchsia-400: var(--palette-gold-400);
-  --color-fuchsia-500: var(--palette-gold-500);
-  --color-fuchsia-600: var(--palette-gold-600);
+  --color-fuchsia-500: var(--palette-gold-650);
+  --color-fuchsia-600: var(--palette-gold-700);
   --color-fuchsia-700: var(--palette-gold-700);
   --color-fuchsia-800: var(--palette-gold-800);
   --color-fuchsia-900: var(--palette-gold-900);
   --color-fuchsia-950: var(--palette-gold-950);
 
-  /* Action Green → green / emerald / lime / teal */
+  /* Emerald → green / emerald / lime / teal. Status only (win / odds-up);
+     no longer a brand or CTA colour under BANDA.                        */
   --color-green-50:  var(--palette-green-50);
   --color-green-100: var(--palette-green-100);
   --color-green-200: var(--palette-green-200);
@@ -606,9 +640,10 @@
   --color-orange-900: var(--palette-gold-900);
   --color-orange-950: var(--palette-gold-950);
 
-  /* Tertiary Slate-Blue → blue / sky / indigo / cyan.
-     DESIGN.md treats informational as a muted slate-blue, not a bright one —
-     saturated blue fights the purple/green pairing. */
+  /* Tertiary Gray → blue / sky / cyan. BANDA treats informational as a
+     neutral gray, not a chromatic blue: a saturated blue fights the
+     coffee/gold pairing. NOTE: indigo is *not* in this group — it is
+     remapped onto gold below, with purple / violet / fuchsia.           */
   --color-blue-50:  var(--palette-tertiary-50);
   --color-blue-100: var(--palette-tertiary-100);
   --color-blue-200: var(--palette-tertiary-200);
@@ -633,13 +668,16 @@
   --color-sky-900: var(--palette-tertiary-900);
   --color-sky-950: var(--palette-tertiary-900);
 
+  /* BANDA Gold → indigo. Grouped here for file order only; indigo follows
+     the gold ramp exactly like purple / violet / fuchsia above, not the
+     tertiary gray of blue / sky / cyan.                                 */
   --color-indigo-50:  var(--palette-gold-50);
   --color-indigo-100: var(--palette-gold-100);
   --color-indigo-200: var(--palette-gold-200);
   --color-indigo-300: var(--palette-gold-300);
   --color-indigo-400: var(--palette-gold-400);
-  --color-indigo-500: var(--palette-gold-500);
-  --color-indigo-600: var(--palette-gold-600);
+  --color-indigo-500: var(--palette-gold-650);
+  --color-indigo-600: var(--palette-gold-700);
   --color-indigo-700: var(--palette-gold-700);
   --color-indigo-800: var(--palette-gold-800);
   --color-indigo-900: var(--palette-gold-900);
@@ -657,7 +695,7 @@
   --color-cyan-900: var(--palette-tertiary-900);
   --color-cyan-950: var(--palette-tertiary-900);
 
-  /* Tertiary Slate-Blue — semantic alias */
+  /* Tertiary Gray — semantic alias */
   --color-info-50:  var(--palette-tertiary-50);
   --color-info-100: var(--palette-tertiary-100);
   --color-info-200: var(--palette-tertiary-200);
