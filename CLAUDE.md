@@ -4,14 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Siakabet UI — a Vue 3 sports betting and casino web application for the Kenyan market. Built with Vite, managed with pnpm, deployed via Docker/Nginx to GKE (Google Kubernetes Engine) through GitLab CI.
+Naibet UI — a Vue 3 sports betting and casino web application for the Kenyan market, running on **Nuxt 4 with SSR**. Managed with pnpm; infrastructure (Docker/Nginx/GKE/GitLab CI) is owned by another team — see `docs/INFRA-HANDOFF.md` for what changed for them.
 
 ## Commands
 
 - **Install dependencies:** `pnpm install`
 - **Dev server:** `pnpm dev` (runs on port 5079)
-- **Production build:** `pnpm run build`
+- **Production build:** `pnpm build` (outputs to `.output/`)
 - **Preview build:** `pnpm preview`
+- **Start production server:** `node .output/server/index.mjs` (port 3000, `PORT` overrides)
 - **Lint:** `npx eslint src/`
 
 No test framework is configured.
@@ -19,23 +20,24 @@ No test framework is configured.
 ## Architecture
 
 ### Tech Stack
-- **Vue 3** (Composition API with `<script setup>`) + **Vue Router** + **Pinia** (with persisted state)
-- **Vite** with auto-imports (`unplugin-auto-import`): Vue APIs (`ref`, `computed`, `watch`, etc.), `axios`, `storeToRefs`, and all composables from `./composables/**` are available globally without imports
-- **unplugin-vue-components**: components are auto-registered (no manual imports needed in templates)
-- **Tailwind CSS 4** (CSS-first config in `src/style.css`, no `tailwind.config.js`) with dark mode via a `@custom-variant` on `[data-theme="dark"]`, plus shadcn-vue (JS variant, no TypeScript)
-- **@unhead/vue** for dynamic SEO meta/head management per route
+- **Nuxt 4** (Vue 3 Composition API with `<script setup>`) + **Vue Router** (file-based, via Nuxt pages) + **Pinia 4** via `@pinia/nuxt` (with persisted state via `pinia-plugin-persistedstate/nuxt`)
+- Nuxt provides auto-imports natively: Vue APIs (`ref`, `computed`, `watch`, …), Nuxt composables (`useRuntimeConfig`, `useHead`, …), and everything under `app/composables/**` and `app/stores/**` are available globally without imports. The old `unplugin-auto-import`, `unplugin-vue-components`, and `@unhead/vue` packages are gone — Nuxt's built-in component auto-registration and `useHead`/`useSeoMeta` replace them.
+- **Tailwind CSS 4** (CSS-first config in `app/assets/css/style.css`, no `tailwind.config.js`) with dark mode via a `@custom-variant` on `[data-theme="dark"]`, plus shadcn-vue (JS variant, no TypeScript)
 
 ### Path Alias
-`@` maps to `./src` (configured in `vite.config.js`)
+`@` maps to `./app` (Nuxt's `srcDir`, configured implicitly by Nuxt 4's `app/` convention — see `nuxt.config.js`). The legacy `src/` tree is Phase 2+ leftovers, not part of the build; nothing under `app/` may import from it.
 
 ### Key Directories
 
-- **`src/stores/`** — Pinia stores (~50 stores). Major ones: `login.js`, `betslip.js`, `sports.js`, `casino.js`, `matches.js`, `live-matches.js`, `modal.js`. Many use `pinia-plugin-persistedstate`.
-- **`src/composables/`** — Reusable composition functions (~60+). Auto-imported by Vite, so they're usable anywhere without explicit imports. Key ones: `useBetslip.js`, `useTax.js`, `useThemeSwitch.js`, `useModalTypes.js`, `useMixpanel.js`.
-- **`src/services/API.js`** — Axios factory that creates instances from env-configured base URLs. Multiple backend services: matches, auth, bet, casino, virtual, affiliate, CMS, kiron-lite.
-- **`src/router/index.js`** — All routes defined in a single file. Uses `meta.requiresAuth` for auth gating (redirects to login modal, not a page). Route `afterEach` handles dynamic SEO meta and JSON-LD schemas.
-- **`src/views/`** — Page-level components. Some routes use layout wrappers (`WithSibarAndBetslip`, `CasinoLayout`, `CrashIndex`, `TheAuth`).
-- **`src/components/ui/`** — shadcn-vue components (button, toast). Added via `npx shadcn-vue@latest add <component>`.
+- **`app/pages/`** — File-based routing. Nuxt maps file paths to routes automatically (e.g. `app/pages/sports/[sport].vue` → `/sports/:sport`, `app/pages/sports/[sport]/[country]/[league].vue` → `/sports/:sport/:country/:league`). Dynamic route names not covered by real page files (Phase 2 backlog) are registered via the `pages:extend` hook in `nuxt.config.js`, which maps them onto `app/components/PhaseTwoPlaceholder.vue`.
+- **`app/layouts/`** — Layout wrappers applied via `definePageMeta({ layout: ... })` or Nuxt's default-layout convention (`default.vue`), replacing the old route-wrapper components (`WithSibarAndBetslip`, `CasinoLayout`, `CrashIndex`, `TheAuth`).
+- **`app/stores/`** — Pinia stores (~50 stores), loaded via `@pinia/nuxt`'s `storesDirs`. Major ones: `login.js`, `betslip.js`, `sports.js`, `casino.js`, `matches.js`, `live-matches.js`, `modal.js`. Persisted stores default to `localStorage`; `login.js` explicitly overrides to a cookie so the server can read the session.
+- **`app/composables/`** — Reusable composition functions (~60+), auto-imported by Nuxt. Key ones: `useBetslip.js`, `useTax.js`, `useThemeSwitch.js`, `useModalTypes.js`, `useMixpanel.js`, `useSeoHead.js` (per-page SEO/JSON-LD).
+- **`app/services/API.js`** — Axios factory that creates instances from `useRuntimeConfig().public`-sourced base URLs (was `import.meta.env.VITE_*`). Multiple backend services: matches, auth, bet, casino, virtual, affiliate, CMS, kiron-lite.
+- **`app/middleware/`** — Nuxt route middleware (e.g. `tracking.global.js`). Distinct from `server/middleware/`, which runs on every server request (Nitro).
+- **`server/`** — Nitro server code: `server/routes/version.json.js` (health check) and `server/middleware/phase2-match-details-noindex.js` (see `docs/PHASE-2-NOTES.md` for a critical caveat about that file).
+- **`app/components/ui/`** — shadcn-vue components (button, toast). Added via `npx shadcn-vue@latest add <component>`.
+- **`nuxt.config.js`** — `runtimeConfig.public` replaces `import.meta.env.VITE_*` (all keys renamed `VITE_*` → `NUXT_PUBLIC_*`, read at server start, not build time); `routeRules` sets per-route SSR/prerender behavior and noindex headers for unported Phase 2 pages.
 
 ### Design System
 
@@ -55,20 +57,17 @@ Other conventions:
 - Prefer semantic tokens (`bg-card`, `text-muted-foreground`, `border-border`) over palette classes in new components.
 
 ### Environment Variables
-All prefixed with `VITE_`. The `.env` file is committed (not gitignored) and contains real dev/prod API URLs. For Docker production builds, `.env.production` uses placeholder constants that get replaced at runtime by `docker/config/app/entrypoint.sh` via `sed`.
+All prefixed with `NUXT_PUBLIC_` and exposed via `runtimeConfig.public` in `nuxt.config.js` (renamed 1:1 from the old `VITE_*` names, same values). Nuxt reads them at **server start**, not build time, so no `sed` substitution step is needed anymore. `.env` and `.env.example` are committed (not gitignored). See `docs/INFRA-HANDOFF.md` for the full rename table.
 
-Key env vars: `VITE_MATCHES_URL`, `VITE_AUTH_URL`, `VITE_BET_URL`, `VITE_CASINO_URL`, `VITE_VIRTUAL_URL`, `VITE_APP_VERSION`.
+Key env vars: `NUXT_PUBLIC_MATCHES_URL`, `NUXT_PUBLIC_AUTH_URL`, `NUXT_PUBLIC_BET_URL`, `NUXT_PUBLIC_CASINO_URL`, `NUXT_PUBLIC_VIRTUAL_URL`, `NUXT_PUBLIC_APP_VERSION`.
 
 ### Deployment
-- **GitLab CI** (`.gitlab-ci.yml`): two stages — `build-and-push` (Docker image to GCP Artifact Registry) and `deploy` (Helm to GKE)
-- **Branches:** `main` → production, `devel` → development
-- **Docker** (`docker/Dockerfile`): multi-stage build (Node + pnpm → Nginx Alpine). `APP_VERSION` passed as build arg.
-- **Helm chart** lives in `siakabet-ui/` directory
+The app now runs as a Node server, not a static bundle — see `docs/INFRA-HANDOFF.md` for the full before/after. Infrastructure (Docker/Nginx/GKE/GitLab CI/Helm) is owned by another team and out of scope for this repo's application code; that handoff doc is the interface between this codebase and their config.
 
 ### Conventions
 - JavaScript only (no TypeScript) — `components.json` confirms `"typescript": false`
 - ESLint with `vue3-recommended` + Prettier
 - `vue/multi-word-component-names` rule is disabled
 - Production builds drop `console` and `debugger` statements via esbuild
-- Custom Vite plugin serves `/version.json` for app version checking
-- Mixpanel analytics integrated as a Vue plugin
+- `server/routes/version.json.js` (a Nitro server route) serves `/version.json` for app version checking
+- Mixpanel analytics integrated as a `.client` Nuxt plugin

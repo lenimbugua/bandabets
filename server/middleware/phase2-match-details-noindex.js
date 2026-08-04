@@ -1,3 +1,18 @@
+// ============================================================================
+// REMOVE THIS FILE WHEN PHASE 2 SHIPS THE REAL MATCH-DETAILS PAGE.
+//
+// Unlike the routeRules half of the Phase-1 placeholder scaffold (in
+// nuxt.config.js), this middleware matches by URL SHAPE (the regex below),
+// NOT by membership in the phase2Placeholders array. Deleting the
+// "match-details" entry from that array does NOT stop this file from
+// firing. If Phase 2 ports the real page to this same URL shape
+// (/sports/:sport/:country/:league/:matchSlug-:id) and this file is still
+// present, it will keep slapping X-Robots-Tag: noindex, nofollow on the
+// real, live match-details page — silently, with no error — forever.
+// Delete this file (or gate it behind a condition that is provably false
+// once the real page exists) as part of that Phase 2 work.
+// ============================================================================
+//
 // Nitro global middleware — exists solely because ONE Phase-1 placeholder
 // route (see nuxt.config.js's phase2Placeholders) can't safely get its
 // X-Robots-Tag header from `routeRules` the way the other 27 do.
