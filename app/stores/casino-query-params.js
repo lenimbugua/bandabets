@@ -1,20 +1,28 @@
 
 import { useScreenSizes } from "../composables/useScreenSizes";
 
-const { isSmallScreen } = useScreenSizes();
-
 export const useCasinoQueryParamsStore = defineStore(
   "casino-query-params-store",
   {
-    state: () => ({
-      category_id: "",
-      provider_id: "",
-      filter: "",
-      page: "1",
-      resource: "games",
-      mode: "1",
-      platform: isSmallScreen.value ? "mobile" : "desktop",
-    }),
+    // useScreenSizes() must be called here, inside the state factory, not at
+    // module scope: a module-scope call runs once at import time (before
+    // useNuxtApp() has a Nuxt instance to attach to, and before
+    // app/plugins/ssr-width.js has run), and on the server it would be
+    // shared/stale across every request. The state factory runs per store
+    // instance (per request on the server), so it's a valid place to call it.
+    state: () => {
+      const { isSmallScreen } = useScreenSizes();
+
+      return {
+        category_id: "",
+        provider_id: "",
+        filter: "",
+        page: "1",
+        resource: "games",
+        mode: "1",
+        platform: isSmallScreen.value ? "mobile" : "desktop",
+      };
+    },
 
     getters: {
       getParams: (state) => {
@@ -33,6 +41,8 @@ export const useCasinoQueryParamsStore = defineStore(
     actions: {
       /** ---! Start set params section ---! */
       resetToDefaults() {
+        const { isSmallScreen } = useScreenSizes();
+
         this.category_id = "";
         this.provider_id = "";
         this.filter = "";
