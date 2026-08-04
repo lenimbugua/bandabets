@@ -167,7 +167,12 @@ sed -i '' 's/--palette-slate-/--palette-coffee-/g; s/--palette-purple-/--palette
 cd /Users/leonardmbugua/Desktop/bandabet
 grep -c 'palette-slate\|palette-purple' app/assets/css/style.css   # expect 0
 grep -c 'palette-coffee' app/assets/css/style.css                  # expect 99
-grep -c 'palette-gold' app/assets/css/style.css                    # expect 131  (74 former purple + 57 existing)
+grep -c 'palette-gold' app/assets/css/style.css                    # expect 120
+# 120 = 57 existing gold occurrences (its 11 declarations are rewritten in
+# place, not added to) + 63 renamed purple references. The purple family had
+# 74 occurrences, but Step 3 deletes its 11 declaration lines outright, so
+# only its 63 var() references survive to be renamed.
+grep -c '^\s*--palette-gold-[0-9]*:' app/assets/css/style.css      # expect 11 — one gold ramp, no duplicate declarations
 ```
 
 Then confirm every referenced palette variable is actually declared — this catches a step referenced by layer 3 but missing from a rewritten ramp:
