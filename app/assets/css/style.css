@@ -210,7 +210,7 @@
 
 /* ── Light theme ─────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --background: var(--palette-coffee-50);
+  --background: #faf7f4;
   --foreground: var(--palette-coffee-900);
 
   --card: var(--palette-white);
@@ -219,75 +219,78 @@
   --popover: var(--palette-white);
   --popover-foreground: var(--palette-coffee-900);
 
-  --primary: var(--palette-gold-600);
+  /* Gold-500 is 2.2:1 on white — unusable as text. Light uses gold-700
+     for anything that carries or outlines text. */
+  --primary: var(--palette-gold-700);
   --primary-foreground: var(--palette-white);
 
-  --secondary: var(--palette-green-400);
-  --secondary-foreground: var(--palette-coffee-900);
+  --secondary: #edbca6;
+  --secondary-foreground: #47291a;
 
-  --tertiary: var(--palette-tertiary-700);
+  --tertiary: var(--palette-tertiary-800);
   --tertiary-foreground: var(--palette-white);
 
-  --muted: var(--palette-coffee-100);
-  --muted-foreground: var(--palette-coffee-500);
+  --muted: #f3ede7;
+  --muted-foreground: var(--palette-coffee-400);
 
-  --accent: #f6eef8;
+  --accent: #f7ede2;
   --accent-foreground: var(--foreground);
 
   --destructive: var(--palette-red-600);
   --destructive-foreground: var(--palette-white);
 
-  /* Text-legible variants — Action Green is too light to read on off-white */
+  /* Text-legible variants — the dark-theme status colours are too light
+     to read on off-white */
   --success: var(--palette-green-800);
   --warning: var(--palette-gold-700);
 
   --border: var(--palette-coffee-200);
   --input: var(--palette-white);
-  --ring: var(--palette-gold-600);
+  --ring: var(--palette-gold-700);
 
   --gold: var(--palette-gold-700);
   --gold-foreground: var(--palette-white);
   --emerald: var(--palette-green-800);
-  --dark-card: var(--palette-coffee-100);
+  --dark-card: #f3ede7;
 
-  /* Bet — same brand green in both themes so the CTA never shifts hue;
-     only the hover deepens rather than lifts, to read against light. */
-  --bet: var(--palette-green-400);
-  --bet-foreground: var(--palette-coffee-900);
-  --bet-hover: var(--palette-green-500);
-  --bet-bright: var(--palette-green-500);
-  --bet-deep: var(--palette-green-700);
+  /* Bet — same gold fill and same dark text in both themes so the CTA
+     never shifts hue; only the hover deepens rather than lifts. */
+  --bet: var(--palette-gold-500);
+  --bet-foreground: var(--palette-gold-900);
+  --bet-hover: var(--palette-gold-600);
+  --bet-bright: var(--palette-gold-600);
+  --bet-deep: var(--palette-gold-800);
 
-  --surface-deepest: var(--palette-coffee-200);
-  --surface-sunken: var(--palette-coffee-100);
+  --surface-deepest: #e8ddd2;
+  --surface-sunken: #f3ede7;
   --surface-elevated: var(--palette-white);
-  --surface-interactive: var(--palette-coffee-100);
-  --surface-active: var(--palette-coffee-200);
+  --surface-interactive: #f3ede7;
+  --surface-active: #e8ddd2;
 
-  --brand-bright: var(--palette-gold-600);
+  --brand-bright: var(--palette-gold-700);
   --brand-dark: var(--palette-gold-900);
-  --brand-selected: var(--palette-gold-700);
-  --brand-mid: var(--palette-gold-600);
-  --brand-forest: var(--palette-gold-950);
-  --brand-teal: var(--palette-gold-800);
+  --brand-selected: var(--palette-gold-500);
+  --brand-mid: var(--palette-gold-700);
+  --brand-forest: var(--palette-coffee-950);
+  --brand-teal: var(--palette-coffee-700);
 
   --gold-bright: var(--palette-gold-600);
   --gold-deep: var(--palette-gold-800);
   --gold-muted: var(--palette-gold-700);
   --bronze: var(--palette-gold-800);
 
-  --border-subtle: #eef2f7;
+  --border-subtle: #f0e7dd;
   --border-strong: var(--palette-coffee-300);
   --border-darkest: var(--palette-coffee-400);
 
-  --text-muted-alt: var(--palette-coffee-500);
-  --text-subtle: var(--palette-coffee-700);
+  --text-muted-alt: var(--palette-coffee-400);
+  --text-subtle: var(--palette-coffee-500);
 
-  /* Elevation — light uses a slate umbra, "Soft Slate" shadows */
-  --elevation-umbra: 15 23 42;
-  --elevation-alpha-1: 0.04;
-  --elevation-alpha-2: 0.08;
-  --elevation-alpha-3: 0.12;
+  /* Elevation — light uses a coffee umbra so shadows stay in-family */
+  --elevation-umbra: 45 19 6;
+  --elevation-alpha-1: 0.05;
+  --elevation-alpha-2: 0.10;
+  --elevation-alpha-3: 0.14;
 }
 
 
