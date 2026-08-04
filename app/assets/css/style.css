@@ -175,7 +175,11 @@
   /* Brand ramp aliases */
   --brand-bright: var(--palette-gold-500);
   --brand-dark: var(--palette-gold-800);
-  --brand-selected: var(--palette-gold-500);
+  /* Not the selected-odds token despite the name — real selected odds use
+     bg-primary/text-primary-foreground. Its nine consumers are brand buttons,
+     seven of which put near-white text on it, so it must stay dark: gold-500
+     would be 2.11:1, gold-800 is 8.86:1. */
+  --brand-selected: var(--palette-gold-800);
   --brand-mid: var(--palette-gold-600);
   --brand-forest: var(--palette-coffee-950);
   --brand-teal: var(--palette-coffee-700);
@@ -269,7 +273,7 @@
 
   --brand-bright: var(--palette-gold-700);
   --brand-dark: var(--palette-gold-900);
-  --brand-selected: var(--palette-gold-500);
+  --brand-selected: var(--palette-gold-800);
   --brand-mid: var(--palette-gold-700);
   --brand-forest: var(--palette-coffee-950);
   --brand-teal: var(--palette-coffee-700);
