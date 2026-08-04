@@ -18,9 +18,16 @@ const sportName = computed(() =>
     .replace(/\b\w/g, (c) => c.toUpperCase()),
 );
 
+const { getSportMeta } = useSportMeta();
+const sportMeta = computed(() => getSportMeta(route.params.sport));
+
 useSeoHead({
-  title: `Live ${sportName.value} Betting – Real-Time Odds & Matches | Naibet`,
-  description: `Follow live ${sportName.value} games and place in-play bets with dynamic odds. Experience real-time sports betting excitement on Naibet.`,
+  title:
+    sportMeta.value?.title ??
+    `Live ${sportName.value} Betting – Real-Time Odds & Matches | Naibet`,
+  description:
+    sportMeta.value?.description ??
+    `Follow live ${sportName.value} games and place in-play bets with dynamic odds. Experience real-time sports betting excitement on Naibet.`,
 });
 
 const { pollLiveMatches } = useNewLiveStore();

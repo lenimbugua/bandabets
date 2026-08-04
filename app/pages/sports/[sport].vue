@@ -12,9 +12,16 @@ const sportName = computed(() =>
     .replace(/\b\w/g, (c) => c.toUpperCase()),
 );
 
+const { getSportMeta } = useSportMeta();
+const sportMeta = computed(() => getSportMeta(route.params.sport));
+
 useSeoHead({
-  title: `${sportName.value} Betting in Kenya – Odds & Live Markets | Naibet`,
-  description: `Bet on ${sportName.value} at Naibet Kenya. Competitive odds, live markets and instant M-Pesa deposits.`,
+  title:
+    sportMeta.value?.title ??
+    `${sportName.value} Betting in Kenya – Odds & Live Markets | Naibet`,
+  description:
+    sportMeta.value?.description ??
+    `Bet on ${sportName.value} at Naibet Kenya. Competitive odds, live markets and instant M-Pesa deposits.`,
 });
 
 const { viewToDisplay } = toRefs(useSportsStore());

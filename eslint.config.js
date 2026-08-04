@@ -1,24 +1,22 @@
-import js from "@eslint/js";
-import pluginVue from "eslint-plugin-vue";
 import prettierConfig from "eslint-config-prettier";
-import globals from "globals";
+// @nuxt/eslint (nuxt.config.js `modules`) generates this file via `nuxt
+// prepare`/`nuxt dev`/`nuxt build`. It carries the full set of Nuxt/Vue
+// auto-import globals (definePageMeta, useSeoHead, defineStore,
+// storeToRefs, useRuntimeConfig, sendRedirect, defineEventHandler, ...) so
+// ESLint stops flagging every auto-import as `no-undef`. It also includes
+// Nuxt's own recommended Vue rule set, which we layer our project rules on
+// top of below.
+import { withNuxt } from "./.nuxt/eslint.config.mjs";
 
-export default [
+export default withNuxt(
   {
-    ignores: ["dist/**", "node_modules/**", "siakabet-ui/**", "docker/**"],
+    // `src/**` is legacy pre-Nuxt code being ported/deleted through Phase 2
+    // (see docs/superpowers/plans/2026-08-04-nuxt-migration-phase-2.md).
+    // Remove this ignore in Batch G when `src/` is deleted entirely.
+    ignores: ["dist/**", "node_modules/**", "siakabet-ui/**", "docker/**", "src/**"],
   },
-  js.configs.recommended,
-  ...pluginVue.configs["flat/recommended"],
   prettierConfig,
   {
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
     rules: {
       "vue/no-unused-vars": "error",
       "vue/multi-word-component-names": "off",
@@ -33,4 +31,4 @@ export default [
       ],
     },
   },
-];
+);

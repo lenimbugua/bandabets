@@ -172,7 +172,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@pinia/nuxt", "pinia-plugin-persistedstate/nuxt", "@vueuse/nuxt"],
+  modules: [
+    "@pinia/nuxt",
+    "pinia-plugin-persistedstate/nuxt",
+    "@vueuse/nuxt",
+    "@nuxt/eslint",
+  ],
 
   pinia: {
     storesDirs: ["./app/stores/**"],
@@ -199,6 +204,63 @@ export default defineNuxtConfig({
     // generated above: ssr:false where applicable plus an X-Robots-Tag
     // noindex header on all of them. See phase2NoindexRouteRules.
     ...phase2NoindexRouteRules,
+
+    // --- Batch 0.2: restore the baseline redirects -------------------------
+    // Restored from the deleted baseline router
+    // (`git show 81ae85f:src/router/index.js:566-612`). The baseline
+    // comment there said the authoritative 301s lived in
+    // docker/config/app/nginx/conf.d/default.conf; `docker/` no longer
+    // exists in this repo, so these routeRules are now the ONLY surviving
+    // copy of this redirect layer. Real 301s (the baseline's own were
+    // client-side 200s via vue-router `redirect`).
+    //
+    // Old pari-* / siaka-* virtual-game paths -> the "nai-*" names this app
+    // actually uses.
+    "/virtual-games/pari-league": {
+      redirect: { to: "/virtual-games/nai-league", statusCode: 301 },
+    },
+    "/virtual-games/pari-turbo": {
+      redirect: { to: "/virtual-games/nai-turbo", statusCode: 301 },
+    },
+    "/virtual-games/pari-virtual-jackpot": {
+      redirect: { to: "/virtual-games/nai-virtual-jackpot", statusCode: 301 },
+    },
+    "/virtual-games/siaka-league": {
+      redirect: { to: "/virtual-games/nai-league", statusCode: 301 },
+    },
+    "/virtual-games/siaka-turbo": {
+      redirect: { to: "/virtual-games/nai-turbo", statusCode: 301 },
+    },
+    "/virtual-games/siaka-virtual-jackpot": {
+      redirect: { to: "/virtual-games/nai-virtual-jackpot", statusCode: 301 },
+    },
+    // The old site had a sports lobby at /sports; this app has /sports/:sport.
+    "/sports": { redirect: { to: "/sports/soccer", statusCode: 301 } },
+    // Aviator has its own dedicated page.
+    "/crash-games/aviator": { redirect: { to: "/aviator", statusCode: 301 } },
+    // NOTE: "/crash-games/:name" -> "/crash/:name" is a function-shaped
+    // redirect (needs the dynamic :name segment) and cannot be expressed as
+    // a static routeRules value — see server/routes/crash-games/[name].js.
+    //
+    // Old lobbies. This app has a single casino lobby at /casino-home; the
+    // /casino/:name and /crash/:name game routes are unaffected.
+    "/casino": { redirect: { to: "/casino-home", statusCode: 301 } },
+    "/crash": { redirect: { to: "/casino-home", statusCode: 301 } },
+    // Retired features, kept resolving because the URLs are still indexed:
+    // instant games were pulled, and the freebet/welcome-gift pages are
+    // disabled.
+    "/instant": { redirect: { to: "/casino-home", statusCode: 301 } },
+    "/instant/live": { redirect: { to: "/casino-home", statusCode: 301 } },
+    "/welcome-promotions": { redirect: { to: "/promotions", statusCode: 301 } },
+    "/freebet": { redirect: { to: "/promotions", statusCode: 301 } },
+    // The previous naibet.com served every page under a /ke country prefix.
+    // Strip it so indexed URLs and bookmarks keep resolving after the
+    // cutover. Only the bare "/ke" path is handled here as a static
+    // routeRule; "/ke/:pathMatch(.*)*" (preserving query + hash) is a
+    // function-shaped redirect deferred to Batch G per the Phase 2 plan
+    // (§4, 0.2) — a catch-all Nitro handler at this stage could swallow
+    // paths that later batches haven't ported yet.
+    "/ke": { redirect: { to: "/", statusCode: 301 } },
   },
 
   app: {
