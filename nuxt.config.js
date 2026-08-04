@@ -10,6 +10,16 @@ export default defineNuxtConfig({
     storesDirs: ["./app/stores/**"],
   },
 
+  // pinia-plugin-persistedstate/nuxt defaults to cookie storage for any
+  // store that doesn't set an explicit `persist.storage`. Only login.js
+  // (session token) should use cookies so the server can read it; every
+  // other persisted store (betslip, theme, nav state, ...) must stay on
+  // localStorage as it did under plain Vite, or its state would ride along
+  // on every HTTP request. login.js overrides this default explicitly.
+  piniaPluginPersistedstate: {
+    storage: "localStorage",
+  },
+
   css: ["~/assets/css/style.css"],
 
   app: {

@@ -209,6 +209,12 @@ export const useLoginStore = defineStore("login-store", {
   },
 
   persist: {
+    storage: piniaPluginPersistedstate.cookies({
+      maxAge: 60 * 60 * 24 * 30,
+      sameSite: "lax",
+      secure: true,
+      path: "/",
+    }),
     pick: ["token", "profileSid", "msisdn"],
   },
 });
