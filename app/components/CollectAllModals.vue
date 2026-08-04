@@ -17,7 +17,7 @@ import LoginModal from "./LoginModal.vue";
 import MultibetBoostModal from "./MultibetBoostModal.vue";
 import OneCutModal from "./OneCutModal.vue";
 import TwoUpModal from "./TwoUpModal.vue";
-import InviteFriendModal from "../../src/views/festive/InviteFriendModal.vue";
+import InviteFriendModal from "@/components/festive/InviteFriendModal.vue";
 import SocialconsModal from "@/components/affiliate/SocialconsModal.vue";
 // import DepositPop from "./DepositPop.vue";
 const { modalType } = storeToRefs(useModalStore());

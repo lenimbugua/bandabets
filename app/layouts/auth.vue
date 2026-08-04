@@ -1,5 +1,5 @@
 <script setup>
-import AuthTopBar from "../../src/views/AuthTopBar.vue";
+import AuthTopBar from "@/components/AuthTopBar.vue";
 </script>
 <template>
   <h1 class="sr-only">Account – Login & Register</h1>
