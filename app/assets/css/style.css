@@ -21,47 +21,54 @@
 /* ============================================================================
    LAYER 1 — PALETTE
    Theme-independent ramps. Swapping the brand means editing this block.
+   Five ramps: Coffee (neutral), BANDA Gold (brand/primary), Emerald
+   (win/up), Signal Red (live/loss), Tertiary Gray (informational).
    ========================================================================= */
 
 :root {
-  /* Charcoal Slate — structure, text, borders, every neutral surface */
-  --palette-slate-50:  #f8fafc;
-  --palette-slate-100: #f1f5f9;
-  --palette-slate-200: #e2e8f0;
-  --palette-slate-300: #cbd5e1;
-  --palette-slate-400: #94a3b8;
-  --palette-slate-500: #64748b;
-  --palette-slate-600: #475569;
-  --palette-slate-700: #334155;
-  --palette-slate-800: #1e293b;
-  --palette-slate-900: #121826;   /* Deep Charcoal — brand foundation */
-  --palette-slate-950: #0a0f1a;
+  /* Coffee — the structural neutral. Values are the BANDA spec's
+     Material-3 surface tokens; only the 50 step is interpolated, to give
+     the light theme a warm off-white above on-surface. */
+  --palette-coffee-50:  #fdf8f3;
+  --palette-coffee-100: #f1dfd1;   /* on-surface */
+  --palette-coffee-200: #dbc2ad;   /* on-surface-variant */
+  --palette-coffee-300: #a28d7a;   /* outline */
+  --palette-coffee-400: #544434;   /* outline-variant */
+  --palette-coffee-500: #3d3329;   /* surface-container-highest */
+  --palette-coffee-600: #32281f;   /* surface-container-high */
+  --palette-coffee-700: #271e15;   /* surface-container */
+  --palette-coffee-800: #231a11;   /* surface-container-low */
+  --palette-coffee-900: #1a120a;   /* surface / background */
+  --palette-coffee-950: #140d06;   /* surface-container-lowest */
 
-  /* Naibet Purple — brand, primary actions, active state */
-  --palette-purple-50:  #fbf3fc;
-  --palette-purple-100: #f6e2f8;
-  --palette-purple-200: #efc6f3;
-  --palette-purple-300: #e3a1ea;
-  --palette-purple-400: #c86fd3;
-  --palette-purple-500: #a63faf;
-  --palette-purple-600: #8a3192;   /* Primary Purple */
-  --palette-purple-700: #761c7f;
-  --palette-purple-800: #6f1378;
-  --palette-purple-900: #560d5d;
-  --palette-purple-950: #36003d;
+  /* BANDA Gold — brand, primary action, jackpots, selected odds.
+     Eight of eleven steps are verbatim spec tokens; 50, 200 and 600 are
+     interpolated to keep the ramp evenly spaced. */
+  --palette-gold-50:  #fff8ee;
+  --palette-gold-100: #ffdcbd;   /* primary-fixed */
+  --palette-gold-200: #ffcb9a;
+  --palette-gold-300: #ffbc77;   /* primary */
+  --palette-gold-400: #ffb86f;   /* surface-tint / primary-fixed-dim */
+  --palette-gold-500: #fa9602;   /* BANDA Gold — primary-container */
+  --palette-gold-600: #d97e00;
+  --palette-gold-700: #8a5100;   /* inverse-primary */
+  --palette-gold-800: #693c00;   /* on-primary-fixed-variant */
+  --palette-gold-900: #4a2800;   /* on-primary */
+  --palette-gold-950: #2c1600;   /* on-primary-fixed */
 
-  /* Action Green — success, confirmation, positive money */
-  --palette-green-50:  #f0fdec;
-  --palette-green-100: #dcfbd2;
-  --palette-green-200: #9cf986;
-  --palette-green-300: #81dc6d;
-  --palette-green-400: #59bb54;   /* Action Green — the brand green */
-  --palette-green-500: #4ca33c;
-  --palette-green-600: #2e8a22;
-  --palette-green-700: #187411;
-  --palette-green-800: #0e6e08;
-  --palette-green-900: #0a5306;
-  --palette-green-950: #002200;
+  /* Emerald — win / odds-up status only. No longer a brand or CTA colour;
+     cooled from the old Action Green so it separates from gold on coffee. */
+  --palette-green-50:  #ecfdf5;
+  --palette-green-100: #d1fae5;
+  --palette-green-200: #a7f3d0;
+  --palette-green-300: #34d399;
+  --palette-green-400: #10b981;   /* the win / odds-up colour */
+  --palette-green-500: #059669;
+  --palette-green-600: #048c60;
+  --palette-green-700: #047857;
+  --palette-green-800: #065f46;   /* light-theme text-legible variant */
+  --palette-green-900: #064e3b;
+  --palette-green-950: #022c22;
 
   /* Signal Red — errors, losses, destructive */
   --palette-red-50:  #fff1f0;
@@ -76,30 +83,18 @@
   --palette-red-900: #5c0005;
   --palette-red-950: #3d0003;
 
-  /* Gold — jackpots, boosts, odds highlights */
-  --palette-gold-50:  #fff8eb;
-  --palette-gold-100: #feebc8;
-  --palette-gold-200: #fdd692;
-  --palette-gold-300: #f9be5c;
-  --palette-gold-400: #f2a93b;
-  --palette-gold-500: #de8e1b;
-  --palette-gold-600: #c97b10;
-  --palette-gold-700: #a3600c;
-  --palette-gold-800: #7d4909;
-  --palette-gold-900: #5a3406;
-  --palette-gold-950: #2a1a00;
-
-  /* Tertiary Slate-Blue — informational chips, metadata emphasis */
-  --palette-tertiary-50:  #eef3fc;
-  --palette-tertiary-100: #d8e3fb;
-  --palette-tertiary-200: #bcc7de;
-  --palette-tertiary-300: #8e9ab0;
-  --palette-tertiary-400: #5e6a80;
-  --palette-tertiary-500: #4d586c;
-  --palette-tertiary-600: #3c475a;
-  --palette-tertiary-700: #364154;
-  --palette-tertiary-800: #253044;
-  --palette-tertiary-900: #111c2d;
+  /* Tertiary — informational neutral gray, per the spec's tertiary tokens.
+     A chromatic tertiary would fight the coffee/gold pairing. */
+  --palette-tertiary-50:  #f4f4f4;
+  --palette-tertiary-100: #e2e2e2;   /* tertiary-fixed */
+  --palette-tertiary-200: #c9c9c9;   /* tertiary */
+  --palette-tertiary-300: #adaeae;   /* tertiary-container */
+  --palette-tertiary-400: #8a8c8c;
+  --palette-tertiary-500: #6b6d6d;
+  --palette-tertiary-600: #545656;
+  --palette-tertiary-700: #454747;   /* on-tertiary-fixed-variant */
+  --palette-tertiary-800: #404242;   /* on-tertiary-container */
+  --palette-tertiary-900: #2f3131;   /* on-tertiary */
 
   /* Absolutes */
   --palette-white: #ffffff;
@@ -115,29 +110,29 @@
 /* ── Dark theme (default) ────────────────────────────────────────────────── */
 :root {
   /* Base */
-  --background: var(--palette-slate-950);
-  --foreground: var(--palette-slate-100);
+  --background: var(--palette-coffee-950);
+  --foreground: var(--palette-coffee-100);
 
-  --card: var(--palette-slate-900);
-  --card-foreground: var(--palette-slate-100);
+  --card: var(--palette-coffee-900);
+  --card-foreground: var(--palette-coffee-100);
 
   --popover: #151c2c;
-  --popover-foreground: var(--palette-slate-100);
+  --popover-foreground: var(--palette-coffee-100);
 
   /* Primary — Naibet Purple, lifted one step so it reads on charcoal */
-  --primary: var(--palette-purple-500);
+  --primary: var(--palette-gold-500);
   --primary-foreground: var(--palette-white);
 
   /* Secondary — Action Green. Charcoal text per the Success/Bet spec. */
   --secondary: var(--palette-green-400);
-  --secondary-foreground: var(--palette-slate-900);
+  --secondary-foreground: var(--palette-coffee-900);
 
   /* Tertiary — informational */
   --tertiary: var(--palette-tertiary-500);
   --tertiary-foreground: var(--palette-tertiary-100);
 
-  --muted: var(--palette-slate-800);
-  --muted-foreground: var(--palette-slate-400);
+  --muted: var(--palette-coffee-800);
+  --muted-foreground: var(--palette-coffee-400);
 
   /* Accent — the subtle interactive surface (hover rows, tinted panels).
      Purple-tinted so it reads as branded at low opacity, but quiet enough
@@ -153,36 +148,36 @@
 
   --border: #1e2739;
   --input: #151c2c;
-  --ring: var(--palette-purple-500);
+  --ring: var(--palette-gold-500);
 
   --gold: var(--palette-gold-400);
   --gold-foreground: var(--palette-gold-950);
   --emerald: var(--palette-green-400);
-  --dark-card: var(--palette-slate-900);
+  --dark-card: var(--palette-coffee-900);
 
   /* Bet — the conversion CTAs (Join Now, Place Bet, betslip orb). Action
      Green. Carries charcoal text, never white: white on this green is 2.4:1.
      bright/deep are the lift and the edge, for glows, borders and shadows. */
   --bet: var(--palette-green-400);
-  --bet-foreground: var(--palette-slate-900);
+  --bet-foreground: var(--palette-coffee-900);
   --bet-hover: var(--palette-green-300);
   --bet-bright: var(--palette-green-300);
   --bet-deep: var(--palette-green-600);
 
   /* Surfaces — tonal layers, deepest to most-raised */
   --surface-deepest: #070b14;
-  --surface-sunken: var(--palette-slate-950);
-  --surface-elevated: var(--palette-slate-900);
-  --surface-interactive: var(--palette-slate-800);
+  --surface-sunken: var(--palette-coffee-950);
+  --surface-elevated: var(--palette-coffee-900);
+  --surface-interactive: var(--palette-coffee-800);
   --surface-active: #2a3648;
 
   /* Brand ramp aliases */
-  --brand-bright: var(--palette-purple-500);
-  --brand-dark: var(--palette-purple-800);
-  --brand-selected: var(--palette-purple-600);
-  --brand-mid: var(--palette-purple-600);
-  --brand-forest: var(--palette-purple-900);
-  --brand-teal: var(--palette-purple-700);
+  --brand-bright: var(--palette-gold-500);
+  --brand-dark: var(--palette-gold-800);
+  --brand-selected: var(--palette-gold-600);
+  --brand-mid: var(--palette-gold-600);
+  --brand-forest: var(--palette-gold-900);
+  --brand-teal: var(--palette-gold-700);
 
   /* Gold aliases */
   --gold-bright: var(--palette-gold-300);
@@ -196,8 +191,8 @@
   --border-darkest: #070b14;
 
   /* Text */
-  --text-muted-alt: var(--palette-slate-500);
-  --text-subtle: var(--palette-slate-300);
+  --text-muted-alt: var(--palette-coffee-500);
+  --text-subtle: var(--palette-coffee-300);
 
   /* Shape — Soft 4px base */
   --radius: 0.25rem;
@@ -214,26 +209,26 @@
 
 /* ── Light theme ─────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --background: var(--palette-slate-50);
-  --foreground: var(--palette-slate-900);
+  --background: var(--palette-coffee-50);
+  --foreground: var(--palette-coffee-900);
 
   --card: var(--palette-white);
-  --card-foreground: var(--palette-slate-900);
+  --card-foreground: var(--palette-coffee-900);
 
   --popover: var(--palette-white);
-  --popover-foreground: var(--palette-slate-900);
+  --popover-foreground: var(--palette-coffee-900);
 
-  --primary: var(--palette-purple-600);
+  --primary: var(--palette-gold-600);
   --primary-foreground: var(--palette-white);
 
   --secondary: var(--palette-green-400);
-  --secondary-foreground: var(--palette-slate-900);
+  --secondary-foreground: var(--palette-coffee-900);
 
   --tertiary: var(--palette-tertiary-700);
   --tertiary-foreground: var(--palette-white);
 
-  --muted: var(--palette-slate-100);
-  --muted-foreground: var(--palette-slate-500);
+  --muted: var(--palette-coffee-100);
+  --muted-foreground: var(--palette-coffee-500);
 
   --accent: #f6eef8;
   --accent-foreground: var(--foreground);
@@ -245,35 +240,35 @@
   --success: var(--palette-green-800);
   --warning: var(--palette-gold-700);
 
-  --border: var(--palette-slate-200);
+  --border: var(--palette-coffee-200);
   --input: var(--palette-white);
-  --ring: var(--palette-purple-600);
+  --ring: var(--palette-gold-600);
 
   --gold: var(--palette-gold-700);
   --gold-foreground: var(--palette-white);
   --emerald: var(--palette-green-800);
-  --dark-card: var(--palette-slate-100);
+  --dark-card: var(--palette-coffee-100);
 
   /* Bet — same brand green in both themes so the CTA never shifts hue;
      only the hover deepens rather than lifts, to read against light. */
   --bet: var(--palette-green-400);
-  --bet-foreground: var(--palette-slate-900);
+  --bet-foreground: var(--palette-coffee-900);
   --bet-hover: var(--palette-green-500);
   --bet-bright: var(--palette-green-500);
   --bet-deep: var(--palette-green-700);
 
-  --surface-deepest: var(--palette-slate-200);
-  --surface-sunken: var(--palette-slate-100);
+  --surface-deepest: var(--palette-coffee-200);
+  --surface-sunken: var(--palette-coffee-100);
   --surface-elevated: var(--palette-white);
-  --surface-interactive: var(--palette-slate-100);
-  --surface-active: var(--palette-slate-200);
+  --surface-interactive: var(--palette-coffee-100);
+  --surface-active: var(--palette-coffee-200);
 
-  --brand-bright: var(--palette-purple-600);
-  --brand-dark: var(--palette-purple-900);
-  --brand-selected: var(--palette-purple-700);
-  --brand-mid: var(--palette-purple-600);
-  --brand-forest: var(--palette-purple-950);
-  --brand-teal: var(--palette-purple-800);
+  --brand-bright: var(--palette-gold-600);
+  --brand-dark: var(--palette-gold-900);
+  --brand-selected: var(--palette-gold-700);
+  --brand-mid: var(--palette-gold-600);
+  --brand-forest: var(--palette-gold-950);
+  --brand-teal: var(--palette-gold-800);
 
   --gold-bright: var(--palette-gold-600);
   --gold-deep: var(--palette-gold-800);
@@ -281,11 +276,11 @@
   --bronze: var(--palette-gold-800);
 
   --border-subtle: #eef2f7;
-  --border-strong: var(--palette-slate-300);
-  --border-darkest: var(--palette-slate-400);
+  --border-strong: var(--palette-coffee-300);
+  --border-darkest: var(--palette-coffee-400);
 
-  --text-muted-alt: var(--palette-slate-500);
-  --text-subtle: var(--palette-slate-700);
+  --text-muted-alt: var(--palette-coffee-500);
+  --text-subtle: var(--palette-coffee-700);
 
   /* Elevation — light uses a slate umbra, "Soft Slate" shadows */
   --elevation-umbra: 15 23 42;
@@ -395,102 +390,102 @@
      `*-gray-*` / `*-green-*` class usages inside the system for free.   */
 
   /* Charcoal Slate → slate / gray / zinc / neutral / stone */
-  --color-slate-50:  var(--palette-slate-50);
-  --color-slate-100: var(--palette-slate-100);
-  --color-slate-200: var(--palette-slate-200);
-  --color-slate-300: var(--palette-slate-300);
-  --color-slate-400: var(--palette-slate-400);
-  --color-slate-500: var(--palette-slate-500);
-  --color-slate-600: var(--palette-slate-600);
-  --color-slate-700: var(--palette-slate-700);
-  --color-slate-800: var(--palette-slate-800);
-  --color-slate-900: var(--palette-slate-900);
-  --color-slate-950: var(--palette-slate-950);
+  --color-slate-50:  var(--palette-coffee-50);
+  --color-slate-100: var(--palette-coffee-100);
+  --color-slate-200: var(--palette-coffee-200);
+  --color-slate-300: var(--palette-coffee-300);
+  --color-slate-400: var(--palette-coffee-400);
+  --color-slate-500: var(--palette-coffee-500);
+  --color-slate-600: var(--palette-coffee-600);
+  --color-slate-700: var(--palette-coffee-700);
+  --color-slate-800: var(--palette-coffee-800);
+  --color-slate-900: var(--palette-coffee-900);
+  --color-slate-950: var(--palette-coffee-950);
 
-  --color-gray-50:  var(--palette-slate-50);
-  --color-gray-100: var(--palette-slate-100);
-  --color-gray-200: var(--palette-slate-200);
-  --color-gray-300: var(--palette-slate-300);
-  --color-gray-400: var(--palette-slate-400);
-  --color-gray-500: var(--palette-slate-500);
-  --color-gray-600: var(--palette-slate-600);
-  --color-gray-700: var(--palette-slate-700);
-  --color-gray-800: var(--palette-slate-800);
-  --color-gray-900: var(--palette-slate-900);
-  --color-gray-950: var(--palette-slate-950);
+  --color-gray-50:  var(--palette-coffee-50);
+  --color-gray-100: var(--palette-coffee-100);
+  --color-gray-200: var(--palette-coffee-200);
+  --color-gray-300: var(--palette-coffee-300);
+  --color-gray-400: var(--palette-coffee-400);
+  --color-gray-500: var(--palette-coffee-500);
+  --color-gray-600: var(--palette-coffee-600);
+  --color-gray-700: var(--palette-coffee-700);
+  --color-gray-800: var(--palette-coffee-800);
+  --color-gray-900: var(--palette-coffee-900);
+  --color-gray-950: var(--palette-coffee-950);
 
-  --color-zinc-50:  var(--palette-slate-50);
-  --color-zinc-100: var(--palette-slate-100);
-  --color-zinc-200: var(--palette-slate-200);
-  --color-zinc-300: var(--palette-slate-300);
-  --color-zinc-400: var(--palette-slate-400);
-  --color-zinc-500: var(--palette-slate-500);
-  --color-zinc-600: var(--palette-slate-600);
-  --color-zinc-700: var(--palette-slate-700);
-  --color-zinc-800: var(--palette-slate-800);
-  --color-zinc-900: var(--palette-slate-900);
-  --color-zinc-950: var(--palette-slate-950);
+  --color-zinc-50:  var(--palette-coffee-50);
+  --color-zinc-100: var(--palette-coffee-100);
+  --color-zinc-200: var(--palette-coffee-200);
+  --color-zinc-300: var(--palette-coffee-300);
+  --color-zinc-400: var(--palette-coffee-400);
+  --color-zinc-500: var(--palette-coffee-500);
+  --color-zinc-600: var(--palette-coffee-600);
+  --color-zinc-700: var(--palette-coffee-700);
+  --color-zinc-800: var(--palette-coffee-800);
+  --color-zinc-900: var(--palette-coffee-900);
+  --color-zinc-950: var(--palette-coffee-950);
 
-  --color-neutral-50:  var(--palette-slate-50);
-  --color-neutral-100: var(--palette-slate-100);
-  --color-neutral-200: var(--palette-slate-200);
-  --color-neutral-300: var(--palette-slate-300);
-  --color-neutral-400: var(--palette-slate-400);
-  --color-neutral-500: var(--palette-slate-500);
-  --color-neutral-600: var(--palette-slate-600);
-  --color-neutral-700: var(--palette-slate-700);
-  --color-neutral-800: var(--palette-slate-800);
-  --color-neutral-900: var(--palette-slate-900);
-  --color-neutral-950: var(--palette-slate-950);
+  --color-neutral-50:  var(--palette-coffee-50);
+  --color-neutral-100: var(--palette-coffee-100);
+  --color-neutral-200: var(--palette-coffee-200);
+  --color-neutral-300: var(--palette-coffee-300);
+  --color-neutral-400: var(--palette-coffee-400);
+  --color-neutral-500: var(--palette-coffee-500);
+  --color-neutral-600: var(--palette-coffee-600);
+  --color-neutral-700: var(--palette-coffee-700);
+  --color-neutral-800: var(--palette-coffee-800);
+  --color-neutral-900: var(--palette-coffee-900);
+  --color-neutral-950: var(--palette-coffee-950);
 
-  --color-stone-50:  var(--palette-slate-50);
-  --color-stone-100: var(--palette-slate-100);
-  --color-stone-200: var(--palette-slate-200);
-  --color-stone-300: var(--palette-slate-300);
-  --color-stone-400: var(--palette-slate-400);
-  --color-stone-500: var(--palette-slate-500);
-  --color-stone-600: var(--palette-slate-600);
-  --color-stone-700: var(--palette-slate-700);
-  --color-stone-800: var(--palette-slate-800);
-  --color-stone-900: var(--palette-slate-900);
-  --color-stone-950: var(--palette-slate-950);
+  --color-stone-50:  var(--palette-coffee-50);
+  --color-stone-100: var(--palette-coffee-100);
+  --color-stone-200: var(--palette-coffee-200);
+  --color-stone-300: var(--palette-coffee-300);
+  --color-stone-400: var(--palette-coffee-400);
+  --color-stone-500: var(--palette-coffee-500);
+  --color-stone-600: var(--palette-coffee-600);
+  --color-stone-700: var(--palette-coffee-700);
+  --color-stone-800: var(--palette-coffee-800);
+  --color-stone-900: var(--palette-coffee-900);
+  --color-stone-950: var(--palette-coffee-950);
 
   /* Naibet Purple → purple / violet / fuchsia */
-  --color-purple-50:  var(--palette-purple-50);
-  --color-purple-100: var(--palette-purple-100);
-  --color-purple-200: var(--palette-purple-200);
-  --color-purple-300: var(--palette-purple-300);
-  --color-purple-400: var(--palette-purple-400);
-  --color-purple-500: var(--palette-purple-500);
-  --color-purple-600: var(--palette-purple-600);
-  --color-purple-700: var(--palette-purple-700);
-  --color-purple-800: var(--palette-purple-800);
-  --color-purple-900: var(--palette-purple-900);
-  --color-purple-950: var(--palette-purple-950);
+  --color-purple-50:  var(--palette-gold-50);
+  --color-purple-100: var(--palette-gold-100);
+  --color-purple-200: var(--palette-gold-200);
+  --color-purple-300: var(--palette-gold-300);
+  --color-purple-400: var(--palette-gold-400);
+  --color-purple-500: var(--palette-gold-500);
+  --color-purple-600: var(--palette-gold-600);
+  --color-purple-700: var(--palette-gold-700);
+  --color-purple-800: var(--palette-gold-800);
+  --color-purple-900: var(--palette-gold-900);
+  --color-purple-950: var(--palette-gold-950);
 
-  --color-violet-50:  var(--palette-purple-50);
-  --color-violet-100: var(--palette-purple-100);
-  --color-violet-200: var(--palette-purple-200);
-  --color-violet-300: var(--palette-purple-300);
-  --color-violet-400: var(--palette-purple-400);
-  --color-violet-500: var(--palette-purple-500);
-  --color-violet-600: var(--palette-purple-600);
-  --color-violet-700: var(--palette-purple-700);
-  --color-violet-800: var(--palette-purple-800);
-  --color-violet-900: var(--palette-purple-900);
-  --color-violet-950: var(--palette-purple-950);
+  --color-violet-50:  var(--palette-gold-50);
+  --color-violet-100: var(--palette-gold-100);
+  --color-violet-200: var(--palette-gold-200);
+  --color-violet-300: var(--palette-gold-300);
+  --color-violet-400: var(--palette-gold-400);
+  --color-violet-500: var(--palette-gold-500);
+  --color-violet-600: var(--palette-gold-600);
+  --color-violet-700: var(--palette-gold-700);
+  --color-violet-800: var(--palette-gold-800);
+  --color-violet-900: var(--palette-gold-900);
+  --color-violet-950: var(--palette-gold-950);
 
-  --color-fuchsia-50:  var(--palette-purple-50);
-  --color-fuchsia-100: var(--palette-purple-100);
-  --color-fuchsia-200: var(--palette-purple-200);
-  --color-fuchsia-300: var(--palette-purple-300);
-  --color-fuchsia-400: var(--palette-purple-400);
-  --color-fuchsia-500: var(--palette-purple-500);
-  --color-fuchsia-600: var(--palette-purple-600);
-  --color-fuchsia-700: var(--palette-purple-700);
-  --color-fuchsia-800: var(--palette-purple-800);
-  --color-fuchsia-900: var(--palette-purple-900);
-  --color-fuchsia-950: var(--palette-purple-950);
+  --color-fuchsia-50:  var(--palette-gold-50);
+  --color-fuchsia-100: var(--palette-gold-100);
+  --color-fuchsia-200: var(--palette-gold-200);
+  --color-fuchsia-300: var(--palette-gold-300);
+  --color-fuchsia-400: var(--palette-gold-400);
+  --color-fuchsia-500: var(--palette-gold-500);
+  --color-fuchsia-600: var(--palette-gold-600);
+  --color-fuchsia-700: var(--palette-gold-700);
+  --color-fuchsia-800: var(--palette-gold-800);
+  --color-fuchsia-900: var(--palette-gold-900);
+  --color-fuchsia-950: var(--palette-gold-950);
 
   /* Action Green → green / emerald / lime / teal */
   --color-green-50:  var(--palette-green-50);
@@ -630,17 +625,17 @@
   --color-sky-900: var(--palette-tertiary-900);
   --color-sky-950: var(--palette-tertiary-900);
 
-  --color-indigo-50:  var(--palette-purple-50);
-  --color-indigo-100: var(--palette-purple-100);
-  --color-indigo-200: var(--palette-purple-200);
-  --color-indigo-300: var(--palette-purple-300);
-  --color-indigo-400: var(--palette-purple-400);
-  --color-indigo-500: var(--palette-purple-500);
-  --color-indigo-600: var(--palette-purple-600);
-  --color-indigo-700: var(--palette-purple-700);
-  --color-indigo-800: var(--palette-purple-800);
-  --color-indigo-900: var(--palette-purple-900);
-  --color-indigo-950: var(--palette-purple-950);
+  --color-indigo-50:  var(--palette-gold-50);
+  --color-indigo-100: var(--palette-gold-100);
+  --color-indigo-200: var(--palette-gold-200);
+  --color-indigo-300: var(--palette-gold-300);
+  --color-indigo-400: var(--palette-gold-400);
+  --color-indigo-500: var(--palette-gold-500);
+  --color-indigo-600: var(--palette-gold-600);
+  --color-indigo-700: var(--palette-gold-700);
+  --color-indigo-800: var(--palette-gold-800);
+  --color-indigo-900: var(--palette-gold-900);
+  --color-indigo-950: var(--palette-gold-950);
 
   --color-cyan-50:  var(--palette-tertiary-50);
   --color-cyan-100: var(--palette-tertiary-100);
@@ -822,7 +817,7 @@
   color: transparent;
   background-image: linear-gradient(
     135deg,
-    var(--palette-purple-400),
+    var(--palette-gold-400),
     var(--primary)
   );
 }
@@ -842,8 +837,8 @@
 @utility bg-gradient-primary {
   background: linear-gradient(
     135deg,
-    var(--palette-purple-500),
-    var(--palette-purple-800)
+    var(--palette-gold-500),
+    var(--palette-gold-800)
   );
 }
 
