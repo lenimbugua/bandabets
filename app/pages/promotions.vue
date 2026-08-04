@@ -1,5 +1,16 @@
 <script setup>
 import CategoryPills from "@/components/mobile/CategoryPills.vue";
+
+definePageMeta({
+  name: "promotions",
+  layout: "default",
+});
+
+useSeoHead({
+  title: "Naibet Promotions – Free Bets, Cashbacks & Bonuses",
+  description:
+    "Discover exciting Naibet offers including free bets, cashback, and deposit bonuses. Claim rewards every week.",
+});
 </script>
 
 <template>

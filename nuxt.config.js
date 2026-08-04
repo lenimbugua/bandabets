@@ -22,6 +22,13 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/style.css"],
 
+  routeRules: {
+    "/": { ssr: true },
+    "/leagues": { ssr: true },
+    "/promotions": { ssr: true },
+    "/sports/**": { ssr: true },
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: "en", class: "scroll-smooth scrollbar-hide" },

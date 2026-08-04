@@ -1,16 +1,16 @@
 <script setup>
 import { useDefaultSport } from "@/composables/useDefaultSport";
-import { useMatches2Store } from "../stores/matches2";
-import { useScreenSizes } from "../composables/useScreenSizes";
-import { useScrollToViewedMatch } from "../composables/useScrollToViewedMatch";
-import { useCasinoStore } from "../stores/casino";
+import { useMatches2Store } from "@/stores/matches2";
+import { useScreenSizes } from "@/composables/useScreenSizes";
+import { useScrollToViewedMatch } from "@/composables/useScrollToViewedMatch";
+import { useCasinoStore } from "@/stores/casino";
 import { storeToRefs } from "pinia";
-import TopGames from "../components/mobile/TopGames.vue";
-import GamesRow from "../components/mobile/GamesRow.vue";
-// import LiveMatchesPreviewDesktop from "../components/LiveMatchesPreviewDesktop.vue";
-import MobileTest from "./MobileTest.vue";
+import TopGames from "@/components/mobile/TopGames.vue";
+import GamesRow from "@/components/mobile/GamesRow.vue";
+// import LiveMatchesPreviewDesktop from "@/components/LiveMatchesPreviewDesktop.vue";
+import MobileTest from "@/components/MobileTest.vue";
 // FREEBET DISABLED — restore later
-// import WelcomeGiftStrip from "../components/WelcomeGiftStrip.vue";
+// import WelcomeGiftStrip from "@/components/WelcomeGiftStrip.vue";
 import { computed, onMounted, ref } from "vue";
 
 const matchesStore = useMatches2Store();

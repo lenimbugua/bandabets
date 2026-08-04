@@ -1,6 +1,17 @@
 <script setup>
 import { useScreenSizes } from "../composables/useScreenSizes";
 
+definePageMeta({
+  name: "leagues",
+  layout: "default",
+});
+
+useSeoHead({
+  title: "Football Leagues & Fixtures | Naibet Sportsbook",
+  description:
+    "Browse upcoming football leagues and fixtures. Bet pre-match or live on your favorite teams at Naibet Kenya.",
+});
+
 const { isLargeScreen } = useScreenSizes();
 </script>
 

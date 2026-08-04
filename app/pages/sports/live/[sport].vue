@@ -1,17 +1,34 @@
 <script setup>
 import { onBeforeUnmount, onMounted } from "vue";
-import HeaderLinks from "../components/HeaderLinks.vue";
-import NewLive3 from "../components/NewLive3.vue";
-import CategoryPills from "../components/mobile/CategoryPills.vue";
-import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
-import { useScreenSizes } from "../composables/useScreenSizes";
-import { useLiveMatchesStore } from "../stores/live-matches";
-import { useNewLiveStore } from "../stores/new-live";
+import HeaderLinks from "@/components/HeaderLinks.vue";
+import NewLive3 from "@/components/NewLive3.vue";
+import CategoryPills from "@/components/mobile/CategoryPills.vue";
+import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
+import { useScreenSizes } from "@/composables/useScreenSizes";
+import { useLiveMatchesStore } from "@/stores/live-matches";
+import { useNewLiveStore } from "@/stores/new-live";
+
+const route = useRoute();
+
+definePageMeta({ name: "live", layout: "default" });
+
+const sportName = computed(() =>
+  String(route.params.sport || "")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase()),
+);
+
+useSeoHead({
+  title: `Live ${sportName.value} Betting – Real-Time Odds & Matches | Naibet`,
+  description: `Follow live ${sportName.value} games and place in-play bets with dynamic odds. Experience real-time sports betting excitement on Naibet.`,
+});
+
 const { pollLiveMatches } = useNewLiveStore();
 const { pollLiveMatches: pollLiveMatches2 } = useLiveMatchesStore();
 
-const pollFrequency = parseInt(import.meta.env.VITE_LIVE_POLL_INTERVAL)
-  ? parseInt(import.meta.env.VITE_LIVE_POLL_INTERVAL)
+const config = useRuntimeConfig().public;
+const pollFrequency = parseInt(config.livePollInterval)
+  ? parseInt(config.livePollInterval)
   : 10000;
 
 let intervalId = null;

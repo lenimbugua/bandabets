@@ -2,11 +2,11 @@
 import { computed, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useCasinoStore } from "@/stores/casino";
-import TopGames from "../components/mobile/TopGames.vue";
-import GamesRow from "../components/mobile/GamesRow.vue";
-import QuickAccessBar from "../components/mobile/QuickAccessBar.vue";
+import TopGames from "@/components/mobile/TopGames.vue";
+import GamesRow from "@/components/mobile/GamesRow.vue";
+import QuickAccessBar from "@/components/mobile/QuickAccessBar.vue";
 // FREEBET DISABLED — restore later
-// import WelcomeGiftStrip from "../components/WelcomeGiftStrip.vue";
+// import WelcomeGiftStrip from "@/components/WelcomeGiftStrip.vue";
 
 const casinoStore = useCasinoStore();
 const { categoriesWithGames } = storeToRefs(casinoStore);

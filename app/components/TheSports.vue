@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeUnmount } from "vue";
-import { useScreenSizes } from "../composables/useScreenSizes";
-import { useSportsQueryParamsStore } from "../stores/sports-query-params";
+import { useScreenSizes } from "@/composables/useScreenSizes";
+import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
 
 const { resetToDefaults } = useSportsQueryParamsStore();
 const { isLargeScreen } = useScreenSizes();
