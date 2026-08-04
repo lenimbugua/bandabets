@@ -41,20 +41,23 @@ No test framework is configured.
 
 ### Design System
 
-The whole visual system lives in **`app/assets/css/style.css`** (moved from `src/style.css` in the migration, byte-identical), specified by `DESIGN.md` (Naibet Core — "Modern Corporate Precision"). It is organised in four layers, and the rule is that **no literal colour may appear below layer 2**:
+The whole visual system lives in **`app/assets/css/style.css`** (moved from `src/style.css` in the migration, byte-identical), specified by `DESIGN.md` (**BANDA High-Velocity** — "Modern Corporate with High-Density"). It is organised in four layers, and the rule is that **no literal colour may appear below layer 2**:
 
-1. **Palette** — `--palette-{family}-{50..950}` in `:root`. Six ramps: Charcoal Slate (neutral), Naibet Purple (brand), Action Green (success/bet), Signal Red, Gold (jackpots), Tertiary Slate-Blue (informational). This is the only block containing hex values.
+1. **Palette** — `--palette-{family}-{50..950}` in `:root`. Five ramps: Coffee (neutral), BANDA Gold (brand/primary), Emerald (win/up), Signal Red (live/loss), Tertiary Gray (informational). This is the only block containing hex values.
 2. **Semantics** — role tokens (`--primary`, `--card`, `--surface-elevated`, `--border-strong`…) declared twice: `:root` is the dark theme (the default), `[data-theme="light"]` is the light theme. Both reference layer 1.
-3. **Bindings** — `@theme` / `@theme inline` expose layers 1–2 as Tailwind utilities. Tailwind's stock ramps are **remapped onto the Naibet palette**, so legacy `bg-gray-800`, `text-blue-600`, `border-amber-400` etc. resolve to design-system colours automatically. There is no off-system Tailwind colour.
+3. **Bindings** — `@theme` / `@theme inline` expose layers 1–2 as Tailwind utilities. Tailwind's stock ramps are **remapped onto the BANDA palette**, so legacy `bg-gray-800`, `text-blue-600`, `border-amber-400` etc. resolve to design-system colours automatically — `bg-purple-*` and `bg-amber-*` both resolve to gold, `bg-gray-*` to coffee. There is no off-system Tailwind colour.
 4. **Utilities** — composite classes (`elevation-1/2/3`, `accent-bar`, `badge-tint-*`, `bg-gradient-*`, `card-hover-lift`) built from the layers above.
 
 **To retheme the app, edit layer 1 only.** Everything downstream — components, gradients, glows, datepicker, toasts, logos, keyframes — resolves through it. Editing layer 2 changes what a role *means* per theme (e.g. which purple step is `--primary` in dark).
+Gold-500 `#fa9602` is 2.2:1 on white and must never be light-theme text — see the contrast rules in `docs/superpowers/specs/2026-08-04-banda-retheme-design.md`.
 
 Other conventions:
 - **Type:** Montserrat (`font-display`, applied to `h1`–`h6` in base) for headings, Inter (`font-sans`) for body and data. Both loaded via `nuxt.config.js`'s `app.head.link` (Google Fonts stylesheet + preconnects) — `index.html` was deleted in the migration. Scale utilities: `text-display-lg`, `text-headline-lg`, `text-headline-md`, `text-body-lg`, `text-body-md`, `text-label-md`, `text-label-sm` — display/headline sizes are fluid via `clamp()`, so one class serves mobile and desktop.
 - **Shape:** 4px soft base. `rounded-sm` 4px (standard: buttons, inputs, cards), `rounded-lg`/`rounded-xl` 8px (modals, large sections), `rounded-full` for status chips. The upper radius scale is deliberately compressed.
 - **Elevation:** tonal layers plus micro-shadows, never heavy blur. Level 1 = hairline border, no shadow; Level 2 = hover; Level 3 = modals. Tailwind's `shadow-sm`…`shadow-2xl` are folded onto this scale, and shadow colour/opacity swap per theme via `--elevation-umbra` and `--elevation-alpha-*`.
 - Prefer semantic tokens (`bg-card`, `text-muted-foreground`, `border-border`) over palette classes in new components.
+
+`DESIGN.md`'s typography (Poppins) and high-density layout rules are **not yet implemented** — only the colour half of the BANDA spec has landed.
 
 ### Environment Variables
 All prefixed with `NUXT_PUBLIC_` and exposed via `runtimeConfig.public` in `nuxt.config.js` (renamed 1:1 from the old `VITE_*` names, same values). Nuxt reads them at **server start**, not build time, so no `sed` substitution step is needed anymore. **`.env` is gitignored** (it holds real dev/prod API URLs) and has never been committed; only `.env.example` (values stripped) is tracked in git. Do not commit `.env`. See `docs/INFRA-HANDOFF.md` for the full rename table.
