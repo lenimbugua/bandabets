@@ -676,7 +676,6 @@
   --color-stone-900: var(--palette-coffee-900);
   --color-stone-950: var(--palette-coffee-950);
 
-
   /* Emerald → green / emerald / lime / teal. Status only (win / odds-up);
      no longer a brand or CTA colour under BANDA.                        */
   --color-green-50:  var(--palette-green-50);
