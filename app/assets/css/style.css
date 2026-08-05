@@ -69,14 +69,12 @@
   --palette-gold-900: #4a2800;   /* on-primary */
   --palette-gold-950: #2c1600;   /* on-primary-fixed */
 
-  /* Gold mid-tone, same reason as coffee-450/550/650. Layer 3 points
-     Tailwind's purple/violet/fuchsia/indigo families at this ramp, and those
-     families' steps 500-600 are used as inline text on white cards. The gold
-     ramp jumps from .2967 luminance at 600 straight to .1129 at 700, so
-     neither step lands where the old purple ramp did. This one is
-     luminance-matched to the pre-BANDA purple-500; step 600 needs no new
-     token because gold-700 is already within .016 of old purple-600. */
-  --palette-gold-650: #9e5b00;   /* L .1475 — parity with old purple-500 .1476 */
+  /* Gold mid-tone, same reason as coffee-450/550/650. Luminance-matched to
+     the pre-BANDA brand's 500 step (L .1475) so components that carried the
+     old brand colour keep their value structure; step 600 needs no new
+     token because gold-700 is already within .016 of the old 600 step.
+     Exposed as gold-650 in layer 3. */
+  --palette-gold-650: #9e5b00;   /* L .1475 — parity with old brand-500 .1476 */
 
   /* Emerald — win / odds-up status only. No longer a brand or CTA colour;
      cooled from the old Action Green so it separates from gold on coffee. */
@@ -471,7 +469,7 @@
    LAYER 3 — BINDINGS
    Semantics and palette become Tailwind utilities.
    Tailwind's stock ramps are remapped onto the BANDA palette so that legacy
-   `bg-gray-800` / `text-purple-500` usage stays inside the design system.
+   `bg-gray-800` / `text-emerald-500` usage stays inside the design system.
    ========================================================================= */
 
 /* Dark mode via data-theme attribute */
@@ -678,45 +676,6 @@
   --color-stone-900: var(--palette-coffee-900);
   --color-stone-950: var(--palette-coffee-950);
 
-  /* BANDA Gold → purple / violet / fuchsia. The old brand was purple, so
-     these families carry legacy brand usage; they follow gold now. Steps
-     500/600 point at gold-650/gold-700 rather than gold-500/600 because
-     they are used as inline text on white cards — see layer 1.          */
-  --color-purple-50:  var(--palette-gold-50);
-  --color-purple-100: var(--palette-gold-100);
-  --color-purple-200: var(--palette-gold-200);
-  --color-purple-300: var(--palette-gold-300);
-  --color-purple-400: var(--palette-gold-400);
-  --color-purple-500: var(--palette-gold-650);
-  --color-purple-600: var(--palette-gold-700);
-  --color-purple-700: var(--palette-gold-700);
-  --color-purple-800: var(--palette-gold-800);
-  --color-purple-900: var(--palette-gold-900);
-  --color-purple-950: var(--palette-gold-950);
-
-  --color-violet-50:  var(--palette-gold-50);
-  --color-violet-100: var(--palette-gold-100);
-  --color-violet-200: var(--palette-gold-200);
-  --color-violet-300: var(--palette-gold-300);
-  --color-violet-400: var(--palette-gold-400);
-  --color-violet-500: var(--palette-gold-650);
-  --color-violet-600: var(--palette-gold-700);
-  --color-violet-700: var(--palette-gold-700);
-  --color-violet-800: var(--palette-gold-800);
-  --color-violet-900: var(--palette-gold-900);
-  --color-violet-950: var(--palette-gold-950);
-
-  --color-fuchsia-50:  var(--palette-gold-50);
-  --color-fuchsia-100: var(--palette-gold-100);
-  --color-fuchsia-200: var(--palette-gold-200);
-  --color-fuchsia-300: var(--palette-gold-300);
-  --color-fuchsia-400: var(--palette-gold-400);
-  --color-fuchsia-500: var(--palette-gold-650);
-  --color-fuchsia-600: var(--palette-gold-700);
-  --color-fuchsia-700: var(--palette-gold-700);
-  --color-fuchsia-800: var(--palette-gold-800);
-  --color-fuchsia-900: var(--palette-gold-900);
-  --color-fuchsia-950: var(--palette-gold-950);
 
   /* Emerald → green / emerald / lime / teal. Status only (win / odds-up);
      no longer a brand or CTA colour under BANDA.                        */
@@ -836,8 +795,7 @@
 
   /* Tertiary Gray → blue / sky / cyan. BANDA treats informational as a
      neutral gray, not a chromatic blue: a saturated blue fights the
-     coffee/gold pairing. NOTE: indigo is *not* in this group — it is
-     remapped onto gold below, with purple / violet / fuchsia.           */
+     coffee/gold pairing.                                                 */
   --color-blue-50:  var(--palette-tertiary-50);
   --color-blue-100: var(--palette-tertiary-100);
   --color-blue-200: var(--palette-tertiary-200);
@@ -861,21 +819,6 @@
   --color-sky-800: var(--palette-tertiary-800);
   --color-sky-900: var(--palette-tertiary-900);
   --color-sky-950: var(--palette-tertiary-900);
-
-  /* BANDA Gold → indigo. Grouped here for file order only; indigo follows
-     the gold ramp exactly like purple / violet / fuchsia above, not the
-     tertiary gray of blue / sky / cyan.                                 */
-  --color-indigo-50:  var(--palette-gold-50);
-  --color-indigo-100: var(--palette-gold-100);
-  --color-indigo-200: var(--palette-gold-200);
-  --color-indigo-300: var(--palette-gold-300);
-  --color-indigo-400: var(--palette-gold-400);
-  --color-indigo-500: var(--palette-gold-650);
-  --color-indigo-600: var(--palette-gold-700);
-  --color-indigo-700: var(--palette-gold-700);
-  --color-indigo-800: var(--palette-gold-800);
-  --color-indigo-900: var(--palette-gold-900);
-  --color-indigo-950: var(--palette-gold-950);
 
   --color-cyan-50:  var(--palette-tertiary-50);
   --color-cyan-100: var(--palette-tertiary-100);
@@ -1028,7 +971,7 @@
 
 /* ── Brand accents ──────────────────────────────────────────────────────── */
 
-/* Active list item — 4px left-accent bar in Primary Purple */
+/* Active list item — 4px left-accent bar in BANDA Gold */
 @utility accent-bar {
   box-shadow: inset 4px 0 0 0 var(--primary);
 }
