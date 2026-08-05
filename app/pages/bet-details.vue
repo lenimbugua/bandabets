@@ -1,7 +1,32 @@
 <script setup>
+// Ported from src/views/BetDetails.vue. Baseline route was a child of
+// WithSibarAndBetslip (now app/layouts/default.vue) — layout left at its
+// default here.
+//
+// fetchBetslip() below is called synchronously in setup, same as
+// baseline. app/stores/bets.js reads token/profileSid from the persisted
+// login store and can call openLoginModal on 401, mutating global modal
+// state — unsafe under SSR. This page stays client-only (routeRules in
+// nuxt.config.js), which keeps it inert. See plan §9 SSR hazards.
+//
+// The local `BetDetails` component import below shadows the
+// auto-registered global of the same name — intentional, keep it explicit
+// (do not delete expecting auto-import to resolve the same file).
 import { storeToRefs } from "pinia";
-import BetDetails from "../components/BetDetails.vue";
-import { useBetsStore } from "../stores/bets";
+import BetDetails from "@/components/BetDetails.vue";
+import { useBetsStore } from "@/stores/bets";
+
+definePageMeta({
+  name: "bet-details",
+  requiresAuth: true,
+});
+
+useSeoHead({
+  title: "Bet Details | Bandabets Slip Info",
+  description:
+    "View full bet slip details, odds, and results instantly from your Bandabets account.",
+  robots: "noindex,nofollow",
+});
 
 const { pending } = storeToRefs(useBetsStore());
 const { fetchBetslip } = useBetsStore();
