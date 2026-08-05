@@ -45,11 +45,16 @@ const phase2RequiresAuthNames = new Set([
 const phase2Placeholders = [
   { name: "aviator", path: "/aviator" },
   { name: "bet-details", path: "/bet-details" },
-  { name: "countries", path: "/sports/soccer/countries" },
   // "games" has no entry in the old router at all (nearest analog was
   // "play-casino-games" at /casino/:name, which is what this mirrors) —
   // a judgment call, not a sourced path. Flagged in task-10-report.md.
   { name: "games", path: "/casino/:name" },
+  // Batch D: three routes commented out in the baseline router
+  // (git show 81ae85f:src/router/index.js — leaderboard 343-353,
+  // share-happiness 506-516, welcome-gift 745-757 under a "FREEBET
+  // DISABLED" banner). These are new URLs, not indexed ones being
+  // restored, so they stay placeholders pending a product decision —
+  // see docs/superpowers/plans/2026-08-04-nuxt-migration-phase-2.md §8.2.
   { name: "leaderboard", path: "/leaderboard" },
   {
     name: "match-details",
@@ -59,9 +64,7 @@ const phase2Placeholders = [
   { name: "pari-turbo", path: "/virtual-games/nai-turbo" },
   { name: "pari-virtual-jackpot", path: "/virtual-games/nai-virtual-jackpot" },
   { name: "playon", path: "/virtual-games/playon" },
-  { name: "promotion-details", path: "/promotion-details/:name" },
   { name: "share-bets", path: "/share-bets/:code?" },
-  { name: "share-feedback", path: "/share-feedback" },
   { name: "share-happiness", path: "/share-happiness" },
   { name: "welcome-gift", path: "/welcome-gift" },
 ];
@@ -241,6 +244,17 @@ export default defineNuxtConfig({
     "/withdraw": { ssr: false, headers: NOINDEX_HEADERS },
     "/bonus": { ssr: false, headers: NOINDEX_HEADERS },
     "/join-affiliate": { ssr: false, headers: NOINDEX_HEADERS },
+
+    // --- Batch D: static tail ------------------------------------------------
+    // /promotion-details/:name and /sports/soccer/countries just left
+    // phase2Placeholders above and become indexable — countries already
+    // falls under "/sports/**": { ssr: true } below; promotion-details gets
+    // the app's default ssr:true with no explicit rule needed.
+    // /share-feedback ships client-only (mode: "client" in the plan) and
+    // stays permanently noindex for the same reason as the Batch B/C
+    // pages: useSeoHead's robots meta never reaches the server under
+    // ssr:false.
+    "/share-feedback": { ssr: false, headers: NOINDEX_HEADERS },
 
     // Every Phase-2 placeholder path (scaffold + the four real stub pages)
     // generated above: ssr:false where applicable plus an X-Robots-Tag

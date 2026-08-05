@@ -21,7 +21,11 @@ export function useSeoHead(options = {}) {
 
   const title = options.title || DEFAULT_TITLE;
   const description = options.description || DEFAULT_DESC;
-  const canonical = `${BASE_URL}${normalizePath(route.path || "/")}`;
+  // Optional override for pages that intentionally duplicate another route's
+  // body (e.g. /sports/soccer/countries mirrors /leagues) and want the
+  // canonical to point at the original to avoid duplicate-content dilution.
+  const canonicalPath = options.canonicalPath || route.path || "/";
+  const canonical = `${BASE_URL}${normalizePath(canonicalPath)}`;
   const robots = isParamPage(route.fullPath)
     ? "noindex,follow"
     : options.robots || "index,follow";
