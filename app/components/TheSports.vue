@@ -2,6 +2,10 @@
 import { onBeforeUnmount } from "vue";
 import { useScreenSizes } from "@/composables/useScreenSizes";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
+// Explicit import required: `Lazy` is a reserved Nuxt prefix, so a bare
+// <LazyInfinityScroll> tag resolves to nothing and the wrapped content
+// silently disappears.
+import LazyInfinityScroll from "@/components/LazyInfinityScroll.vue";
 
 const { resetToDefaults } = useSportsQueryParamsStore();
 const { isLargeScreen } = useScreenSizes();

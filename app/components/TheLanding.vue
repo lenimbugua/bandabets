@@ -7,6 +7,11 @@ import { useCasinoStore } from "@/stores/casino";
 import { storeToRefs } from "pinia";
 import TopGames from "@/components/mobile/TopGames.vue";
 import GamesRow from "@/components/mobile/GamesRow.vue";
+// Must be imported explicitly. `Lazy` is a reserved Nuxt prefix, so a bare
+// <LazyInfinityScroll> tag is parsed as "lazy-load a component named
+// InfinityScroll" — which does not exist — and Vue renders nothing. That
+// silently emptied this page's entire desktop (isLargeScreen) branch.
+import LazyInfinityScroll from "@/components/LazyInfinityScroll.vue";
 // import LiveMatchesPreviewDesktop from "@/components/LiveMatchesPreviewDesktop.vue";
 import MobileTest from "@/components/MobileTest.vue";
 // FREEBET DISABLED — restore later
