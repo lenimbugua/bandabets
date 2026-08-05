@@ -1,19 +1,36 @@
 <script setup>
-import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
-import { ref, computed, onMounted } from "vue"
-import { Gift } from "lucide-vue-next"
-import BonusHeader from "@/components/bonus/BonusHeader.vue"
-import BonusTabs from "@/components/bonus/BonusTabs.vue"
-import BonusCard from "@/components/bonus/BonusCard.vue"
-import MissionsSection from "@/components/bonus/MissionsSection.vue"
-import PromoBanner from "@/components/bonus/PromoBanner.vue"
-import DailyRewards from "@/components/bonus/DailyRewards.vue"
-import ReferralSection from "@/components/bonus/ReferralSection.vue"
+// Ported from src/views/BonusPage.vue. Baseline route "/bonus"
+// (git show 81ae85f:src/router/index.js:94-104) is top-level, requiresAuth
+// FALSE (plan's own correction — do not gate) and is NOT registered in
+// Phase 1's phase2Placeholders/phase2RealStubPaths/phase2RequiresAuthNames
+// at all, so /bonus 404s today and has no generated noindex routeRule; one
+// is added from scratch in nuxt.config.js in this same commit.
+import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
+import { Gift } from "lucide-vue-next";
+import BonusHeader from "@/components/bonus/BonusHeader.vue";
+import BonusTabs from "@/components/bonus/BonusTabs.vue";
+import BonusCard from "@/components/bonus/BonusCard.vue";
+import MissionsSection from "@/components/bonus/MissionsSection.vue";
+import PromoBanner from "@/components/bonus/PromoBanner.vue";
+import DailyRewards from "@/components/bonus/DailyRewards.vue";
+import ReferralSection from "@/components/bonus/ReferralSection.vue";
 
-import sportsIcon from "@/assets/bonus/sports-icon.png"
-import aviatorIcon from "@/assets/bonus/aviator-icon.png"
-import jetxIcon from "@/assets/bonus/jetx-icon.png"
-import esportsIcon from "@/assets/bonus/esports-icon.png"
+import sportsIcon from "@/assets/bonus/sports-icon.png";
+import aviatorIcon from "@/assets/bonus/aviator-icon.png";
+import jetxIcon from "@/assets/bonus/jetx-icon.png";
+import esportsIcon from "@/assets/bonus/esports-icon.png";
+
+definePageMeta({
+  name: "bonus",
+  layout: false,
+});
+
+useSeoHead({
+  title: "My Bonuses | Bandabets",
+  description:
+    "View and manage your bonuses, daily rewards, missions, and referral program at Bandabets.",
+  robots: "noindex,nofollow",
+});
 
 const bonusData = [
   {
@@ -81,7 +98,7 @@ const bonusData = [
       { step: 2, description: "Complete 3x wagering" },
     ],
   },
-]
+];
 
 const historyData = [
   {
@@ -100,19 +117,19 @@ const historyData = [
       { step: 1, description: "This bonus has expired" },
     ],
   },
-]
+];
 
-const activeTab = ref("active")
-const totalBalance = 900.00
-const ready = ref(false)
+const activeTab = ref("active");
+const totalBalance = 900.00;
+const ready = ref(false);
 
 const displayedBonuses = computed(() =>
   activeTab.value === "active" ? bonusData : historyData
-)
+);
 
 onMounted(() => {
-  requestAnimationFrame(() => { ready.value = true })
-})
+  requestAnimationFrame(() => { ready.value = true; });
+});
 </script>
 
 <template>

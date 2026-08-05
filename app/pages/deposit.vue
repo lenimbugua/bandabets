@@ -1,12 +1,27 @@
 <script setup>
-import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
-import { ref } from "vue";
+// Ported from src/views/DepositFunds.vue. Baseline route "/deposit"
+// (git show 81ae85f:src/router/index.js:369) is top-level, not a child of
+// WithSibarAndBetslip — renders its own HeaderLinks/Footer/MobileFooterV2,
+// so layout: false.
+import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
+
+definePageMeta({
+  name: "deposit",
+  requiresAuth: true,
+  layout: false,
+});
+
+useSeoHead({
+  title: "Deposit Funds | Instant M-Pesa Payments | Bandabets",
+  description:
+    "Deposit instantly via M-Pesa and start betting today. Secure, fast, and reliable deposits at Bandabets.",
+  robots: "noindex,nofollow",
+});
 
 const activeTab = ref("deposit");
 
 const tabs = [
   { id: "deposit", label: "Deposit" },
-//   { id: "paybill", label: "Paybill" },
   { id: "jisort", label: "Jisort" },
   { id: "bonuses", label: "Bonuses" },
   { id: "terms", label: "Terms" },
@@ -50,7 +65,6 @@ const tabs = [
       <!-- Deposit Tab -->
       <template v-if="activeTab === 'deposit'">
         <DepositForm />
-        <!-- <MpesaPaybillDeposit /> -->
         <SortYourDeposit class="sm:hidden" />
       </template>
 

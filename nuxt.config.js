@@ -17,17 +17,16 @@ const phase2PlaceholderFile = fileURLToPath(
 // Phase 1 (neither here nor as a real page) — see docs/PHASE-2-NOTES.md for
 // that gap; there is nothing to attach `requiresAuth` to until Phase 2
 // creates those pages.
+// "profile", "deposit", "withdraw", "self-exclusion" and "join-affiliate"
+// now set requiresAuth directly in their own definePageMeta (Batch C) —
+// kept here too since this set still gates "bet-details" and the
+// not-yet-ported virtual-game names.
 const phase2RequiresAuthNames = new Set([
   "bet-details",
-  "deposit",
-  "join-affiliate",
   "pari-league",
   "pari-turbo",
   "pari-virtual-jackpot",
   "playon",
-  "profile",
-  "self-exclusion",
-  "withdraw",
 ]);
 
 // Phase 1 route-name scaffold. DELETE EACH ENTRY as Phase 2 ports the real
@@ -47,12 +46,10 @@ const phase2Placeholders = [
   { name: "aviator", path: "/aviator" },
   { name: "bet-details", path: "/bet-details" },
   { name: "countries", path: "/sports/soccer/countries" },
-  { name: "deposit", path: "/deposit" },
   // "games" has no entry in the old router at all (nearest analog was
   // "play-casino-games" at /casino/:name, which is what this mirrors) —
   // a judgment call, not a sourced path. Flagged in task-10-report.md.
   { name: "games", path: "/casino/:name" },
-  { name: "join-affiliate", path: "/join-affiliate" },
   { name: "leaderboard", path: "/leaderboard" },
   {
     name: "match-details",
@@ -62,15 +59,11 @@ const phase2Placeholders = [
   { name: "pari-turbo", path: "/virtual-games/nai-turbo" },
   { name: "pari-virtual-jackpot", path: "/virtual-games/nai-virtual-jackpot" },
   { name: "playon", path: "/virtual-games/playon" },
-  { name: "profile", path: "/profile" },
   { name: "promotion-details", path: "/promotion-details/:name" },
-  { name: "self-exclusion", path: "/profile/exclude" },
   { name: "share-bets", path: "/share-bets/:code?" },
   { name: "share-feedback", path: "/share-feedback" },
   { name: "share-happiness", path: "/share-happiness" },
-  { name: "sort-deposit", path: "/sort-deposit" },
   { name: "welcome-gift", path: "/welcome-gift" },
-  { name: "withdraw", path: "/withdraw" },
 ];
 
 // The four real stub pages (their own .vue files under app/pages/, created
@@ -232,6 +225,22 @@ export default defineNuxtConfig({
     "/forgot-password": { ssr: false, headers: NOINDEX_HEADERS },
     "/reset-password": { ssr: false, headers: NOINDEX_HEADERS },
     "/verify-account": { ssr: false, headers: NOINDEX_HEADERS },
+
+    // --- Batch C: account — permanent noindex, ssr:false --------------------
+    // profile / deposit / sort-deposit / withdraw / self-exclusion / bonus /
+    // join-affiliate just left phase2Placeholders (removed above, except
+    // "bonus" which was never registered there at all — it 404'd in Phase 1
+    // with no generated noindex routeRule of any kind). All seven are
+    // private account pages; useSeoHead's robots meta does NOT reach
+    // crawlers under ssr:false (pageToClientOnly / ServerPlaceholder), so
+    // these permanent header rules are the only real guard.
+    "/profile": { ssr: false, headers: NOINDEX_HEADERS },
+    "/profile/exclude": { ssr: false, headers: NOINDEX_HEADERS },
+    "/deposit": { ssr: false, headers: NOINDEX_HEADERS },
+    "/sort-deposit": { ssr: false, headers: NOINDEX_HEADERS },
+    "/withdraw": { ssr: false, headers: NOINDEX_HEADERS },
+    "/bonus": { ssr: false, headers: NOINDEX_HEADERS },
+    "/join-affiliate": { ssr: false, headers: NOINDEX_HEADERS },
 
     // Every Phase-2 placeholder path (scaffold + the four real stub pages)
     // generated above: ssr:false where applicable plus an X-Robots-Tag

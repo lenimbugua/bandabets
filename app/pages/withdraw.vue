@@ -1,6 +1,26 @@
 <script setup>
-import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
+// Ported from src/views/WithdrawFunds.vue. Baseline route "/withdraw"
+// (git show 81ae85f:src/router/index.js:393) is top-level, not a child of
+// WithSibarAndBetslip — layout: false.
+//
+// Name shadowing: the source view imports a DIFFERENT component of the same
+// name (app/components/WithdrawFunds.vue). Kept explicit and this page file
+// is deliberately NOT named WithdrawFunds.vue to avoid confusion.
+import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
 import WithdrawFunds from "@/components/WithdrawFunds.vue";
+
+definePageMeta({
+  name: "withdraw",
+  requiresAuth: true,
+  layout: false,
+});
+
+useSeoHead({
+  title: "Withdraw Winnings | Instant M-Pesa Cashouts | Bandabets",
+  description:
+    "Withdraw your Bandabets winnings instantly to M-Pesa. Quick, secure, and hassle-free payouts anytime.",
+  robots: "noindex,nofollow",
+});
 </script>
 
 <template>
