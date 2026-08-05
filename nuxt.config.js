@@ -80,6 +80,14 @@ const phase2RequiresAuthNames = new Set([]);
 //     itself isn't rendered anywhere live either); removing the
 //     placeholder here would be an unrelated scope decision Batch F/G
 //     wasn't asked to make.
+//
+// Batch G (plan §11, "teardown"): the instruction there is to delete this
+// whole scaffold — phase2Placeholders, phase2RequiresAuthNames,
+// phase2RealStubPaths, toNitroPatterns(), phase2NoindexRouteRules and
+// app/components/PhaseTwoPlaceholder.vue — ONLY once this array is empty.
+// It is not: these three product-gated routes have no product decision on
+// record, so the scaffold stays, deliberately, until whoever makes that
+// call ships or drops each one.
 const phase2Placeholders = [
   { name: "leaderboard", path: "/leaderboard" },
   { name: "share-happiness", path: "/share-happiness" },
