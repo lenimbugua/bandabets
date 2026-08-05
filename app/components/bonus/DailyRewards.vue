@@ -24,7 +24,7 @@ const todayReward = weeklyRewards.find((r) => r.current)
 </script>
 
 <template>
-  <div class="bg-gradient-card rounded-xl border border-gray-200 dark:border-border p-2.5 shadow-md dark:shadow-none">
+  <div class="bg-card rounded-xl border border-gray-200 dark:border-border p-2.5 shadow-md dark:shadow-none">
     <!-- Header Row -->
     <div class="flex items-center justify-between mb-2">
       <div class="flex items-center gap-1.5">
@@ -94,7 +94,7 @@ const todayReward = weeklyRewards.find((r) => r.current)
     <button
       v-if="todayReward && !todayReward.claimed"
       type="button"
-      class="w-full bg-gradient-gold text-accent-foreground text-xs font-bold py-2 rounded-lg shadow-glow-gold flex items-center justify-center gap-1 cta-premium"
+      class="w-full bg-bet text-bet-foreground text-xs font-bold py-2 rounded-lg shadow-glow-gold flex items-center justify-center gap-1 cta-premium"
     >
       <Gift class="w-3.5 h-3.5" />
       Claim Day {{ todayReward.day }}: {{ todayReward.reward }} KES

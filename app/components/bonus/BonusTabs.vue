@@ -15,7 +15,7 @@ const emit = defineEmits(["update:activeTab"]);
         cn(
           'flex-1 py-2 px-4 rounded-full text-xs font-semibold transition-all duration-300',
           activeTab === 'active'
-            ? 'bg-white dark:bg-gradient-card text-primary shadow-md border border-primary/30 shadow-glow-green'
+            ? 'bg-white dark:bg-card text-primary shadow-md border border-primary/30 shadow-glow-green'
             : 'text-muted-foreground hover:text-foreground hover:bg-secondary/30'
         )
       "
@@ -29,7 +29,7 @@ const emit = defineEmits(["update:activeTab"]);
         cn(
           'flex-1 py-2 px-4 rounded-full text-xs font-semibold transition-all duration-300',
           activeTab === 'history'
-            ? 'bg-white dark:bg-gradient-card text-primary shadow-md border border-primary/30 shadow-glow-green'
+            ? 'bg-white dark:bg-card text-primary shadow-md border border-primary/30 shadow-glow-green'
             : 'text-muted-foreground hover:text-foreground hover:bg-secondary/30'
         )
       "

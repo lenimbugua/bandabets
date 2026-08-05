@@ -29,7 +29,7 @@ function handleShare() {
 </script>
 
 <template>
-  <div class="bg-gradient-card rounded-xl border border-gray-200 dark:border-border overflow-hidden card-hover-lift shadow-md dark:shadow-none">
+  <div class="bg-card rounded-xl border border-gray-200 dark:border-border overflow-hidden card-hover-lift shadow-md dark:shadow-none">
     <!-- Header Banner -->
     <div class="relative bg-linear-to-r from-primary/10 dark:from-primary/30 via-accent/8 dark:via-accent/20 to-primary/10 dark:to-primary/30 p-3 border-b border-gray-200 dark:border-border">
       <div class="absolute inset-0 overflow-hidden">
@@ -39,8 +39,8 @@ function handleShare() {
 
       <div class="relative flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-9 h-9 rounded-xl bg-gradient-gold flex items-center justify-center shadow-glow-gold">
-            <Users class="w-5 h-5 text-accent-foreground" />
+          <div class="w-9 h-9 rounded-xl bg-bet flex items-center justify-center shadow-glow-gold">
+            <Users class="w-5 h-5 text-bet-foreground" />
           </div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -104,10 +104,10 @@ function handleShare() {
             </Transition>
           </button>
           <button
-            class="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center shadow-glow-gold cta-premium"
+            class="w-10 h-10 rounded-lg bg-bet flex items-center justify-center shadow-glow-gold cta-premium"
             @click="handleShare"
           >
-            <Share2 class="w-4 h-4 text-accent-foreground" />
+            <Share2 class="w-4 h-4 text-bet-foreground" />
           </button>
         </div>
         <Transition name="fade">
@@ -134,7 +134,7 @@ function handleShare() {
       </div>
 
       <!-- CTA -->
-      <button type="button" class="w-full bg-gradient-gold text-accent-foreground text-xs font-bold py-2.5 rounded-xl shadow-glow-gold flex items-center justify-center gap-1.5 cta-premium">
+      <button type="button" class="w-full bg-bet text-bet-foreground text-xs font-bold py-2.5 rounded-xl shadow-glow-gold flex items-center justify-center gap-1.5 cta-premium">
         <Users class="w-4 h-4" />
         Invite Friends Now
         <ChevronRight class="w-4 h-4" />

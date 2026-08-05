@@ -129,7 +129,7 @@ function getSpecifier(outcome) {
       <TabList
         v-if="tabs.length"
         aria-label="Bet builder markets"
-        class="flex gap-2 px-4 py-2.5 border-b border-gray-100/60 dark:border-white/4 bg-white/90 dark:bg-[oklch(13%_0.04_258/0.88)] premium-glass"
+        class="flex gap-2 px-4 py-2.5 border-b border-gray-100/60 dark:border-white/4 bg-card"
       >
         <Tab
           v-for="(tab, index) in tabs"

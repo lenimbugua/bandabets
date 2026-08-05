@@ -250,7 +250,7 @@ onMounted(() => {
       <div :class="['stagger-item', ready && 'stagger-visible']" style="--delay: 6">
         <div class="bg-linear-to-r from-primary/30 dark:from-primary/20 to-accent/30 dark:to-accent/20 rounded-xl p-4 md:p-6 border border-primary/30 text-center glass-card">
           <p class="text-xs text-muted-foreground mb-2">Need more bonuses?</p>
-          <button type="button" class="bg-gradient-gold text-accent-foreground text-sm md:text-base font-bold px-6 py-2.5 rounded-full shadow-glow-gold cta-premium">
+          <button type="button" class="bg-bet text-bet-foreground text-sm md:text-base font-bold px-6 py-2.5 rounded-full shadow-glow-gold cta-premium">
             Deposit Now &amp; Earn More!
           </button>
         </div>

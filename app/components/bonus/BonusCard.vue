@@ -55,7 +55,7 @@ const gameIconComponents = {
 
 <template>
   <div
-    class="bg-gradient-card rounded-xl border border-gray-200 dark:border-border overflow-hidden hover:border-primary/30 card-hover-lift shadow-md dark:shadow-none"
+    class="bg-card rounded-xl border border-gray-200 dark:border-border overflow-hidden hover:border-primary/30 card-hover-lift shadow-md dark:shadow-none"
   >
     <div class="p-2.5">
       <!-- Header Row -->
@@ -188,7 +188,7 @@ const gameIconComponents = {
         <div v-if="wagerMultiplier" class="flex items-center gap-1">
           <div class="w-14 h-1.5 bg-gray-200 dark:bg-secondary rounded-full overflow-hidden">
             <div
-              class="h-full bg-gradient-emerald rounded-full animate-progress"
+              class="h-full bg-success rounded-full animate-progress"
               :style="{ width: progressPercent + '%' }"
             />
           </div>
@@ -199,7 +199,7 @@ const gameIconComponents = {
         <!-- CTA -->
         <button
           type="button"
-          class="bg-gradient-gold text-accent-foreground text-xs font-bold px-3.5 py-1.5 rounded-full flex items-center gap-0.5 shadow-glow-gold shrink-0 cta-premium"
+          class="bg-bet text-bet-foreground text-xs font-bold px-3.5 py-1.5 rounded-full flex items-center gap-0.5 shadow-glow-gold shrink-0 cta-premium"
         >
           Claim Now <ChevronRight class="w-3 h-3" />
         </button>
