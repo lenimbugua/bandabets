@@ -7,9 +7,10 @@ import { useCasinoStore } from "../stores/casino";
 
 import { useDefaultSport } from "@/composables/useDefaultSport";
 import { ArrowRightIcon } from "@heroicons/vue/20/solid";
-import formatStuff from "../utilities/format-stuff";
-
-const { formCloudflareImage } = formatStuff();
+// Unused while the promo placeholder is in place. Kept commented, not
+// deleted, so restoring the real images is a local change in this file.
+// import formatStuff from "../utilities/format-stuff";
+// const { formCloudflareImage } = formatStuff();
 
 const { initDefaultSport } = useDefaultSport();
 
@@ -120,7 +121,10 @@ function launchCasino(gameId, gameName) {
 function goToPromoDetails(promo) {
   const normalized = {
     ...promo,
-    image_url: promo.image_url || formCloudflareImage(promo.img),
+    // TEMPORARY: placeholder instead of the CMS/Cloudflare image, so the
+    // detail page a user lands on matches the card they clicked.
+    // Restore: promo.image_url || formCloudflareImage(promo.img)
+    image_url: PROMO_PLACEHOLDER,
     description: promo.description || promo.samary,
     app_route_name: promo.app_route_name || promo.routeName,
     call_to_action_name: promo.call_to_action_name || "Claim Now",
@@ -138,8 +142,11 @@ function goToPromoDetails(promo) {
       <article v-for="promo in promos" :key="promo.title" class="promo-card">
         <!-- Image -->
         <div class="promo-card-img" @click="launchCasino(promo.id, promo.name)">
+          <!-- TEMPORARY: placeholder in place of the per-promo Cloudflare
+               image. This is the /promotions listing grid.
+               Restore :src="formCloudflareImage(promo.img)" to undo. -->
           <img
-            :src="formCloudflareImage(promo.img)"
+            :src="PROMO_PLACEHOLDER"
             :alt="promo.name || 'Promotion'"
             loading="lazy"
           />

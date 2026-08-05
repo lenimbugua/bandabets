@@ -10,7 +10,7 @@ import AviatorFreeRains from "./AviatorFreeRains.vue";
 import DepositBonus from "./DepositBonus.vue";
 import JengaBetsPromotion from "./JengaBetsPromotion.vue";
 
-import formatStuff from "@/utilities/format-stuff";
+// import formatStuff from "@/utilities/format-stuff";
 import { ArrowLeftIcon } from "@heroicons/vue/20/solid";
 import InviteFriendsPromo from "./InviteFriendsPromo.vue";
 import LeaderboardPromo from "./LeaderboardPromo.vue";
@@ -20,7 +20,8 @@ import WelcomeBonus from "./WelcomeBonus.vue";
 import EarlyCashout from "./EarlyCashout.vue";
 import PlayonRains from "./PlayonRains.vue";
 
-const { formCloudflareImage } = formatStuff();
+// Unused while the placeholder is in place — see getPromoImage() below.
+// const { formCloudflareImage } = formatStuff();
 
 const route = useRoute();
 

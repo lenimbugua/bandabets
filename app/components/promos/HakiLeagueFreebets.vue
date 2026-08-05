@@ -1,16 +1,17 @@
 <script setup>
-import { usePromos } from "@/composables/usePromos";
-import formatStuff from "@/utilities/format-stuff";
 import { RouterLink } from "vue-router";
 
-const { formCloudflareImage } = formatStuff();
+// import { usePromos } from "@/composables/usePromos";
 
-const { promos, hakiLeaguePromo } = usePromos();
-
-function getPromoImageByName() {
-  const promo = promos.find((p) => p.name === hakiLeaguePromo);
-  return promo ? promo.img : null;
-}
+// Unused while the placeholder is in place. Kept commented, not deleted, so
+// restoring the real image is a local change in this file.
+// import formatStuff from "@/utilities/format-stuff";
+// const { formCloudflareImage } = formatStuff();
+// const { promos, hakiLeaguePromo } = usePromos();
+// function getPromoImageByName() {
+//   const promo = promos.find((p) => p.name === hakiLeaguePromo);
+//   return promo ? promo.img : null;
+// }
 
 const bettingRules = [
   "You can bet on all available leagues.",

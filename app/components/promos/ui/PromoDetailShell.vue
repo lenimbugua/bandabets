@@ -1,5 +1,5 @@
 <script setup>
-import formatStuff from "@/utilities/format-stuff";
+// import formatStuff from "@/utilities/format-stuff";
 
 const props = defineProps({
   img: { type: String, default: "" },
@@ -7,7 +7,10 @@ const props = defineProps({
   alt: { type: String, default: "Promotion" },
 });
 
-const { formCloudflareImage } = formatStuff();
+// formCloudflareImage is unused while the placeholder is in place. Kept as a
+// commented line rather than deleted so restoring the real image is a
+// two-line change in this file.
+// const { formCloudflareImage } = formatStuff();
 
 const linkTo = typeof props.to === "string" ? { name: props.to } : props.to;
 </script>
@@ -20,8 +23,13 @@ const linkTo = typeof props.to === "string" ? { name: props.to } : props.to;
       :to="to ? linkTo : undefined"
       class="pshell__banner"
     >
+      <!-- TEMPORARY: placeholder in place of the per-promo Cloudflare image.
+           This shell renders the banner for EarlyCashout, PlayonRains,
+           AviatorFreeRains, DepositBonus, WelcomeBonus and PromoIndex, so it
+           is the single point that covers all of them.
+           Restore :src="formCloudflareImage(img)" to undo. -->
       <img
-        :src="formCloudflareImage(img)"
+        :src="PROMO_PLACEHOLDER"
         :alt="alt"
         loading="lazy"
       />
