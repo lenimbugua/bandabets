@@ -67,10 +67,13 @@ function getPromoImageByName() {
 }
 
 function getPromoImage() {
-  const promo = getPromoImageByName();
-  const imgId = promo ? promo.img : null;
-  const img = formCloudflareImage(imgId);
-  return img;
+  // TEMPORARY: every promo renders the shared placeholder while the real
+  // artwork is produced. Restore the Cloudflare lookup below to undo.
+  return PROMO_PLACEHOLDER;
+
+  // const promo = getPromoImageByName();
+  // const imgId = promo ? promo.img : null;
+  // return formCloudflareImage(imgId);
 }
 
 function promoExistsInNewPromos() {

@@ -17,16 +17,22 @@ const autoplayDelay = 8000;
 
 // BANDA campaign artwork, served from /public. 3:1, so the frame below uses
 // the same ratio and nothing gets cropped.
-const items = [
-  { name: "Starter Free Bet", image: "/banners/banda/starter-free-bet.jpg" },
-  { name: "Kick Off Bonus", image: "/banners/banda/kick-off-bonus.jpg" },
-  { name: "Kick Off Bonus terms", image: "/banners/banda/kick-off-bonus-terms.jpg" },
-  { name: "We serve you more action", image: "/banners/banda/we-serve-you-more-action.jpg" },
-  { name: "Promo menu", image: "/banners/banda/promo-menu.jpg" },
-  { name: "Real-time scores", image: "/banners/banda/real-time-scores.jpg" },
-  { name: "News that rides with you", image: "/banners/banda/news-that-rides-with-you.jpg" },
-  { name: "Wherever you are", image: "/banners/banda/wherever-you-are.jpg" },
-];
+// TEMPORARY: one placeholder slide instead of the eight-slide campaign set.
+// A carousel of eight identical frames would autoplay through nothing, so the
+// set is collapsed to a single slide rather than repeated. Restore the array
+// below to bring the real artwork back.
+const items = [{ name: "Kick Off Bonus", image: PROMO_PLACEHOLDER }];
+
+// const items = [
+//   { name: "Starter Free Bet", image: "/banners/banda/starter-free-bet.jpg" },
+//   { name: "Kick Off Bonus", image: "/banners/banda/kick-off-bonus.jpg" },
+//   { name: "Kick Off Bonus terms", image: "/banners/banda/kick-off-bonus-terms.jpg" },
+//   { name: "We serve you more action", image: "/banners/banda/we-serve-you-more-action.jpg" },
+//   { name: "Promo menu", image: "/banners/banda/promo-menu.jpg" },
+//   { name: "Real-time scores", image: "/banners/banda/real-time-scores.jpg" },
+//   { name: "News that rides with you", image: "/banners/banda/news-that-rides-with-you.jpg" },
+//   { name: "Wherever you are", image: "/banners/banda/wherever-you-are.jpg" },
+// ];
 
 // The BANDA banners are brand artwork with no live offers behind them yet, so
 // every slide goes home. Flip this to false to restore per-banner routing —

@@ -33,9 +33,11 @@ const freeBetDetails = [
   <div class="font-sans max-w-7xl mx-auto">
     <!-- Hero Section -->
     <div class="relative aspect-video h-42 sm:h-104 w-full my-4">
+      <!-- TEMPORARY: placeholder in place of the Cloudflare promo image.
+           Restore :src="formCloudflareImage(getPromoImageByName())" to undo. -->
       <img
         class="absolute top-0 w-full h-full right-0 left-0 bottom-0 object-contain md:object-cover"
-        :src="formCloudflareImage(getPromoImageByName())"
+        :src="PROMO_PLACEHOLDER"
         alt="Pari League free bets promotion"
         loading="lazy"
       />

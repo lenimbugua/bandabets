@@ -117,9 +117,11 @@ onBeforeUnmount(() => {
           <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Back</h3>
         </div>
         <div class="relative aspect-video h-42 sm:h-104 w-full my-4 rounded-xl overflow-hidden border border-gray-200 dark:border-border shadow-sm dark:shadow-none">
+          <!-- TEMPORARY: placeholder in place of the CMS image_url.
+               Restore :src="selectedPromo?.image_url" to undo. -->
           <img
             class="absolute top-0 w-full h-full right-0 left-0 bottom-0 object-cover"
-            :src="selectedPromo?.image_url"
+            :src="PROMO_PLACEHOLDER"
             :alt="selectedPromo?.title || 'Promotion details'"
             loading="lazy"
           />

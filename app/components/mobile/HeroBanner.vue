@@ -30,17 +30,21 @@ const liveBetId = 1000016;
 const redBarronId = 1000017;
 const oneCutId = 1000018;
 
-// BANDA campaign artwork, served from /public — same set as the desktop strip.
-const items = [
-  { name: "Starter Free Bet", image: "/banners/banda/starter-free-bet.jpg" },
-  { name: "Kick Off Bonus", image: "/banners/banda/kick-off-bonus.jpg" },
-  { name: "Kick Off Bonus terms", image: "/banners/banda/kick-off-bonus-terms.jpg" },
-  { name: "We serve you more action", image: "/banners/banda/we-serve-you-more-action.jpg" },
-  { name: "Promo menu", image: "/banners/banda/promo-menu.jpg" },
-  { name: "Real-time scores", image: "/banners/banda/real-time-scores.jpg" },
-  { name: "News that rides with you", image: "/banners/banda/news-that-rides-with-you.jpg" },
-  { name: "Wherever you are", image: "/banners/banda/wherever-you-are.jpg" },
-];
+// TEMPORARY: one placeholder slide instead of the eight-slide campaign set —
+// same treatment as the desktop strip in TheBanner.vue. Restore the array
+// below to bring the real artwork back.
+const items = [{ name: "Kick Off Bonus", image: PROMO_PLACEHOLDER }];
+
+// const items = [
+//   { name: "Starter Free Bet", image: "/banners/banda/starter-free-bet.jpg" },
+//   { name: "Kick Off Bonus", image: "/banners/banda/kick-off-bonus.jpg" },
+//   { name: "Kick Off Bonus terms", image: "/banners/banda/kick-off-bonus-terms.jpg" },
+//   { name: "We serve you more action", image: "/banners/banda/we-serve-you-more-action.jpg" },
+//   { name: "Promo menu", image: "/banners/banda/promo-menu.jpg" },
+//   { name: "Real-time scores", image: "/banners/banda/real-time-scores.jpg" },
+//   { name: "News that rides with you", image: "/banners/banda/news-that-rides-with-you.jpg" },
+//   { name: "Wherever you are", image: "/banners/banda/wherever-you-are.jpg" },
+// ];
 
 // No live offers behind the BANDA artwork yet, so every slide goes home.
 // Flip to false to restore the per-banner game/route launching below.
