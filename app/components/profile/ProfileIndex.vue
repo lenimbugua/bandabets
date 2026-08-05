@@ -5,6 +5,20 @@ import { storeToRefs } from "pinia";
 import MobileFooterV2 from "../mobile/MobileFooterV2.vue";
 import NotAuthenicated from "../NotAuthenicated.vue";
 
+// Explicit imports are required, not stylistic. Nuxt auto-registers
+// components in subdirectories with a path prefix, so these siblings register
+// as ProfileUserInfo / ProfileTheAccount / ProfileDepositWithdrawLinks — the
+// bare <UserInfo />, <TheAccount /> and <DepositWithdrawLinks /> tags below
+// would not resolve, and Vue renders an unresolved component as nothing. That
+// silently emptied three sections of the profile page.
+// (<ProfileLinks /> happens to survive because Nuxt strips the redundant
+// directory prefix from profile/ProfileLinks.vue, but it is imported here too
+// so the whole set is explicit rather than half-relying on that quirk.)
+import UserInfo from "./UserInfo.vue";
+import TheAccount from "./TheAccount.vue";
+import DepositWithdrawLinks from "./DepositWithdrawLinks.vue";
+import ProfileLinks from "./ProfileLinks.vue";
+
 import { useModalTypes } from "@/composables/useModalTypes";
 
 const { drawer } = useModalTypes();

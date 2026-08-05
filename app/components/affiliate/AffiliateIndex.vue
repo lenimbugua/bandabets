@@ -7,6 +7,7 @@ import AffiliateCommission from "./AffiliateCommission.vue";
 import AffiliateSwiper from "./AffiliateSwiper.vue";
 import AffiliateTabs from "./AffiliateTabs.vue";
 import HowToAffiliate from "./HowToAffiliate.vue";
+import MyEarnings from "./MyEarnings.vue";
 import ShareButton from "./ShareButton.vue";
 
 const { fetchAffiliateUrl, fetchAffiliateEarnings, reset } =

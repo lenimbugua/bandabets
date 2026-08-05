@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LeagueBetControls from "./LeagueBetControls.vue";
 import LeagueEmptySlip from "./LeagueEmptySlip.vue";
 </script>
 

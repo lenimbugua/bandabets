@@ -2,6 +2,7 @@
 import { useShareBetStore } from "@/stores/sharebet";
 
 import { storeToRefs } from "pinia";
+import BookedSelection from "./BookedSelection.vue";
 
 const { sharedBetslip } = storeToRefs(useShareBetStore());
 </script>

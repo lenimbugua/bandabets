@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import TeamStats from "./TeamStats.vue";
 const matches = ref([
   {
     parent_match_id: "6771279",

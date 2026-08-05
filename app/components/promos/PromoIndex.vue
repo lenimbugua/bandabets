@@ -7,6 +7,7 @@ import MultibetBoostPromo from "../MultibetBoostPromo.vue";
 import OneCutPromo from "../OneCutPromo.vue";
 import TwoUpPromo from "../TwoUpPromo.vue";
 import AviatorFreeRains from "./AviatorFreeRains.vue";
+import AviatorKaribuBonus from "./AviatorKaribuBonus.vue";
 import DepositBonus from "./DepositBonus.vue";
 import JengaBetsPromotion from "./JengaBetsPromotion.vue";
 
@@ -19,6 +20,7 @@ import TanoSupuu from "./TanoSupuu.vue";
 import WelcomeBonus from "./WelcomeBonus.vue";
 import EarlyCashout from "./EarlyCashout.vue";
 import PlayonRains from "./PlayonRains.vue";
+import ShareKrisii from "./ShareKrisii.vue";
 
 // Unused while the placeholder is in place — see getPromoImage() below.
 // const { formCloudflareImage } = formatStuff();

@@ -5,6 +5,8 @@ import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import EmptyState from "../EmptyState.vue";
+import CategoryPagination from "./CategoryPagination.vue";
+import SelectionsCard from "./SelectionsCard.vue";
 
 const modules = [Autoplay, Navigation];
 const { bethub, pending } = storeToRefs(useBookedBetsStore());

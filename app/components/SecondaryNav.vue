@@ -5,6 +5,8 @@ import { useModalStore } from "@/stores/modal";
 import { toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { useSecondaryNavGames } from "../composables/useSecondaryNavGames";
+import GameLinkIconLayout from "./games-links/GameLinkIconLayout.vue";
+import SportsGamesLink from "./games-links/SportsGamesLink.vue";
 const { sportsIconsModal } = useModalTypes();
 const { openModal } = useModalStore();
 

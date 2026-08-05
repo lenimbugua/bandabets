@@ -1,4 +1,5 @@
 <script setup>
+import BookedBetsCategory from "@/components/community-bets/BookedBetsCategory.vue";
 import BookedBetsFAQs from "@/components/community-bets/BookedBetsFAQs.vue";
 import LoadCode from "@/components/community-bets/LoadCode.vue";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";

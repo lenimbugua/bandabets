@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ChatAvatar from "./ChatAvatar.vue";
+import ChatBox from "./ChatBox.vue";
 import ChatInput from "./ChatInput.vue";
 import ChatLikes from "./ChatLikes.vue";
 import ChatTopBar from "./ChatTopBar.vue";

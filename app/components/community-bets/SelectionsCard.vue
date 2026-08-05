@@ -10,6 +10,7 @@ import { useLoadCode } from "@/composables/useLoadCode";
 import { useBetslip } from "@/composables/useBetslip";
 import { useShareBetStore } from "@/stores/sharebet.js";
 import { ShareIcon, PlusIcon } from "@heroicons/vue/20/solid";
+import BookedSelection from "./BookedSelection.vue";
 
 const { setBookingCode } = useShareBetStore();
 const modules = [Autoplay, Navigation, Pagination];
