@@ -272,6 +272,35 @@
   --text-muted-alt: var(--text-tertiary);      /* → text-tertiary */
   --text-subtle: var(--text-secondary);        /* → text-secondary */
 
+  /* Intent — status surface/border/text triplets, so status components
+     stop inventing their own tints */
+  --success-surface: color-mix(in srgb, var(--success) 12%, transparent);
+  --success-border: color-mix(in srgb, var(--success) 35%, transparent);
+  --success-text: var(--success);
+  --warning-surface: color-mix(in srgb, var(--warning) 12%, transparent);
+  --warning-border: color-mix(in srgb, var(--warning) 35%, transparent);
+  --warning-text: var(--warning);
+  --danger-surface: color-mix(in srgb, var(--destructive) 12%, transparent);
+  --danger-border: color-mix(in srgb, var(--destructive) 35%, transparent);
+  --danger-text: var(--destructive);
+
+  /* Domain — odds cell states. Selected = the bet CTA gold; up/down are
+     the status colours, shown as a brief flash, never a resting state. */
+  --odds-bg: var(--surface-2);
+  --odds-fg: var(--text-primary);
+  --odds-hover-bg: var(--surface-3);
+  --odds-selected-bg: var(--bet);
+  --odds-selected-fg: var(--bet-foreground);
+  --odds-up: var(--emerald);
+  --odds-down: var(--palette-red-400);
+  --odds-suspended-bg: var(--surface-1);
+  --odds-suspended-fg: var(--text-disabled);
+
+  /* Domain — live indicator */
+  --live: var(--palette-red-500);
+  --live-bg: color-mix(in srgb, var(--live) 12%, transparent);
+  --live-border: color-mix(in srgb, var(--live) 35%, transparent);
+
   /* Shape — Soft 4px base */
   --radius: 0.25rem;
 
@@ -401,6 +430,35 @@
   --text-muted-alt: var(--palette-coffee-400);
   --text-subtle: var(--palette-coffee-500);
 
+  /* Intent — status surface/border/text triplets, so status components
+     stop inventing their own tints */
+  --success-surface: color-mix(in srgb, var(--success) 12%, transparent);
+  --success-border: color-mix(in srgb, var(--success) 35%, transparent);
+  --success-text: var(--success);
+  --warning-surface: color-mix(in srgb, var(--warning) 12%, transparent);
+  --warning-border: color-mix(in srgb, var(--warning) 35%, transparent);
+  --warning-text: var(--warning);
+  --danger-surface: color-mix(in srgb, var(--destructive) 12%, transparent);
+  --danger-border: color-mix(in srgb, var(--destructive) 35%, transparent);
+  --danger-text: var(--destructive);
+
+  /* Domain — odds cell states. Selected = the bet CTA gold; up/down are
+     the status colours, shown as a brief flash, never a resting state. */
+  --odds-bg: var(--surface-2);
+  --odds-fg: var(--text-primary);
+  --odds-hover-bg: var(--surface-3);
+  --odds-selected-bg: var(--bet);
+  --odds-selected-fg: var(--bet-foreground);
+  --odds-up: var(--emerald);
+  --odds-down: var(--palette-red-600);
+  --odds-suspended-bg: var(--surface-1);
+  --odds-suspended-fg: var(--text-disabled);
+
+  /* Domain — live indicator */
+  --live: var(--palette-red-500);
+  --live-bg: color-mix(in srgb, var(--live) 12%, transparent);
+  --live-border: color-mix(in srgb, var(--live) 35%, transparent);
+
   /* Elevation — light uses a coffee umbra so shadows stay in-family */
   --elevation-umbra: 45 19 6;
   --elevation-alpha-1: 0.05;
@@ -502,6 +560,31 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-tertiary: var(--text-tertiary);
   --color-text-disabled: var(--text-disabled);
+
+  /* Intent triplets */
+  --color-success-surface: var(--success-surface);
+  --color-success-border: var(--success-border);
+  --color-success-text: var(--success-text);
+  --color-warning-surface: var(--warning-surface);
+  --color-warning-border: var(--warning-border);
+  --color-warning-text: var(--warning-text);
+  --color-danger-surface: var(--danger-surface);
+  --color-danger-border: var(--danger-border);
+  --color-danger-text: var(--danger-text);
+
+  /* Domain — odds and live */
+  --color-odds-bg: var(--odds-bg);
+  --color-odds-fg: var(--odds-fg);
+  --color-odds-hover-bg: var(--odds-hover-bg);
+  --color-odds-selected: var(--odds-selected-bg);
+  --color-odds-selected-fg: var(--odds-selected-fg);
+  --color-odds-up: var(--odds-up);
+  --color-odds-down: var(--odds-down);
+  --color-odds-suspended-bg: var(--odds-suspended-bg);
+  --color-odds-suspended-fg: var(--odds-suspended-fg);
+  --color-live: var(--live);
+  --color-live-bg: var(--live-bg);
+  --color-live-border: var(--live-border);
 
   /* ── Elevation ──────────────────────────────────────────────────────────
      Level 1 is a hairline, not a shadow. Levels 2 and 3 are the only
@@ -746,6 +829,10 @@
   --color-orange-800: var(--palette-gold-800);
   --color-orange-900: var(--palette-gold-900);
   --color-orange-950: var(--palette-gold-950);
+
+  /* Gold mid-tone — direct ramp access for the .1475-luminance step that
+     sits between gold-600 and gold-700 (see layer 1) */
+  --color-gold-650: var(--palette-gold-650);
 
   /* Tertiary Gray → blue / sky / cyan. BANDA treats informational as a
      neutral gray, not a chromatic blue: a saturated blue fights the
