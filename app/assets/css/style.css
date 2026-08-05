@@ -159,6 +159,8 @@
      this gold is 2.1:1. */
   --primary: var(--palette-gold-500);
   --primary-foreground: var(--palette-gold-900);
+  --primary-hover: var(--palette-gold-400);
+  --primary-active: var(--palette-gold-600);
 
   /* Secondary — the spec's warm peach. */
   --secondary: #edbca6;
@@ -217,39 +219,58 @@
   --betslip-foreground: var(--palette-white);
   --betslip-label: var(--palette-betslip-300);
 
-  /* Surfaces — tonal layers, deepest to most-raised */
-  --surface-deepest: var(--palette-coffee-950);
-  --surface-sunken: var(--palette-coffee-900);
-  --surface-elevated: var(--palette-coffee-800);
-  --surface-interactive: var(--palette-coffee-600);
-  --surface-active: var(--palette-coffee-500);
+  /* Text hierarchy — the four canonical text levels. The spec's table used
+     coffee-500/400 for disabled, but those are near-black surface fills;
+     the ramp's real mid-tones (450/550/650) carry text, per the layer-1
+     comments. */
+  --text-primary: var(--palette-coffee-100);
+  --text-secondary: var(--palette-coffee-200);
+  --text-tertiary: var(--palette-coffee-300);
+  --text-disabled: var(--palette-coffee-650);
 
-  /* Brand ramp aliases */
-  --brand-bright: var(--palette-gold-500);
-  --brand-dark: var(--palette-gold-800);
-  /* Not the selected-odds token despite the name — real selected odds use
-     bg-primary/text-primary-foreground. Its nine consumers are brand buttons,
-     seven of which put near-white text on it, so it must stay dark: gold-500
-     would be 2.11:1, gold-800 is 8.86:1. */
-  --brand-selected: var(--palette-gold-800);
-  --brand-mid: var(--palette-gold-600);
-  --brand-forest: var(--palette-coffee-950);
-  --brand-teal: var(--palette-coffee-700);
-
-  /* Gold aliases */
-  --gold-bright: var(--palette-gold-300);
-  --gold-deep: var(--palette-gold-700);
-  --gold-muted: var(--palette-gold-400);
-  --bronze: var(--palette-gold-800);
+  /* Surfaces — interaction-oriented hierarchy: page → container → card →
+     interactive control → selected control */
+  --surface-0: var(--palette-coffee-950);
+  --surface-1: var(--palette-coffee-900);
+  --surface-2: var(--palette-coffee-800);
+  --surface-3: var(--palette-coffee-600);
+  --surface-4: var(--palette-coffee-500);
 
   /* Borders */
   --border-subtle: var(--palette-coffee-700);
   --border-strong: var(--palette-coffee-300);
   --border-darkest: var(--palette-coffee-950);
 
-  /* Text */
-  --text-muted-alt: var(--palette-coffee-300);
-  --text-subtle: var(--palette-coffee-200);
+  /* ────────────────────────────────────────────────────────────────────
+     DEPRECATED — do not use in new code. Kept only so existing
+     components keep rendering identically; each points at its canonical
+     replacement. Migrating the ~149 consumer files off these is a
+     future PR.
+     ──────────────────────────────────────────── */
+  --surface-deepest: var(--surface-0);
+  --surface-sunken: var(--surface-1);
+  --surface-elevated: var(--surface-2);
+  --surface-interactive: var(--surface-3);
+  --surface-active: var(--surface-4);
+
+  --brand-bright: var(--primary);              /* → primary */
+  --brand-dark: var(--palette-gold-800);       /* → gold ramp via amber-800 */
+  /* Not the selected-odds token despite the name — real selected odds use
+     bg-primary/text-primary-foreground. Its nine consumers are brand
+     buttons, seven of which put near-white text on it, so it must stay
+     dark: gold-500 would be 2.11:1, gold-800 is 8.86:1. */
+  --brand-selected: var(--palette-gold-800);
+  --brand-mid: var(--palette-gold-600);
+  --brand-forest: var(--surface-0);            /* → surface-0 */
+  --brand-teal: var(--palette-coffee-700);
+
+  --gold-bright: var(--bet-bright);            /* → bet-bright */
+  --gold-deep: var(--bet-deep);                /* → bet-deep */
+  --gold-muted: var(--bet-hover);              /* → bet-hover */
+  --bronze: var(--palette-gold-800);
+
+  --text-muted-alt: var(--text-tertiary);      /* → text-tertiary */
+  --text-subtle: var(--text-secondary);        /* → text-secondary */
 
   /* Shape — Soft 4px base */
   --radius: 0.25rem;
@@ -279,6 +300,8 @@
      for anything that carries or outlines text. */
   --primary: var(--palette-gold-700);
   --primary-foreground: var(--palette-white);
+  --primary-hover: var(--palette-gold-800);
+  --primary-active: var(--palette-gold-900);
 
   --secondary: #edbca6;
   --secondary-foreground: #47291a;
@@ -330,13 +353,35 @@
   --betslip-foreground: var(--palette-white);
   --betslip-label: var(--palette-betslip-500);
 
-  --surface-deepest: #e8ddd2;
-  --surface-sunken: #f3ede7;
-  --surface-elevated: var(--palette-white);
-  --surface-interactive: #f3ede7;
-  --surface-active: #e8ddd2;
+  /* Text hierarchy — mid-tone steps; see the dark block note */
+  --text-primary: var(--palette-coffee-900);
+  --text-secondary: var(--palette-coffee-650);
+  --text-tertiary: var(--palette-coffee-550);
+  --text-disabled: var(--palette-coffee-450);
 
-  --brand-bright: var(--palette-gold-700);
+  --surface-0: #e8ddd2;
+  --surface-1: #f3ede7;
+  --surface-2: var(--palette-white);
+  --surface-3: #f3ede7;
+  --surface-4: #e8ddd2;
+
+  --border-subtle: #f0e7dd;
+  --border-strong: var(--palette-coffee-300);
+  --border-darkest: var(--palette-coffee-400);
+
+  /* ────────────────────────────────────────────────────────────────────
+     DEPRECATED — do not use in new code. Kept only so existing
+     components keep rendering identically; each points at its canonical
+     replacement. Migrating the ~149 consumer files off these is a
+     future PR.
+     ──────────────────────────────────────────── */
+  --surface-deepest: var(--surface-0);
+  --surface-sunken: var(--surface-1);
+  --surface-elevated: var(--surface-2);
+  --surface-interactive: var(--surface-3);
+  --surface-active: var(--surface-4);
+
+  --brand-bright: var(--primary);              /* gold-700 in light = primary */
   --brand-dark: var(--palette-gold-900);
   --brand-selected: var(--palette-gold-800);
   --brand-mid: var(--palette-gold-700);
@@ -351,10 +396,8 @@
   --gold-muted: var(--palette-gold-700);
   --bronze: var(--palette-gold-800);
 
-  --border-subtle: #f0e7dd;
-  --border-strong: var(--palette-coffee-300);
-  --border-darkest: var(--palette-coffee-400);
-
+  /* Rendering-identical values, so these stay palette refs (the canonical
+     text tokens land on different steps in light) */
   --text-muted-alt: var(--palette-coffee-400);
   --text-subtle: var(--palette-coffee-500);
 
@@ -386,6 +429,8 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-tertiary: var(--tertiary);
@@ -424,6 +469,12 @@
   --color-surface-interactive: var(--surface-interactive);
   --color-surface-active: var(--surface-active);
 
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-4: var(--surface-4);
+
   /* Brand palette */
   --color-brand-bright: var(--brand-bright);
   --color-brand-dark: var(--brand-dark);
@@ -446,6 +497,11 @@
   /* Text variants */
   --color-text-muted-alt: var(--text-muted-alt);
   --color-text-subtle: var(--text-subtle);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-disabled: var(--text-disabled);
 
   /* ── Elevation ──────────────────────────────────────────────────────────
      Level 1 is a hairline, not a shadow. Levels 2 and 3 are the only
