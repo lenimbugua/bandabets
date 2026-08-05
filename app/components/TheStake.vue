@@ -53,7 +53,7 @@ function formatStakeLabel(amount) {
           <path d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1H2V4Z" />
           <path fill-rule="evenodd" d="M1 6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6Zm11 3.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd" />
         </svg>
-        <span class="font-bold text-gray-700 dark:text-white/60">
+        <span class="font-bold text-gray-700 dark:text-white/60 font-odds tabular-nums">
           {{ parseFloat(balance).toFixed("2") }}
         </span>
         <span class="text-[0.6rem]">KES</span>
@@ -102,7 +102,7 @@ function formatStakeLabel(amount) {
             v-model="selectedStakeAmount"
             type="number"
             aria-label="Stake amount in KES"
-            class="w-full pl-10 pr-3 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200/80 dark:border-white/8 text-right text-[0.85rem] font-bold text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-bright/30 focus:border-brand-bright/30 transition-all stake-input"
+            class="w-full pl-10 pr-3 py-2 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200/80 dark:border-white/8 text-right text-[0.85rem] font-bold text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-bright/30 focus:border-brand-bright/30 transition-all stake-input font-odds tabular-nums"
             required
             @input="updateStake(selectedStakeAmount)"
           />

@@ -25,7 +25,7 @@ const navItems = [
         :class="cn(
           'flex flex-col items-center gap-0.5 py-1.5 px-4 rounded-xl transition-all relative',
           item.highlight
-            ? 'bg-gradient-gold text-accent-foreground shadow-glow-gold -mt-4 px-5 py-2'
+            ? 'bg-bet text-bet-foreground shadow-glow-gold -mt-4 px-5 py-2'
             : activeTab === item.id
             ? 'text-primary'
             : 'text-muted-foreground hover:text-foreground'

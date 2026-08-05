@@ -64,7 +64,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <button type="button" class="bg-gradient-gold text-accent-foreground text-xs font-bold px-4 py-2.5 rounded-lg flex flex-col items-center shadow-glow-gold shrink-0 cta-premium">
+        <button type="button" class="bg-bet text-bet-foreground text-xs font-bold px-4 py-2.5 rounded-lg flex flex-col items-center shadow-glow-gold shrink-0 cta-premium">
           <span>CLAIM</span>
           <ArrowRight class="w-3 h-3" />
         </button>

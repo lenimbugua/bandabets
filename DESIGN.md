@@ -50,38 +50,38 @@ colors:
   surface-variant: '#3d3329'
 typography:
   h1:
-    fontFamily: Poppins
+    fontFamily: Montserrat
     fontSize: 32px
     fontWeight: '700'
     lineHeight: 40px
     letterSpacing: -0.02em
   h1-mobile:
-    fontFamily: Poppins
+    fontFamily: Montserrat
     fontSize: 24px
     fontWeight: '700'
     lineHeight: 32px
   h2:
-    fontFamily: Poppins
+    fontFamily: Montserrat
     fontSize: 20px
     fontWeight: '700'
     lineHeight: 28px
   odds-display:
-    fontFamily: Poppins
+    fontFamily: Inter
     fontSize: 16px
     fontWeight: '600'
     lineHeight: 20px
   body-main:
-    fontFamily: Poppins
+    fontFamily: Inter
     fontSize: 14px
     fontWeight: '400'
     lineHeight: 20px
   data-compact:
-    fontFamily: Poppins
+    fontFamily: Inter
     fontSize: 12px
     fontWeight: '500'
     lineHeight: 16px
   label-caps:
-    fontFamily: Poppins
+    fontFamily: Inter
     fontSize: 10px
     fontWeight: '700'
     lineHeight: 12px
@@ -124,7 +124,7 @@ The palette is centered around the "BANDA Gold" (#fa9602), used strictly for pri
 - **Loss/Down:** A muted Rose for decreasing odds or settled losses.
 
 ## Typography
-The typography system utilizes **Poppins** across all roles to maintain a clean, modern geometric feel. 
+The typography system pairs **Montserrat** (headings and promotional display) with **Inter** (UI, tables, odds, and body copy). Montserrat carries the architecture; Inter carries the data, with `tabular-nums` on all numeric displays so odds and money align in columns. 
 
 - **Headings:** Bold weights (700) are used for headers and section titles to provide a strong anchor for the eye amidst dense data.
 - **Odds & Data:** Medium weights (500/600) are applied to betting odds and prices. This ensures legibility at small sizes while distinguishing interactive data from static labels.

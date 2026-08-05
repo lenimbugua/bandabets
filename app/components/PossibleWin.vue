@@ -32,7 +32,7 @@ const showTax = ref(false);
       Potential Win
     </span>
     <div class="flex items-center gap-1">
-      <span class="text-[0.85rem] font-black text-gray-900 dark:text-white">
+      <span class="text-[0.85rem] font-black text-gray-900 dark:text-white font-odds tabular-nums">
         {{ formattedNumber(possibleWin) }}
       </span>
       <span class="text-[0.6rem] text-gray-400 dark:text-white/30">KES</span>

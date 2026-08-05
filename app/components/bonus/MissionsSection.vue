@@ -71,7 +71,7 @@ const gameIconMap = {
         v-for="mission in missions"
         :key="mission.id"
         :class="cn(
-          'relative shrink-0 w-[150px] md:w-auto bg-gradient-card rounded-xl border p-2.5 card-hover-lift snap-start shadow-md dark:shadow-none',
+          'relative shrink-0 w-[150px] md:w-auto bg-card rounded-xl border p-2.5 card-hover-lift snap-start shadow-md dark:shadow-none',
           mission.hot ? 'border-accent/40 dark:border-accent/50' : 'border-gray-200 dark:border-border'
         )"
       >
@@ -126,7 +126,7 @@ const gameIconMap = {
             <Clock class="w-2 h-2" /> {{ mission.urgency }}
           </span>
           <span v-else class="text-[9px] text-foreground/70">No expiry</span>
-          <button type="button" class="bg-gradient-gold text-accent-foreground text-[9px] font-bold px-2.5 py-1 rounded-full flex items-center gap-0.5 shadow-glow-gold cta-premium">
+          <button type="button" class="bg-bet text-bet-foreground text-[9px] font-bold px-2.5 py-1 rounded-full flex items-center gap-0.5 shadow-glow-gold cta-premium">
             Deposit <ChevronRight class="w-2.5 h-2.5" />
           </button>
         </div>
