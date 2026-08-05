@@ -1,16 +1,16 @@
-// TEMPORARY — single placeholder standing in for every promo and banner image.
+// TEMPORARY — placeholder standing in for the PROMO PAGE images while the real
+// promo artwork is produced.
 //
-// All promo artwork (the hardcoded BANDA carousel slides, the Cloudflare-hosted
-// promo images, and the CMS `image_url` on promotion details) currently points
-// here while the real campaign artwork is produced.
+// Scope is the promo pages only. The homepage banner carousels
+// (TheBanner.vue, mobile/HeroBanner.vue) use the real BANDA campaign artwork
+// from /public/banners/banda/ and are deliberately NOT covered here.
 //
-// To undo: delete this file and restore the original image sources. The call
-// sites are TheBanner.vue, mobile/HeroBanner.vue, promos/PromoIndex.vue,
-// promos/PromotionDetails.vue and promos/HakiLeagueFreebets.vue — each one
-// references PROMO_PLACEHOLDER, so they are easy to find. The previous slide
-// arrays and Cloudflare image IDs are preserved in comments at those call
-// sites rather than deleted, so nothing has to be reconstructed.
+// Call sites, all under app/components/promos/:
+//   PromoIndex.vue          — replaces the Cloudflare image lookup
+//   PromotionDetails.vue    — replaces the CMS `image_url`
+//   HakiLeagueFreebets.vue  — replaces its Cloudflare image
+// Each keeps its original image source in a comment, so restoring is
+// uncommenting rather than reconstructing.
 //
-// 1997x666 (3:1), which is the ratio the banner frames already assume, so
-// nothing crops.
+// 1997x666 (3:1).
 export const PROMO_PLACEHOLDER = "/banners/banda/placeholder.jpg";
