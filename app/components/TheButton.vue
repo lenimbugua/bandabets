@@ -166,7 +166,7 @@ function outcomeIsLocked() {
       </span>
       <span
         :class="outcomeIsSelected ? 'text-odds-selected-fg' : 'text-gray-900 dark:text-white'"
-        class="text-[0.8rem] font-bold leading-tight tabular-nums"
+        class="text-[0.8rem] font-bold leading-tight tabular-nums font-odds"
       >
         {{ outcome.oddValue }}
       </span>
@@ -205,7 +205,7 @@ function outcomeIsLocked() {
         </span>
         <span
           :class="outcomeIsSelected ? 'text-odds-selected-fg' : 'text-primary'"
-          class="text-[0.8rem] font-bold tabular-nums"
+          class="text-[0.8rem] font-bold tabular-nums font-odds"
         >
           {{ outcome.oddValue }}
         </span>
@@ -214,7 +214,7 @@ function outcomeIsLocked() {
       <template v-else>
         <span
           :class="outcomeIsSelected ? 'text-odds-selected-fg' : 'text-primary'"
-          class="text-[0.8rem] font-bold tabular-nums"
+          class="text-[0.8rem] font-bold tabular-nums font-odds"
         >
           {{ outcome.oddValue }}
         </span>

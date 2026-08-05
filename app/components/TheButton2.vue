@@ -166,7 +166,7 @@ function outcomeIsLocked() {
         :class="[
           outcomeIsSelected ? 'text-odds-selected-fg' : 'dark:text-white text-gray-950',
         ]"
-        class="text-[0.7rem] font-bold"
+        class="text-[0.7rem] font-bold tabular-nums font-odds"
       >
         {{ outcome.oddValue }}
       </div>
@@ -207,7 +207,7 @@ function outcomeIsLocked() {
         :class="[
           outcomeIsSelected ? 'text-odds-selected-fg' : 'dark:text-white text-gray-950',
         ]"
-        class="text-[1rem] font-black"
+        class="text-[1rem] font-black tabular-nums font-odds"
       >
         {{ outcome.oddValue }}
       </div>
