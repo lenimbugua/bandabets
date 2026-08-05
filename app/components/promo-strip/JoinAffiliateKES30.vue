@@ -1,6 +1,6 @@
 <template>
   <RouterLink
-    class="px-2.5 py-1 bg-linear-to-r from-violet-500 via-lime-500 to-violet-500 flex items-center justify-between text-foreground font-bold text-xs"
+    class="px-2.5 py-1 bg-linear-to-r from-gold-650 via-lime-500 to-gold-650 flex items-center justify-between text-foreground font-bold text-xs"
     :to="{ name: 'join-affiliate' }"
   >
     <div class="flex justify-between w-full items-center text-gray-950">
@@ -22,7 +22,7 @@
           </svg>
         </div>
         <span>Get</span>
-        <span class="text-fuchsia-700 font-black">KES.30</span>
+        <span class="text-amber-700 font-black">KES.30</span>
         <span>Per Referral</span>
       </div>
       <div>

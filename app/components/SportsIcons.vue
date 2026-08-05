@@ -36,7 +36,7 @@ function showIcon(name) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
       :class="size"
-      class="fill-current text-fuchsia-400"
+      class="fill-current text-amber-400"
     >
       <path
         d="M162-520h114q-6-38-23-71t-43-59q-18 29-30.5 61.5T162-520Zm522 0h114q-5-36-17.5-68.5T750-650q-26 26-43 59t-23 71ZM210-310q26-26 43-59t23-71H162q5 36 17.5 68.5T210-310Zm540 0q18-29 30.5-61.5T798-440H684q6 38 23 71t43 59ZM358-520h82v-278q-53 8-98.5 29.5T260-712q39 38 64.5 86.5T358-520Zm162 0h82q8-57 33.5-105.5T700-712q-36-35-81.5-56.5T520-798v278Zm-80 358v-278h-82q-8 57-33.5 105.5T260-248q36 35 81.5 56.5T440-162Zm80 0q53-8 98.5-29.5T700-248q-39-38-64.5-86.5T602-440h-82v278Zm-40-318Zm0 400q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"
@@ -332,7 +332,7 @@ function showIcon(name) {
       fill="none"
       viewBox="0 0 32 32"
       :class="size"
-      class="text-purple-500"
+      class="text-gold-650"
     >
       <path
         stroke="currentColor"
@@ -453,7 +453,7 @@ function showIcon(name) {
       fill="none"
       viewBox="0 0 31 32"
       :class="size"
-      class="text-violet-400"
+      class="text-amber-400"
     >
       <path
         stroke="currentColor"
@@ -486,7 +486,7 @@ function showIcon(name) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
       :class="size"
-      class="fill-current text-violet-400"
+      class="fill-current text-amber-400"
     >
       <path
         d="M480-480Zm80 240q100 0 170-70t70-170q0-101-73.5-170.5T550-720q-48 0-93 11t-87 33l100 40q41 17 65.5 52.5T560-504q0 60-41.5 102T418-360H162q-2 24-2 54.5v65.5h400ZM176-440h240q27 0 45.5-18.5T480-504q0-19-10.5-34.5T440-562l-148-60q-42 37-71.5 84T176-440Zm384 280H160q-33 0-56.5-23.5T80-240v-90q0-98 37-183.5t100.5-149Q281-726 367-763t183-37q68 0 128 25t105 68.5Q828-663 854-605t26 125q0 66-25 124.5t-68.5 102Q743-210 684.5-185T560-160Z"

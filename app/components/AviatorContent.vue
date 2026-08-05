@@ -30,7 +30,7 @@ const isHidden = ref(true);
         <main v-show="!isHidden" class="max-w-5xl mx-auto py-10 px-5 space-y-10">
           <!-- Promotion Overview -->
           <section>
-            <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+            <h2 class="text-2xl font-semibold text-amber-700 mb-4">
               Overview
             </h2>
             <p>
@@ -44,7 +44,7 @@ const isHidden = ref(true);
 
           <!-- How it Works -->
           <section>
-            <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+            <h2 class="text-2xl font-semibold text-amber-700 mb-4">
               How It Works
             </h2>
             <p>
@@ -61,7 +61,7 @@ const isHidden = ref(true);
 
             <!-- Free Bet Rain Details -->
             <div class="space-y-6 mt-6">
-              <div class="bg-gray-50 border-l-4 border-indigo-500 p-4">x1xd1xxzzzzzzzzzZ C`AZASZ```````````````````````````K566 BUJJ N <Noframes>JMMMJ</Noframes>`````z`
+              <div class="bg-gray-50 border-l-4 border-gold-650 p-4">
                 <h3 class="font-bold text-lg">KSH 30 Free Bet Rain</h3>
                 <ul class="list-disc list-inside text-gray-700 mt-2">
                   <li>Randomly awarded <strong>20 times daily</strong>.</li>
@@ -73,7 +73,7 @@ const isHidden = ref(true);
                 </ul>
               </div>
 
-              <div class="bg-gray-50 border-l-4 border-indigo-500 p-4">
+              <div class="bg-gray-50 border-l-4 border-gold-650 p-4">
                 <h3 class="font-bold text-lg">KSH 50 Free Bet Rain</h3>
                 <ul class="list-disc list-inside text-gray-700 mt-2">
                   <li>Randomly awarded <strong>20 times daily</strong>.</li>
@@ -85,7 +85,7 @@ const isHidden = ref(true);
                 </ul>
               </div>
 
-              <div class="bg-gray-50 border-l-4 border-indigo-500 p-4">
+              <div class="bg-gray-50 border-l-4 border-gold-650 p-4">
                 <h3 class="font-bold text-lg">KSH 100 Free Bet Rain</h3>
                 <ul class="list-disc list-inside text-gray-700 mt-2">
                   <li>Randomly awarded <strong>10 times daily</strong>.</li>
@@ -97,7 +97,7 @@ const isHidden = ref(true);
                 </ul>
               </div>
 
-              <div class="bg-gray-50 border-l-4 border-indigo-500 p-4">
+              <div class="bg-gray-50 border-l-4 border-gold-650 p-4">
                 <h3 class="font-bold text-lg">KSH 500 Free Bet Rain</h3>
                 <ul class="list-disc list-inside text-gray-700 mt-2">
                   <li>Randomly awarded <strong>10 times daily</strong>.</li>
@@ -113,7 +113,7 @@ const isHidden = ref(true);
 
           <!-- Terms and Conditions -->
           <section>
-            <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+            <h2 class="text-2xl font-semibold text-amber-700 mb-4">
               Terms and Conditions
             </h2>
             <ul class="list-disc list-inside space-y-2 text-gray-700">
@@ -146,7 +146,7 @@ const isHidden = ref(true);
 
           <!-- Conclusion -->
           <section>
-            <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+            <h2 class="text-2xl font-semibold text-amber-700 mb-4">
               Conclusion
             </h2>
             <p>

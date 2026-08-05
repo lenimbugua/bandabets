@@ -57,7 +57,7 @@ function showIcon(name) {
 
     <BanknotesIcon
       v-if="showIcon('banknotes')"
-      class="h-6 w-6 fill-current text-purple-500"
+      class="h-6 w-6 fill-current text-gold-650"
     />
     <UserPlusIcon
       v-if="showIcon('userPlusIcon')"

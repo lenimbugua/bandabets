@@ -68,7 +68,7 @@ function openShare() {
     class="w-[20.4rem] bg-gray-200 dark:bg-background rounded-md overflow-clip border border-gray-300 dark:border-black/30 shadow-xs hover:shadow-md hover:shadow-gray-500/50 transition-all duration-300"
   >
     <div
-      class="dark:bg-linear-to-br border-b border-gray-300 dark:border-black/30 from-purple-950 via-[--background] to-red-950 px-2 py-0.5 pt-1"
+      class="dark:bg-linear-to-br border-b border-gray-300 dark:border-black/30 from-amber-950 via-[--background] to-red-950 px-2 py-0.5 pt-1"
     >
       <div class="items-center">
         <div class="flex justify-between">

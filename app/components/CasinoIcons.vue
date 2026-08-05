@@ -414,7 +414,7 @@ function showIcon(num) {
     class="relative h-6 w-6 aspect-3/2 rounded-lg overflow-clip"
   >
     <img
-      class="top-0  bg-purple-500  right-0 left-0 bottom-0 object-cover h-full w-full"
+      class="top-0  bg-gold-650  right-0 left-0 bottom-0 object-cover h-full w-full"
       src="/virtual1.png"
       alt="Virtual games"
       loading="lazy"

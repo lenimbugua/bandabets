@@ -76,7 +76,7 @@ const features = [
 
       <div class="container mx-auto px-4 relative">
         <h1
-          class="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-linear-to-r from-purple-600 to-pink-600"
+          class="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-linear-to-r from-amber-700 to-pink-600"
         >
           Elevate Your Betting Experience
         </h1>
@@ -95,7 +95,7 @@ const features = [
         <div
           class="bg-white dark:bg-surface-elevated rounded-2xl shadow-xl p-6 transform transition-all duration-300 hover:scale-[1.02]"
         >
-          <GiftIcon class="w-12 h-12 text-purple-600 mb-4" />
+          <GiftIcon class="w-12 h-12 text-amber-700 mb-4" />
           <h2 class="text-2xl font-bold mb-4">What are Free Bets?</h2>
           <p class="text-gray-600 dark:text-gray-300">
             Free bets are promotional offers that allow you to place a bet
@@ -115,7 +115,7 @@ const features = [
               class="flex items-start space-x-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-background"
             >
               <div
-                class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 font-bold"
+                class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-300 font-bold"
               >
                 {{ index + 1 }}
               </div>
@@ -155,10 +155,10 @@ const features = [
               :key="index"
               class="flex items-start space-x-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-background"
             >
-              <div class="p-2 rounded-lg bg-purple-100 dark:bg-purple-900">
+              <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-900">
                 <component
                   :is="feature.icon"
-                  class="w-5 h-5 text-purple-600 dark:text-purple-300"
+                  class="w-5 h-5 text-amber-700 dark:text-amber-300"
                 />
               </div>
               <div>

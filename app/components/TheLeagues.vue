@@ -18,7 +18,7 @@ const { competitions, meta } = storeToRefs(useMatchesStore());
     <Listbox>
       <div class="mt-1">
         <ListboxButton
-          class="relative w-full cursor-default rounded-md border dark:border-border bg-white dark:bg-surface-deepest py-1 pl-3 pr-10 text-left shadow-md focus:outline-hidden focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+          class="relative w-full cursor-default rounded-md border dark:border-border bg-white dark:bg-surface-deepest py-1 pl-3 pr-10 text-left shadow-md focus:outline-hidden focus-visible:border-gold-650 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
         >
           <span class="block truncate text-gray-950 dark:text-gray-50"
             >Leagues</span

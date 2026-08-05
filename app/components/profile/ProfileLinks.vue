@@ -68,8 +68,8 @@ const signOut = () => {
         class="flex items-center justify-between px-4 py-3 hover:bg-gray-50 dark:hover:bg-white/3 transition-colors"
       >
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-purple-50 dark:bg-purple-500/10 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-purple-500">
+          <div class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-gold-650/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-gold-650">
               <path fill-rule="evenodd" d="M5 2.75C5 1.784 5.784 1 6.75 1h6.5c.966 0 1.75.784 1.75 1.75v3.552c0 .814-.291 1.6-.818 2.217l-2.042 2.39a.75.75 0 0 1-1.14 0L8.958 8.519A3.368 3.368 0 0 1 8.14 6.302V5.151L5 2.75Zm1.5.633 2.14 1.63V6.302c0 .47.168.925.474 1.283L10 8.575l.886-1.037A1.868 1.868 0 0 0 11.36 6.3V5.013L13.5 3.383V2.75a.25.25 0 0 0-.25-.25h-6.5a.25.25 0 0 0-.25.25v.633Z" clip-rule="evenodd" />
               <path d="M6.75 12a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h6.5a.75.75 0 0 0 .75-.75v-4.5a.75.75 0 0 0-.75-.75h-6.5Zm1.5 2.25a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z" />
             </svg>

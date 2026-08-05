@@ -45,7 +45,7 @@ const gameIconMap = {
   aviator: { icon: Plane, color: "text-primary bg-primary/20 border-primary/30" },
   sports: { icon: Trophy, color: "text-accent bg-accent/20 border-accent/30" },
   cashback: { icon: TrendingUp, color: "text-success bg-success/15 border-success/25" },
-  esports: { icon: Gamepad2, color: "text-purple-600 dark:text-purple-400 bg-purple-500/15 dark:bg-purple-400/20 border-purple-500/25 dark:border-purple-400/30" },
+  esports: { icon: Gamepad2, color: "text-amber-700 dark:text-amber-400 bg-gold-650/15 dark:bg-amber-400/20 border-gold-650/25 dark:border-amber-400/30" },
 }
 </script>
 

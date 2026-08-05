@@ -4,7 +4,7 @@
   >
     <div class="max-w-7xl mx-auto">
       <section
-        class="p-10 mb-10 text-center rounded-2xl shadow-xl transition-colors duration-500 bg-gray-50 shadow-gray-200/50 dark:bg-secondary dark:shadow-purple-900/50"
+        class="p-10 mb-10 text-center rounded-2xl shadow-xl transition-colors duration-500 bg-gray-50 shadow-gray-200/50 dark:bg-secondary dark:shadow-amber-900/50"
       >
         <p class="text-xl text-red-500 mb-2 font-bold">
           🎄 Sambaza za Krisi na Mabeste UshindeMbuzi! 🐐
@@ -35,7 +35,7 @@
 
       <div class="grid md:grid-cols-2 gap-8 mb-12">
         <div
-          class="p-8 rounded-2xl border-l-8 border-red-500 shadow-lg transition-colors duration-500 bg-white shadow-gray-200/50 dark:bg-secondary dark:shadow-purple-900/50"
+          class="p-8 rounded-2xl border-l-8 border-red-500 shadow-lg transition-colors duration-500 bg-white shadow-gray-200/50 dark:bg-secondary dark:shadow-amber-900/50"
         >
           <h2 class="text-3xl font-bold text-red-500 mb-6">
             💰 Guaranteed Cash: Everyone Eats
@@ -55,14 +55,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b border-gray-200 dark:border-purple-700">
+                <tr class="border-b border-gray-200 dark:border-amber-700">
                   <td class="p-3">Instant Sign-Up Cash (min KES 30 bet)</td>
                   <td class="p-3 font-bold text-yellow-500">
                     KES 30 Instantly
                   </td>
                 </tr>
                 <tr
-                  class="border-b bg-gray-50 border-gray-200 dark:border-purple-700 dark:bg-card"
+                  class="border-b bg-gray-50 border-gray-200 dark:border-amber-700 dark:bg-card"
                 >
                   <td class="p-3">Daily Deposit Commission</td>
                   <td class="p-3 font-bold text-yellow-500">
@@ -77,7 +77,7 @@
         </div>
 
         <div
-          class="p-8 rounded-2xl border-l-8 border-yellow-500 shadow-lg transition-colors duration-500 bg-white shadow-gray-200/50 dark:bg-secondary dark:shadow-purple-900/50"
+          class="p-8 rounded-2xl border-l-8 border-yellow-500 shadow-lg transition-colors duration-500 bg-white shadow-gray-200/50 dark:bg-secondary dark:shadow-amber-900/50"
         >
           <h2 class="text-3xl font-bold text-yellow-500 mb-6">
             🏆 How to Win the Daily Mbuzi
@@ -106,7 +106,7 @@
             </li>
           </ul>
           <p
-            class="mt-6 pt-4 border-t border-gray-200 text-sm italic dark:border-purple-800"
+            class="mt-6 pt-4 border-t border-gray-200 text-sm italic dark:border-amber-800"
           >
             Pro Tip: The leaderboard resets every day. If you didn't win today,
             form ni kesho!
@@ -132,31 +132,31 @@
             </thead>
             <tbody>
               <tr
-                class="text-xl font-extrabold bg-red-100 dark:bg-purple-800/50"
+                class="text-xl font-extrabold bg-red-100 dark:bg-amber-800/50"
               >
                 <td class="p-3 border-r border-yellow-600">1st - 3rd</td>
                 <td class="p-3 text-yellow-500">🐐 Mbuzi (KES 5,000 Cash)</td>
               </tr>
               <tr class="bg-white dark:bg-secondary">
-                <td class="p-3 border-r border-gray-200 dark:border-purple-700">
+                <td class="p-3 border-r border-gray-200 dark:border-amber-700">
                   4th - 5th
                 </td>
                 <td class="p-3 font-semibold text-red-500">💰 KES 2,000</td>
               </tr>
               <tr class="bg-gray-50 dark:bg-card">
-                <td class="p-3 border-r border-gray-200 dark:border-purple-700">
+                <td class="p-3 border-r border-gray-200 dark:border-amber-700">
                   6th - 10th
                 </td>
                 <td class="p-3 font-semibold text-red-500">💸 KES 1,000</td>
               </tr>
               <tr class="bg-white dark:bg-secondary">
-                <td class="p-3 border-r border-gray-200 dark:border-purple-700">
+                <td class="p-3 border-r border-gray-200 dark:border-amber-700">
                   11th - 20th
                 </td>
                 <td class="p-3 font-semibold text-red-500">💵 KES 500</td>
               </tr>
               <tr class="bg-gray-50 dark:bg-card">
-                <td class="p-3 border-r border-gray-200 dark:border-purple-700">
+                <td class="p-3 border-r border-gray-200 dark:border-amber-700">
                   21st - 30th
                 </td>
                 <td class="p-3 font-semibold text-red-500">🪙 KES 200</td>
@@ -167,7 +167,7 @@
       </section>
 
       <section
-        class="p-8 rounded-2xl border-l-8 border-red-500 shadow-xl mb-12 bg-white shadow-gray-200/50 dark:bg-secondary dark:shadow-purple-900/50"
+        class="p-8 rounded-2xl border-l-8 border-red-500 shadow-xl mb-12 bg-white shadow-gray-200/50 dark:bg-secondary dark:shadow-amber-900/50"
       >
         <h2 class="text-3xl font-bold text-red-500 mb-6">
           🎁 Why Your Friends Will Love You
@@ -199,7 +199,7 @@
       </section>
 
       <section
-        class="pt-6 border-t border-dashed text-sm border-gray-300 text-gray-600 dark:border-purple-700 dark:text-gray-400"
+        class="pt-6 border-t border-dashed text-sm border-gray-300 text-gray-600 dark:border-amber-700 dark:text-gray-400"
       >
         <h3 class="text-xl font-bold mb-3 text-primary-foreground dark:text-gray-100">
           📋 Terms & Conditions

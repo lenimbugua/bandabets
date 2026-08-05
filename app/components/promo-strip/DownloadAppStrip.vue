@@ -18,7 +18,6 @@ const { downloadApp } = useDownloadApp();
           <span class="animate-pulse">🔥</span>
         </div>
         <span class="text-xs">Download App Today</span>
-        <!-- <span class="text-fuchsia-600 font-black text-xs">KES.30</span> -->
         <div class="flex space-x-1 justify-between">
           <span class="animate-pulse">🔥</span>
           <span class="animate-pulse">🔥</span>
@@ -26,7 +25,7 @@ const { downloadApp } = useDownloadApp();
       </div>
       <div>
         <button
-          class="bg-linear-to-r from-indigo-500 via-lime-600 to-fuchsia-500 text-white p-1 rounded-md flex space-x-0.5"
+          class="bg-linear-to-r from-gold-650 via-lime-600 to-gold-650 text-white p-1 rounded-md flex space-x-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

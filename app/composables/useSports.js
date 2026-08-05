@@ -44,7 +44,7 @@ const games = ref([
   {
     name: "eSports",
     icon: eSoccer,
-    iconColor: "text-violet-600 dark:text-violet-400",
+    iconColor: "text-amber-700 dark:text-amber-400",
     id: 10915624,
     link: "/",
   },
@@ -156,7 +156,7 @@ const games = ref([
   {
     name: "Snooker",
     icon: snooker,
-    iconColor: "text-purple-600 dark:text-purple-400",
+    iconColor: "text-amber-700 dark:text-amber-400",
     id: 22,
     link: "/",
   },

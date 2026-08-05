@@ -51,7 +51,7 @@ onBeforeMount(() => {
 </script>
 <template>
   <div
-    class="pr-1 py-1 bg-linear-to-r from-red-500 via-fuchsia-900 to-red-700"
+    class="pr-1 py-1 bg-linear-to-r from-red-500 via-amber-900 to-red-700"
     @click="
       currentSlide[0].item.func(
         currentSlide[0].item.gameId,
@@ -61,7 +61,7 @@ onBeforeMount(() => {
   >
     <!-- Overlay with blend mode -->
     <!-- <div
-      class="absolute inset-0 bg-linear-to-r from-brand-teal via-fuchsia-900 to-brand-bright mix-blend-overlay"
+      class="absolute inset-0 bg-linear-to-r from-brand-teal via-amber-900 to-brand-bright mix-blend-overlay"
     ></div>
     <div class="absolute inset-0 backdrop-blur-[0.08rem] z-[-1]"></div> -->
     <div class="flex justify-between w-full">
