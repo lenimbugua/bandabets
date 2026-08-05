@@ -36,6 +36,41 @@ const claimedQueryCategories = mainNavCategories
   .map((c) => c.activeQueryCategory)
   .filter(Boolean);
 
+// Mobile under-header text tabs (All Sports / Casino / …) — see CategoryPills.vue.
+// Kept separate from mainNavCategories, which still drives the desktop header nav.
+export const headerTabCategories = [
+  { name: "All Sports", displayName: "All Sports", to: { name: "home" }, activeOn: ["home", "sports", "country", "countries", "match-details", "live"] },
+  { name: "Casino", displayName: "Casino", to: { name: "casino-home", query: { category: "all" } }, activeOn: ["casino-home", "casino-game"] },
+  { name: "Slots", displayName: "Slots", to: { name: "casino-home", query: { category: "slots" } }, activeOn: ["casino-home"], activeQueryCategory: "slots" },
+  { name: "Virtuals", displayName: "Virtuals", to: { name: "casino-home", query: { category: "virtuals" } }, activeOn: ["casino-home"], activeQueryCategory: "virtuals" },
+  { name: "Promotions", displayName: "Promotions", to: { name: "promotions" }, activeOn: ["promotions", "promotion-details"] },
+];
+
+const claimedHeaderTabQueryCategories = headerTabCategories
+  .map((c) => c.activeQueryCategory)
+  .filter(Boolean);
+
+export function useHeaderTabs() {
+  const router = useRouter();
+  const route = useRoute();
+
+  function isActive(cat) {
+    if (!cat.activeOn.includes(route.name)) return false;
+    if (cat.activeQueryCategory) {
+      return route.query.category === cat.activeQueryCategory;
+    }
+    const q = route.query.category;
+    if (q && claimedHeaderTabQueryCategories.includes(q)) return false;
+    return true;
+  }
+
+  function handleClick(cat) {
+    router.push(cat.to);
+  }
+
+  return { tabs: headerTabCategories, isActive, handleClick };
+}
+
 /**
  * Shared main navigation (HOME / SPORTS / AVIATOR / …).
  * Consumed by the desktop header nav links and the mobile category pill bar.
