@@ -2,10 +2,18 @@ import formatStuff from "../utilities/format-stuff";
 
 import { crashGamesRouteName } from "./useCasino";
 
+// formatStuff() itself is safe at module scope (verified: no
+// useRuntimeConfig/window/ref inside — see plan §F.6), but the two arrays
+// below used to be module-scope consts, shared by every concurrent SSR
+// request (rule 3). Read-only literals, so low severity, but moved inside
+// the factory for consistency with useVirtual.js/usePopular.js.
 const { formCloudflareImage } = formatStuff();
 
-const redBaronImg = formCloudflareImage("dca13b16-9130-4d26-95fc-170e8227d800");
-const categories = [
+export function useCrash() {
+  const redBaronImg = formCloudflareImage(
+    "dca13b16-9130-4d26-95fc-170e8227d800",
+  );
+  const categories = [
   {
     category_id: "",
     category_name: "Flying High",
@@ -266,9 +274,8 @@ const games = [
     live: false,
     hot: false,
   },
-];
+  ];
 
-export function useCrash() {
   return {
     categories,
     games,

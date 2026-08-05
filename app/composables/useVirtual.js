@@ -1,5 +1,13 @@
 import { virtualGamesRouteName } from "./useCasino";
-const categories = [
+
+// Batch F (plan §F.6): these two arrays used to be module-scope consts
+// returned as-is by useVirtual(), which means ONE instance was shared by
+// every concurrent SSR request (rule 3). They're read-only literals (never
+// mutated by VirtualsIndex.vue, which only passes them through as props),
+// so the risk was low, but the fix is cheap: build them fresh on every
+// call by moving the literals inside the exported function.
+export function useVirtual() {
+  const categories = [
   {
     category_id: "",
     category_name: "Hot",
@@ -258,8 +266,8 @@ const games = [
   //     live: false,
   //     hot: false,
   //   },
-];
-export function useVirtual() {
+  ];
+
   return {
     games,
     categories,

@@ -1,4 +1,11 @@
 <script setup>
+// Ported from src/views/TheAviator.vue. Baseline route was top-level (not
+// a child of WithSibarAndBetslip) -> layout: false. ssr:false + noindex
+// come from routeRules in nuxt.config.js (plan §F.6): `referralUrl` below
+// reads `window.location.origin` unguarded inside a computed, which would
+// throw during SSR — safe only because ssr:false means this <script
+// setup> never runs on the server (Nuxt's pageToClientOnly /
+// ServerPlaceholder — see global constraint 6).
 import ShareToSocials from "@/components/community-bets/ShareToSocials.vue";
 import { useAviatorReferralStore } from "@/stores/aviator-referral";
 // import { useLoginStore } from "@/stores/login"; // invite friend feature disabled
@@ -16,6 +23,18 @@ import { storeToRefs } from "pinia";
 import { computed, onMounted, ref } from "vue";
 // import { useRoute } from "vue-router"; // invite friend feature disabled
 
+definePageMeta({
+  name: "aviator",
+  layout: false,
+});
+
+useSeoHead({
+  title: "Play Aviator – Crash Game with Real Winnings | Bandabets",
+  description:
+    "Soar high with the Aviator crash game! Cash out before the plane flies away and win real money instantly.",
+  robots: "noindex,nofollow",
+});
+
 // const route = useRoute(); // invite friend feature disabled
 const showInvitePopover = ref(false);
 const loading = ref(false);
@@ -29,7 +48,7 @@ const { referralCode: promoCode, referralDetails } = storeToRefs(affiliateStore)
 const { redeemBonus } = affiliateStore;
 const { redeemPending } = storeToRefs(affiliateStore);
 
-const affiliateText = "Your friend invited you to play Aviator on Naibet!\nSign up, deposit, and get 5 Free Bets instantly.\nPlay Now";
+const affiliateText = "Your friend invited you to play Aviator on Bandabets!\nSign up, deposit, and get 5 Free Bets instantly.\nPlay Now";
 
 const referralUrl = computed(() =>
   promoCode.value
@@ -98,7 +117,7 @@ const steps = [
 
 <template>
   <div class="aviator-shell">
-    <h1 class="sr-only">Play Aviator – Crash Game | Naibet</h1>
+    <h1 class="sr-only">Play Aviator – Crash Game | Bandabets</h1>
 
     <!-- Top nav bar -->
     <div class="sticky top-0 z-20">

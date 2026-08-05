@@ -19,14 +19,16 @@ const phase2PlaceholderFile = fileURLToPath(
 // creates those pages.
 // "profile", "deposit", "withdraw", "self-exclusion" and "join-affiliate"
 // now set requiresAuth directly in their own definePageMeta (Batch C) —
-// same for "bet-details" and "my-bets"/"bet-placed" (Batch E). Kept here
-// only for the not-yet-ported virtual-game names.
-const phase2RequiresAuthNames = new Set([
-  "pari-league",
-  "pari-turbo",
-  "pari-virtual-jackpot",
-  "playon",
-]);
+// same for "bet-details" and "my-bets"/"bet-placed" (Batch E), and now
+// "pari-league"/"pari-turbo"/"pari-virtual-jackpot"/"playon" (Batch F —
+// see app/pages/virtual-games/nai-league.vue etc.). Empty for now; kept
+// declared (rather than deleted) because the pages:extend hook below still
+// references it for whichever of "leaderboard"/"share-happiness" ends up
+// shipping requiresAuth: true — neither is in this Set today (Batch D
+// oversight, out of scope for Batch F/G to fix), so their placeholders
+// currently resolve without the auth gate the baseline's commented-out
+// route carried.
+const phase2RequiresAuthNames = new Set([]);
 
 // Phase 1 route-name scaffold. DELETE EACH ENTRY as Phase 2 ports the real
 // page for that name — this list should shrink to empty over time.
@@ -41,31 +43,55 @@ const phase2RequiresAuthNames = new Set([
 // without porting the real view yet. Paths are sourced from the deleted
 // src/router/index.js (`git show 81ae85f:src/router/index.js`), not
 // invented, so Phase 2 can swap in the real page without changing URLs.
+// Batch F removed "aviator", "games" (never a real baseline name — see the
+// git-blame note this replaced), "pari-league", "pari-turbo",
+// "pari-virtual-jackpot" and "playon": all six now have real pages under
+// app/pages/ (casino-home.vue, casino/[name].vue, crash/[name].vue,
+// virtual-games/[name].vue, aviator.vue, virtual-games/index.vue,
+// virtual-games/nai-*.vue, virtual-games/playon.vue, virtual-league.vue —
+// plan §10).
+//
+// The three product-gated routes below (commented out in the baseline
+// router, never shipped by Batch D — plan §8.2) are still undecided, so
+// they stay placeholders. Their backing src/ files were resolved anyway so
+// src/ could be deleted in Batch G (plan's explicit instruction: relocate
+// into app/ only if live code imports the file directly, delete
+// otherwise):
+//   - leaderboard (src/views/LeaderBoard.vue): one live call site
+//     (app/components/mobile/HeroBanner.vue:80, `router.push({name:
+//     "leaderboard"})`) — a route-NAME push, not a component import.
+//     Nothing in app/ imports LeaderBoard.vue itself, so it was deleted.
+//     The placeholder below keeps that push from throwing.
+//   - share-happiness (src/views/festive/ShareZaKrisii.vue): four live
+//     call sites push { name: "share-happiness" } (ThePromos.vue,
+//     promo-strip/ChristmassStrip.vue, promos/ShareKrisii.vue x2) — same
+//     situation, route-NAME pushes only. Nothing in app/ imports
+//     ShareZaKrisii.vue or any of its 9 src/views/festive/ dependencies
+//     (FestiveTabs, HowToWin, ShareButton, LeaderBoards, MyStats,
+//     AffiliateFAQs, LeaderboardPlayers, LeaderboardPrizes,
+//     SparkleLoader — verified by grepping app/ for each filename), so all
+//     17 src/views/festive/ files were deleted rather than relocated. The
+//     placeholder below keeps all four pushes from throwing.
+//   - welcome-gift (src/views/WelcomeGift.vue): zero live call sites
+//     outside commented-out code (app/components/VerifyAccount.vue:71,
+//     TheLanding.vue, MobileTest.vue). Kept as a placeholder anyway rather
+//     than removed, since app/components/WelcomeGiftStrip.vue:42 still
+//     links { name: "welcome-gift" } (dead but unexercised — the strip
+//     itself isn't rendered anywhere live either); removing the
+//     placeholder here would be an unrelated scope decision Batch F/G
+//     wasn't asked to make.
 const phase2Placeholders = [
-  { name: "aviator", path: "/aviator" },
-  // "games" has no entry in the old router at all (nearest analog was
-  // "play-casino-games" at /casino/:name, which is what this mirrors) —
-  // a judgment call, not a sourced path. Flagged in task-10-report.md.
-  { name: "games", path: "/casino/:name" },
-  // Batch D: three routes commented out in the baseline router
-  // (git show 81ae85f:src/router/index.js — leaderboard 343-353,
-  // share-happiness 506-516, welcome-gift 745-757 under a "FREEBET
-  // DISABLED" banner). These are new URLs, not indexed ones being
-  // restored, so they stay placeholders pending a product decision —
-  // see docs/superpowers/plans/2026-08-04-nuxt-migration-phase-2.md §8.2.
   { name: "leaderboard", path: "/leaderboard" },
-  { name: "pari-league", path: "/virtual-games/nai-league" },
-  { name: "pari-turbo", path: "/virtual-games/nai-turbo" },
-  { name: "pari-virtual-jackpot", path: "/virtual-games/nai-virtual-jackpot" },
-  { name: "playon", path: "/virtual-games/playon" },
   { name: "share-happiness", path: "/share-happiness" },
   { name: "welcome-gift", path: "/welcome-gift" },
 ];
 
-// The four real stub pages (their own .vue files under app/pages/, created
+// The three real stub pages (their own .vue files under app/pages/, created
 // in an earlier triage round because the shared chrome references these
 // names directly) are placeholders too and must never be indexed either.
-const phase2RealStubPaths = ["/login", "/signup", "/casino-home", "/my-bets"];
+// "casino-home" moved out in Batch F — see the explicit permanent
+// routeRules entry for it below instead.
+const phase2RealStubPaths = ["/login", "/signup", "/my-bets"];
 
 const NOINDEX_HEADERS = { "X-Robots-Tag": "noindex, nofollow" };
 
@@ -280,9 +306,39 @@ export default defineNuxtConfig({
     "/share-bets": { ssr: false },
     "/share-bets/**": { ssr: false },
 
-    // Every Phase-2 placeholder path (scaffold + the four real stub pages)
-    // generated above: ssr:false where applicable plus an X-Robots-Tag
-    // noindex header on all of them. See phase2NoindexRouteRules.
+    // --- Batch F: games --------------------------------------------------------
+    // All eleven game routes are private, iframe/canvas embeds with nothing
+    // to index — permanent ssr:false + noindex, same reasoning as every
+    // other Batch B/C/D/E private page. "casino-home" replaces its old
+    // phase2RealStubPaths entry (removed above) with this explicit rule,
+    // same shape as before. useCasino/useCasinoStore's circular import
+    // (plan §F.7) needs a live Nuxt instance + router just to construct the
+    // store, so every one of these pages must stay client-only — making
+    // any of them ssr:true would pull useRuntimeConfig/useRouter into
+    // server-side store construction across the module cycle.
+    "/casino-home": { ssr: false, headers: NOINDEX_HEADERS },
+    "/aviator": { ssr: false, headers: NOINDEX_HEADERS },
+    // /casino/:name and /crash/:name are single dynamic segments — "*" is
+    // radix3's one-segment wildcard (see toNitroPatterns' own comment
+    // above for why "**" would be wrong here: it must not swallow deeper
+    // paths, though neither of these has any today).
+    "/casino/*": { ssr: false, headers: NOINDEX_HEADERS },
+    "/crash/*": { ssr: false, headers: NOINDEX_HEADERS },
+    "/virtual-league": { ssr: false, headers: NOINDEX_HEADERS },
+    // /virtual-games covers the bare index ("virtuals"); /virtual-games/**
+    // covers every path under it — the four static Kiron/Playon routes
+    // (nai-league, nai-turbo, nai-virtual-jackpot, playon) AND the dynamic
+    // /virtual-games/:name ("play-virtuals-games") fallback. All of them
+    // are ssr:false + noindex, so one glob is enough; static-vs-dynamic
+    // ranking (plan §F.4) is a Nuxt page-routing concern and is unaffected
+    // by this Nitro-level rule matching all of them identically.
+    "/virtual-games": { ssr: false, headers: NOINDEX_HEADERS },
+    "/virtual-games/**": { ssr: false, headers: NOINDEX_HEADERS },
+
+    // Every Phase-2 placeholder path (scaffold + the three remaining real
+    // stub pages) generated above: ssr:false where applicable plus an
+    // X-Robots-Tag noindex header on all of them. See
+    // phase2NoindexRouteRules.
     ...phase2NoindexRouteRules,
 
     // --- Batch 0.2: restore the baseline redirects -------------------------

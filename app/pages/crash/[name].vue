@@ -1,6 +1,25 @@
+<script setup>
+// Ported from src/views/CasinoGame.vue — see app/pages/casino/[name].vue
+// for the full porting note (same source view backs three routes). This
+// one was NEVER registered in Phase 1 at all (no placeholder, no
+// routeRule) — /crash/:name 404'd until now.
+const route = useRoute();
+
+definePageMeta({
+  name: "play-crash-games",
+  layout: false,
+});
+
+useSeoHead({
+  title: `Play ${route.params.name} | Bandabets Crash Game`,
+  description: `Enjoy ${route.params.name} with smooth gameplay, fair odds, and real cash prizes at Bandabets Kenya Crash Games.`,
+  robots: "noindex,nofollow",
+});
+</script>
+
 <template>
   <div class="casino-game-shell">
-    <h1 class="sr-only">Casino Game | Naibet</h1>
+    <h1 class="sr-only">Crash Game | Bandabets</h1>
 
     <!-- Top nav bar -->
     <div class="sticky top-0 z-20">

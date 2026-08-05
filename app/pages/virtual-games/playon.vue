@@ -1,10 +1,33 @@
 <script setup>
+// Ported from src/views/PlayonGame.vue — simplest view in the batch (plan
+// §F.2). Baseline route was top-level -> layout: false. requiresAuth
+// carried true in the baseline; set directly now (was previously
+// satisfied by phase2RequiresAuthNames while this was a placeholder).
+//
+// useScreenSizes() at setup is correct only because app/layouts/default.vue
+// runs first and seeds the per-request cache (plan §F.6 / PHASE-2-NOTES
+// §e) — this page uses layout:false so it does NOT get that seeding, but
+// this route is ssr:false anyway, so useScreenSizes() only ever runs
+// client-side here regardless.
 import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import API, { virtualLeaguesBaseURL } from "../services/API";
-import { useCasinoStore } from "../stores/casino";
-import { useLoginStore } from "../stores/login";
-import { useScreenSizes } from "../composables/useScreenSizes";
+import API, { virtualLeaguesBaseURL } from "@/services/API";
+import { useCasinoStore } from "@/stores/casino";
+import { useLoginStore } from "@/stores/login";
+import { useScreenSizes } from "@/composables/useScreenSizes";
+
+definePageMeta({
+  name: "playon",
+  requiresAuth: true,
+  layout: false,
+});
+
+useSeoHead({
+  title: "Playon | Virtual Football Betting | Bandabets",
+  description:
+    "Play Playon virtual football and enjoy realistic matches, live stats, and instant payouts.",
+  robots: "noindex,nofollow",
+});
 
 const launchUrl = ref(null);
 const pending = ref(false);
@@ -44,7 +67,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <h1 class="sr-only">Playon | Naibet</h1>
+  <h1 class="sr-only">Playon | Bandabets</h1>
   <CasinoAnimate v-if="pending" />
 
   <div v-else class="flex flex-col iframe-container">

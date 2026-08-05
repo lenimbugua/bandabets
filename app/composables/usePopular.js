@@ -4,7 +4,12 @@ import {
   virtualGamesRouteName,
 } from "./useCasino";
 
-const categories = [
+// Batch F (plan §F.6): `categories` and `providers` used to be module-scope
+// consts — one instance shared by every concurrent SSR request (rule 3).
+// `games`/`allGames`/`newGames` already lived inside usePopular() itself,
+// so only these two needed to move.
+function buildCategories() {
+  return [
   {
     category_id: "all",
     category_name: "All Games",
@@ -35,27 +40,32 @@ const categories = [
     cat_binomen: "spins",
     games_count: "",
   },
-];
+  ];
+}
 
-const providers = [
-  {
-    category_id: "iMoon",
-    category_name: "iMoon",
-  },
-  {
-    category_id: "GoldenRace",
-    category_name: "GoldenRace ",
-  },
-  //   {
-  //     category_id: "kiron",
-  //     category_name: "kiron",
-  //   },
-];
+function buildProviders() {
+  return [
+    {
+      category_id: "iMoon",
+      category_name: "iMoon",
+    },
+    {
+      category_id: "GoldenRace",
+      category_name: "GoldenRace ",
+    },
+    //   {
+    //     category_id: "kiron",
+    //     category_name: "kiron",
+    //   },
+  ];
+}
 
 export function usePopular() {
   const { public: config } = useRuntimeConfig();
   const hakiLeagueGameId = config.hakiLeagueGameId;
   const hakiJackpotGameId = config.kironJackpotGameId;
+  const categories = buildCategories();
+  const providers = buildProviders();
 
   const games = [
     {

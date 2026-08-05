@@ -1,9 +1,31 @@
 <script setup>
-import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
+// Ported from src/views/VirtualsIndex.vue. Baseline route was top-level ->
+// layout: false. ssr:false + noindex come from routeRules in
+// nuxt.config.js — this page instantiates the casino store (plan §F.7
+// circular import) and links to the auth-gated Kiron routes, so it stays
+// client-only like every other Batch F game page.
+//
+// Links to { name: 'pari-league' } and { name: 'pari-virtual-jackpot' }
+// below require those two pages to exist — they're shipped in this same
+// batch (app/pages/virtual-games/nai-league.vue,
+// nai-virtual-jackpot.vue).
+import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
 import { storeToRefs } from "pinia";
 import { RouterLink } from "vue-router";
-import { useVirtual } from "../composables/useVirtual";
-import { useCasinoStore } from "../stores/casino";
+import { useVirtual } from "@/composables/useVirtual";
+import { useCasinoStore } from "@/stores/casino";
+
+definePageMeta({
+  name: "virtuals",
+  layout: false,
+});
+
+useSeoHead({
+  title: "Virtual Sports | 24/7 Matches & Results | Bandabets",
+  description:
+    "Bet on nonstop virtual football, racing, and more. Fast results and instant wins 24/7 on Bandabets.",
+  robots: "noindex,nofollow",
+});
 
 const { categories, games } = useVirtual();
 const { pending } = storeToRefs(useCasinoStore());
@@ -15,21 +37,11 @@ const { pending } = storeToRefs(useCasinoStore());
     <CasinoAnimate v-if="pending" />
 
     <div v-else class="flex w-full px-3 space-x-4 lg:px-0 lg:pt-3">
-      <!-- <div class="hidden lg:block pr-3">
-        <div class="fixed top-16 lg:top-24">
-          <SidebarTabs />
-        </div>
-        <div class="mt-96">
-          <SitePromotions />
-        </div>
-      </div> -->
       <div class="w-full rounded-md">
         <div class="md:hidden w-full overflow-x-scroll">
           <MainCategories class="p-2 mb-2" />
         </div>
-        <div class="md:max-w-[1000px] mx-auto rounded-lg overflow-clip">
-          <!-- <TheBanner /> -->
-        </div>
+        <div class="md:max-w-[1000px] mx-auto rounded-lg overflow-clip"></div>
 
         <div class="md:max-w-[1000px] mx-auto">
           <div
@@ -55,14 +67,6 @@ const { pending } = storeToRefs(useCasinoStore());
             </h1>
             <div></div>
           </div>
-          <!-- <h1
-            class="flex justify-center sm:py-6 font-bold uppercase text-xl w-full text-center sm:text-left text-gray-950 dark:text-white my-3"
-          >
-            HOT 
-          </h1> -->
-          <!-- <div class="mb-3">
-              <CasinoSearch />
-            </div> -->
           <div class="grid grid-cols-2 gap-4 mb-6">
             <RouterLink
               :to="{ name: 'pari-league' }"
