@@ -118,6 +118,16 @@
   --palette-tertiary-800: #404242;   /* on-tertiary-container */
   --palette-tertiary-900: #2f3131;   /* on-tertiary */
 
+  /* Betslip Green — the mobile bottom-nav betslip orb, and only that. A
+     deliberate exception to the gold CTA system: #2E7D32 is the specified
+     brand green for the betslip. Steps exist so the orb's glow, border and
+     idle state stay in one family. */
+  --palette-betslip-300: #66bb6a;
+  --palette-betslip-400: #43a047;
+  --palette-betslip-500: #2e7d32;   /* the specified colour */
+  --palette-betslip-600: #256428;
+  --palette-betslip-700: #1b5e20;
+
   /* Absolutes */
   --palette-white: #ffffff;
   --palette-black: #000000;
@@ -187,15 +197,25 @@
   --logo-ink: var(--palette-white);
   --logo-accent: var(--palette-gold-500);
 
-  /* Bet — the conversion CTAs (Join Now, Place Bet, betslip orb) and
-     selected odds cells. BANDA Gold with gold-900 text: 5.9:1, AA at any
-     size, and identical in both themes so the CTA never shifts hue.
-     bright/deep are the lift and the edge, for glows, borders and shadows. */
+  /* Bet — the conversion CTAs (Join Now, Place Bet) and selected odds cells.
+     BANDA Gold with gold-900 text: 5.9:1, AA at any size, and identical in
+     both themes so the CTA never shifts hue. bright/deep are the lift and
+     the edge, for glows, borders and shadows. */
   --bet: var(--palette-gold-500);
   --bet-foreground: var(--palette-gold-900);
   --bet-hover: var(--palette-gold-400);
   --bet-bright: var(--palette-gold-300);
   --bet-deep: var(--palette-gold-700);
+
+  /* Betslip orb — mobile bottom nav only, green rather than gold. Carries
+     white, never gold-900: gold-900 on this green is 2.6:1. Identical in
+     both themes except the label, which has to survive both grounds. */
+  --betslip: var(--palette-betslip-500);
+  --betslip-idle: var(--palette-betslip-600);
+  --betslip-bright: var(--palette-betslip-400);
+  --betslip-deep: var(--palette-betslip-700);
+  --betslip-foreground: var(--palette-white);
+  --betslip-label: var(--palette-betslip-300);
 
   /* Surfaces — tonal layers, deepest to most-raised */
   --surface-deepest: var(--palette-coffee-950);
@@ -301,6 +321,15 @@
   --bet-bright: var(--palette-gold-600);
   --bet-deep: var(--palette-gold-800);
 
+  /* Betslip orb — same green fill and white text as dark. Only the label
+     darkens: betslip-300 is 2.2:1 on the light footer, betslip-500 is 4.8. */
+  --betslip: var(--palette-betslip-500);
+  --betslip-idle: var(--palette-betslip-600);
+  --betslip-bright: var(--palette-betslip-400);
+  --betslip-deep: var(--palette-betslip-700);
+  --betslip-foreground: var(--palette-white);
+  --betslip-label: var(--palette-betslip-500);
+
   --surface-deepest: #e8ddd2;
   --surface-sunken: #f3ede7;
   --surface-elevated: var(--palette-white);
@@ -379,6 +408,14 @@
   --color-bet-hover: var(--bet-hover);
   --color-bet-bright: var(--bet-bright);
   --color-bet-deep: var(--bet-deep);
+
+  /* Betslip orb */
+  --color-betslip: var(--betslip);
+  --color-betslip-idle: var(--betslip-idle);
+  --color-betslip-bright: var(--betslip-bright);
+  --color-betslip-deep: var(--betslip-deep);
+  --color-betslip-foreground: var(--betslip-foreground);
+  --color-betslip-label: var(--betslip-label);
 
   /* Surface hierarchy */
   --color-surface-deepest: var(--surface-deepest);

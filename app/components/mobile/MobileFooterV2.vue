@@ -108,13 +108,13 @@ function isActive(routeName) {
           <div
             :class="[
               'absolute inset-0 rounded-full blur-xl transition-opacity duration-700',
-              betslipLength > 0 ? 'bg-bet/50 opacity-100' : 'bg-bet/30 opacity-100',
+              betslipLength > 0 ? 'bg-betslip/50 opacity-100' : 'bg-betslip/30 opacity-100',
             ]"
           ></div>
           <div
             :class="[
               'absolute inset-1 rounded-full blur-md transition-opacity duration-700',
-              betslipLength > 0 ? 'bg-bet-bright/40 opacity-100 animate-pulse' : 'opacity-0',
+              betslipLength > 0 ? 'bg-betslip-bright/40 opacity-100 animate-pulse' : 'opacity-0',
             ]"
           ></div>
 
@@ -124,28 +124,28 @@ function isActive(routeName) {
               'relative w-13 h-13 rounded-full flex items-center justify-center transition-all duration-300',
               'backdrop-blur-2xl border shadow-lg',
               betslipLength > 0
-                ? 'bg-bet-bright border-bet-deep shadow-bet-deep/40'
-                : 'bg-bet border-bet-deep shadow-bet-deep/30',
+                ? 'bg-betslip border-betslip-deep shadow-betslip-deep/40'
+                : 'bg-betslip-idle border-betslip-deep shadow-betslip-deep/30',
             ]"
           >
             <!-- Ticket icon when empty -->
             <svg
               v-if="betslipLength === 0"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              class="w-5 h-5 text-bet-foreground"
+              class="w-5 h-5 text-betslip-foreground"
             >
               <path fill-rule="evenodd" d="M1.5 6.375c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v3.026a.75.75 0 0 1-.375.65 2.249 2.249 0 0 0 0 3.898.75.75 0 0 1 .375.65v3.026c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 17.625v-3.026a.75.75 0 0 1 .374-.65 2.249 2.249 0 0 0 0-3.898.75.75 0 0 1-.374-.65V6.375Zm15-1.125a.75.75 0 0 1 .75.75v.75a.75.75 0 0 1-1.5 0V6a.75.75 0 0 1 .75-.75Zm.75 4.5a.75.75 0 0 0-1.5 0v.75a.75.75 0 0 0 1.5 0v-.75Zm-.75 3a.75.75 0 0 1 .75.75v.75a.75.75 0 0 1-1.5 0v-.75a.75.75 0 0 1 .75-.75Zm.75 4.5a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-.75ZM6 12a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 12Zm.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clip-rule="evenodd" />
             </svg>
             <!-- Count when active -->
             <span
               v-else
-              class="text-base font-black text-bet-foreground"
+              class="text-base font-black text-betslip-foreground"
             >{{ betslipLength }}</span>
           </div>
         </div>
         <span
           class="text-[0.6rem] font-semibold mt-0.5"
-          :class="betslipLength > 0 ? 'text-gold-bright' : 'text-gray-500 dark:text-gray-500'"
+          :class="betslipLength > 0 ? 'text-betslip-label' : 'text-gray-500 dark:text-gray-500'"
         >Betslip</span>
       </div>
 
