@@ -81,16 +81,38 @@ export const useCasinoStore = defineStore("casino-store", {
     setSearchTerm(term) {
       this.searchTerm = term;
     },
+    // Was: `const { getGames } = useCasino()` — but useCasino() has never
+    // returned a `getGames` property (verified against the pre-migration
+    // baseline too), so it was permanently undefined and this action threw
+    // "getGames is not a function" on every call. CasinoProviderCategories.vue
+    // awaits it whenever a provider tab is clicked, so provider filtering has
+    // been broken, not merely dead code.
+    //
+    // Reconstructed from the original intent: the assignment was synchronous
+    // and keyed by binomen, so getGames(binomen) was a lookup over the
+    // already-fetched category/game groups, not a network call.
+    // `categoriesWithGames` holds exactly that shape — { ...category, games }
+    // with games already run through filterHiddenGames/normalizeGame.
     async getAllCasinos() {
-      const { getGames } = useCasino();
-      if (this.selectedCategory.cat_binomen) {
-        this.casinosGames = getGames(this.selectedCategory.cat_binomen);
-        return;
+      const binomen =
+        this.selectedCategory.cat_binomen || this.selectedCategory.p_binomen;
+      if (!binomen) return;
+
+      // The groups are fetched elsewhere on page load; fetch on demand so a
+      // direct click before that resolves still returns games rather than
+      // silently emptying the grid.
+      if (!this.categoriesWithGames.length) {
+        await this.fetchCategoriesWithGames();
       }
-      if (this.selectedCategory.p_binomen) {
-        this.casinosGames = getGames(this.selectedCategory.p_binomen);
-        return;
-      }
+
+      const match = this.categoriesWithGames.find(
+        (category) =>
+          category.cat_binomen === binomen || category.p_binomen === binomen,
+      );
+
+      // [] rather than undefined: `casinosGames` is filtered by a getter, and
+      // undefined would throw there instead of rendering an empty grid.
+      this.casinosGames = match?.games ?? [];
     },
 
     async getCategories() {
