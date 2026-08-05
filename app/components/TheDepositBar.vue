@@ -16,7 +16,7 @@ import { ChevronRightIcon } from "@heroicons/vue/24/solid";
       </div>
 
       <!-- Center: Badge. A solid gold chip, not a tinted one — the old
-           brand-forest/25 was a purple wash over a purple bar, so the badge
+           brand-forest/25 was a faint wash over a matching bar, so the badge
            read as a faint outline rather than a thing you could tap. -->
       <div class="shrink-0 px-2.5 py-0.5 mx-2 rounded-full bg-gold shadow-sm">
         <span class="block text-center text-[11px] font-bold text-gold-foreground">Bonus</span>

@@ -53,7 +53,7 @@
 </template>
 
 <style scoped>
-/* Mark follows the brand tokens — purple structure, Action Green accent */
+/* Mark follows the brand tokens — BANDA structure, Action Green accent */
 .cls-1 {
   fill: var(--secondary);
 }

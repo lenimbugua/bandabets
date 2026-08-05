@@ -6,25 +6,25 @@
       class="top-lights absolute top-0 left-0 w-full h-[4px] flex justify-between px-1.5"
     >
       <div class="light light-1 amber-500"></div>
-      <div class="light light-2 fuchsia-500"></div>
+      <div class="light light-2 gold-650"></div>
       <div class="light light-3 red-500"></div>
       <div class="light light-4 red-500"></div>
       <div class="light light-5 sky-500"></div>
       <div class="light light-6 teal-500"></div>
       <div class="light light-7 amber-500"></div>
-      <div class="light light-8 fuchsia-500"></div>
+      <div class="light light-8 gold-650"></div>
       <div class="light light-9 red-500"></div>
       <div class="light light-10 red-500"></div>
       <div class="light light-11 sky-500"></div>
       <div class="light light-12 teal-500"></div>
       <div class="light light-13 amber-500"></div>
-      <div class="light light-14 fuchsia-500"></div>
+      <div class="light light-14 gold-650"></div>
       <div class="light light-15 red-500"></div>
       <div class="light light-16 red-500"></div>
       <div class="light light-17 sky-500"></div>
       <div class="light light-18 teal-500"></div>
       <div class="light light-19 amber-500"></div>
-      <div class="light light-20 fuchsia-500"></div>
+      <div class="light light-20 gold-650"></div>
       <div class="light light-21 red-500"></div>
       <div class="light light-22 red-500"></div>
       <div class="light light-23 sky-500"></div>
@@ -39,25 +39,25 @@
       <div class="light light-b2 sky-500"></div>
       <div class="light light-b3 teal-500"></div>
       <div class="light light-b4 amber-500"></div>
-      <div class="light light-b5 fuchsia-500"></div>
+      <div class="light light-b5 gold-650"></div>
       <div class="light light-b6 red-500"></div>
       <div class="light light-b7 red-500"></div>
       <div class="light light-b8 sky-500"></div>
       <div class="light light-b9 teal-500"></div>
       <div class="light light-b10 amber-500"></div>
-      <div class="light light-b11 fuchsia-500"></div>
+      <div class="light light-b11 gold-650"></div>
       <div class="light light-b12 red-500"></div>
       <div class="light light-b13 red-500"></div>
       <div class="light light-b14 sky-500"></div>
       <div class="light light-b15 teal-500"></div>
       <div class="light light-b16 amber-500"></div>
-      <div class="light light-b17 fuchsia-500"></div>
+      <div class="light light-b17 gold-650"></div>
       <div class="light light-b18 red-500"></div>
       <div class="light light-b19 red-500"></div>
       <div class="light light-b20 sky-500"></div>
       <div class="light light-b21 teal-500"></div>
       <div class="light light-b22 amber-500"></div>
-      <div class="light light-b23 fuchsia-500"></div>
+      <div class="light light-b23 gold-650"></div>
       <div class="light light-b24 red-500"></div>
       <div class="light light-b25 red-500"></div>
     </div>
@@ -91,8 +91,8 @@
 .amber-500 {
   background-color: rgb(245 158 11);
 }
-.fuchsia-500 {
-  background-color: rgb(217 70 239);
+.gold-650 {
+  background-color: var(--palette-gold-650);
 }
 .red-500 {
   background-color: var(--brand-bright);

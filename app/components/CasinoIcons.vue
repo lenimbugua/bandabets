@@ -492,7 +492,7 @@ function showIcon(num) {
 <style scoped>
 .virtual {
   mix-blend-mode: multiply;
-  background-color: purple;
+  background-color: var(--palette-gold-650);
 }
 
 .virtual1 {

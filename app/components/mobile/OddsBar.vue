@@ -111,8 +111,8 @@ function openBetslip() {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  /* Lighter purple than the bar it sits on. The old --background fill was
-     near-black on a dark-purple bar, with --accent text on top of it — the
+  /* Lighter shade than the bar it sits on. The old --background fill was
+     near-black on a dark bar, with --accent text on top of it — the
      count was barely legible in either theme. */
   background: var(--brand-bright);
   color: var(--primary-foreground);
