@@ -150,7 +150,7 @@ function outcomeIsLocked() {
       <div
         :class="[
           outcomeIsSelected
-            ? 'text-lime-50'
+            ? 'text-odds-selected-fg/80'
             : 'dark:text-slate-400 text-gray-950',
         ]"
         class="text-xs"
@@ -192,7 +192,7 @@ function outcomeIsLocked() {
       <div
         :class="[
           outcomeIsSelected
-            ? 'text-lime-100'
+            ? 'text-odds-selected-fg/80'
             : 'dark:text-slate-400 text-gray-700',
         ]"
         class="text-xs"
