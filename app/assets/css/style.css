@@ -1082,10 +1082,6 @@
   }
 }
 
-@utility animate-pulse-slow {
-  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
 @utility animate-shimmer {
   animation: shimmer 3s linear infinite;
 }
@@ -1093,6 +1089,13 @@
 
 /* ============================================================================
    KEYFRAMES
+
+   Duration tiers — pick the smallest that fits:
+     micro-interaction   120–180 ms   (hover, press, toggle)
+     component transition 180–240 ms  (panels, tabs, cards)
+     data / status        300–600 ms  (odds flash, progress)
+     celebration          600–1200 ms (wins, jackpots — only here may the
+                                       interface visibly perform)
    ========================================================================= */
 
 @keyframes highlight {
@@ -1134,31 +1137,6 @@
   50% { opacity: 0.7; transform: scale(1.15); }
 }
 
-@keyframes bounceInRight {
-  0%, 60%, 75%, 90%, 100% { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
-  0% { opacity: 0; transform: translate3d(3000px, 0, 0) scaleX(3); }
-  60% { opacity: 1; transform: translate3d(-25px, 0, 0) scaleX(1); }
-  75% { transform: translate3d(10px, 0, 0) scaleX(0.98); }
-  90% { transform: translate3d(-5px, 0, 0) scaleX(0.995); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-@keyframes zoomIn {
-  0% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
-  50% { opacity: 1; }
-}
-
-@keyframes backInLeft {
-  0% { transform: translateX(-2000px) scale(0.7); opacity: 0.7; }
-  80% { transform: translateX(0) scale(0.7); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes backInRight {
-  0% { transform: translateX(2000px) scale(0.7); opacity: 0.7; }
-  80% { transform: translateX(0) scale(0.7); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
-}
 
 @keyframes pulse-animation {
   0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 30%, transparent); }
@@ -1305,16 +1283,6 @@
 .gaming-glow-pulse {
   animation: glow-pulse 4s ease-in-out infinite;
 }
-
-/* Lightweight replacements for animate.css */
-.anim-active {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-.anim-bounceInRight { animation-name: bounceInRight; }
-.anim-zoomIn { animation-name: zoomIn; }
-.anim-backInLeft { animation-name: backInLeft; }
-.anim-backInRight { animation-name: backInRight; }
 
 /* Swiper pagination overrides */
 :root {
