@@ -67,7 +67,7 @@ function filterBySubTypeId(data) {
       </div>
       <div class="flex items-center gap-1.5 shrink-0 ml-2">
         <TwoUpIcon v-if="match?.markets[0]?.twoGoalUpActive" />
-        <span class="text-[0.6rem] font-semibold text-red-500">{{ match.statusDesc }}</span>
+        <span class="text-[0.6rem] font-semibold text-live">{{ match.statusDesc }}</span>
         <span class="text-[0.6rem] font-medium text-gray-500 dark:text-white/40 tabular-nums">{{ match.periodicTime }}'</span>
       </div>
     </div>
@@ -86,7 +86,7 @@ function filterBySubTypeId(data) {
           <span class="text-[0.8rem] font-medium text-gray-900 dark:text-white/85 truncate">
             {{ match.homeTeam }}
           </span>
-          <span class="text-[0.8rem] font-bold text-red-500 tabular-nums shrink-0">
+          <span class="text-[0.8rem] font-bold text-live tabular-nums shrink-0">
             {{ homeScore(match.result) }}
           </span>
         </div>
@@ -94,7 +94,7 @@ function filterBySubTypeId(data) {
           <span class="text-[0.8rem] font-medium text-gray-900 dark:text-white/85 truncate">
             {{ match.awayTeam }}
           </span>
-          <span class="text-[0.8rem] font-bold text-red-500 tabular-nums shrink-0">
+          <span class="text-[0.8rem] font-bold text-live tabular-nums shrink-0">
             {{ awayScore(match.result) }}
           </span>
         </div>
@@ -148,7 +148,7 @@ function filterBySubTypeId(data) {
         />
 
         <div
-          class="shrink-0 cursor-pointer text-[0.65rem] font-semibold text-red-500 whitespace-nowrap pl-1 flex items-center gap-0.5"
+          class="shrink-0 cursor-pointer text-[0.65rem] font-semibold text-live whitespace-nowrap pl-1 flex items-center gap-0.5"
           role="button"
           :aria-label="'View more markets for ' + match.homeTeam + ' vs ' + match.awayTeam"
           tabindex="0"

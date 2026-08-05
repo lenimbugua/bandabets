@@ -145,7 +145,7 @@ function outcomeIsLocked() {
     :class="[
       outcomeIsLocked() ? 'cursor-not-allowed opacity-50' : 'cursor-pointer active:scale-[0.97]',
       outcomeIsSelected
-        ? 'bg-brand-bright/90 ring-1 ring-brand-bright/30'
+        ? 'bg-odds-selected ring-1 ring-bet-deep/30'
         : 'odd-btn-default',
     ]"
     class="flex-1 flex flex-col justify-center items-center py-2.5 px-2 rounded-lg transition-all duration-150 min-w-[3.2rem]"
@@ -154,7 +154,7 @@ function outcomeIsLocked() {
     <ThePadlock v-if="outcomeIsLocked()" />
     <template v-else>
       <span
-        :class="outcomeIsSelected ? 'text-white/80' : 'text-gray-500 dark:text-white/65'"
+        :class="outcomeIsSelected ? 'text-odds-selected-fg/80' : 'text-gray-500 dark:text-white/65'"
         class="text-[0.6rem] leading-none mb-0.5"
       >
         {{ outcome.outcomeName }}
@@ -165,7 +165,7 @@ function outcomeIsLocked() {
         />
       </span>
       <span
-        :class="outcomeIsSelected ? 'text-white' : 'text-gray-900 dark:text-white'"
+        :class="outcomeIsSelected ? 'text-odds-selected-fg' : 'text-gray-900 dark:text-white'"
         class="text-[0.8rem] font-bold leading-tight tabular-nums"
       >
         {{ outcome.oddValue }}
@@ -194,7 +194,7 @@ function outcomeIsLocked() {
       <!-- With label: name left, odds right -->
       <template v-if="showLabel">
         <span
-          :class="outcomeIsSelected ? 'text-white/80' : 'text-gray-600 dark:text-white/70'"
+          :class="outcomeIsSelected ? 'text-odds-selected-fg/80' : 'text-gray-600 dark:text-white/70'"
           class="text-[0.6rem] font-normal leading-tight"
         >
           {{ outcome.outcomeNameAlias }}
@@ -204,7 +204,7 @@ function outcomeIsLocked() {
           />
         </span>
         <span
-          :class="outcomeIsSelected ? 'text-white' : 'text-brand-bright'"
+          :class="outcomeIsSelected ? 'text-odds-selected-fg' : 'text-primary'"
           class="text-[0.8rem] font-bold tabular-nums"
         >
           {{ outcome.oddValue }}
@@ -213,7 +213,7 @@ function outcomeIsLocked() {
       <!-- Without label: centered odds only -->
       <template v-else>
         <span
-          :class="outcomeIsSelected ? 'text-white' : 'text-brand-bright'"
+          :class="outcomeIsSelected ? 'text-odds-selected-fg' : 'text-primary'"
           class="text-[0.8rem] font-bold tabular-nums"
         >
           {{ outcome.oddValue }}
@@ -267,8 +267,8 @@ function outcomeIsLocked() {
 
 /* Match-detail variant selected */
 .odds-btn-selected {
-  background: color-mix(in oklch, var(--primary) 90%, transparent);
-  box-shadow: 0 1px 4px color-mix(in oklch, var(--primary) 15%, transparent);
+  background: var(--odds-selected-bg);
+  box-shadow: 0 1px 4px color-mix(in oklch, var(--odds-selected-bg) 15%, transparent);
   border: 1px solid transparent;
 }
 </style>

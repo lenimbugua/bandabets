@@ -139,7 +139,7 @@ function outcomeIsLocked() {
     :class="[
       outcomeIsLocked() ? 'cursor-not-allowed' : 'cursor-pointer',
       outcomeIsSelected
-        ? 'bg-brand-selected/80'
+        ? 'bg-odds-selected'
         : 'bg-gray-300/70 dark:bg-surface-interactive',
     ]"
     class="flex justify-center items-center p-1 h-full shadow-md rounded-md"
@@ -164,7 +164,7 @@ function outcomeIsLocked() {
       </div>
       <div
         :class="[
-          outcomeIsSelected ? 'text-white' : 'dark:text-white text-gray-950',
+          outcomeIsSelected ? 'text-odds-selected-fg' : 'dark:text-white text-gray-950',
         ]"
         class="text-[0.7rem] font-bold"
       >
@@ -178,7 +178,7 @@ function outcomeIsLocked() {
     :class="[
       outcomeIsLocked() ? 'cursor-not-allowed' : 'cursor-pointer',
       outcomeIsSelected
-        ? 'bg-brand-selected/80'
+        ? 'bg-odds-selected'
         : 'bg-gray-300/80 dark:bg-surface-interactive',
     ]"
     class="p-2 text-sm font-extrabold w-full rounded-md"
@@ -205,7 +205,7 @@ function outcomeIsLocked() {
       </div>
       <div
         :class="[
-          outcomeIsSelected ? 'text-white' : 'dark:text-white text-gray-950',
+          outcomeIsSelected ? 'text-odds-selected-fg' : 'dark:text-white text-gray-950',
         ]"
         class="text-[1rem] font-black"
       >

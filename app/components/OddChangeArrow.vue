@@ -45,32 +45,26 @@ function getCss() {
 
 <style scoped>
 .red {
-  border-color: red transparent transparent transparent;
+  border-color: var(--odds-down) transparent transparent transparent;
 }
 
 .green {
-  border-color: transparent transparent var(--color-brand-bright) transparent;
+  border-color: transparent transparent var(--odds-up) transparent;
 }
 
 .selected-up {
-  border-color: transparent transparent white transparent;
+  border-color: transparent transparent var(--odds-selected-fg) transparent;
 }
 
 .selected-down {
-  border-color: white transparent transparent transparent;
+  border-color: var(--odds-selected-fg) transparent transparent transparent;
 }
 .down {
   border-width: 0.5rem 0.25rem 0 0.25rem;
-  /* border-color: #666 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0); */
-  /* _border-color: #666 #000 #000 #000; */
-  /* _filter: progid:DXImageTransform.Microsoft.Chroma(color="#000000"); */
 }
 
 .up {
   border-width: 0 0.25rem 0.5rem 0.25rem;
-  /* border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #666 rgba(0, 0, 0, 0);
-  _border-color: #000 #000 #666 #000;
-  _filter: progid:DXImageTransform.Microsoft.Chroma(color="#000000"); */
 }
 .arrow {
   width: 0;
