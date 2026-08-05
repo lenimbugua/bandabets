@@ -19,10 +19,9 @@ const phase2PlaceholderFile = fileURLToPath(
 // creates those pages.
 // "profile", "deposit", "withdraw", "self-exclusion" and "join-affiliate"
 // now set requiresAuth directly in their own definePageMeta (Batch C) —
-// kept here too since this set still gates "bet-details" and the
-// not-yet-ported virtual-game names.
+// same for "bet-details" and "my-bets"/"bet-placed" (Batch E). Kept here
+// only for the not-yet-ported virtual-game names.
 const phase2RequiresAuthNames = new Set([
-  "bet-details",
   "pari-league",
   "pari-turbo",
   "pari-virtual-jackpot",
@@ -44,7 +43,6 @@ const phase2RequiresAuthNames = new Set([
 // invented, so Phase 2 can swap in the real page without changing URLs.
 const phase2Placeholders = [
   { name: "aviator", path: "/aviator" },
-  { name: "bet-details", path: "/bet-details" },
   // "games" has no entry in the old router at all (nearest analog was
   // "play-casino-games" at /casino/:name, which is what this mirrors) —
   // a judgment call, not a sourced path. Flagged in task-10-report.md.
@@ -56,15 +54,10 @@ const phase2Placeholders = [
   // restored, so they stay placeholders pending a product decision —
   // see docs/superpowers/plans/2026-08-04-nuxt-migration-phase-2.md §8.2.
   { name: "leaderboard", path: "/leaderboard" },
-  {
-    name: "match-details",
-    path: "/sports/:sport/:country/:league/:matchSlug(.*)-:id",
-  },
   { name: "pari-league", path: "/virtual-games/nai-league" },
   { name: "pari-turbo", path: "/virtual-games/nai-turbo" },
   { name: "pari-virtual-jackpot", path: "/virtual-games/nai-virtual-jackpot" },
   { name: "playon", path: "/virtual-games/playon" },
-  { name: "share-bets", path: "/share-bets/:code?" },
   { name: "share-happiness", path: "/share-happiness" },
   { name: "welcome-gift", path: "/welcome-gift" },
 ];
@@ -107,23 +100,17 @@ function toNitroPatterns(routerPath) {
 // mode:"client" pages — Nuxt's pageToClientOnly returns ServerPlaceholder
 // on the server) is JS-independent and reaches crawlers regardless.
 //
-// EXCEPTION: "match-details" is deliberately skipped here. Its path
-// (/sports/:sport/:country/:league/:matchSlug(.*)-:id) is dynamic AND
-// shares the /sports/ prefix with three real, currently-working SEO
-// routes. Nitro's routeRules matcher (radix3's toRouteMatcher) does not
-// respect segment-count depth for dynamic patterns — verified directly: a
-// "/sports/*/*/*/*" routeRules entry also matched "/sports/football" and
-// "/sports/live/football" when queried, which would have wrongly
-// noindexed those live routes. match-details gets its header from
-// server/middleware/phase2-match-details-noindex.js instead, via precise
-// regex segment-counting — see that file for the full root-cause trace.
-// Every OTHER dynamic placeholder path here (games, promotion-details,
-// share-bets) is safe despite the same matcher looseness because nothing
-// real shares their URL prefix (/casino/**, /promotion-details/**,
-// /share-bets/**) — there's nothing there to accidentally noindex.
+// "match-details" no longer appears in phase2Placeholders at all (Batch E
+// shipped the real page — see the pages:extend rewrite below) and
+// server/middleware/phase2-match-details-noindex.js, which used to give it
+// a hand-written regex-based noindex header instead of a routeRules entry
+// (because Nitro's routeRules matcher doesn't respect segment-count depth
+// for dynamic patterns and would have wrongly noindexed
+// /sports/football and /sports/live/football too), has been deleted.
+// match-details is now fully indexable via the "/sports/**": { ssr: true }
+// routeRule below, same as every other real /sports/ route.
 const phase2NoindexRouteRules = {};
-for (const { name, path } of phase2Placeholders) {
-  if (name === "match-details") continue;
+for (const { path } of phase2Placeholders) {
   for (const pattern of toNitroPatterns(path)) {
     phase2NoindexRouteRules[pattern] = { headers: NOINDEX_HEADERS };
   }
@@ -138,6 +125,19 @@ export default defineNuxtConfig({
 
   hooks: {
     "pages:extend"(pages) {
+      // Batch E: match-details' real path
+      // (/sports/:sport/:country/:league/:matchSlug(.*)-:id) fuses two
+      // params into one path segment, which file-based routing cannot
+      // express. app/pages/match-details.vue is a stand-in filename —
+      // Nuxt auto-discovers it at the default path "/match-details";
+      // rewrite that in place. See plan §9.
+      const matchDetailsPage = pages.find((p) => p.path === "/match-details");
+      if (matchDetailsPage) {
+        matchDetailsPage.path =
+          "/sports/:sport/:country/:league/:matchSlug(.*)-:id";
+        matchDetailsPage.name = "match-details";
+      }
+
       for (const { name, path } of phase2Placeholders) {
         pages.push({
           name,
@@ -255,6 +255,30 @@ export default defineNuxtConfig({
     // pages: useSeoHead's robots meta never reaches the server under
     // ssr:false.
     "/share-feedback": { ssr: false, headers: NOINDEX_HEADERS },
+
+    // --- Batch E: match & bet -------------------------------------------------
+    // match-details just left phase2Placeholders above and is deliberately
+    // given NO entry here: it's the app's most SEO-valuable dynamic page
+    // and falls under "/sports/**": { ssr: true } below like every other
+    // real /sports/ route. server/middleware/phase2-match-details-noindex.js
+    // (which used to force-noindex this URL shape) has been deleted.
+    //
+    // bet-details and bet-placed are private, ssr:false pages — permanent
+    // noindex, same reasoning as every other Batch B/C/D private page.
+    // bet-placed was never registered anywhere in Phase 1 (no placeholder,
+    // no real stub, no routeRule) — this is a brand new entry, not a
+    // removal.
+    "/bet-details": { ssr: false, headers: NOINDEX_HEADERS },
+    "/bet-placed": { ssr: false, headers: NOINDEX_HEADERS },
+    // share-bets just left phase2Placeholders above. It's PUBLIC (the
+    // baseline carried no robots directive on it at all — confirmed no
+    // noindex, so it must end up indexable), but BookedBets.vue's setup
+    // runs two SSR-unsafe operations (loadSharedBetslip()+openModal() and
+    // fetchBethub(), both flagged in plan §9), so it stays ssr:false
+    // WITHOUT a noindex header — absence of a noindex directive is enough
+    // for it to be indexable; nothing here tells crawlers to skip it.
+    "/share-bets": { ssr: false },
+    "/share-bets/**": { ssr: false },
 
     // Every Phase-2 placeholder path (scaffold + the four real stub pages)
     // generated above: ssr:false where applicable plus an X-Robots-Tag

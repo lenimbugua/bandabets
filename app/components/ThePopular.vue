@@ -168,10 +168,16 @@ const matches = ref([
 ]);
 </script>
 <template>
-  <RouterLink
+  <!-- Batch E: this used to RouterLink to { name: 'match-details' } with no
+       params, against a route that now requires 5 (sport/country/league/
+       matchSlug/id). vue-router's resolve() throws "Missing required
+       param" for that. This whole list is hardcoded demo data (2022
+       fixtures, fake ids) with nothing to derive real params from, so the
+       link is removed rather than pointed at a match that doesn't exist —
+       see docs/superpowers/plans/2026-08-04-nuxt-migration-phase-2.md §9. -->
+  <div
     v-for="match in matches"
     :key="match.id"
-    :to="{ name: 'match-details' }"
     class="block p-3 pt-2 mt-2 leading-none space-y-2"
     style="border-top: 1px solid #504b5c"
   >
@@ -195,5 +201,5 @@ const matches = ref([
         :odd="odd.odd"
       />
     </div>
-  </RouterLink>
+  </div>
 </template>

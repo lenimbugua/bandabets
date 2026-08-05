@@ -3,14 +3,13 @@ import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";
 import { useHead } from "@unhead/vue";
 import { computed, ref, toRefs } from "vue";
-import { onBeforeRouteLeave } from "vue-router";
+import { onBeforeRouteLeave, useRoute } from "vue-router";
 import { useGeniusGameTracker } from "../composables/useGeniusGameTracker";
 import { useIconNames } from "../composables/useIconNames";
 import { useMatchesStore } from "../stores/matches";
 import BetBuilder from "./BetBuilder.vue";
 import { useCompetionsStore } from "@/stores/competitions";
 import { ChevronLeftIcon } from "@heroicons/vue/24/outline";
-import { useRoute } from "vue-router";
 import EmptyState from "./EmptyState.vue";
 import AppIcons from "./icons/AppIcons.vue";
 import MatchDetails from "./MatchDetails.vue";
@@ -19,6 +18,17 @@ import MatchDetailsMatch from "./MatchDetailsMatch.vue";
 const route = useRoute();
 
 const matchId = route.params.id;
+
+// Batch E SSR-hazard fix (docs/superpowers/plans/2026-08-04-nuxt-migration-phase-2.md
+// §9): useRuntimeConfig() must sit at the top of setup, not below the
+// setInterval/performInitialFetch calls it used to follow — if this file is
+// ever reordered again, keeping the composable call first means it can
+// never accidentally end up hoisted to module scope (rule 2, "nuxt
+// instance unavailable").
+const { public: config } = useRuntimeConfig();
+const pollFrequency = parseInt(config.livePollInterval)
+  ? parseInt(config.livePollInterval)
+  : 10000;
 
 const { setMatchId } = useSportsQueryParamsStore();
 const { selectCompetitions } = useCompetionsStore();
@@ -102,29 +112,35 @@ useHead({
   ],
 });
 
-function performInitialFetch() {
+// SSR-hazard fix: this used to be a synchronous, un-awaited
+// performInitialFetch() call. During SSR that's a floating promise the
+// render never sees, so the markup serialised the empty `pending` state —
+// ssr:true bought nothing. Awaiting useAsyncData makes Nuxt wait for the
+// real fetch before finishing the server render.
+await useAsyncData(`match-details-${matchId}`, async () => {
   if (matchDetailIsLive.value) {
-    pollMatchDetails(matchId);
-    return;
+    await pollMatchDetails(matchId);
+  } else {
+    console.log(matchId);
+    await fetchMatchDetails(matchId);
   }
-  console.log(matchId);
-  fetchMatchDetails(matchId);
-}
+  return true;
+});
 
-performInitialFetch();
-
-const { public: config } = useRuntimeConfig();
-const pollFrequency = parseInt(config.livePollInterval)
-  ? parseInt(config.livePollInterval)
-  : 10000;
-
+// SSR-hazard fix: this setInterval used to run unconditionally at setup —
+// i.e. it executed during SSR too. Its only cleanup, onBeforeRouteLeave
+// below, never fires on the server, so every request leaked one live
+// timer into the Node process, each polling forever. Guard with
+// import.meta.client (or move to onMounted) so it only ever starts in the
+// browser.
 let intervalId = null;
-
-intervalId = setInterval(() => {
-  if (matchDetails?.value?.isLiveCoverage) {
-    pollMatchDetails(matchId);
-  }
-}, pollFrequency);
+if (import.meta.client) {
+  intervalId = setInterval(() => {
+    if (matchDetails?.value?.isLiveCoverage) {
+      pollMatchDetails(matchId);
+    }
+  }, pollFrequency);
+}
 
 onBeforeRouteLeave(() => {
   setMatchId("");
