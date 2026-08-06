@@ -30,7 +30,7 @@ const { matches, pending } = storeToRefs(useMatches2Store());
 <template>
   <div
     :class="[
-      'match-filters',
+      'match-filters max-md:overflow-hidden',
       sticky ? 'sticky z-40' : '',
       containerClass || 'mx-3 rounded-t-xl',
     ]"
@@ -61,7 +61,7 @@ const { matches, pending } = storeToRefs(useMatches2Store());
       </div>
       <CalendarDropdown />
     </div>
-    <div class="px-3 pb-2">
+    <div class="px-3 pt-1.5 pb-1">
       <MarketSection />
     </div>
     </template>

@@ -3,10 +3,10 @@
     :to="{ name: 'countries' }"
     class="group py-1 flex items-center rounded-md focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary"
   >
-    <div class="flex h-7 items-center cursor-pointer">
+    <div class="flex h-9 items-center cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4 shrink-0 text-foreground"
+        class="h-4.5 w-4.5 shrink-0 text-foreground"
         viewBox="0 0 24 24"
       >
         <path
@@ -15,7 +15,7 @@
         />
       </svg>
       <span
-        class="ml-1 block truncate capitalize text-xs font-medium text-foreground"
+        class="ml-1 block truncate capitalize text-[0.95rem] font-bold text-foreground"
         >Countries</span
       >
       <!-- the chevron is the affordance: this chip navigates away rather than

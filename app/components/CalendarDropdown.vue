@@ -1,5 +1,5 @@
 <script setup>
-import { CheckIcon, ChevronDownIcon } from "@heroicons/vue/20/solid";
+import { CheckIcon } from "@heroicons/vue/20/solid";
 import { useFormatDates } from "../composables/useFormatDates";
 
 import { useMatches2Store } from "../stores/matches2";
@@ -44,7 +44,8 @@ function closePopover() {
        this trigger, landing at the bar's bottom-left corner. -->
   <div class="relative flex items-center">
     <button
-      class="flex items-center gap-1 px-3 py-1.5 text-xs font-medium uppercase whitespace-nowrap rounded-full transition-colors cursor-pointer bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/15 focus:outline-hidden"
+      :aria-label="`Filter by date: ${selectedDay?.label || 'date'}`"
+      class="flex items-center justify-center w-8 h-8 rounded-full transition-colors cursor-pointer bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/15 focus:outline-hidden"
       @click="isOpen = !isOpen"
     >
       <svg
@@ -59,10 +60,6 @@ function closePopover() {
           clip-rule="evenodd"
         />
       </svg>
-      <span class="text-xs font-medium text-gray-700 dark:text-gray-200 uppercase">
-        {{ selectedDay?.label?.toUpperCase() || "DATE" }}
-      </span>
-      <ChevronDownIcon class="w-3 h-3 text-gray-600 dark:text-gray-300 shrink-0" />
     </button>
 
     <!-- Mobile Drawer -->

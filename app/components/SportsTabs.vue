@@ -31,7 +31,7 @@ const isSelected = (id) => {
   <TabGroup>
     <!-- w-max, not justify-between: the row scrolls inside SportsFilterBar, and a
          distributed row would squeeze the tabs instead of letting them overflow. -->
-    <TabList aria-label="Sports categories" class="flex items-center gap-1.5 w-max">
+    <TabList aria-label="Sports categories" class="flex items-center gap-5 w-max">
       <Tab
         v-for="thisSport in games"
         :key="thisSport.id"
@@ -41,18 +41,25 @@ const isSelected = (id) => {
         <div
           :ref="(el) => (sportRefs[thisSport.id] = el)"
           :class="[
-            'cursor-pointer rounded-full border flex flex-row items-center gap-1.5 shrink-0 h-7 px-2.5 text-sm whitespace-nowrap capitalize font-medium transition-all duration-150',
+            'relative cursor-pointer flex flex-row items-center gap-1.5 shrink-0 py-2 text-sm whitespace-nowrap capitalize font-bold transition-colors duration-150',
             'focus:outline-hidden',
             isSelected(thisSport.id)
-              ? 'bg-brand-bright border-transparent text-primary-foreground font-semibold [&_svg]:text-primary-foreground'
-              : 'bg-surface-interactive border-border shadow-sm text-muted-foreground hover:text-foreground hover:shadow-md',
+              ? 'text-selected [&_svg]:text-selected'
+              : 'text-foreground hover:text-selected [&_svg]:text-foreground',
           ]"
         >
           <!-- Icon -->
-          <SportsIcons :icon="thisSport.icon" size="h-3.5 w-3.5" />
+          <SportsIcons :icon="thisSport.icon" size="h-4.5 w-4.5" />
 
           <!-- Sport name -->
-          <span class="text-[11px] leading-none">{{ thisSport.name }}</span>
+          <span class="leading-none">{{ thisSport.name }}</span>
+
+          <!-- Selected underline -->
+          <span
+            v-if="isSelected(thisSport.id)"
+            class="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-selected"
+            aria-hidden="true"
+          ></span>
         </div>
       </Tab>
     </TabList>

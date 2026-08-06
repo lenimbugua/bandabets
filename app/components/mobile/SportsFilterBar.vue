@@ -42,7 +42,7 @@ const outcomeLabels = computed(() => {
 <template>
   <div
     :class="[
-      'sports-filter-bar',
+      'sports-filter-bar max-md:overflow-hidden',
       sticky ? 'sticky z-40' : '',
       containerClass || 'mx-3 rounded-t-xl',
     ]"

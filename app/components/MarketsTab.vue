@@ -25,7 +25,7 @@ onBeforeMount(() => {
          scrolls. -->
     <TabList
       aria-label="Betting markets"
-      class="flex w-full items-center gap-2 overflow-x-auto scrollbar-hide py-1"
+      class="flex w-full items-center gap-2 overflow-x-auto scrollbar-hide py-0.5"
     >
       <Tab
         v-for="category in markets"
@@ -35,11 +35,11 @@ onBeforeMount(() => {
       >
         <button
           :class="[
-            'inline-flex h-7 shrink-0 items-center cursor-pointer whitespace-nowrap rounded-full px-3 text-xs transition-colors',
+            'inline-flex h-[22px] shrink-0 items-center cursor-pointer whitespace-nowrap rounded-full px-2.5 text-[0.8rem] font-bold transition-colors',
             'focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary',
             selected
-              ? 'bg-primary text-primary-foreground font-semibold'
-              : 'bg-surface-interactive text-muted-foreground font-medium hover:text-foreground',
+              ? 'bg-green-500 text-amber-300'
+              : 'bg-surface-interactive text-foreground/80 hover:text-foreground',
           ]"
           @click="fetchMatches(category.subTypeId)"
         >

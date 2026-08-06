@@ -68,15 +68,15 @@ function isSelected(selected) {
           >
             <button
               :class="[
-                'inline-flex h-7 shrink-0 items-center justify-center px-2 sm:px-4',
+                'inline-flex h-9 shrink-0 items-center justify-center px-2 sm:px-4',
                 // first:pl-0 keeps the leading label flush with the row gutter
                 // without reaching outside this component to do it
                 'first:pl-0',
-                'text-xs font-medium whitespace-nowrap capitalize',
+                'text-[0.95rem] font-bold whitespace-nowrap capitalize',
                 'border-b-2 transition-colors focus:outline-hidden',
                 isSelected(category.name)
-                  ? 'border-primary font-semibold text-primary'
-                  : 'border-transparent text-muted-foreground hover:text-foreground',
+                  ? 'border-selected text-selected'
+                  : 'border-transparent text-foreground hover:text-selected',
               ]"
             >
               <div v-if="category.name === 'grid'">Popular</div>
