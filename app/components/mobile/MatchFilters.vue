@@ -1,6 +1,7 @@
 <script setup>
 import { storeToRefs } from "pinia";
 import { useMatches2Store } from "@/stores/matches2";
+import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
 import CalendarDropdown from "../CalendarDropdown.vue";
 import HighlitsTab from "../HighlitsTab.vue";
 import LeaguesButton from "../LeaguesButton.vue";
@@ -25,6 +26,10 @@ defineProps({
    Kept visible while pending: the filters shouldn't flicker out and back on
    every fetch, only when a fetch genuinely returns nothing. */
 const { matches, pending } = storeToRefs(useMatches2Store());
+/* In the grid (Popular) layout the result set is competitions, not matches —
+   matches may legitimately be empty there, and hiding the strip would also
+   hide the tabs needed to leave the layout. */
+const { layout } = storeToRefs(useSportsQueryParamsStore());
 </script>
 
 <template>
@@ -53,7 +58,7 @@ const { matches, pending } = storeToRefs(useMatches2Store());
       <SportsTabs />
     </div>
 
-    <template v-if="pending || matches?.length">
+    <template v-if="pending || matches?.length || layout === 'grid'">
     <div class="flex items-center justify-between gap-2 px-3 pt-1">
       <div class="flex items-center gap-2 min-w-0">
         <HighlitsTab />
