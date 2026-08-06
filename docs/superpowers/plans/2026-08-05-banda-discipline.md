@@ -715,3 +715,30 @@ Start `pnpm dev` (port 5079) and verify with curl that SSR renders without error
 - [ ] **Step 4: Wrap up**
 
 Invoke the superpowers:finishing-a-development-branch skill to decide how the branch integrates (merge/PR).
+
+---
+
+## Post-execution follow-ups (from the final whole-branch review, 2026-08-06)
+
+Non-blocking items deliberately deferred to future PRs, recorded here so they
+survive the working notes:
+
+- **Harden `font-odds`**: replace the `@theme`-derived family-only utility
+  with an explicit `@utility font-odds { font-family: var(--font-odds);
+  font-variant-numeric: tabular-nums; }` so a lone `font-odds` can never
+  yield proportional numerals. All 8 current call sites pair the classes
+  manually, so nothing is broken today.
+- **Wire status components onto the intent triplets**: the
+  `--success/--warning/--danger` surface/border/text triplets are defined
+  and bound but no component consumes them yet — sweeping bet-won banners,
+  bonus callouts, and failed-deposit notices onto them was out of scope.
+- **Documented spec deviation**: the `highlight` keyframe stays
+  primary-gold. The spec assumed it was odds-change feedback; it is
+  actually the scroll-to-match indicator (direction-less), and real
+  odds-change feedback (OddChangeArrow) was rewired to
+  `--odds-up`/`--odds-down` as intended.
+- **Pre-existing warts noticed, out of scope**: `ShareKrisii.vue` references
+  a nonexistent `font-poppins` class; `ChristmassStrip2.vue` has a
+  duplicated `.red-500` selector whose first declaration is dead.
+- Still open from the spec's Out-of-scope list: migrating the ~149 files off
+  deprecated aliases; removing the gray/amber/blue Tailwind remaps.
