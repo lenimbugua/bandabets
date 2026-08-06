@@ -2,9 +2,9 @@
 import { computed, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useCasinoStore } from "@/stores/casino";
-import TopGames from "@/components/mobile/TopGames.vue";
 import GamesRow from "@/components/mobile/GamesRow.vue";
 import QuickAccessBar from "@/components/mobile/QuickAccessBar.vue";
+import HotTabsSection from "@/components/mobile/HotTabsSection.vue";
 // FREEBET DISABLED — restore later
 // import WelcomeGiftStrip from "@/components/WelcomeGiftStrip.vue";
 
@@ -54,7 +54,8 @@ const otherCategories = computed(() => {
       <!-- Quick access: merged game/sport navigation -->
       <QuickAccessBar />
 
-      <TopGames />
+      <!-- Hot tabs: Live / Codes / Top Games (absorbs the old TopGames strip) -->
+      <HotTabsSection />
 
       <GamesRow
         v-for="cat in otherCategories"

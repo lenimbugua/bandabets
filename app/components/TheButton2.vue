@@ -78,6 +78,13 @@ const props = defineProps({
     required: false,
     default: 0,
   },
+  // "stacked" (default) puts the label above the value; "wide" lays the
+  // label left and the value right for the horizontal hot-section cards.
+  variant: {
+    type: String,
+    required: false,
+    default: "stacked",
+  },
 });
 
 const { betslip } = storeToRefs(useBetslipStore());
@@ -141,12 +148,18 @@ function outcomeIsLocked() {
       outcomeIsSelected
         ? 'bg-odds-selected'
         : 'bg-gray-300/70 dark:bg-surface-interactive',
+      variant === 'wide' ? 'px-3 py-2' : 'p-1',
     ]"
-    class="flex justify-center items-center p-1 h-full shadow-md rounded-md"
+    class="flex justify-center items-center h-full shadow-md rounded-md"
     @click="handleSelect($event)"
   >
     <ThePadlock v-if="outcomeIsLocked()" />
-    <div v-else class="flex-col justify-center items-center">
+    <div
+      v-else
+      :class="variant === 'wide'
+        ? 'flex w-full items-center justify-between gap-1.5'
+        : 'flex-col justify-center items-center'"
+    >
       <div
         :class="[
           outcomeIsSelected
@@ -165,8 +178,9 @@ function outcomeIsLocked() {
       <div
         :class="[
           outcomeIsSelected ? 'text-odds-selected-fg' : 'dark:text-white text-gray-950',
+          variant === 'wide' ? 'text-sm font-extrabold' : 'text-[0.7rem] font-bold',
         ]"
-        class="text-[0.7rem] font-bold tabular-nums font-odds"
+        class="tabular-nums font-odds"
       >
         {{ outcome.oddValue }}
       </div>
