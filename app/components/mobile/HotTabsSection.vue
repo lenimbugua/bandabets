@@ -177,7 +177,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="mt-4">
+  <section class="mx-3 mt-4 overflow-hidden rounded-xl bg-card py-2">
     <!-- Tab row -->
     <div class="flex items-center gap-5 px-3 overflow-x-auto scrollbar-hide">
       <button
@@ -185,7 +185,7 @@ onMounted(() => {
         :key="tab.key"
         type="button"
         class="flex shrink-0 items-center gap-1.5 py-2 text-[0.95rem] font-extrabold whitespace-nowrap transition-colors duration-150"
-        :class="activeTab === tab.key ? 'text-brand-bright' : 'text-foreground'"
+        :class="activeTab === tab.key ? 'text-selected' : 'text-foreground'"
         @click="activeTab = tab.key"
       >
         <!-- Live: signal dot -->
@@ -217,7 +217,7 @@ onMounted(() => {
           type="button"
           class="flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-colors duration-150"
           :class="activeCompetitionId === chip.id
-            ? 'bg-brand-bright text-primary-foreground'
+            ? 'bg-selected text-selected-foreground'
             : 'bg-surface-elevated text-muted-foreground hover:text-foreground'"
           @click="selectedCompetitionId = chip.id"
         >
@@ -225,7 +225,7 @@ onMounted(() => {
           <span
             class="flex h-5 min-w-5 items-center justify-center rounded-full px-1 text-[0.65rem] font-bold tabular-nums"
             :class="activeCompetitionId === chip.id
-              ? 'bg-background text-brand-bright'
+              ? 'bg-background text-selected'
               : 'bg-foreground/10 text-foreground/70'"
           >{{ chip.count }}</span>
         </button>
@@ -239,12 +239,12 @@ onMounted(() => {
       <!-- Match cards -->
       <div
         v-else-if="liveCards.length"
-        class="flex snap-x snap-mandatory gap-2.5 px-3 pb-2 overflow-x-auto scrollbar-hide"
+        class="flex snap-x snap-mandatory gap-2.5 px-3 scroll-px-3 pb-2 overflow-x-auto scrollbar-hide"
       >
         <article
           v-for="match in liveCards"
           :key="match.parentMatchId"
-          class="w-[82%] max-w-sm shrink-0 snap-start rounded-xl bg-card p-3"
+          class="w-[82%] max-w-sm shrink-0 snap-start rounded-xl bg-popover p-3"
         >
           <!-- League header + teams open match details -->
           <div class="cursor-pointer" @click="goToMatchDetails(match, router, true)">
@@ -332,7 +332,7 @@ onMounted(() => {
           type="button"
           class="flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-colors duration-150"
           :class="activeCodeCategory === chip.id
-            ? 'bg-brand-bright text-primary-foreground'
+            ? 'bg-selected text-selected-foreground'
             : 'bg-surface-elevated text-muted-foreground hover:text-foreground'"
           @click="selectedCodeCategory = chip.id"
         >
@@ -341,7 +341,7 @@ onMounted(() => {
           <span
             class="flex h-5 min-w-5 items-center justify-center rounded-full px-1 text-[0.65rem] font-bold tabular-nums"
             :class="activeCodeCategory === chip.id
-              ? 'bg-background text-brand-bright'
+              ? 'bg-background text-selected'
               : 'bg-foreground/10 text-foreground/70'"
           >{{ chip.count }}</span>
         </button>
@@ -353,12 +353,12 @@ onMounted(() => {
 
       <div
         v-else-if="codeCards.length"
-        class="flex snap-x snap-mandatory gap-2.5 px-3 pb-2 overflow-x-auto scrollbar-hide"
+        class="flex snap-x snap-mandatory gap-2.5 px-3 scroll-px-3 pb-2 overflow-x-auto scrollbar-hide"
       >
         <article
           v-for="(bet, idx) in codeCards"
           :key="idx"
-          class="w-64 shrink-0 snap-start rounded-xl bg-card p-3"
+          class="w-64 shrink-0 snap-start rounded-xl bg-popover p-3"
         >
           <div class="mb-2 flex items-center gap-2">
             <img v-if="bet.categoryIcon" :src="bet.categoryIcon" :alt="bet.categoryName" class="h-4 w-4 rounded-full object-cover" />
@@ -370,7 +370,7 @@ onMounted(() => {
               <div class="truncate text-[0.65rem] font-semibold text-foreground/80">
                 {{ sel.homeTeam }} vs {{ sel.awayTeam }}
               </div>
-              <div class="text-[0.65rem] font-medium text-brand-bright">
+              <div class="text-[0.65rem] font-medium text-selected">
                 {{ sel.outcomeName }} @{{ sel.oddValue }}
               </div>
             </div>
@@ -385,7 +385,7 @@ onMounted(() => {
                 <span class="font-bold text-foreground">{{ bet.slip?.length || 0 }}</span> picks
               </span>
               <span class="text-[0.65rem] text-foreground/65">
-                @<span class="font-bold text-brand-bright">{{ getTotalOdds(bet.slip) }}</span>
+                @<span class="font-bold text-selected">{{ getTotalOdds(bet.slip) }}</span>
               </span>
             </div>
             <button
@@ -416,7 +416,7 @@ onMounted(() => {
           type="button"
           class="flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-colors duration-150"
           :class="activeGameCategory?.id === chip.id
-            ? 'bg-brand-bright text-primary-foreground'
+            ? 'bg-selected text-selected-foreground'
             : 'bg-surface-elevated text-muted-foreground hover:text-foreground'"
           @click="selectedGameCategoryId = chip.id"
         >

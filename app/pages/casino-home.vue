@@ -223,7 +223,8 @@ function clearSearch() {
   <div class="min-h-screen">
     <h1 class="sr-only">Casino | Play 500+ Games Online | Bandabets</h1>
     <div class="sticky top-0 z-60 bg-white dark:bg-background">
-      <TheDepositBar class="md:hidden" />
+      <!-- DEPOSIT BAR DISABLED — restore later
+      <TheDepositBar class="md:hidden" /> -->
       <HeaderLinks />
       <CategoryPills :sticky="false" />
       <!-- Casino category nav (only on casino-mode routes) -->
@@ -232,8 +233,10 @@ function clearSearch() {
 
     <div class="w-full bg-gray-50 dark:bg-background">
       <div class="max-w-[1280px] mx-auto px-3 md:px-5 pb-20">
-        <!-- 2. Hero Banner -->
-        <TheBanner class="mt-3" />
+        <!-- 2. Hero Banner (overflow-hidden clips the mobile peek slide) -->
+        <div class="mt-3 overflow-hidden">
+          <TheBanner />
+        </div>
         <!-- Search Input -->
         <div class="relative z-30 mt-3">
           <div

@@ -87,7 +87,7 @@ function viewAll() {
         </div>
         <button
           type="button"
-          class="shrink-0 inline-flex items-center gap-1 text-xs font-bold text-gold-bright hover:text-gold"
+          class="shrink-0 inline-flex items-center gap-1 text-xs font-bold text-selected hover:text-selected/80"
           @click="viewAll"
         >
           ALL
@@ -108,7 +108,7 @@ function viewAll() {
           type="button"
           class="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[0.65rem] font-semibold whitespace-nowrap transition-all cursor-pointer"
           :class="activeCategory?.id === pill.id
-            ? 'bg-brand-bright text-primary-foreground'
+            ? 'bg-selected text-selected-foreground'
             : 'bg-gray-100 dark:bg-white/8 text-gray-600 dark:text-white/50 hover:text-gray-800 dark:hover:text-white/75 hover:bg-gray-200 dark:hover:bg-white/12'"
           @click="selectedCategoryId = pill.id"
         >

@@ -17,7 +17,7 @@ const { currentMode } = useAppMode();
 
 <template>
   <header
-    class="sticky top-0 z-60 backdrop-blur-xl bg-background/90 border-b border-border/50"
+    class="sticky top-0 z-60 backdrop-blur-xl bg-surface-coffee/95 border-b border-border/50"
   >
     <!-- ========== DESKTOP ========== -->
     <div
@@ -79,7 +79,7 @@ const { currentMode } = useAppMode();
           <template v-if="!token">
             <RouterLink
               :to="{ name: 'login' }"
-              class="text-sm font-bold text-foreground px-1.5 py-1.5 transition-colors duration-150 hover:text-brand-bright"
+              class="text-sm font-bold text-foreground px-1.5 py-1.5 transition-colors duration-150 hover:text-selected"
             >
               Log In
             </RouterLink>
@@ -111,7 +111,7 @@ const { currentMode } = useAppMode();
         <span class="flex-1 truncate text-sm text-muted-foreground">
           Sport Team, Football League, Games
         </span>
-        <span class="shrink-0 text-sm font-bold text-brand-bright">Search</span>
+        <span class="shrink-0 text-sm font-bold text-selected">Search</span>
       </button>
     </div>
 

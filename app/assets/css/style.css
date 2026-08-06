@@ -26,20 +26,22 @@
    ========================================================================= */
 
 :root {
-  /* Coffee — the structural neutral. Values are the BANDA spec's
-     Material-3 surface tokens; only the 50 step is interpolated, to give
-     the light theme a warm off-white above on-surface. */
-  --palette-coffee-50:  #fdf8f3;
-  --palette-coffee-100: #f1dfd1;   /* on-surface */
+  /* Coffee — the structural neutral. Values are the Aureate Obsidian spec's
+     Material-3 surface tokens: charcoal surface fills with warm on-surface
+     accents (steps 200–400 are the spec's warm outline/variant tokens);
+     only the 50 step is interpolated, to give the light theme an off-white
+     above on-surface. */
+  --palette-coffee-50:  #f6f5f4;
+  --palette-coffee-100: #e5e2e1;   /* on-surface */
   --palette-coffee-200: #dbc2ad;   /* on-surface-variant */
   --palette-coffee-300: #a28d7a;   /* outline */
   --palette-coffee-400: #544434;   /* outline-variant */
-  --palette-coffee-500: #3d3329;   /* surface-container-highest */
-  --palette-coffee-600: #32281f;   /* surface-container-high */
-  --palette-coffee-700: #271e15;   /* surface-container */
-  --palette-coffee-800: #231a11;   /* surface-container-low */
-  --palette-coffee-900: #1a120a;   /* surface / background */
-  --palette-coffee-950: #140d06;   /* surface-container-lowest */
+  --palette-coffee-500: #353534;   /* surface-container-highest */
+  --palette-coffee-600: #2a2a2a;   /* surface-container-high */
+  --palette-coffee-700: #201f1f;   /* surface-container */
+  --palette-coffee-800: #1c1b1b;   /* surface-container-low */
+  --palette-coffee-900: #131313;   /* surface / background */
+  --palette-coffee-950: #0e0e0e;   /* surface-container-lowest */
 
   /* Coffee mid-tones. The spec's surface tokens compress this ramp's
      midrange — 400/500/600 are all near-black surface fills, so they read
@@ -62,7 +64,7 @@
   --palette-gold-200: #ffcb9a;
   --palette-gold-300: #ffbc77;   /* primary */
   --palette-gold-400: #ffb86f;   /* surface-tint / primary-fixed-dim */
-  --palette-gold-500: #fa9602;   /* BANDA Gold — primary-container */
+  --palette-gold-500: #fa9603;   /* Brand Orange — primary-container */
   --palette-gold-600: #d97e00;
   --palette-gold-700: #8a5100;   /* inverse-primary */
   --palette-gold-800: #693c00;   /* on-primary-fixed-variant */
@@ -76,19 +78,20 @@
      Exposed as gold-650 in layer 3. */
   --palette-gold-650: #9e5b00;   /* L .1475 — parity with old brand-500 .1476 */
 
-  /* Emerald — win / odds-up status only. No longer a brand or CTA colour;
-     cooled from the old Action Green so it separates from gold on coffee. */
-  --palette-green-50:  #ecfdf5;
-  --palette-green-100: #d1fae5;
-  --palette-green-200: #a7f3d0;
-  --palette-green-300: #34d399;
-  --palette-green-400: #10b981;   /* the win / odds-up colour */
-  --palette-green-500: #059669;
-  --palette-green-600: #048c60;
-  --palette-green-700: #047857;
-  --palette-green-800: #065f46;   /* light-theme text-legible variant */
-  --palette-green-900: #064e3b;
-  --palette-green-950: #022c22;
+  /* Emerald — win / odds-up status only. Desaturated per the Aureate
+     Obsidian tertiary tokens: a sage-mint top end over the spec's deep
+     forest steps, so positive states read calm rather than neon. */
+  --palette-green-50:  #eafaf2;
+  --palette-green-100: #b1f0ce;   /* tertiary-fixed */
+  --palette-green-200: #95d4b3;   /* tertiary-fixed-dim */
+  --palette-green-300: #7dbb9b;   /* tertiary-container */
+  --palette-green-400: #57a67f;   /* the win / odds-up colour */
+  --palette-green-500: #2d6a4f;   /* the spec's structural emerald */
+  --palette-green-600: #1f5c43;
+  --palette-green-700: #0e5138;   /* on-tertiary-fixed-variant */
+  --palette-green-800: #044b33;   /* light-theme text-legible variant */
+  --palette-green-900: #003824;   /* on-tertiary */
+  --palette-green-950: #002114;   /* on-tertiary-fixed */
 
   /* Signal Red — errors, losses, destructive */
   --palette-red-50:  #fff1f0;
@@ -103,18 +106,18 @@
   --palette-red-900: #5c0005;
   --palette-red-950: #3d0003;
 
-  /* Tertiary — informational neutral gray, per the spec's tertiary tokens.
-     A chromatic tertiary would fight the coffee/gold pairing. */
-  --palette-tertiary-50:  #f4f4f4;
-  --palette-tertiary-100: #e2e2e2;   /* tertiary-fixed */
-  --palette-tertiary-200: #c9c9c9;   /* tertiary */
-  --palette-tertiary-300: #adaeae;   /* tertiary-container */
-  --palette-tertiary-400: #8a8c8c;
-  --palette-tertiary-500: #6b6d6d;
-  --palette-tertiary-600: #545656;
-  --palette-tertiary-700: #454747;   /* on-tertiary-fixed-variant */
-  --palette-tertiary-800: #404242;   /* on-tertiary-container */
-  --palette-tertiary-900: #2f3131;   /* on-tertiary */
+  /* Tertiary — informational warm taupe, per the spec's secondary tokens.
+     Sits between the charcoal surfaces and the warm on-surface accents. */
+  --palette-tertiary-50:  #f8f4f0;
+  --palette-tertiary-100: #f1dfd1;   /* secondary-fixed */
+  --palette-tertiary-200: #d4c4b6;   /* secondary */
+  --palette-tertiary-300: #c6b6a8;   /* on-secondary-container */
+  --palette-tertiary-400: #a89a8c;
+  --palette-tertiary-500: #7d7164;
+  --palette-tertiary-600: #61564a;
+  --palette-tertiary-700: #52473d;   /* secondary-container */
+  --palette-tertiary-800: #50453b;   /* on-secondary-fixed-variant */
+  --palette-tertiary-900: #392f25;   /* on-secondary */
 
   /* Betslip Green — the mobile bottom-nav betslip orb, and only that. A
      deliberate exception to the gold CTA system: #2E7D32 is the specified
@@ -125,6 +128,13 @@
   --palette-betslip-500: #2e7d32;   /* the specified colour */
   --palette-betslip-600: #256428;
   --palette-betslip-700: #1b5e20;
+
+  /* Coffee accent — the Aureate Obsidian prose's warm container tones,
+     kept out of the neutral ramp: reserved for branded chrome surfaces
+     (header/nav) that sit warm against the charcoal foundation. */
+  --palette-coffee-warm-800: #241c14;
+  --palette-coffee-warm-900: #1a120a;
+  --palette-coffee-warm-950: #120b05;
 
   /* Absolutes */
   --palette-white: #ffffff;
@@ -143,8 +153,9 @@
 
 /* ── Dark theme (default) ────────────────────────────────────────────────── */
 :root {
-  /* Base */
-  --background: var(--palette-coffee-900);
+  /* Base — the page foundation is the warm coffee, per the Aureate
+     Obsidian 60/30 split: coffee shell, charcoal containers above it. */
+  --background: var(--palette-coffee-warm-950);
   --foreground: var(--palette-coffee-100);
 
   --card: var(--palette-coffee-800);
@@ -182,7 +193,13 @@
   --success: var(--palette-green-400);
   --warning: var(--palette-gold-400);
 
-  --border: var(--palette-coffee-400);
+  /* Branded chrome — the warm coffee surface for the header/nav shell. */
+  --surface-coffee: var(--palette-coffee-warm-900);
+
+  /* Hairline strokes per the Obsidian spec — edges are defined by the
+     #2a2a2a container-high step, not the warm outline, which reads as
+     noise on the neutral charcoal surfaces. */
+  --border: var(--palette-coffee-600);
   --input: var(--palette-coffee-800);
   --ring: var(--palette-gold-500);
 
@@ -236,7 +253,7 @@
 
   /* Borders */
   --border-subtle: var(--palette-coffee-700);
-  --border-strong: var(--palette-coffee-300);
+  --border-strong: var(--palette-coffee-500);
   --border-darkest: var(--palette-coffee-950);
 
   /* ────────────────────────────────────────────────────────────────────
@@ -282,13 +299,19 @@
   --danger-border: color-mix(in srgb, var(--destructive) 35%, transparent);
   --danger-text: var(--destructive);
 
-  /* Domain — odds cell states. Selected = the bet CTA gold; up/down are
-     the status colours, shown as a brief flash, never a resting state. */
+  /* Selection — active chips, pills and picked odds. Emerald, so chosen
+     state separates from the orange CTA/brand accent. */
+  --selected: var(--palette-betslip-400);
+  --selected-foreground: var(--palette-green-950);
+
+  /* Domain — odds cell states. Selected = the emerald selection role;
+     up/down are the status colours, shown as a brief flash, never a
+     resting state. */
   --odds-bg: var(--surface-2);
   --odds-fg: var(--text-primary);
   --odds-hover-bg: var(--surface-3);
-  --odds-selected-bg: var(--bet);
-  --odds-selected-fg: var(--bet-foreground);
+  --odds-selected-bg: var(--selected);
+  --odds-selected-fg: var(--selected-foreground);
   --odds-up: var(--emerald);
   --odds-down: var(--palette-red-400);
   --odds-suspended-bg: var(--surface-1);
@@ -299,8 +322,8 @@
   --live-bg: color-mix(in srgb, var(--live) 12%, transparent);
   --live-border: color-mix(in srgb, var(--live) 35%, transparent);
 
-  /* Shape — Soft 4px base */
-  --radius: 0.25rem;
+  /* Shape — Round Four 8px base */
+  --radius: 0.5rem;
 
   /* Elevation — dark relies on black umbra at higher alpha */
   --elevation-umbra: 0 0 0;
@@ -349,6 +372,10 @@
      to read on off-white */
   --success: var(--palette-green-800);
   --warning: var(--palette-gold-700);
+
+  /* Branded chrome — in light theme the header shell stays on the light
+     neutral rather than flipping to dark coffee. */
+  --surface-coffee: var(--palette-coffee-50);
 
   --border: var(--palette-coffee-200);
   --input: var(--palette-white);
@@ -440,13 +467,19 @@
   --danger-border: color-mix(in srgb, var(--destructive) 35%, transparent);
   --danger-text: var(--destructive);
 
-  /* Domain — odds cell states. Selected = the bet CTA gold; up/down are
-     the status colours, shown as a brief flash, never a resting state. */
+  /* Selection — active chips, pills and picked odds. Emerald, so chosen
+     state separates from the orange CTA/brand accent. */
+  --selected: var(--palette-betslip-400);
+  --selected-foreground: var(--palette-green-950);
+
+  /* Domain — odds cell states. Selected = the emerald selection role;
+     up/down are the status colours, shown as a brief flash, never a
+     resting state. */
   --odds-bg: var(--surface-2);
   --odds-fg: var(--text-primary);
   --odds-hover-bg: var(--surface-3);
-  --odds-selected-bg: var(--bet);
-  --odds-selected-fg: var(--bet-foreground);
+  --odds-selected-bg: var(--selected);
+  --odds-selected-fg: var(--selected-foreground);
   --odds-up: var(--emerald);
   --odds-down: var(--palette-red-600);
   --odds-suspended-bg: var(--surface-1);
@@ -495,6 +528,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-selected: var(--selected);
+  --color-selected-foreground: var(--selected-foreground);
+  --color-surface-coffee: var(--surface-coffee);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
@@ -844,13 +880,13 @@
   --color-info-900: var(--palette-tertiary-900);
 
   /* ── Typography ─────────────────────────────────────────────────────────
-     Montserrat carries the architecture; Inter carries the data.        */
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+     Hanken Grotesk carries both the architecture and the data.          */
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
-  /* Odds and money — Inter with a metric-stable mono fallback. Pair the
-     font-odds utility with tabular-nums on every numeric display. */
-  --font-odds: "Inter", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  /* Odds and money — Hanken Grotesk with a metric-stable mono fallback. Pair
+     the font-odds utility with tabular-nums on every numeric display. */
+  --font-odds: "Hanken Grotesk", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Type scale. Display and headline sizes are fluid so one class covers
      the 4-column mobile grid and the 12-column desktop grid.            */
@@ -885,18 +921,19 @@
   --text-label-sm--line-height: 1.33;
   --text-label-sm--font-weight: 500;
 
-  /* ── Shape — Soft 4px base ──────────────────────────────────────────────
-     Standard elements 4px, large surfaces 8px, status chips fully round.
-     The upper end is compressed so legacy rounded-xl / -2xl converge on
-     the professional-modern silhouette instead of reading as playful.   */
-  --radius-xs: 0.125rem;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.5rem;
-  --radius-2xl: 0.75rem;
-  --radius-3xl: 1rem;
-  --radius-4xl: 1.25rem;
+  /* ── Shape — Round Four (Aureate Obsidian) ──────────────────────────────
+     Standard controls 8px, containers 16px, status chips fully round.
+     Markup keeps its compressed idiom (rounded-sm on controls, rounded-xl
+     on cards), so the scale is retuned here to land those classes on the
+     spec's 8px / 16px targets without touching components.              */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
 
   /* ── Layout ─────────────────────────────────────────────────────────────
      4px base unit, 8px component rhythm, 1280px reading container.      */

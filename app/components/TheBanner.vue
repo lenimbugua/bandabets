@@ -73,22 +73,25 @@ function slideNext() {
 
 <template>
   <div class="w-full">
-    <div class="relative w-full aspect-[3/1] overflow-hidden">
+    <div class="relative w-full">
       <swiper
-        :slides-per-view="1"
         :slides-per-group="1"
         :space-between="12"
+        :breakpoints="{
+          0: { slidesPerView: 1.1 },
+          1024: { slidesPerView: 1 },
+        }"
         :loop="true"
         :autoplay="{ delay: autoplayDelay, disableOnInteraction: false }"
         :navigation="false"
         :modules="modules"
-        class="h-full"
+        class="max-lg:overflow-visible!"
         @swiper="onSwiperInit"
       >
         <swiper-slide v-for="item in items" :key="item.image">
           <button
             type="button"
-            class="relative block h-full w-full rounded-xl overflow-hidden group cursor-pointer ring-1 ring-gray-200/80 dark:ring-white/10"
+            class="relative block w-full aspect-[3/1] rounded-xl overflow-hidden group cursor-pointer ring-1 ring-gray-200/80 dark:ring-white/10"
             :aria-label="`${item.name} — open`"
             @click="openBanner(item)"
           >
@@ -110,7 +113,7 @@ function slideNext() {
       <button
         type="button"
         aria-label="Previous banner"
-        class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center bg-card/60 text-muted-foreground opacity-40 hover:opacity-100 hover:text-foreground hover:bg-card transition-all duration-200 backdrop-blur-sm"
+        class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full hidden lg:flex items-center justify-center bg-card/60 text-muted-foreground opacity-40 hover:opacity-100 hover:text-foreground hover:bg-card transition-all duration-200 backdrop-blur-sm"
         @click="slidePrev"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">
@@ -120,7 +123,7 @@ function slideNext() {
       <button
         type="button"
         aria-label="Next banner"
-        class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center bg-card/60 text-muted-foreground opacity-40 hover:opacity-100 hover:text-foreground hover:bg-card transition-all duration-200 backdrop-blur-sm"
+        class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full hidden lg:flex items-center justify-center bg-card/60 text-muted-foreground opacity-40 hover:opacity-100 hover:text-foreground hover:bg-card transition-all duration-200 backdrop-blur-sm"
         @click="slideNext"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">

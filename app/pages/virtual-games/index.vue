@@ -31,7 +31,8 @@ const { categories, games } = useVirtual();
 const { pending } = storeToRefs(useCasinoStore());
 </script>
 <template>
-  <TheDepositBar class="md:hidden" />
+  <!-- DEPOSIT BAR DISABLED — restore later
+  <TheDepositBar class="md:hidden" /> -->
   <HeaderLinks />
   <div class="w-full h-full max-w-[1680px] sm:px-3 mx-auto overflow-scroll bg-gray-50/50 dark:bg-transparent">
     <CasinoAnimate v-if="pending" />

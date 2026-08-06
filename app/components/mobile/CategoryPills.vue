@@ -16,7 +16,7 @@ const { tabs, isActive, handleClick } = useHeaderTabs();
   >
     <nav
       aria-label="Main categories"
-      class="flex gap-5 overflow-x-auto scrollbar-hide w-full max-w-[1680px] mx-auto px-4"
+      class="flex justify-between gap-4 overflow-x-auto scrollbar-hide w-full max-w-[1680px] mx-auto px-4"
     >
       <button
         v-for="tab in tabs"
@@ -24,14 +24,14 @@ const { tabs, isActive, handleClick } = useHeaderTabs();
         type="button"
         class="relative shrink-0 py-3 text-sm font-bold whitespace-nowrap transition-colors duration-150"
         :class="isActive(tab)
-          ? 'text-brand-bright'
-          : 'text-foreground hover:text-brand-bright'"
+          ? 'text-selected'
+          : 'text-foreground hover:text-selected'"
         @click="handleClick(tab)"
       >
         {{ tab.displayName }}
         <span
           v-if="isActive(tab)"
-          class="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-brand-bright"
+          class="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-selected"
           aria-hidden="true"
         ></span>
       </button>

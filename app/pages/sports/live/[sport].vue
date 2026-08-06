@@ -81,7 +81,8 @@ const { isLargeScreen } = useScreenSizes();
     >
       <div class="grow live-page-bg">
         <div class="sticky top-0 pb-2 live-page-bg z-40">
-          <TheDepositBar />
+          <!-- DEPOSIT BAR DISABLED — restore later
+          <TheDepositBar /> -->
           <HeaderLinks />
           <CategoryPills :sticky="false" />
         </div>

@@ -7,7 +7,8 @@ import CategoryPills from "./mobile/CategoryPills.vue";
 import MobileFooterV2 from "./mobile/MobileFooterV2.vue";
 import MatchFilters from "./mobile/MatchFilters.vue";
 import TheBanner from "./TheBanner.vue";
-import TheDepositBar from "./TheDepositBar.vue";
+// DEPOSIT BAR DISABLED — restore later
+// import TheDepositBar from "./TheDepositBar.vue";
 
 defineProps({
   seoTitle: { type: String, default: "" },
@@ -52,16 +53,20 @@ onBeforeUnmount(() => {
 
     <!-- Pinned top block: deposit bar (mobile) + header + category pills -->
     <div ref="stickyTopEl" class="sticky top-0 z-60 bg-white dark:bg-background">
-      <TheDepositBar class="md:hidden" />
+      <!-- DEPOSIT BAR DISABLED — restore later
+      <TheDepositBar class="md:hidden" /> -->
       <HeaderLinks />
       <CategoryPills :sticky="false" />
     </div>
 
     <!-- Scrollable content -->
     <div class="bg-gray-50 dark:bg-background">
-      <!-- Banner (always shown on mobile sports) -->
-      <div class="mx-3 rounded-xl overflow-hidden">
-        <TheBanner />
+      <!-- Banner (always shown on mobile sports). Outer div clips the peeking
+           next slide at the screen edge; slides carry their own rounding. -->
+      <div class="overflow-hidden pt-3">
+        <div class="mx-3">
+          <TheBanner />
+        </div>
       </div>
 
       <!-- Hero content (landing only) -->
