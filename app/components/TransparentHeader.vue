@@ -7,7 +7,6 @@ import { useLoginStore } from "../stores/login";
 import { useLinksStore } from "../stores/links";
 import HeaderProfile from "./HeaderProfile.vue";
 import DepositButton from "./DepositButton.vue";
-import { Bars4Icon } from "@heroicons/vue/20/solid";
 
 import { useModalStore } from "@/stores/modal";
 
@@ -133,7 +132,8 @@ function isSelected(name) {
     <div class="flex px-3 lg:hidden justify-between items-center py-2">
       <div class="flex justify-between items-center space-x-1">
         <div class="flex justify-between items-center space-x-1">
-          <Bars4Icon
+          <Icon
+            name="tabler:menu-2"
             class="text-gray-950 dark:text-white fill-current h-6 w-6"
             @click="openModal(drawer)"
           />

@@ -1,6 +1,4 @@
 <script setup>
-import { ChevronRightIcon } from "@heroicons/vue/24/outline";
-import { ChevronLeftIcon } from "@heroicons/vue/24/solid";
 import { toRefs } from "vue";
 import { useFormatDates } from "../composables/useFormatDates";
 import { useModalTypes } from "@/composables/useModalTypes";
@@ -73,7 +71,7 @@ function teamAbbr(name) {
           class="p-1.5 rounded-lg text-gray-300 dark:text-white/20 hover:text-gray-500 dark:hover:text-white/45 hover:bg-gray-100 dark:hover:bg-white/5 transition-all duration-200 cursor-pointer active:scale-95 shrink-0"
           @click="fetchMatchByDirection(matchDetails.parentMatchId, 'previous')"
         >
-          <ChevronLeftIcon class="w-4 h-4" />
+          <Icon name="tabler:chevron-left" class="w-4 h-4" />
         </button>
 
         <!-- Home team -->
@@ -141,7 +139,7 @@ function teamAbbr(name) {
           class="p-1.5 rounded-lg text-gray-300 dark:text-white/20 hover:text-gray-500 dark:hover:text-white/45 hover:bg-gray-100 dark:hover:bg-white/5 transition-all duration-200 cursor-pointer active:scale-95 shrink-0"
           @click="fetchMatchByDirection(matchDetails.parentMatchId, 'next')"
         >
-          <ChevronRightIcon class="w-4 h-4" />
+          <Icon name="tabler:chevron-right" class="w-4 h-4" />
         </button>
       </div>
     </div>

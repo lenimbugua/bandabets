@@ -9,7 +9,6 @@ import { useIconNames } from "../composables/useIconNames";
 import { useMatchesStore } from "../stores/matches";
 import BetBuilder from "./BetBuilder.vue";
 import { useCompetionsStore } from "@/stores/competitions";
-import { ChevronLeftIcon } from "@heroicons/vue/24/outline";
 import EmptyState from "./EmptyState.vue";
 import AppIcons from "./icons/AppIcons.vue";
 import MatchDetails from "./MatchDetails.vue";
@@ -164,7 +163,7 @@ onBeforeRouteLeave(() => {
             class="p-2 -ml-2 rounded-xl text-gray-500 dark:text-white/65 hover:bg-gray-100 dark:hover:bg-white/5 transition-all duration-200 cursor-pointer active:scale-95"
             @click="$router.go(-1)"
           >
-            <ChevronLeftIcon class="w-5 h-5" />
+            <Icon name="tabler:chevron-left" class="w-5 h-5" />
           </button>
           <span class="text-[0.68rem] font-semibold tracking-[0.1em] uppercase text-gray-500 dark:text-white/65">
             Match Details

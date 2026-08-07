@@ -1,5 +1,4 @@
 <script setup>
-import { ArrowLeftIcon } from "@heroicons/vue/24/outline";
 import { ref, toRefs } from "vue";
 import { useFeedbackStore } from "../stores/feedback";
 
@@ -52,7 +51,7 @@ function updateCharacterCount() {
       class="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
       @click="$router.go(-1)"
     >
-      <ArrowLeftIcon class="w-4 h-4" />
+      <Icon name="tabler:arrow-left" class="w-4 h-4" />
       Back
     </button>
 

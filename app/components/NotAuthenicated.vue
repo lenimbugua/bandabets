@@ -1,6 +1,5 @@
 <script setup>
 import { useLoginStore } from "@/stores/login";
-import { ExclamationCircleIcon } from "@heroicons/vue/24/solid";
 const { openLoginModal } = useLoginStore();
 
 </script>
@@ -12,7 +11,8 @@ const { openLoginModal } = useLoginStore();
           style="z-index: 999"
           class="p-1 absolute -top-10 mx-auto bg-red-50 dark:bg-brand-bright/20 rounded-full"
         >
-          <ExclamationCircleIcon
+          <Icon
+            name="tabler:alert-circle"
             style="z-index: 100"
             class="w-16 h-16 mx-auto text-red-500"
           />

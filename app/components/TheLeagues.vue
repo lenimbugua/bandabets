@@ -1,5 +1,6 @@
 <script setup>
-import { FlagIcon } from "@heroicons/vue/24/outline";
+import { h } from "vue";
+import { Icon } from "#components";
 import { storeToRefs } from "pinia";
 import {
   Listbox,
@@ -7,11 +8,17 @@ import {
   ListboxOptions,
   ListboxOption,
 } from "@headlessui/vue";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
 
 import { useMatchesStore } from "../stores/matches";
 
 const { competitions, meta } = storeToRefs(useMatchesStore());
+
+// BaseEmptyState (out of scope for this migration batch) renders its `icon`
+// prop via `<component :is="icon">`, which requires an actual component
+// reference rather than a Tabler name string — wrap the Tabler icon in a
+// tiny functional component so the existing dynamic-component contract
+// keeps working without touching BaseEmptyState.vue.
+const noLeaguesIcon = () => h(Icon, { name: "tabler:flag" });
 </script>
 <template>
   <div class="max-w-sm">
@@ -26,7 +33,8 @@ const { competitions, meta } = storeToRefs(useMatchesStore());
           <span
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
           >
-            <ChevronUpDownIcon
+            <Icon
+              name="tabler:selector"
               class="h-5 w-5 text-gray-950 dark:text-gray-400"
               aria-hidden="true"
             />
@@ -43,7 +51,7 @@ const { competitions, meta } = storeToRefs(useMatchesStore());
           >
             <BaseEmptyState
               v-if="!competitions || !competitions.length"
-              :icon="FlagIcon"
+              :icon="noLeaguesIcon"
               title="No leagues"
               description="No competitions available"
               size="sm"
@@ -73,7 +81,7 @@ const { competitions, meta } = storeToRefs(useMatchesStore());
                   v-if="selected"
                   class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
                 >
-                  <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                  <Icon name="tabler:check" class="h-5 w-5" aria-hidden="true" />
                 </span>
               </li>
             </ListboxOption>
@@ -105,7 +113,7 @@ const { competitions, meta } = storeToRefs(useMatchesStore());
                   v-if="selected"
                   class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
                 >
-                  <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                  <Icon name="tabler:check" class="h-5 w-5" aria-hidden="true" />
                 </span>
               </li>
             </ListboxOption>

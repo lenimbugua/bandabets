@@ -2,7 +2,6 @@
 import { computed, onMounted, ref } from "vue";
 import { storeToRefs } from "pinia";
 import { RouterLink } from "vue-router";
-import { GiftIcon } from "@heroicons/vue/24/outline";
 import { useLoginStore } from "@/stores/login";
 import { useFreebetStore } from "@/stores/freebet";
 
@@ -52,7 +51,7 @@ onMounted(() => {
       <span
         class="relative z-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold/40 bg-gold/12 text-gold-bright"
       >
-        <GiftIcon class="h-5 w-5" />
+        <Icon name="tabler:gift" class="h-5 w-5" />
       </span>
 
       <!-- copy -->

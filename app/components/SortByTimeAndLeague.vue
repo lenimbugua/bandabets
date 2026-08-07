@@ -5,8 +5,6 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/vue";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/vue/20/solid";
-
 import { useMatchesStore } from "../stores/matches";
 
 const { fetchSortedMatches } = useMatchesStore();
@@ -38,7 +36,8 @@ const selectedSort = ref(sorts.value[0]);
             <span
               class="pointer-events-none absolute inset-y-0 right-0 flex items-center"
             >
-              <ChevronUpDownIcon
+              <Icon
+                name="tabler:selector"
                 :class="['text-primary-400', 'dark:text-primary-450']"
                 class="h-5 w-5"
                 aria-hidden="true"
@@ -80,7 +79,7 @@ const selectedSort = ref(sorts.value[0]);
                     v-if="selected"
                     class="absolute inset-y-0 left-0 flex items-center pl-3 text-red-600"
                   >
-                    <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                    <Icon name="tabler:check" class="h-5 w-5" aria-hidden="true" />
                   </span>
                 </li>
               </ListboxOption>

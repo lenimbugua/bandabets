@@ -1,8 +1,4 @@
 <script setup>
-import { UserPlusIcon } from "@heroicons/vue/20/solid";
-import { GiftIcon } from "@heroicons/vue/24/outline";
-import { SparklesIcon } from "@heroicons/vue/24/solid";
-
 const props = defineProps({
   icon: {
     type: String,
@@ -430,7 +426,7 @@ function showIcon(name) {
     v-if="showIcon('new')"
     class="flex min-w-10 items-center text-white py-2"
   >
-    <SparklesIcon class="h-4 w-4 flex mx-auto" />
+    <Icon name="tabler:sparkles" class="h-4 w-4 flex mx-auto" />
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="52"
@@ -457,7 +453,7 @@ function showIcon(name) {
     v-if="showIcon('promotions')"
     class="flex justify-between items-center space-x-1 py-2"
   >
-    <GiftIcon class="h-4 w-4 text-white" />
+    <Icon name="tabler:gift" class="h-4 w-4 text-white" />
     <span
       class="flex text-[0.5rem] tracking-widest text-white font-black uppercase"
     >
@@ -471,7 +467,7 @@ function showIcon(name) {
     v-if="showIcon('affiliate')"
     class="flex justify-between items-center space-x-1 py-2"
   >
-    <UserPlusIcon class="h-4 w-" />
+    <Icon name="tabler:user-plus" class="h-4 w-" />
     <span
       class="flex text-[0.5rem] tracking-widest text-black font-black uppercase"
     >

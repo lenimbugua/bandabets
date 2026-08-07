@@ -1,7 +1,6 @@
 <script setup>
 import { useDefaultSport } from "@/composables/useDefaultSport";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import { ChevronRightIcon } from "@heroicons/vue/20/solid";
 import { computed, onMounted, ref, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { useMainCategories } from "../composables/useMainCategories";
@@ -134,7 +133,8 @@ const { categories } = useMainCategories();
       class="p-0.5 h-10 flex items-center right-0 md:hidden text-end shadow-sm rounded-r-md border border-l-0 dark:border-border-darkest"
       @click="scroll"
     >
-      <ChevronRightIcon
+      <Icon
+        name="tabler:chevron-right"
         :class="{ 'opacity-80': !canScrollRight }"
         class="stroke-2 h-5 w-5 text-gray-950 dark:text-white fill-current"
       />

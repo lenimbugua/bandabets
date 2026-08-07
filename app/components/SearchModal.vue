@@ -10,7 +10,6 @@ import { storeToRefs } from "pinia";
 import { useModalStore } from "@/stores/modal";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { computed } from "vue";
-import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { useSearchStore } from "../stores/search";
 import MatchesForSearch from "./MatchesForSearch.vue";
 
@@ -84,7 +83,7 @@ function clearSearch() {
               <div class="shrink-0 p-3 sm:p-4 border-b border-border/50">
                 <div class="flex items-center gap-2">
                   <div class="flex-1 relative">
-                    <MagnifyingGlassIcon class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/50" />
+                    <Icon name="tabler:search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/50" />
                     <input
                       ref="searchInputRef"
                       v-model="searchTerm"
@@ -101,7 +100,7 @@ function clearSearch() {
                       class="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 rounded text-muted-foreground/40 hover:text-foreground transition-colors"
                       @click="clearSearch"
                     >
-                      <XMarkIcon class="w-4 h-4" />
+                      <Icon name="tabler:x" class="w-4 h-4" />
                     </button>
                   </div>
                   <button
@@ -120,7 +119,7 @@ function clearSearch() {
                 </div>
                 <div v-else class="flex flex-col items-center justify-center py-12 px-4">
                   <div class="w-12 h-12 rounded-full bg-muted/50 flex items-center justify-center mb-3">
-                    <MagnifyingGlassIcon class="w-5 h-5 text-muted-foreground/30" />
+                    <Icon name="tabler:search" class="w-5 h-5 text-muted-foreground/30" />
                   </div>
                   <p class="text-sm text-muted-foreground text-center">
                     Search for matches, teams, or leagues

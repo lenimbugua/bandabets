@@ -1,6 +1,5 @@
 <script setup>
 import { Tab, TabGroup, TabList } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { ref, toRefs } from "vue";
 import { useMatchesStore } from "../stores/matches";
@@ -166,7 +165,8 @@ function marketHasSelection(market) {
             >
               {{ market.matchOutcomes.length }}
             </span>
-            <ChevronDownIcon
+            <Icon
+              name="tabler:chevron-down"
               :class="isOpened(index) ? 'rotate-180' : ''"
               class="w-3 h-3 text-gray-400 dark:text-white/50 transition-transform duration-200"
             />

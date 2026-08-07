@@ -1,5 +1,4 @@
 <script setup>
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/vue/24/solid";
 // import OddPayoutStrip from "./OddPayoutStrip.vue";
 import { ref } from "vue";
 import OneCutStrip from "./OneCutStrip.vue";
@@ -40,8 +39,8 @@ const showOneCutStrip = ref(false);
       ></div>
     </div>
     <button type="button" :aria-label="showOneCutStrip ? 'Hide one cut strip details' : 'Show one cut strip details'" @click="showOneCutStrip = !showOneCutStrip">
-      <ChevronDownIcon v-if="!showOneCutStrip" class="text-red-100 h-7 w-7" />
-      <ChevronUpIcon v-else class="text-red-100 h-7 w-7" />
+      <Icon v-if="!showOneCutStrip" name="tabler:chevron-down" class="text-red-100 h-7 w-7" />
+      <Icon v-else name="tabler:chevron-up" class="text-red-100 h-7 w-7" />
     </button>
   </div>
   <OneCutStrip v-if="!showOneCutStrip" />

@@ -1,11 +1,6 @@
 <script setup>
 import { usePoll } from "@/composables/usePoll";
 import { useLoginStore } from "@/stores/login";
-import {
-  EyeIcon,
-  EyeSlashIcon,
-  ArrowPathIcon,
-} from "@heroicons/vue/24/outline";
 import { onUnmounted, ref, toRefs, computed } from "vue";
 import {
   MAX_WITHDRAWAL,
@@ -85,8 +80,8 @@ onUnmounted(() => {
               :aria-label="showBalance ? 'Hide balance' : 'Show balance'"
               @click="showBalance = !showBalance"
             >
-              <EyeIcon v-if="showBalance" class="h-4 w-4" />
-              <EyeSlashIcon v-else class="h-4 w-4" />
+              <Icon v-if="showBalance" name="tabler:eye" class="h-4 w-4" />
+              <Icon v-else name="tabler:eye-off" class="h-4 w-4" />
             </button>
           </div>
         </div>
@@ -96,7 +91,7 @@ onUnmounted(() => {
           aria-label="Refresh balance"
           @click="getProfileInfo()"
         >
-          <ArrowPathIcon class="w-4 h-4" :class="{ 'animate-spin': profilePending }" />
+          <Icon name="tabler:refresh" class="w-4 h-4" :class="{ 'animate-spin': profilePending }" />
         </button>
       </div>
     </div>

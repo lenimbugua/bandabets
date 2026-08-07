@@ -1,5 +1,4 @@
 <script setup>
-import { CheckCircleIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { onBeforeUnmount } from "vue";
 import { useRouter } from "vue-router";
@@ -90,7 +89,7 @@ onBeforeUnmount(() => {
     <!-- Success banner -->
     <div class="rounded-xl bg-success/8 dark:bg-success/10 border border-success/20 dark:border-success/20 p-4 mb-6">
       <div class="flex items-start gap-3">
-        <CheckCircleIcon class="h-6 w-6 text-success dark:text-success shrink-0 mt-0.5" />
+        <Icon name="tabler:circle-check" class="h-6 w-6 text-success dark:text-success shrink-0 mt-0.5" />
         <div>
           <p class="text-sm font-semibold text-success dark:text-success">
             Verification code sent

@@ -1,6 +1,3 @@
-<script setup>
-import { ChevronRightIcon } from "@heroicons/vue/24/solid";
-</script>
 
 <template>
   <RouterLink
@@ -23,7 +20,7 @@ import { ChevronRightIcon } from "@heroicons/vue/24/solid";
       </div>
 
       <!-- Right: Arrow -->
-      <ChevronRightIcon class="w-4 h-4 text-black shrink-0" />
+      <Icon name="tabler:chevron-right" class="w-4 h-4 text-black shrink-0" />
     </div>
   </RouterLink>
 </template>

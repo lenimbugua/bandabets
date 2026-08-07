@@ -6,7 +6,6 @@ import { usePromos } from "../composables/usePromos";
 import { useCasinoStore } from "../stores/casino";
 
 import { useDefaultSport } from "@/composables/useDefaultSport";
-import { ArrowRightIcon } from "@heroicons/vue/20/solid";
 // Unused while the promo placeholder is in place. Kept commented, not
 // deleted, so restoring the real images is a local change in this file.
 // import formatStuff from "../utilities/format-stuff";
@@ -180,7 +179,7 @@ function goToPromoDetails(promo) {
             @click="goToPromoDetails(promo)"
           >
             Details
-            <ArrowRightIcon class="w-3.5 h-3.5" />
+            <Icon name="tabler:arrow-right" class="w-3.5 h-3.5" />
           </button>
         </footer>
       </article>

@@ -6,7 +6,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
 
@@ -69,7 +68,7 @@ const { closeModal } = useModalStore();
                   <OneCutIcon />
                 </DialogTitle>
                 <button class="p-1 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors cursor-pointer outline-hidden" aria-label="Close" @click="closeModal">
-                  <XMarkIcon class="w-5 h-5" />
+                  <Icon name="tabler:x" class="w-5 h-5" />
                 </button>
               </div>
               <div class="max-h-[85vh] overflow-y-scroll scrollbar-hide">

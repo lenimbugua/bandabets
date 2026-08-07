@@ -5,7 +5,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
@@ -91,7 +90,7 @@ function goHome() {
                 aria-label="Close"
                 @click="closeModal"
               >
-                <XMarkIcon class="w-5 h-5 text-muted-foreground" />
+                <Icon name="tabler:x" class="w-5 h-5 text-muted-foreground" />
               </button>
             </div>
 

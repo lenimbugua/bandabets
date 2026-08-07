@@ -1,16 +1,24 @@
 <script setup>
-import { ClipboardDocumentListIcon } from "@heroicons/vue/24/outline";
+import { h } from "vue";
+import { Icon } from "#components";
 import { storeToRefs } from "pinia";
 import { useBetsStore } from "../stores/bets";
 import BetsLoader from "./BetsLoader.vue";
 
 const { pending, bets } = storeToRefs(useBetsStore());
+
+// BaseEmptyState (out of scope for this migration batch) renders its `icon`
+// prop via `<component :is="icon">`, which requires an actual component
+// reference rather than a Tabler name string — wrap the Tabler icon in a
+// tiny functional component so the existing dynamic-component contract
+// keeps working without touching BaseEmptyState.vue.
+const noBetsIcon = () => h(Icon, { name: "tabler:clipboard-list" });
 </script>
 <template>
   <BetsLoader v-if="pending" />
   <BaseEmptyState
     v-else-if="!bets.length"
-    :icon="ClipboardDocumentListIcon"
+    :icon="noBetsIcon"
     title="No bets yet"
     description="Your bet history will appear here"
   />

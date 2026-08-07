@@ -1,5 +1,4 @@
 <script setup>
-import { ShareIcon } from "@heroicons/vue/20/solid";
 import { useBetslipLogin } from "@/composables/useBetslipLogin";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useModalStore } from "@/stores/modal";
@@ -38,6 +37,6 @@ async function shareYourBet() {
     @click="shareYourBet"
   >
     <TheButtonSpin v-if="pending" />
-    <ShareIcon v-else class="w-6 h-6" />
+    <Icon v-else name="tabler:share" class="w-6 h-6" />
   </button>
 </template>

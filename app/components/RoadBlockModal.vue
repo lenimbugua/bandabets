@@ -5,7 +5,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/solid";
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
 
@@ -112,7 +111,7 @@ const handleRoadBlockClick = () => {
                     aria-label="Close promotional offer"
                     @click="closeModal"
                   >
-                    <XMarkIcon class="text-slate-400 dark:text-white w-4 h-4" />
+                    <Icon name="tabler:x" class="text-slate-400 dark:text-white w-4 h-4" />
                   </button>
               </div>
               <img
