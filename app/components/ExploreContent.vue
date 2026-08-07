@@ -89,7 +89,7 @@ function handleItemClick(item) {
       v-for="tab in tabs"
       :key="tab.id"
       :class="activeTab === tab.id
-        ? 'bg-brand-bright text-primary-foreground'
+        ? 'bg-pill-selected text-pill-selected-foreground'
         : 'bg-gray-100 dark:bg-white/6 text-muted-foreground'"
       class="shrink-0 px-3 py-1 rounded-full text-[0.65rem] font-semibold transition-colors"
       @click="activeTab = tab.id"
@@ -109,7 +109,7 @@ function handleItemClick(item) {
           <button
             class="flex items-center justify-center gap-1.5 py-2 rounded-lg text-[0.7rem] font-semibold transition-colors"
             :class="!isDark
-              ? 'bg-brand-bright text-primary-foreground'
+              ? 'bg-pill-selected text-pill-selected-foreground'
               : 'bg-gray-50 dark:bg-white/4 text-muted-foreground hover:bg-gray-100 dark:hover:bg-white/8'"
             @click="isDark = false"
           >
@@ -119,7 +119,7 @@ function handleItemClick(item) {
           <button
             class="flex items-center justify-center gap-1.5 py-2 rounded-lg text-[0.7rem] font-semibold transition-colors"
             :class="isDark
-              ? 'bg-brand-bright text-primary-foreground'
+              ? 'bg-pill-selected text-pill-selected-foreground'
               : 'bg-gray-50 dark:bg-white/4 text-muted-foreground hover:bg-gray-100 dark:hover:bg-white/8'"
             @click="isDark = true"
           >

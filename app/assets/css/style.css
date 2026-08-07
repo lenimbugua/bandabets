@@ -304,14 +304,19 @@
   --selected: var(--palette-betslip-400);
   --selected-foreground: var(--palette-green-950);
 
+  /* Selected pills & picked odds — deep structural green with warm gold
+     text (the market-chip pairing), applied app-wide. */
+  --pill-selected: var(--palette-green-500);
+  --pill-selected-foreground: var(--palette-gold-300);
+
   /* Domain — odds cell states. Selected = the emerald selection role;
      up/down are the status colours, shown as a brief flash, never a
      resting state. */
   --odds-bg: var(--surface-2);
   --odds-fg: var(--text-primary);
   --odds-hover-bg: var(--surface-3);
-  --odds-selected-bg: var(--selected);
-  --odds-selected-fg: var(--selected-foreground);
+  --odds-selected-bg: var(--pill-selected);
+  --odds-selected-fg: var(--pill-selected-foreground);
   --odds-up: var(--emerald);
   --odds-down: var(--palette-red-400);
   --odds-suspended-bg: var(--surface-1);
@@ -472,14 +477,19 @@
   --selected: var(--palette-betslip-400);
   --selected-foreground: var(--palette-green-950);
 
+  /* Selected pills & picked odds — deep structural green with warm gold
+     text (the market-chip pairing), applied app-wide. */
+  --pill-selected: var(--palette-green-500);
+  --pill-selected-foreground: var(--palette-gold-300);
+
   /* Domain — odds cell states. Selected = the emerald selection role;
      up/down are the status colours, shown as a brief flash, never a
      resting state. */
   --odds-bg: var(--surface-2);
   --odds-fg: var(--text-primary);
   --odds-hover-bg: var(--surface-3);
-  --odds-selected-bg: var(--selected);
-  --odds-selected-fg: var(--selected-foreground);
+  --odds-selected-bg: var(--pill-selected);
+  --odds-selected-fg: var(--pill-selected-foreground);
   --odds-up: var(--emerald);
   --odds-down: var(--palette-red-600);
   --odds-suspended-bg: var(--surface-1);
@@ -530,6 +540,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-selected: var(--selected);
   --color-selected-foreground: var(--selected-foreground);
+  --color-pill-selected: var(--pill-selected);
+  --color-pill-selected-foreground: var(--pill-selected-foreground);
   --color-surface-coffee: var(--surface-coffee);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);

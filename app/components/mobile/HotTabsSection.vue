@@ -217,7 +217,7 @@ onMounted(() => {
           type="button"
           class="flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-colors duration-150"
           :class="activeCompetitionId === chip.id
-            ? 'bg-selected text-selected-foreground'
+            ? 'bg-pill-selected text-pill-selected-foreground'
             : 'bg-surface-elevated text-muted-foreground hover:text-foreground'"
           @click="selectedCompetitionId = chip.id"
         >
@@ -332,7 +332,7 @@ onMounted(() => {
           type="button"
           class="flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-colors duration-150"
           :class="activeCodeCategory === chip.id
-            ? 'bg-selected text-selected-foreground'
+            ? 'bg-pill-selected text-pill-selected-foreground'
             : 'bg-surface-elevated text-muted-foreground hover:text-foreground'"
           @click="selectedCodeCategory = chip.id"
         >
@@ -416,7 +416,7 @@ onMounted(() => {
           type="button"
           class="flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold whitespace-nowrap transition-colors duration-150"
           :class="activeGameCategory?.id === chip.id
-            ? 'bg-selected text-selected-foreground'
+            ? 'bg-pill-selected text-pill-selected-foreground'
             : 'bg-surface-elevated text-muted-foreground hover:text-foreground'"
           @click="selectedGameCategoryId = chip.id"
         >

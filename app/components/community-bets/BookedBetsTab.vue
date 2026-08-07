@@ -24,7 +24,7 @@ const categories = ref(["Bets Hub", "Load Code", "FAQ"]);
           :class="[
             'cursor-pointer rounded-full py-1.5 px-4 text-xs font-semibold text-center transition-colors duration-150 border',
             selected
-              ? 'bg-brand-bright text-primary-foreground border-brand-bright'
+              ? 'bg-pill-selected text-pill-selected-foreground border-pill-selected'
               : 'bg-card text-muted-foreground border-border/50 hover:text-foreground hover:border-border',
           ]"
         >

@@ -38,7 +38,7 @@ onBeforeMount(() => {
             'inline-flex h-[22px] shrink-0 items-center cursor-pointer whitespace-nowrap rounded-full px-2.5 text-[0.8rem] font-bold transition-colors',
             'focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary',
             selected
-              ? 'bg-green-500 text-amber-300'
+              ? 'bg-pill-selected text-pill-selected-foreground'
               : 'bg-surface-interactive text-foreground/80 hover:text-foreground',
           ]"
           @click="fetchMatches(category.subTypeId)"

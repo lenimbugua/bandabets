@@ -695,7 +695,7 @@ const isLoading = computed(() => {
             class="shrink-0 flex items-center gap-1.5 px-3.5 lg:px-4 py-1.5 lg:py-2 rounded-full text-[0.7rem] lg:text-xs whitespace-nowrap transition-all duration-300 cursor-pointer"
             :class="[
               selectedCompetition === comp.competitionId
-                ? 'bg-brand-bright text-primary-foreground font-bold'
+                ? 'bg-pill-selected text-pill-selected-foreground font-bold'
                 : 'bg-white dark:bg-white/8 text-gray-600 dark:text-white/50 border border-gray-200 dark:border-white/10 hover:text-gray-800 dark:hover:text-white/75 hover:border-gray-300 dark:hover:border-white/20 font-medium',
             ]"
             @click="selectCompetition(comp.competitionId)"
@@ -1045,7 +1045,7 @@ const isLoading = computed(() => {
             class="shrink-0 flex items-center gap-1.5 px-3.5 lg:px-4 py-1.5 lg:py-2 rounded-full text-[0.7rem] lg:text-xs font-semibold whitespace-nowrap transition-all cursor-pointer"
             :class="[
               activeCodeCategory === pill.code
-                ? 'bg-selected text-selected-foreground'
+                ? 'bg-pill-selected text-pill-selected-foreground'
                 : 'bg-white dark:bg-white/8 text-gray-600 dark:text-white/50 border border-gray-200 dark:border-white/10 hover:text-gray-800 dark:hover:text-white/75 hover:border-gray-300 dark:hover:border-white/20',
             ]"
             @click="selectedCodeCategory = pill.code"
@@ -1189,7 +1189,7 @@ const isLoading = computed(() => {
             class="shrink-0 inline-flex items-center gap-1.5 px-3.5 lg:px-4 py-1.5 lg:py-2 rounded-full text-[0.7rem] lg:text-xs font-semibold whitespace-nowrap transition-all cursor-pointer"
             :class="[
               activeGameCategory === pill.id
-                ? 'bg-selected text-selected-foreground'
+                ? 'bg-pill-selected text-pill-selected-foreground'
                 : 'bg-white dark:bg-white/8 text-gray-600 dark:text-white/50 border border-gray-200 dark:border-white/10 hover:text-gray-800 dark:hover:text-white/75 hover:border-gray-300 dark:hover:border-white/20',
             ]"
             @click="selectedGameCategory = pill.id"
