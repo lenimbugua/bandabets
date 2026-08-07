@@ -10,7 +10,6 @@ import { storeToRefs } from "pinia";
 import { computed, onBeforeUnmount, ref } from "vue";
 
 import { useModalStore } from "@/stores/modal";
-import { XMarkIcon } from "@heroicons/vue/24/solid";
 
 import { useModalTypes } from "@/composables/useModalTypes";
 
@@ -81,7 +80,7 @@ onBeforeUnmount(() => {
                   class="absolute top-4 right-4 p-1 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors cursor-pointer"
                   @click="close"
                 >
-                  <XMarkIcon class="w-5 h-5" />
+                  <Icon name="tabler:x" class="w-5 h-5" />
                 </button>
                 <DialogTitle
                   as="h3"

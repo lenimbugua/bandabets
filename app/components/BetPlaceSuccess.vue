@@ -1,6 +1,5 @@
 <script setup>
 import { useModalStore } from "@/stores/modal";
-import { XMarkIcon } from "@heroicons/vue/24/solid";
 const { closeModal } = useModalStore();
 </script>
 <template>
@@ -10,7 +9,7 @@ const { closeModal } = useModalStore();
       class="absolute top-0 right-0 p-1.5 rounded-full text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors z-10"
       @click="closeModal"
     >
-      <XMarkIcon class="w-5 h-5" />
+      <Icon name="tabler:x" class="w-5 h-5" />
     </button>
 
     <!-- Green checkmark — overlapping top of card -->

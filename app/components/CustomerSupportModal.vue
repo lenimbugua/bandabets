@@ -5,7 +5,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
 
@@ -78,7 +77,7 @@ const showDialog = computed(() => {
                   aria-label="Close"
                   @click="closeModal"
                 >
-                  <XMarkIcon class="w-5 h-5" />
+                  <Icon name="tabler:x" class="w-5 h-5" />
                 </button>
               </div>
 

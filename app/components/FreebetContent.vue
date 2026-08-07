@@ -1,14 +1,4 @@
 <script setup>
-import {
-  CheckCircleIcon,
-  GiftIcon,
-  GlobeAltIcon,
-  WindowIcon,
-  LightBulbIcon,
-  ShieldCheckIcon,
-  TrophyIcon,
-} from "@heroicons/vue/24/outline";
-
 const claimSteps = [
   {
     title: "Sign Up",
@@ -40,17 +30,17 @@ const tips = [
 
 const features = [
   {
-    icon: WindowIcon,
+    icon: "tabler:app-window",
     title: "User-Friendly Interface",
     description: "Easy navigation for both beginners and experienced bettors",
   },
   {
-    icon: GlobeAltIcon,
+    icon: "tabler:world",
     title: "Wide Range of Sports",
     description: "Bet on football, basketball, rugby, and many more sports",
   },
   {
-    icon: ShieldCheckIcon,
+    icon: "tabler:shield-check",
     title: "Secure Transactions",
     description: "Safe and secure payment methods for deposits and withdrawals",
   },
@@ -95,7 +85,7 @@ const features = [
         <div
           class="bg-white dark:bg-surface-elevated rounded-2xl shadow-xl p-6 transform transition-all duration-300 hover:scale-[1.02]"
         >
-          <GiftIcon class="w-12 h-12 text-amber-700 mb-4" />
+          <Icon name="tabler:gift" class="w-12 h-12 text-amber-700 mb-4" />
           <h2 class="text-2xl font-bold mb-4">What are Free Bets?</h2>
           <p class="text-gray-600 dark:text-gray-300">
             Free bets are promotional offers that allow you to place a bet
@@ -131,7 +121,7 @@ const features = [
 
         <!-- Tips Section -->
         <div class="bg-white dark:bg-surface-elevated rounded-2xl shadow-xl p-6">
-          <LightBulbIcon class="w-12 h-12 text-yellow-500 mb-4" />
+          <Icon name="tabler:bulb" class="w-12 h-12 text-yellow-500 mb-4" />
           <h2 class="text-2xl font-bold mb-4">Tips for Using Free Bets</h2>
           <ul class="space-y-3">
             <li
@@ -139,7 +129,7 @@ const features = [
               :key="index"
               class="flex items-center space-x-3 p-2"
             >
-              <CheckCircleIcon class="w-5 h-5 text-red-500" />
+              <Icon name="tabler:circle-check" class="w-5 h-5 text-red-500" />
               <span class="text-gray-600 dark:text-gray-300">{{ tip }}</span>
             </li>
           </ul>
@@ -147,7 +137,7 @@ const features = [
 
         <!-- Why Choose Bandabets -->
         <div class="bg-white dark:bg-surface-elevated rounded-2xl shadow-xl p-6">
-          <TrophyIcon class="w-12 h-12 text-yellow-500 mb-4" />
+          <Icon name="tabler:trophy" class="w-12 h-12 text-yellow-500 mb-4" />
           <h2 class="text-2xl font-bold mb-4">Why Choose Bandabets?</h2>
           <div class="grid gap-4">
             <div
@@ -156,8 +146,8 @@ const features = [
               class="flex items-start space-x-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-background"
             >
               <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-900">
-                <component
-                  :is="feature.icon"
+                <Icon
+                  :name="feature.icon"
                   class="w-5 h-5 text-amber-700 dark:text-amber-300"
                 />
               </div>

@@ -2,7 +2,6 @@
 import { useCompetionsStore } from "@/stores/competitions";
 import { useCountriesStore } from "@/stores/countries";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/vue/24/outline";
 import { computed, onBeforeUnmount, onMounted, toRefs } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import TableLoader from "./TableLoader.vue";
@@ -147,8 +146,8 @@ onMounted(async () => {
                 :aria-label="country.isOpened ? 'Collapse ' + country.countryName : 'Expand ' + country.countryName"
                 @click="country.isOpened = !country.isOpened"
               >
-                <ChevronUpIcon v-if="country.isOpened" class="h-4.5 w-4.5" />
-                <ChevronDownIcon v-else class="h-4.5 w-4.5" />
+                <Icon name="tabler:chevron-up" v-if="country.isOpened" class="h-4.5 w-4.5" />
+                <Icon name="tabler:chevron-down" v-else class="h-4.5 w-4.5" />
               </button>
             </div>
           </div>

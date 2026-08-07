@@ -3,11 +3,6 @@ import { useMatchDetails } from "@/composables/useMatchDetails";
 import { useCompetionsStore } from "@/stores/competitions";
 import { useBetslipStore } from "@/stores/sports-betslip";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  ChevronUpIcon,
-} from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { toRefs } from "vue";
 import { useRouter } from "vue-router";
@@ -70,8 +65,8 @@ function outcomeIsLocked(status) {
         :aria-label="competition.isOpened ? 'Expand ' + competition.competitionName : 'Collapse ' + competition.competitionName"
         @click="competition.isOpened = !competition.isOpened"
       >
-        <ChevronUpIcon v-if="!competition.isOpened" class="h-4.5 w-4.5" />
-        <ChevronDownIcon v-else class="h-4.5 w-4.5" />
+        <Icon name="tabler:chevron-up" v-if="!competition.isOpened" class="h-4.5 w-4.5" />
+        <Icon name="tabler:chevron-down" v-else class="h-4.5 w-4.5" />
       </button>
     </div>
 
@@ -109,7 +104,7 @@ function outcomeIsLocked(status) {
             @click="goToMatchDetails(match, router, false)"
           >
             <span class="text-[0.7rem]">+{{ match.marketCount }}</span>
-            <ChevronRightIcon class="h-3.5 w-3.5" />
+            <Icon name="tabler:chevron-right" class="h-3.5 w-3.5" />
           </div>
         </div>
 

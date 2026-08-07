@@ -1,8 +1,15 @@
 <script setup>
-import { Squares2X2Icon } from "@heroicons/vue/24/outline";
 import { Tab, TabGroup, TabList } from "@headlessui/vue";
-import { ref } from "vue";
+import { h, ref } from "vue";
+import { Icon } from "#components";
 import CasinoIcons from "./CasinoIcons.vue";
+
+// BaseEmptyState (out of scope for this migration batch) renders its `icon`
+// prop via `<component :is="icon">`, which requires an actual component
+// reference rather than a Tabler name string — wrap the Tabler icon in a
+// tiny functional component so the existing dynamic-component contract
+// keeps working without touching BaseEmptyState.vue.
+const noCategoriesIcon = () => h(Icon, { name: "tabler:layout-grid" });
 
 import { usePopularStore } from "@/stores/popular";
 
@@ -53,7 +60,7 @@ function selectCategory(category) {
   </TabGroup>
   <BaseEmptyState
     v-if="!categories || !categories.length"
-    :icon="Squares2X2Icon"
+    :icon="noCategoriesIcon"
     title="No categories"
     description="Categories unavailable"
     size="sm"

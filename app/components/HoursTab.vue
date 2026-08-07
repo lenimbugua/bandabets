@@ -1,6 +1,5 @@
 <script setup>
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { useMatchesStore } from "../stores/matches";
 import { ref } from "vue";
 const { fetchHourMatches } = useMatchesStore();
@@ -20,7 +19,8 @@ const hours = ref([3, 6, 9, 12]);
         class="inline-flex w-full justify-center items-center text-md font-bold focus:outline-hidden"
       >
         HRS
-        <ChevronDownIcon
+        <Icon
+          name="tabler:chevron-down"
           class="-mr-1 h-5 w-5 fill-current"
           aria-hidden="true"
         />

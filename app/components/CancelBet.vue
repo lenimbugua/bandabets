@@ -1,7 +1,6 @@
 <script setup>
 import { useModalStore } from "@/stores/modal";
 import { DialogTitle } from "@headlessui/vue";
-import { ExclamationCircleIcon, XMarkIcon } from "@heroicons/vue/24/solid";
 import { storeToRefs } from "pinia";
 import { useBetsStore } from "../stores/bets";
 import TheButtonSpin from "./TheButtonSpin.vue";
@@ -21,7 +20,8 @@ async function cancelTheBet() {
   <div>
     <div class="w-full p-2 flex justify-center">
       <div class="p-1 absolute -top-10 bg-brand-bright/20 rounded-full">
-        <ExclamationCircleIcon
+        <Icon
+          name="tabler:alert-circle"
           style="z-index: 100"
           class="w-16 h-16 mx-auto text-red-500"
         />
@@ -31,7 +31,7 @@ async function cancelTheBet() {
       class="absolute top-4 right-4 p-0.5 rounded-full border border-gray-950 dark:border-slate-300"
       @click="closeModal"
     >
-      <XMarkIcon class="text-gray-900 dark:text-white w-5 h-5" />
+      <Icon name="tabler:x" class="text-gray-900 dark:text-white w-5 h-5" />
     </div>
     <DialogTitle
       as="h3"

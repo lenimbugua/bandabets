@@ -10,7 +10,6 @@ import {
 } from "@headlessui/vue";
 
 import { useModalStore } from "@/stores/modal";
-import { XMarkIcon } from "@heroicons/vue/24/solid";
 
 import { useModalTypes } from "@/composables/useModalTypes";
 
@@ -84,7 +83,7 @@ const { closeModal } = useModalStore();
                     aria-label="Close deposit dialog"
                     @click="closeModal"
                   >
-                    <XMarkIcon class="w-5 h-5" />
+                    <Icon name="tabler:x" class="w-5 h-5" />
                   </button>
                 </div>
               </div>

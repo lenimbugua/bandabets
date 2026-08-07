@@ -1,5 +1,4 @@
 <script setup>
-import { CheckIcon } from "@heroicons/vue/20/solid";
 import { useFormatDates } from "../composables/useFormatDates";
 
 import { useMatches2Store } from "../stores/matches2";
@@ -102,7 +101,8 @@ function closePopover() {
               @click="handleDaySelect(option)"
             >
               <span class="text-base font-medium">{{ option.label }}</span>
-              <CheckIcon
+              <Icon
+                name="tabler:check"
                 v-if="selectedDay?.value === option.value"
                 class="w-5 h-5 text-brand-bright shrink-0"
                 aria-hidden="true"
@@ -158,7 +158,8 @@ function closePopover() {
             @click="handleDaySelect(option)"
           >
             <span class="text-base font-medium">{{ option.label }}</span>
-            <CheckIcon
+            <Icon
+              name="tabler:check"
               v-if="selectedDay?.value === option.value"
               class="w-5 h-5 text-brand-bright shrink-0"
               aria-hidden="true"

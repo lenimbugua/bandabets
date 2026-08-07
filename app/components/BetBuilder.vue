@@ -1,6 +1,5 @@
 <script setup>
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/24/outline";
 import { ref, toRefs } from "vue";
 import { useBetBuilderStore } from "../stores/betbuilder";
 import { useMatchesStore } from "../stores/matches";
@@ -176,7 +175,8 @@ function getSpecifier(outcome) {
                   @click="fetchMatches(market, index)"
                 >
                   <div class="flex items-center gap-2.5 min-w-0">
-                    <ChevronDownIcon
+                    <Icon
+                      name="tabler:chevron-down"
                       :class="isOpened(index) ? 'rotate-180' : ''"
                       class="w-3 h-3 text-gray-400 dark:text-white/15 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:text-gray-500 dark:group-hover:text-white/25"
                     />

@@ -1,12 +1,19 @@
 <script setup>
-import { SignalIcon } from "@heroicons/vue/24/outline";
 import { useFormatScores } from "@/composables/useFormatScores";
 import { useMatchDetails } from "@/composables/useMatchDetails";
 import { useLiveMatchesStore } from "@/stores/live-matches";
 import { useBetslipStore } from "@/stores/sports-betslip.js";
 import { storeToRefs } from "pinia";
-import { computed, onMounted, ref } from "vue";
+import { computed, h, onMounted, ref } from "vue";
+import { Icon } from "#components";
 import { RouterLink, useRouter } from "vue-router";
+
+// BaseEmptyState (out of scope for this migration batch) renders its `icon`
+// prop via `<component :is="icon">`, which requires an actual component
+// reference rather than a Tabler name string — wrap the Tabler icon in a
+// tiny functional component so the existing dynamic-component contract
+// keeps working without touching BaseEmptyState.vue.
+const noLiveMatchesIcon = () => h(Icon, { name: "tabler:broadcast" });
 
 const router = useRouter();
 const liveMatchesStore = useLiveMatchesStore();
@@ -279,7 +286,7 @@ function selectSport(sportId) {
       <!-- Empty state -->
       <BaseEmptyState
         v-else
-        :icon="SignalIcon"
+        :icon="noLiveMatchesIcon"
         title="No live matches"
         description="Live events will appear here"
         size="sm"

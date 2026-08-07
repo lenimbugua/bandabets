@@ -1,5 +1,4 @@
 <script setup>
-import { MagnifyingGlassIcon } from "@heroicons/vue/24/outline";
 import { useCasinoStore } from "../stores/casino";
 import { storeToRefs } from "pinia";
 
@@ -23,7 +22,7 @@ function filterCasino(term) {
       @keyup="filterCasino(searchTerm)"
     />
     <div class="absolute -top-1 flex items-center justify-between p-3">
-      <MagnifyingGlassIcon class="w-5 h-5 dark:text-white" />
+      <Icon name="tabler:search" class="w-5 h-5 dark:text-white" />
     </div>
   </div>
 </template>

@@ -1,11 +1,18 @@
 <script setup>
-import { CalendarDaysIcon } from "@heroicons/vue/24/outline";
 import { useFormatDates } from "@/composables/useFormatDates";
 import { useCompetionsStore } from "@/stores/competitions";
 import { useModalStore } from "@/stores/modal";
-import { toRefs } from "vue";
+import { h, toRefs } from "vue";
+import { Icon } from "#components";
 import { useMatchesStore } from "../stores/matches";
 const { closeModal } = useModalStore();
+
+// BaseEmptyState (out of scope for this migration batch) renders its `icon`
+// prop via `<component :is="icon">`, which requires an actual component
+// reference rather than a Tabler name string — wrap the Tabler icon in a
+// tiny functional component so the existing dynamic-component contract
+// keeps working without touching BaseEmptyState.vue.
+const noEventsIcon = () => h(Icon, { name: "tabler:calendar-month" });
 const { fetchMatchDetails } = useMatchesStore();
 
 const { competitions, pending } = toRefs(useCompetionsStore());
@@ -53,7 +60,7 @@ function goFetchMatchDetails(matchId) {
     <!-- Empty state -->
     <BaseEmptyState
       v-else
-      :icon="CalendarDaysIcon"
+      :icon="noEventsIcon"
       title="No events available"
       description="Check back later for upcoming matches"
     />

@@ -1,5 +1,4 @@
 <script setup>
-import { DocumentDuplicateIcon } from "@heroicons/vue/24/outline";
 import { ref, toRefs, computed } from "vue";
 import { useBetslipStore } from "../stores/sports-betslip";
 
@@ -83,7 +82,7 @@ function copyBookingCode() {
             class="flex items-center gap-2 font-bold text-gray-900 dark:text-white tabular-nums hover:text-primary transition-colors"
             @click="copyBookingCode"
           >
-            <DocumentDuplicateIcon class="w-4 h-4 text-primary" />
+            <Icon name="tabler:files" class="w-4 h-4 text-primary" />
             <span class="text-base">{{ codeCopied ? 'Copied!' : afterBetDetails.bookingCode }}</span>
           </button>
         </div>

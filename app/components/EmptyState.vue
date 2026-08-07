@@ -1,10 +1,18 @@
 <script setup>
-import { MagnifyingGlassIcon } from "@heroicons/vue/24/outline";
+import { h } from "vue";
+import { Icon } from "#components";
+
+// BaseEmptyState (out of scope for this migration batch) renders its `icon`
+// prop via `<component :is="icon">`, which requires an actual component
+// reference rather than a Tabler name string — wrap the Tabler icon in a
+// tiny functional component so the existing dynamic-component contract
+// keeps working without touching BaseEmptyState.vue.
+const noMatchesIcon = () => h(Icon, { name: "tabler:search" });
 </script>
 
 <template>
   <BaseEmptyState
-    :icon="MagnifyingGlassIcon"
+    :icon="noMatchesIcon"
     title="No matches found"
     description="Check back soon or explore what's live right now"
     size="lg"

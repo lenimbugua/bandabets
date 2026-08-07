@@ -12,7 +12,6 @@ import { computed } from "vue";
 import { useModalStore } from "@/stores/modal";
 
 import { useModalTypes } from "@/composables/useModalTypes";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
 
 const { geniusGameTracker } = useModalTypes();
 
@@ -64,7 +63,7 @@ const { closeModal } = useModalStore();
                 aria-label="Close game tracker"
                 @click="closeModal"
               >
-                <XMarkIcon class="h-5 w-5 text-gray-600" />
+                <Icon name="tabler:x" class="h-5 w-5 text-gray-600" />
               </button>
               <div
                 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"

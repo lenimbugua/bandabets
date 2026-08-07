@@ -1,5 +1,4 @@
 <script setup>
-// import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/vue/20/solid";
 import { ref } from "vue";
 const isHidden = ref(true);
 </script>

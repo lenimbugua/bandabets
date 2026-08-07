@@ -7,8 +7,6 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 
-import { XMarkIcon } from "@heroicons/vue/24/solid";
-
 import { storeToRefs } from "pinia";
 import { computed, ref } from "vue";
 
@@ -98,7 +96,7 @@ function closeThisModal() {
                     aria-label="Close"
                     @click="closeThisModal"
                   >
-                    <XMarkIcon class="w-5 h-5" />
+                    <Icon name="tabler:x" class="w-5 h-5" />
                   </button>
                 </div>
               </div>

@@ -1,7 +1,6 @@
 <script setup>
 import { useModalStore } from "@/stores/modal";
 import { DialogTitle } from "@headlessui/vue";
-import { ExclamationCircleIcon, XMarkIcon } from "@heroicons/vue/24/solid";
 import { toRefs } from "vue";
 import { useBetBuilderStore } from "../stores/betbuilder";
 import { useBetslipStore } from "../stores/sports-betslip.js";
@@ -30,7 +29,8 @@ function removeTheBet() {
   <div>
     <div class="w-full p-2 flex justify-center">
       <div class="p-1 absolute -top-10 bg-brand-bright/20 rounded-full">
-        <ExclamationCircleIcon
+        <Icon
+          name="tabler:alert-circle"
           style="z-index: 100"
           class="w-16 h-16 mx-auto text-amber-500"
         />
@@ -41,7 +41,7 @@ function removeTheBet() {
       aria-label="Close"
       @click="closeModal"
     >
-      <XMarkIcon class="text-gray-900 dark:text-white w-5 h-5" />
+      <Icon name="tabler:x" class="text-gray-900 dark:text-white w-5 h-5" />
     </button>
     <DialogTitle
       as="h3"

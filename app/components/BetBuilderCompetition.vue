@@ -2,12 +2,6 @@
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useModalStore } from "@/stores/modal";
 import { useShareBetStore } from "@/stores/sharebet.js";
-import {
-  //   ChevronLeftIcon,
-  //   ChevronRightIcon,
-  //   PlusIcon,
-  ShareIcon,
-} from "@heroicons/vue/24/outline";
 import { useFormatDates } from "../composables/useFormatDates";
 import { useTopLeagues } from "../composables/useTopLeagues";
 import { useBetslipStore } from "../stores/sports-betslip.js";
@@ -147,7 +141,7 @@ function openShare() {
             class="inline-flex px-2 py-1 max-w-20 items-center gap-1 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-linear-to-r from-amber-500 to-amber-700 text-white hover:scale-105 shadow-sm hover:shadow-md transition-all duration-200 rounded-md"
             @click="openShare"
           >
-            <ShareIcon class="w-4 h-4" />
+            <Icon name="tabler:share" class="w-4 h-4" />
             Share
           </button>
           <button
