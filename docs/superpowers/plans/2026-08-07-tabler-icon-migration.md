@@ -17,7 +17,7 @@
 - Icon color must come from `currentColor` (existing `text-*` classes). Never add a hard-coded color to an icon.
 - Preserve every existing class, event binding, `v-if`/`v-else`, and `aria-*` attribute when swapping a tag. Only the tag name and the import change.
 - Do not touch `app/components/icons/`, inline `<svg>` blocks, `app/components/mobile/MobileFooterV2.vue`, or `app/assets/css/style.css` (spec non-goals).
-- Commit after every task. Working branch: `design/banda-discipline` (already checked out).
+- Commit after every task. Working branch: `feat/tabler-icons` (create from `main` before Task 1: `git checkout -b feat/tabler-icons`).
 
 ## Icon Mapping Table
 
