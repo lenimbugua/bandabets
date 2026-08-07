@@ -105,10 +105,11 @@ const { currentMode } = useAppMode();
         <button
           type="button"
           aria-label="Open navigation menu"
-          class="flex items-center justify-center w-11 h-11 shrink-0 rounded-full bg-surface-elevated text-foreground transition-colors duration-150 hover:bg-accent"
+          class="flex flex-col items-center justify-center gap-0.5 w-12 h-11 shrink-0 rounded-full bg-surface-elevated text-foreground transition-colors duration-150 hover:bg-accent"
           @click="openModal(drawer)"
         >
-          <Icon name="tabler:layout-grid" class="w-5 h-5" />
+          <Icon name="tabler:layout-grid" class="w-4.5 h-4.5" />
+          <span class="text-[0.6rem] font-semibold leading-none">Menu</span>
         </button>
       </div>
     </div>
