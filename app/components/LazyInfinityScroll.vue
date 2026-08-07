@@ -75,10 +75,13 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-  <Lazy
+  <!-- Plain div, NOT <Lazy>: this wraps the page's entire main content, and
+       Lazy.vue's IntersectionObserver-gated slot renders nothing during SSR,
+       which blanked the landing/sports pages' server HTML. -->
+  <div
     ref="listEl"
     class="matches-scroll-container h-dvh w-full overflow-scroll dark:border-border-darkest scrollbar-hide"
   >
     <slot />
-  </Lazy>
+  </div>
 </template>

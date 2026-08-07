@@ -28,7 +28,9 @@ const isSelected = (id) => {
 </script>
 
 <template>
-  <TabGroup>
+  <!-- as="div": parents (SportsFilterBar/MatchFilters) have scoped styles, and a
+       renderless root can't receive their data-v attribute during SSR. -->
+  <TabGroup as="div">
     <!-- w-max, not justify-between: the row scrolls inside SportsFilterBar, and a
          distributed row would squeeze the tabs instead of letting them overflow. -->
     <TabList aria-label="Sports categories" class="flex items-center gap-5 w-max">
