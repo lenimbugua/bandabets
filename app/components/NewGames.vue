@@ -1,5 +1,4 @@
 <script setup>
-import { Sparkles } from "lucide-vue-next";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useCasinoStore } from "../stores/casino";
@@ -66,7 +65,7 @@ async function goToCasinoGames(game) {
   </div>
   <BaseEmptyState
     v-if="!categoryIsPending && (!newGames || !newGames.length)"
-    :icon="Sparkles"
+    icon="tabler:sparkles"
     title="No new games yet"
     description="Fresh games added regularly"
   />

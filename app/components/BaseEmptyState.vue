@@ -2,7 +2,7 @@
 import { computed } from "vue";
 
 const props = defineProps({
-  icon: { type: [Object, Function], default: null },
+  icon: { type: String, default: null },
   title: { type: String, required: true },
   description: { type: String, default: "" },
   size: { type: String, default: "md", validator: (v) => ["sm", "md", "lg"].includes(v) },

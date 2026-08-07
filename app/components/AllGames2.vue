@@ -1,5 +1,4 @@
 <script setup>
-import { Gamepad2 } from "lucide-vue-next";
 import { toRefs } from "vue";
 
 import { useGamesStore } from "../stores/games";
@@ -22,7 +21,7 @@ const { pending } = toRefs(useGamesStore());
 
   <BaseEmptyState
     v-else-if="!games?.gameCategories?.length"
-    :icon="Gamepad2"
+    icon="tabler:device-gamepad-2"
     title="No games found"
     description="Try a different category"
   />

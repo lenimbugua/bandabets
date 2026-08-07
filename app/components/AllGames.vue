@@ -1,5 +1,4 @@
 <script setup>
-import { Gamepad2 } from "lucide-vue-next";
 import { storeToRefs } from "pinia";
 import { usePopular } from "../composables/usePopular";
 import { useCasinoStore } from "../stores/casino";
@@ -49,7 +48,7 @@ const { categoryIsPending } = storeToRefs(useCasinoStore());
   </div>
   <BaseEmptyState
     v-if="!categoryIsPending && (!allGames || !allGames.length)"
-    :icon="Gamepad2"
+    icon="tabler:device-gamepad-2"
     title="No games available"
     description="Check back soon for new games"
   />
