@@ -120,7 +120,7 @@ const steps = [
     <div class="aviator-promo-wrap">
       <div class="aviator-promo-bar" @click="handleToggle">
         <div class="promo-inner">
-          <GiftIcon class="promo-icon" />
+          <Icon name="tabler:gift" class="promo-icon" />
           <span class="promo-text">Earn Ksh 100 Aviator Free Bets Instantly</span>
           <button class="promo-cta">INVITE NOW →</button>
         </div>

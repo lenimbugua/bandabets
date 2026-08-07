@@ -107,7 +107,7 @@ function openShare() {
     </div>
     <!-- <div class="flex items-center justify-between p-2">
       <button class="text-white hover:bg-white/20 disabled:opacity-50">
-        <ChevronLeftIcon class="w-4 h-4" />
+        <Icon name="tabler:chevron-left" class="w-4 h-4" />
       </button>
       <div class="text-center">
         <p class="text-white font-medium text-sm">New bet</p>
@@ -116,7 +116,7 @@ function openShare() {
       <button
         class="text-white hover:bg-white/20 disabled:opacity-50 p-2 rounded-sm"
       >
-        <ChevronRightIcon class="w-4 h-4" />
+        <Icon name="tabler:chevron-right" class="w-4 h-4" />
       </button>
     </div> -->
 
