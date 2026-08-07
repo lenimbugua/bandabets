@@ -15,11 +15,11 @@ const router = useRouter();
 
 // --- Tabs ---
 const tabs = [
+  { key: "top-games", label: "Top Games" },
   { key: "live", label: "Live" },
   { key: "codes", label: "Codes" },
-  { key: "top-games", label: "Top Games" },
 ];
-const activeTab = ref("live");
+const activeTab = ref("top-games");
 
 // --- Live tab ---
 const liveMatchesStore = useLiveMatchesStore();
