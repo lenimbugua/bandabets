@@ -1,5 +1,4 @@
 <script setup>
-import { Users, Gift, Copy, Check, Share2, ChevronRight, Sparkles, TrendingUp } from "lucide-vue-next"
 import { ref } from "vue"
 
 const referralCode = "AMOS2024"
@@ -33,14 +32,14 @@ function handleShare() {
     <!-- Header Banner -->
     <div class="relative bg-linear-to-r from-primary/10 dark:from-primary/30 via-accent/8 dark:via-accent/20 to-primary/10 dark:to-primary/30 p-3 border-b border-gray-200 dark:border-border">
       <div class="absolute inset-0 overflow-hidden">
-        <Sparkles class="absolute top-1 left-6 w-3 h-3 text-accent" />
-        <Sparkles class="absolute bottom-1 right-6 w-3 h-3 text-primary" />
+        <Icon name="tabler:sparkles" class="absolute top-1 left-6 w-3 h-3 text-accent" />
+        <Icon name="tabler:sparkles" class="absolute bottom-1 right-6 w-3 h-3 text-primary" />
       </div>
 
       <div class="relative flex items-center justify-between">
         <div class="flex items-center gap-2">
           <div class="w-9 h-9 rounded-xl bg-bet flex items-center justify-center shadow-glow-gold">
-            <Users class="w-5 h-5 text-bet-foreground" />
+            <Icon name="tabler:users" class="w-5 h-5 text-bet-foreground" />
           </div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -67,7 +66,7 @@ function handleShare() {
           <p class="text-[9px] text-foreground/70 uppercase font-semibold">Your Earnings</p>
           <p class="text-base font-bold text-primary">{{ totalEarnings.toLocaleString() }} KES</p>
           <div class="flex items-center justify-center gap-0.5 text-[9px] text-success font-medium">
-            <TrendingUp class="w-2.5 h-2.5" /> +2,500 this week
+            <Icon name="tabler:trending-up" class="w-2.5 h-2.5" /> +2,500 this week
           </div>
         </div>
         <div class="bg-gray-50 dark:bg-secondary/40 rounded-lg p-2 border border-gray-200/80 dark:border-border/50 text-center">
@@ -99,15 +98,15 @@ function handleShare() {
             @click="handleCopyCode"
           >
             <Transition name="icon-swap" mode="out-in">
-              <Check v-if="copied" class="w-4 h-4 text-primary" />
-              <Copy v-else class="w-4 h-4 text-primary" />
+              <Icon v-if="copied" name="tabler:check" class="w-4 h-4 text-primary" />
+              <Icon v-else name="tabler:copy" class="w-4 h-4 text-primary" />
             </Transition>
           </button>
           <button
             class="w-10 h-10 rounded-lg bg-bet flex items-center justify-center shadow-glow-gold cta-premium"
             @click="handleShare"
           >
-            <Share2 class="w-4 h-4 text-bet-foreground" />
+            <Icon name="tabler:share" class="w-4 h-4 text-bet-foreground" />
           </button>
         </div>
         <Transition name="fade">
@@ -121,23 +120,23 @@ function handleShare() {
           <span class="w-4.5 h-4.5 rounded-full bg-primary flex items-center justify-center text-[8px] font-bold text-primary-foreground shrink-0">1</span>
           <span class="text-foreground/70">Share code</span>
         </div>
-        <ChevronRight class="w-3 h-3 text-primary shrink-0" />
+        <Icon name="tabler:chevron-right" class="w-3 h-3 text-primary shrink-0" />
         <div class="flex-1 flex items-center gap-1.5 bg-gray-50 dark:bg-secondary/30 rounded-lg px-2 py-1.5 border border-gray-200/80 dark:border-border/50">
           <span class="w-4.5 h-4.5 rounded-full bg-primary flex items-center justify-center text-[8px] font-bold text-primary-foreground shrink-0">2</span>
           <span class="text-foreground/70">Friend deposits</span>
         </div>
-        <ChevronRight class="w-3 h-3 text-primary shrink-0" />
+        <Icon name="tabler:chevron-right" class="w-3 h-3 text-primary shrink-0" />
         <div class="flex-1 flex items-center gap-1.5 bg-accent/10 dark:bg-accent/20 rounded-lg px-2 py-1.5 border border-accent/20 dark:border-accent/30">
-          <Gift class="w-3.5 h-3.5 text-accent" />
+          <Icon name="tabler:gift" class="w-3.5 h-3.5 text-accent" />
           <span class="text-accent font-bold">You earn!</span>
         </div>
       </div>
 
       <!-- CTA -->
       <button type="button" class="w-full bg-bet text-bet-foreground text-xs font-bold py-2.5 rounded-xl shadow-glow-gold flex items-center justify-center gap-1.5 cta-premium">
-        <Users class="w-4 h-4" />
+        <Icon name="tabler:users" class="w-4 h-4" />
         Invite Friends Now
-        <ChevronRight class="w-4 h-4" />
+        <Icon name="tabler:chevron-right" class="w-4 h-4" />
       </button>
     </div>
   </div>

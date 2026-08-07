@@ -6,7 +6,6 @@
 // at all, so /bonus 404s today and has no generated noindex routeRule; one
 // is added from scratch in nuxt.config.js in this same commit.
 import MobileFooterV2 from "@/components/mobile/MobileFooterV2.vue";
-import { Gift } from "lucide-vue-next";
 import BonusHeader from "@/components/bonus/BonusHeader.vue";
 import BonusTabs from "@/components/bonus/BonusTabs.vue";
 import BonusCard from "@/components/bonus/BonusCard.vue";
@@ -197,7 +196,7 @@ onMounted(() => {
       <div :class="['stagger-item space-y-2', ready && 'stagger-visible']" style="--delay: 4">
         <div class="flex items-center justify-between gap-2">
           <div class="flex items-center gap-1.5 min-w-0">
-            <Gift class="w-4 h-4 text-accent shrink-0" />
+            <Icon name="tabler:gift" class="w-4 h-4 text-accent shrink-0" />
             <h2 class="text-xs font-bold text-foreground truncate">Active Bonuses</h2>
             <span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
               {{ bonusData.length }}
@@ -234,7 +233,7 @@ onMounted(() => {
           class="flex flex-col items-center justify-center py-12 text-center"
         >
           <div class="w-16 h-16 rounded-full bg-secondary/50 flex items-center justify-center mb-3">
-            <Gift class="w-8 h-8 text-muted-foreground" />
+            <Icon name="tabler:gift" class="w-8 h-8 text-muted-foreground" />
           </div>
           <p class="text-sm font-semibold text-foreground mb-1">No bonus history yet</p>
           <p class="text-xs text-muted-foreground">Your claimed and expired bonuses will appear here</p>

@@ -1,16 +1,4 @@
 <script setup>
-import {
-  Bell,
-  ChevronLeft,
-  Clock,
-  Crown,
-  Gem,
-  Gift,
-  Sparkles,
-  TrendingUp,
-  Zap,
-} from "lucide-vue-next";
-
 defineProps({
   totalBalance: { type: Number, required: true },
   currency: { type: String, default: "KES" },
@@ -31,12 +19,12 @@ const vipLevel = "Silver";
         <div
           class="w-7 h-7 rounded-full bg-gray-100 dark:bg-secondary/50 flex items-center justify-center"
         >
-          <ChevronLeft class="w-4 h-4" />
+          <Icon name="tabler:chevron-left" class="w-4 h-4" />
         </div>
       </button>
 
       <div class="flex items-center gap-1">
-        <Sparkles class="w-4 h-4 text-accent" />
+        <Icon name="tabler:sparkles" class="w-4 h-4 text-accent" />
         <h1 class="text-sm font-bold text-foreground">My Bonuses</h1>
       </div>
 
@@ -44,7 +32,7 @@ const vipLevel = "Silver";
         type="button"
         class="relative w-7 h-7 rounded-full bg-gray-100 dark:bg-secondary/50 flex items-center justify-center"
       >
-        <Bell class="w-4 h-4 text-muted-foreground" />
+        <Icon name="tabler:bell" class="w-4 h-4 text-muted-foreground" />
         <span
           class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-destructive text-destructive-foreground text-[8px] font-bold rounded-full flex items-center justify-center animate-pulse"
         >
@@ -59,9 +47,9 @@ const vipLevel = "Silver";
     >
       <!-- Animated background pattern -->
       <div class="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
-        <Sparkles class="absolute top-3 left-5 w-6 h-6 text-accent" />
-        <Gift class="absolute top-8 right-8 w-5 h-5 text-primary" />
-        <Zap class="absolute bottom-12 right-5 w-5 h-5 text-accent" />
+        <Icon name="tabler:sparkles" class="absolute top-3 left-5 w-6 h-6 text-accent" />
+        <Icon name="tabler:gift" class="absolute top-8 right-8 w-5 h-5 text-primary" />
+        <Icon name="tabler:bolt" class="absolute bottom-12 right-5 w-5 h-5 text-accent" />
       </div>
 
       <!-- User greeting -->
@@ -76,7 +64,7 @@ const vipLevel = "Silver";
             <div
               class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center ring-2 ring-card"
             >
-              <Zap class="w-3 h-3 text-primary-foreground" />
+              <Icon name="tabler:bolt" class="w-3 h-3 text-primary-foreground" />
             </div>
           </div>
           <div>
@@ -92,7 +80,7 @@ const vipLevel = "Silver";
           <div
             class="flex items-center gap-1 bg-gradient-gold px-3 py-1.5 rounded-full shadow-glow-gold"
           >
-            <Crown class="w-4 h-4 text-accent-foreground" />
+            <Icon name="tabler:crown" class="w-4 h-4 text-accent-foreground" />
             <span class="text-xs font-bold text-accent-foreground">{{
               vipLevel
             }}</span>
@@ -117,7 +105,7 @@ const vipLevel = "Silver";
             <div
               class="flex items-center gap-1.5 bg-accent/25 dark:bg-accent/20 backdrop-blur-xs px-2 py-1 rounded-full border border-accent/40 dark:border-accent/30"
             >
-              <Gift class="w-3 h-3 text-accent" />
+              <Icon name="tabler:gift" class="w-3 h-3 text-accent" />
               <span class="text-[10px] font-bold text-accent"
                 >BONUS BALANCE</span
               >
@@ -149,7 +137,7 @@ const vipLevel = "Silver";
                 <div
                   class="flex items-center gap-1 bg-primary/20 px-2 py-0.5 rounded-full"
                 >
-                  <TrendingUp class="w-2.5 h-2.5 text-primary" />
+                  <Icon name="tabler:trending-up" class="w-2.5 h-2.5 text-primary" />
                   <span class="text-[9px] font-bold text-primary"
                     >Ready to bet</span
                   >
@@ -157,7 +145,7 @@ const vipLevel = "Silver";
                 <div
                   class="flex items-center gap-1 bg-secondary/50 px-2 py-0.5 rounded-full"
                 >
-                  <Clock class="w-2.5 h-2.5 text-muted-foreground" />
+                  <Icon name="tabler:clock" class="w-2.5 h-2.5 text-muted-foreground" />
                   <span class="text-[9px] text-foreground/60 font-medium"
                     >7 days left</span
                   >
@@ -170,9 +158,10 @@ const vipLevel = "Silver";
               <div
                 class="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center shadow-glow-gold"
               >
-                <Gem class="w-7 h-7 text-accent-foreground" />
+                <Icon name="tabler:diamond" class="w-7 h-7 text-accent-foreground" />
               </div>
-              <Sparkles
+              <Icon
+                name="tabler:sparkles"
                 class="absolute -top-1 -right-1 w-4 h-4 text-accent"
               />
             </div>

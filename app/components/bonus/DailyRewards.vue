@@ -1,5 +1,4 @@
 <script setup>
-import { Gift, Check, Lock, Flame } from "lucide-vue-next"
 import { cn } from "@/lib/utils"
 
 import coinsReward from "@/assets/bonus/coins-reward.png"
@@ -28,11 +27,11 @@ const todayReward = weeklyRewards.find((r) => r.current)
     <!-- Header Row -->
     <div class="flex items-center justify-between mb-2">
       <div class="flex items-center gap-1.5">
-        <Gift class="w-4 h-4 text-accent" />
+        <Icon name="tabler:gift" class="w-4 h-4 text-accent" />
         <span class="text-[11px] font-bold text-foreground">Daily Rewards</span>
       </div>
       <div class="flex items-center gap-1 bg-primary/10 dark:bg-primary/20 text-primary text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-        <Flame class="w-2.5 h-2.5" />
+        <Icon name="tabler:flame" class="w-2.5 h-2.5" />
         <span>{{ currentStreak }} Day Streak</span>
       </div>
     </div>
@@ -63,11 +62,11 @@ const todayReward = weeklyRewards.find((r) => r.current)
           day.locked && 'grayscale opacity-50'
         )">
           <div v-if="day.claimed" class="w-full h-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
-            <Check class="w-3.5 h-3.5 text-primary" />
+            <Icon name="tabler:check" class="w-3.5 h-3.5 text-primary" />
           </div>
           <div v-else-if="day.locked" class="relative w-full h-full">
             <img :src="day.image" :alt="`Day ${day.day} reward`" class="w-full h-full object-cover blur-[1px]" />
-            <Lock class="absolute inset-0 m-auto w-3 h-3 text-muted-foreground" />
+            <Icon name="tabler:lock" class="absolute inset-0 m-auto w-3 h-3 text-muted-foreground" />
           </div>
           <img
             v-else
@@ -96,7 +95,7 @@ const todayReward = weeklyRewards.find((r) => r.current)
       type="button"
       class="w-full bg-bet text-bet-foreground text-xs font-bold py-2 rounded-lg shadow-glow-gold flex items-center justify-center gap-1 cta-premium"
     >
-      <Gift class="w-3.5 h-3.5" />
+      <Icon name="tabler:gift" class="w-3.5 h-3.5" />
       Claim Day {{ todayReward.day }}: {{ todayReward.reward }} KES
     </button>
   </div>

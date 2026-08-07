@@ -1,5 +1,4 @@
 <script setup>
-import { Gift, Sparkles, ArrowRight, Clock } from "lucide-vue-next"
 import { ref, onMounted, onUnmounted } from "vue"
 
 const userName = "Amos"
@@ -34,14 +33,14 @@ onUnmounted(() => {
 
     <!-- Personal badge -->
     <div class="absolute top-0 right-0 bg-destructive text-destructive-foreground text-[9px] font-bold px-2 py-0.5 rounded-bl-lg flex items-center gap-1">
-      <Clock class="w-2.5 h-2.5" />
+      <Icon name="tabler:clock" class="w-2.5 h-2.5" />
       <span class="tabular-nums">{{ countdown }}</span>
     </div>
 
     <div class="relative">
       <!-- Personal greeting -->
       <div class="flex items-center gap-1 mb-1">
-        <Sparkles class="w-3 h-3 text-accent" />
+        <Icon name="tabler:sparkles" class="w-3 h-3 text-accent" />
         <span class="text-[10px] font-bold text-accent">
           Hey {{ userName }}! Just for YOU
         </span>
@@ -49,7 +48,7 @@ onUnmounted(() => {
 
       <div class="flex items-center gap-3">
         <div class="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center shadow-glow-gold shrink-0">
-          <Gift class="w-6 h-6 text-accent-foreground" />
+          <Icon name="tabler:gift" class="w-6 h-6 text-accent-foreground" />
         </div>
 
         <div class="flex-1 min-w-0">
@@ -66,7 +65,7 @@ onUnmounted(() => {
 
         <button type="button" class="bg-bet text-bet-foreground text-xs font-bold px-4 py-2.5 rounded-lg flex flex-col items-center shadow-glow-gold shrink-0 cta-premium">
           <span>CLAIM</span>
-          <ArrowRight class="w-3 h-3" />
+          <Icon name="tabler:arrow-right" class="w-3 h-3" />
         </button>
       </div>
     </div>

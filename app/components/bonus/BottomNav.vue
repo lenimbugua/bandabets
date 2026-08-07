@@ -1,5 +1,4 @@
 <script setup>
-import { Home, Gift, Wallet, User } from "lucide-vue-next"
 import { cn } from "@/lib/utils"
 
 defineProps({
@@ -9,10 +8,10 @@ defineProps({
 const emit = defineEmits(["update:activeTab"])
 
 const navItems = [
-  { id: "home", label: "Home", icon: Home },
-  { id: "bonuses", label: "Bonuses", icon: Gift, badge: 4 },
-  { id: "deposit", label: "Deposit", icon: Wallet, highlight: true },
-  { id: "profile", label: "Profile", icon: User },
+  { id: "home", label: "Home", icon: "tabler:home" },
+  { id: "bonuses", label: "Bonuses", icon: "tabler:gift", badge: 4 },
+  { id: "deposit", label: "Deposit", icon: "tabler:wallet", highlight: true },
+  { id: "profile", label: "Profile", icon: "tabler:user" },
 ]
 </script>
 
@@ -33,7 +32,7 @@ const navItems = [
         @click="emit('update:activeTab', item.id)"
       >
         <div class="relative">
-          <component :is="item.icon" :class="cn('w-5 h-5', item.highlight && 'w-6 h-6')" />
+          <Icon :name="item.icon" :class="cn('w-5 h-5', item.highlight && 'w-6 h-6')" />
           <span
             v-if="item.badge"
             class="absolute -top-1.5 -right-2 bg-destructive text-destructive-foreground text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center"
