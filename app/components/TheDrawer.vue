@@ -50,7 +50,7 @@ function goHome() {
   <TransitionRoot as="template" :show="showDrawer">
     <Dialog
       as="div"
-      class="relative z-50"
+      class="relative z-70"
       :initial-focus="closeButtonRef"
       @close="closeModal"
     >
@@ -68,7 +68,7 @@ function goHome() {
       </TransitionChild>
 
       <!-- Panel from left -->
-      <div class="fixed inset-0 z-50 flex justify-start">
+      <div class="fixed inset-0 z-70 flex justify-start">
         <TransitionChild
           as="template"
           enter="transition ease-out duration-300 transform"
