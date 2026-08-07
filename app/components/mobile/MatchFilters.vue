@@ -1,8 +1,10 @@
 <script setup>
 import { storeToRefs } from "pinia";
+import { computed } from "vue";
 import { useMatches2Store } from "@/stores/matches2";
 import { useSportsQueryParamsStore } from "@/stores/sports-query-params";
 import CalendarDropdown from "../CalendarDropdown.vue";
+import ColumnHeaderSearch from "../ColumnHeaderSearch.vue";
 import HighlitsTab from "../HighlitsTab.vue";
 import LeaguesButton from "../LeaguesButton.vue";
 import MarketSection from "../MarketSection.vue";
@@ -30,6 +32,22 @@ const { matches, pending } = storeToRefs(useMatches2Store());
    matches may legitimately be empty there, and hiding the strip would also
    hide the tabs needed to leave the layout. */
 const { layout } = storeToRefs(useSportsQueryParamsStore());
+const { getDefaultMarket } = storeToRefs(useMatches2Store());
+
+/* Labels for the column-header bar, derived from the selected market's
+   outcomes (mirrors SportsFilterBar). */
+const outcomeLabels = computed(() => {
+  if (!matches.value?.length) return ["1", "X", "2"];
+  const marketId = "" + getDefaultMarket.value;
+  for (const match of matches.value) {
+    if (!match?.markets?.length) continue;
+    const market = match.markets.find((m) => m.subTypeId === marketId);
+    if (market?.matchOutcomes?.length) {
+      return market.matchOutcomes.map((o) => o.outcomeName || "");
+    }
+  }
+  return ["1", "X", "2"];
+});
 </script>
 
 <template>
@@ -69,6 +87,14 @@ const { layout } = storeToRefs(useSportsQueryParamsStore());
     <div class="px-3 pt-1.5 pb-1">
       <MarketSection />
     </div>
+
+    <!-- Column header: search + outcome labels over the odds columns -->
+    <ColumnHeaderSearch
+      v-if="layout !== 'grid' && matches?.length"
+      :matches="matches"
+      :outcome-labels="outcomeLabels"
+      tone="dark"
+    />
     </template>
   </div>
 </template>

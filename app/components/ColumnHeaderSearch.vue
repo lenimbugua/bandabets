@@ -8,6 +8,8 @@ const props = defineProps({
   outcomeLabels: { type: Array, default: () => ["1", "X", "2"] },
   isLive: { type: Boolean, default: false },
   variant: { type: String, default: "prematch" },
+  // "dark" sinks the bar below the panel surface instead of lifting it.
+  tone: { type: String, default: "default" },
 });
 
 const router = useRouter();
@@ -51,7 +53,10 @@ const isSearching = computed(() => searchQuery.value.trim().length > 0);
 
 <template>
   <div class="col-header-search relative">
-    <div class="col-header flex items-center px-3 py-1.5">
+    <div
+      class="col-header flex items-center px-3 py-1.5"
+      :class="tone === 'dark' ? 'col-header--dark' : ''"
+    >
       <!-- Search: collapsed icon / expanded input (casino-style) -->
       <div
         :class="[
@@ -115,7 +120,7 @@ const isSearching = computed(() => searchQuery.value.trim().length > 0);
         <span
           v-for="label in outcomeLabels"
           :key="label"
-          class="flex-1 min-w-[3.2rem] text-center text-[0.55rem] font-semibold text-gray-400 dark:text-white/30 uppercase"
+          class="flex-1 min-w-[3.2rem] text-center text-[0.8rem] font-semibold text-gray-500 dark:text-white/60 uppercase"
         >
           {{ label }}
         </span>
@@ -193,6 +198,15 @@ const isSearching = computed(() => searchQuery.value.trim().length > 0);
 [data-theme="dark"] .col-header {
   background: oklch(100% 0 0 / 0.02);
   border-bottom-color: oklch(100% 0 0 / 0.04);
+}
+
+/* Sunken tone — darker than the panel it sits in */
+.col-header--dark {
+  background: oklch(0% 0 0 / 0.07);
+}
+[data-theme="dark"] .col-header--dark {
+  background: oklch(0% 0 0 / 0.3);
+  border-bottom-color: oklch(100% 0 0 / 0.03);
 }
 
 /* Search button */
