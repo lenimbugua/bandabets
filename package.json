@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
+    "@iconify-json/tabler": "^1.2.38",
     "@neoconfetti/vue": "^2.2.1",
     "@nuxt/icon": "^2.4.1",
     "@pinia/nuxt": "0.11.3",
@@ -31,7 +32,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@iconify-json/tabler": "^1.2.38",
     "@nuxt/eslint": "^1.16.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",

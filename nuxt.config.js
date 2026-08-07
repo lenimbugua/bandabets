@@ -203,6 +203,32 @@ export default defineNuxtConfig({
   icon: {
     serverBundle: { collections: ["tabler"] },
     fallbackToApi: false,
+    // Without this, every <Icon> — client AND server — resolves via
+    // shared.js's loadIcon(), which always tries the network path first
+    // (@nuxt/icon's runtime plugin registers the local `/api/_nuxt_icon`
+    // route via `_api.setFetch($fetch.native)`, which is ofetch's raw,
+    // un-wrapped platform fetch with no Nuxt base-URL injection — Node's
+    // native fetch() cannot resolve that relative URL during SSR, so
+    // every icon fails to load and every <Icon> renders as an empty
+    // span: 0 CSS mask rules in <head>, no stroke-width anywhere).
+    // scan:true makes @nuxt/icon statically scan the app for every
+    // `collection:name` string (exactly the tabler:* usages verified in
+    // Task 7's whitelist audit) and pre-generate a client-bundle module
+    // that calls the real iconify addIcon() for each one, synchronously,
+    // before any lookup. shared.js's loadIcon() calls
+    // initClientBundle(_addIcon) first and only falls through to the
+    // (broken) network fetch if _getIcon(name) still misses afterward —
+    // so a complete client bundle means the fetch path is never
+    // exercised for any icon actually used in the app, on server or
+    // client. This works for both, keeps fallbackToApi:false intact
+    // (still zero calls to the real Iconify CDN — restricted prod
+    // egress), and needs no change to `provider` (stays default
+    // "server"): any icon somehow missed by the scan still falls back
+    // to the local /api/_nuxt_icon route exactly as before, so this is
+    // additive, not a behavior change for the happy path.
+    clientBundle: {
+      scan: true,
+    },
   },
 
   pinia: {
