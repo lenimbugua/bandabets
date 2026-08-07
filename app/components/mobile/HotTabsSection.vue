@@ -225,7 +225,7 @@ onMounted(() => {
           <span
             class="flex h-5 min-w-5 items-center justify-center rounded-full px-1 text-[0.65rem] font-bold tabular-nums"
             :class="activeCompetitionId === chip.id
-              ? 'bg-background text-selected'
+              ? 'bg-brand-bright text-primary-foreground'
               : 'bg-foreground/10 text-foreground/70'"
           >{{ chip.count }}</span>
         </button>
@@ -341,7 +341,7 @@ onMounted(() => {
           <span
             class="flex h-5 min-w-5 items-center justify-center rounded-full px-1 text-[0.65rem] font-bold tabular-nums"
             :class="activeCodeCategory === chip.id
-              ? 'bg-background text-selected'
+              ? 'bg-brand-bright text-primary-foreground'
               : 'bg-foreground/10 text-foreground/70'"
           >{{ chip.count }}</span>
         </button>
