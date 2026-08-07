@@ -53,12 +53,15 @@ function isSelected(selected) {
 </script>
 
 <template>
-  <div class="flex items-center justify-between text-sm text-foreground">
-    <div class="flex items-center">
+  <!-- min-w-0 at every flex level: without it the tab list can't shrink below
+       its content width, so overflow-x-auto never engages and the tabs bleed
+       under the calendar button on narrow screens. -->
+  <div class="flex items-center justify-between min-w-0 text-sm text-foreground">
+    <div class="flex items-center min-w-0">
       <TabGroup>
         <TabList
           aria-label="Match highlight filters"
-          class="flex w-full overflow-x-auto scrollbar-hide"
+          class="flex w-full min-w-0 overflow-x-auto scrollbar-hide"
         >
           <Tab
             v-for="category in highlights"

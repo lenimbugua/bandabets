@@ -79,10 +79,10 @@ const outcomeLabels = computed(() => {
     <template v-if="pending || matches?.length || layout === 'grid'">
     <div class="flex items-center justify-between gap-2 px-3 pt-1">
       <div class="flex items-center gap-2 min-w-0">
-        <HighlitsTab />
-        <LeaguesButton />
+        <HighlitsTab class="min-w-0" />
+        <LeaguesButton class="shrink-0" />
       </div>
-      <CalendarDropdown />
+      <CalendarDropdown class="shrink-0" />
     </div>
     <div class="px-3 pt-1.5 pb-1">
       <MarketSection />
