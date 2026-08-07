@@ -182,7 +182,7 @@ const missing = names.filter(n => !t.icons[n] && !(t.aliases && t.aliases[n]));
 console.log(missing.length ? "MISSING: " + missing.join(", ") : "ALL " + names.length + " NAMES OK");'
 ```
 
-Expected: `ALL 67 NAMES OK`. If any name prints as MISSING, find the current Tabler name (`node -e 'const t=require("@iconify-json/tabler/icons.json"); console.log(Object.keys(t.icons).filter(k=>k.includes("<fragment>")))'`), and update the mapping table in this plan file before proceeding.
+Expected: `ALL 68 NAMES OK`. If any name prints as MISSING, find the current Tabler name (`node -e 'const t=require("@iconify-json/tabler/icons.json"); console.log(Object.keys(t.icons).filter(k=>k.includes("<fragment>")))'`), and update the mapping table in this plan file before proceeding.
 
 - [ ] **Step 3: Register the module in `nuxt.config.js`**
 
