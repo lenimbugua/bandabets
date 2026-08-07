@@ -40,7 +40,7 @@ const isOpen = computed(() => {
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog
       as="div"
-      class="relative z-50"
+      class="relative z-70"
       :initial-focus="closeButtonRef"
       @close="closeModal"
     >
@@ -58,7 +58,7 @@ const isOpen = computed(() => {
       </TransitionChild>
 
       <!-- Panel from right -->
-      <div class="fixed inset-0 z-50 flex justify-end">
+      <div class="fixed inset-0 z-70 flex justify-end">
         <TransitionChild
           as="template"
           enter="transition ease-out duration-300 transform"
