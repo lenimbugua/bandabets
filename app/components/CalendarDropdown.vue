@@ -44,14 +44,14 @@ function closePopover() {
   <div class="relative flex items-center">
     <button
       :aria-label="`Filter by date: ${selectedDay?.label || 'date'}`"
-      class="flex items-center justify-center w-8 h-8 rounded-full transition-colors cursor-pointer bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/15 focus:outline-hidden"
+      class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full transition-colors cursor-pointer bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/15 focus:outline-hidden"
       @click="isOpen = !isOpen"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        class="w-4 h-4 text-gray-600 dark:text-gray-300 shrink-0"
+        class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600 dark:text-gray-300 shrink-0"
       >
         <path
           fill-rule="evenodd"

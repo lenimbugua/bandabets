@@ -71,11 +71,11 @@ function isSelected(selected) {
           >
             <button
               :class="[
-                'inline-flex h-9 shrink-0 items-center justify-center px-2 sm:px-4',
+                'inline-flex h-8 sm:h-9 shrink-0 items-center justify-center px-1.5 sm:px-4',
                 // first:pl-0 keeps the leading label flush with the row gutter
                 // without reaching outside this component to do it
                 'first:pl-0',
-                'text-[0.95rem] font-bold whitespace-nowrap capitalize',
+                'text-[0.8rem] sm:text-[0.95rem] font-bold whitespace-nowrap capitalize',
                 'border-b-2 transition-colors focus:outline-hidden',
                 isSelected(category.name)
                   ? 'border-selected text-selected'
