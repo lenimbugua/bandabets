@@ -62,7 +62,7 @@ const showShareBetModal = computed(() => {
                 <button class="p-2 py-1 outline-hidden" aria-label="Close" @click="closeModal">
                   <Icon
                     name="tabler:x"
-                    class="w-5 h-5 dark:text-slate-300 stroke-width-2 cursor-pointer"
+                    class="w-5 h-5 dark:text-slate-300 cursor-pointer"
                   />
                 </button>
                 <DialogTitle
@@ -73,7 +73,7 @@ const showShareBetModal = computed(() => {
                 <button ref="closeButtonRef" class="p-2 py-1 outline-hidden" aria-label="Close" @click="closeModal">
                   <Icon
                     name="tabler:x"
-                    class="w-5 h-5 dark:text-slate-300 stroke-width-2 cursor-pointer"
+                    class="w-5 h-5 dark:text-slate-300 cursor-pointer"
                   />
                 </button>
               </div>

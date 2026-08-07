@@ -134,7 +134,7 @@ function isSelected(name) {
         <div class="flex justify-between items-center space-x-1">
           <Icon
             name="tabler:menu-2"
-            class="text-gray-950 dark:text-white fill-current h-6 w-6"
+            class="text-gray-950 dark:text-white h-6 w-6"
             @click="openModal(drawer)"
           />
           <TheLogo />

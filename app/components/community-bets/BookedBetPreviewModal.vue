@@ -120,7 +120,7 @@ function loadSlip() {
                         <span>{{ bookingCode }}</span>
                         <Icon
                           name="tabler:copy"
-                          class="w-4 h-4 mr-0.5 stroke-width-4"
+                          class="w-4 h-4 mr-0.5"
                         />
                       </div>
                       <div v-else>Copied !</div>

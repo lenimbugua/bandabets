@@ -21,7 +21,7 @@ const hours = ref([3, 6, 9, 12]);
         HRS
         <Icon
           name="tabler:chevron-down"
-          class="-mr-1 h-5 w-5 fill-current"
+          class="-mr-1 h-5 w-5"
           aria-hidden="true"
         />
       </MenuButton>

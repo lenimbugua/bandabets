@@ -39,7 +39,7 @@ function getMatches(sportId, name, icon, goToSports) {
           </div>
         </div>
         <div>
-          <Icon name="tabler:chevron-right" class="w-6 h-6 fill-current text-slate-500 dark:text-slate-400" />
+          <Icon name="tabler:chevron-right" class="w-6 h-6 text-slate-500 dark:text-slate-400" />
         </div>
       </div>
     </RowColorWrapper>

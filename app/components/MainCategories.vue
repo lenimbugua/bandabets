@@ -105,9 +105,10 @@ const { categories } = useMainCategories();
       @click="scrollLeft"
     >
       <button>
-        <ChevronLeftIcon
-    :class="{ 'opacity-80': !canScrollLeft }"
-          class="stroke-2 h-5 w-5 text-gray-950 dark:text-white fill-current"
+        <Icon
+          name="tabler:chevron-left"
+          :class="{ 'opacity-80': !canScrollLeft }"
+          class="h-5 w-5 text-gray-950 dark:text-white"
         />
       </button>
     </div> -->
@@ -136,7 +137,7 @@ const { categories } = useMainCategories();
       <Icon
         name="tabler:chevron-right"
         :class="{ 'opacity-80': !canScrollRight }"
-        class="stroke-2 h-5 w-5 text-gray-950 dark:text-white fill-current"
+        class="h-5 w-5 text-gray-950 dark:text-white"
       />
     </button>
   </div>

@@ -227,7 +227,11 @@ export default defineNuxtConfig({
     // to the local /api/_nuxt_icon route exactly as before, so this is
     // additive, not a behavior change for the happy path.
     clientBundle: {
-      scan: true,
+      // Scope the scan to app source: the default globs sweep docs/*.md
+      // prose too, pulling never-used icon names into the client bundle.
+      scan: {
+        globInclude: ["app/**/*.vue", "app/**/*.js"],
+      },
     },
   },
 

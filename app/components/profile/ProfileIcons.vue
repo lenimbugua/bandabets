@@ -20,13 +20,13 @@ function showIcon(name) {
     <Icon
       name="tabler:star"
       v-if="showIcon('star')"
-      class="h-6 w-6 fill-current text-yellow-500"
+      class="h-6 w-6 text-yellow-500"
     />
     <Icon name="tabler:bell" v-if="showIcon('bell')" class="h-6 w-6 text-red-500" />
     <Icon
       name="tabler:clock"
       v-if="showIcon('clock')"
-      class="h-6 w-6 fill-current text-red-500"
+      class="h-6 w-6 text-red-500"
     />
     <Icon
       name="tabler:file-dollar"
@@ -47,12 +47,12 @@ function showIcon(name) {
     <Icon
       name="tabler:cash-banknote"
       v-if="showIcon('banknotes')"
-      class="h-6 w-6 fill-current text-gold-650"
+      class="h-6 w-6 text-gold-650"
     />
     <Icon
       name="tabler:user-plus"
       v-if="showIcon('userPlusIcon')"
-      class="h-6 w-6 fill-current text-red-500"
+      class="h-6 w-6 text-red-500"
     />
     <Icon
       name="tabler:help-circle"
