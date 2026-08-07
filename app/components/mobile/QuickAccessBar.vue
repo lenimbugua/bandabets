@@ -29,7 +29,7 @@ function loginBeforeLaunching(router, game) {
 </script>
 
 <template>
-  <div class="mx-3 mt-2 p-2 rounded-xl bg-gray-100 dark:bg-card overflow-hidden">
+  <div class="mt-2 p-2 bg-gray-100 dark:bg-card overflow-hidden">
     <div
       class="relative flex items-center whitespace-nowrap overflow-x-auto overflow-y-visible scrollbar-hide"
     >
