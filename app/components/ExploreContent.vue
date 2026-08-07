@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import { useDark } from "@vueuse/core";
 
 import { useModalStore } from "@/stores/modal";
 import { useSports } from "@/composables/useSports";
@@ -33,6 +34,7 @@ function hasSvgIcon(sportIcon) {
 }
 
 const router = useRouter();
+const isDark = useDark();
 const { closeModal } = useModalStore();
 const { games, fetchMatches } = useSports();
 const { categories } = useCasino();
@@ -100,6 +102,54 @@ function handleItemClick(item) {
   <div class="flex-1 overflow-y-auto overscroll-contain">
     <!-- All -->
     <div v-if="activeTab === 'all'" class="p-3 space-y-4">
+      <!-- Theme section -->
+      <div>
+        <h3 class="text-[0.65rem] font-bold text-muted-foreground uppercase tracking-wider mb-2">Theme</h3>
+        <div class="grid grid-cols-2 gap-2">
+          <button
+            class="flex items-center justify-center gap-1.5 py-2 rounded-lg text-[0.7rem] font-semibold transition-colors"
+            :class="!isDark
+              ? 'bg-brand-bright text-primary-foreground'
+              : 'bg-gray-50 dark:bg-white/4 text-muted-foreground hover:bg-gray-100 dark:hover:bg-white/8'"
+            @click="isDark = false"
+          >
+            <Icon name="tabler:sun" class="w-4 h-4" />
+            Light
+          </button>
+          <button
+            class="flex items-center justify-center gap-1.5 py-2 rounded-lg text-[0.7rem] font-semibold transition-colors"
+            :class="isDark
+              ? 'bg-brand-bright text-primary-foreground'
+              : 'bg-gray-50 dark:bg-white/4 text-muted-foreground hover:bg-gray-100 dark:hover:bg-white/8'"
+            @click="isDark = true"
+          >
+            <Icon name="tabler:moon" class="w-4 h-4" />
+            Dark
+          </button>
+        </div>
+      </div>
+
+      <!-- Payment section -->
+      <div>
+        <h3 class="text-[0.65rem] font-bold text-muted-foreground uppercase tracking-wider mb-2">Payment</h3>
+        <div class="grid grid-cols-3 gap-2">
+          <button
+            v-for="item in paymentItems"
+            :key="item.name"
+            class="flex flex-col items-center gap-1 py-2.5 px-1 rounded-lg bg-gray-50 dark:bg-white/4 hover:bg-gray-100 dark:hover:bg-white/8 transition-colors cursor-pointer"
+            @click="handleItemClick(item)"
+          >
+            <svg v-if="item.icon === 'deposit'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-brand-bright">
+              <path d="M2.273 5.625A4.483 4.483 0 0 1 5.25 4.5h13.5c1.141 0 2.183.425 2.977 1.125A3 3 0 0 0 18.75 3H5.25a3 3 0 0 0-2.977 2.625ZM2.273 8.625A4.483 4.483 0 0 1 5.25 7.5h13.5c1.141 0 2.183.425 2.977 1.125A3 3 0 0 0 18.75 6H5.25a3 3 0 0 0-2.977 2.625ZM5.25 9a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h13.5a3 3 0 0 0 3-3v-6a3 3 0 0 0-3-3H15a.75.75 0 0 0-.75.75 2.25 2.25 0 0 1-4.5 0A.75.75 0 0 0 9 9H5.25Z" />
+            </svg>
+            <svg v-else-if="item.icon === 'withdraw'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-muted-foreground">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-[0.6rem] font-medium text-foreground text-center leading-tight">{{ item.name }}</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Sports section -->
       <div>
         <h3 class="text-[0.65rem] font-bold text-muted-foreground uppercase tracking-wider mb-2">Sports</h3>
@@ -159,26 +209,6 @@ function handleItemClick(item) {
         </div>
       </div>
 
-      <!-- Payment section -->
-      <div>
-        <h3 class="text-[0.65rem] font-bold text-muted-foreground uppercase tracking-wider mb-2">Payment</h3>
-        <div class="grid grid-cols-3 gap-2">
-          <button
-            v-for="item in paymentItems"
-            :key="item.name"
-            class="flex flex-col items-center gap-1 py-2.5 px-1 rounded-lg bg-gray-50 dark:bg-white/4 hover:bg-gray-100 dark:hover:bg-white/8 transition-colors cursor-pointer"
-            @click="handleItemClick(item)"
-          >
-            <svg v-if="item.icon === 'deposit'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-brand-bright">
-              <path d="M2.273 5.625A4.483 4.483 0 0 1 5.25 4.5h13.5c1.141 0 2.183.425 2.977 1.125A3 3 0 0 0 18.75 3H5.25a3 3 0 0 0-2.977 2.625ZM2.273 8.625A4.483 4.483 0 0 1 5.25 7.5h13.5c1.141 0 2.183.425 2.977 1.125A3 3 0 0 0 18.75 6H5.25a3 3 0 0 0-2.977 2.625ZM5.25 9a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h13.5a3 3 0 0 0 3-3v-6a3 3 0 0 0-3-3H15a.75.75 0 0 0-.75.75 2.25 2.25 0 0 1-4.5 0A.75.75 0 0 0 9 9H5.25Z" />
-            </svg>
-            <svg v-else-if="item.icon === 'withdraw'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-muted-foreground">
-              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-[0.6rem] font-medium text-foreground text-center leading-tight">{{ item.name }}</span>
-          </button>
-        </div>
-      </div>
     </div>
 
     <!-- Sports -->
