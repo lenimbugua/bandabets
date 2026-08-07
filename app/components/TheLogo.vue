@@ -25,6 +25,6 @@ const goHome = () => {
     tabindex="0"
     @click="goHome"
   >
-    <BandaLogo class="h-6 lg:h-7 max-h-full w-auto" />
+    <BandaLogo class="h-4.5 lg:h-7 max-h-full w-auto" />
   </div>
 </template>
