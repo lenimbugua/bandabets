@@ -35,7 +35,7 @@ const showBetslip = computed(() => {
   <TransitionRoot appear :show="showBetslip" as="template">
     <Dialog
       as="div"
-      class="relative z-50"
+      class="relative z-70"
       :initial-focus="closeButtonRef"
       @close="closeModal"
     >
@@ -50,7 +50,7 @@ const showBetslip = computed(() => {
       >
         <div class="fixed inset-0 bg-black/50" />
       </TransitionChild>
-      <div class="fixed z-50 inset-0 flex flex-col justify-end">
+      <div class="fixed z-70 inset-0 flex flex-col justify-end">
         <div class="flex flex-col mt-auto sm:items-center text-center max-h-dvh">
           <TransitionChild
             as="template"
@@ -62,7 +62,7 @@ const showBetslip = computed(() => {
             leave-to="opacity-0 translate-y-8"
           >
             <DialogPanel
-              class="w-full max-w-4xl max-h-[92dvh] sm:max-h-[80dvh] bg-white dark:bg-background transform overflow-hidden text-left align-middle shadow-xl dark:shadow-none border-t border-gray-200 dark:border-white/6 transition-all rounded-t-2xl sm:rounded-t-xl flex flex-col"
+              class="w-full max-w-4xl h-dvh max-h-dvh sm:h-auto sm:max-h-[80dvh] pb-[env(safe-area-inset-bottom,0px)] sm:pb-0 bg-white dark:bg-background transform overflow-hidden text-left align-middle shadow-xl dark:shadow-none border-t border-gray-200 dark:border-white/6 transition-all rounded-none sm:rounded-t-xl flex flex-col"
             >
               <!-- Drag handle (mobile) -->
               <div class="flex justify-center pt-2 pb-1 sm:hidden">
