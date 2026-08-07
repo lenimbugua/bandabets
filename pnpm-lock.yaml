@@ -11,9 +11,6 @@ importers:
       '@headlessui/vue':
         specifier: ^1.7.23
         version: 1.7.23(vue@3.5.38(typescript@5.9.2))
-      '@heroicons/vue':
-        specifier: ^2.2.0
-        version: 2.2.0(vue@3.5.38(typescript@5.9.2))
       '@neoconfetti/vue':
         specifier: ^2.2.1
         version: 2.2.1
@@ -41,9 +38,6 @@ importers:
       dompurify:
         specifier: ^3.4.10
         version: 3.4.10
-      lucide-vue-next:
-        specifier: ^1.0.0
-        version: 1.0.0(vue@3.5.38(typescript@5.9.2))
       mixpanel-browser:
         specifier: ^2.80.0
         version: 2.80.0
@@ -583,11 +577,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       vue: ^3.2.0
-
-  '@heroicons/vue@2.2.0':
-    resolution: {integrity: sha512-G3dbSxoeEKqbi/DFalhRxJU4mTXJn7GwZ7ae8NuEQzd1bqdd0jAbdaBZlHPcvPD2xI1iGzNVB4k20Un2AguYPw==}
-    peerDependencies:
-      vue: '>= 3'
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -3412,12 +3401,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@1.0.0:
-    resolution: {integrity: sha512-V6SPvx1IHTj/UY+FrIYWV5faISsPSb8BnWSFDxAtezWKvWc9ZZ40PDrdu1/Qb5vg4lHWr1hs1BAMGVGm6V1Xdg==}
-    deprecated: Package deprecated. Please use @lucide/vue instead.
-    peerDependencies:
-      vue: '>=3.0.1'
-
   magic-string-ast@1.0.3:
     resolution: {integrity: sha512-CvkkH1i81zl7mmb94DsRiFeG9V2fR2JeuK8yDgS8oiZSFa++wWLEgZ5ufEOyLHbvSbD1gTRKv9NdX69Rnvr9JA==}
     engines: {node: '>=20.19.0'}
@@ -5546,10 +5529,6 @@ snapshots:
   '@headlessui/vue@1.7.23(vue@3.5.38(typescript@5.9.2))':
     dependencies:
       '@tanstack/vue-virtual': 3.13.12(vue@3.5.38(typescript@5.9.2))
-      vue: 3.5.38(typescript@5.9.2)
-
-  '@heroicons/vue@2.2.0(vue@3.5.38(typescript@5.9.2))':
-    dependencies:
       vue: 3.5.38(typescript@5.9.2)
 
   '@humanfs/core@0.19.2':
@@ -8753,10 +8732,6 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
-
-  lucide-vue-next@1.0.0(vue@3.5.38(typescript@5.9.2)):
-    dependencies:
-      vue: 3.5.38(typescript@5.9.2)
 
   magic-string-ast@1.0.3:
     dependencies:
