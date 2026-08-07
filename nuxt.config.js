@@ -197,7 +197,13 @@ export default defineNuxtConfig({
     "pinia-plugin-persistedstate/nuxt",
     "@vueuse/nuxt",
     "@nuxt/eslint",
+    "@nuxt/icon",
   ],
+
+  icon: {
+    serverBundle: { collections: ["tabler"] },
+    fallbackToApi: false,
+  },
 
   pinia: {
     storesDirs: ["./app/stores/**"],
