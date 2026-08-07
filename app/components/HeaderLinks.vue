@@ -60,18 +60,9 @@ const { currentMode } = useAppMode();
 
     <!-- ========== MOBILE ========== -->
     <div class="lg:hidden px-3 pt-1 pb-2.5">
-      <!-- Row 1: Menu + Logo | Auth -->
+      <!-- Row 1: Logo | Auth -->
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-1.5">
-          <button
-            aria-label="Open navigation menu"
-            class="flex items-center justify-center w-9 h-9 rounded-lg text-foreground hover:bg-accent transition-colors duration-150"
-            @click="openModal(drawer)"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-              <path fill-rule="evenodd" d="M2 3.75A.75.75 0 0 1 2.75 3h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4.167a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Zm0 4.166a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Zm0 4.167a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
-            </svg>
-          </button>
           <TheLogo />
         </div>
 
@@ -97,22 +88,29 @@ const { currentMode } = useAppMode();
         </div>
       </div>
 
-      <!-- Row 2: Search bar (opens SearchModal) -->
-      <button
-        type="button"
-        aria-label="Search sport teams, football leagues and games"
-        class="mt-2 flex w-full items-center gap-2.5 rounded-full bg-surface-elevated px-4 py-2.5 text-left transition-colors duration-150 hover:bg-accent"
-        @click="openModal(search)"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 shrink-0 text-muted-foreground">
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.35-4.35" />
-        </svg>
-        <span class="flex-1 truncate text-sm text-muted-foreground">
-          Sport Team, Football League, Games
-        </span>
-        <span class="shrink-0 text-sm font-bold text-selected">Search</span>
-      </button>
+      <!-- Row 2: Search bar (opens SearchModal) + menu -->
+      <div class="mt-2 flex items-center gap-2">
+        <button
+          type="button"
+          aria-label="Search sport teams, football leagues and games"
+          class="flex flex-1 min-w-0 items-center gap-2.5 rounded-full bg-surface-elevated px-4 py-2.5 text-left transition-colors duration-150 hover:bg-accent"
+          @click="openModal(search)"
+        >
+          <Icon name="tabler:search" class="w-5 h-5 shrink-0 text-muted-foreground" />
+          <span class="flex-1 truncate text-sm text-muted-foreground">
+            Sport Team, Football League, Games
+          </span>
+          <span class="shrink-0 text-sm font-bold text-selected">Search</span>
+        </button>
+        <button
+          type="button"
+          aria-label="Open navigation menu"
+          class="flex items-center justify-center w-11 h-11 shrink-0 rounded-full bg-surface-elevated text-foreground transition-colors duration-150 hover:bg-accent"
+          @click="openModal(drawer)"
+        >
+          <Icon name="tabler:layout-grid" class="w-5 h-5" />
+        </button>
+      </div>
     </div>
 
 
