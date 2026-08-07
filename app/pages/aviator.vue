@@ -9,15 +9,6 @@
 import ShareToSocials from "@/components/community-bets/ShareToSocials.vue";
 import { useAviatorReferralStore } from "@/stores/aviator-referral";
 // import { useLoginStore } from "@/stores/login"; // invite friend feature disabled
-import { CheckCircleIcon } from "@heroicons/vue/20/solid";
-import {
-  ArrowPathIcon,
-  BanknotesIcon,
-  DevicePhoneMobileIcon,
-  GiftIcon,
-  UserPlusIcon,
-  XMarkIcon,
-} from "@heroicons/vue/24/outline";
 import { useClipboard } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 import { computed, onMounted, ref } from "vue";
@@ -93,23 +84,23 @@ onMounted(() => {
 
 const steps = [
   {
-    icon: UserPlusIcon,
+    icon: "tabler:user-plus",
     text: "Share your unique referral link with friends.",
   },
   {
-    icon: BanknotesIcon,
+    icon: "tabler:cash-banknote",
     text: "Your friend signs up and deposits KSH 49 or more.",
   },
   {
-    icon: DevicePhoneMobileIcon,
+    icon: "tabler:device-mobile",
     text: "They play at least 3 Aviator rounds with a 1.5x multiplier and a total stake of KSH 49 or more.",
   },
   {
-    icon: GiftIcon,
+    icon: "tabler:gift",
     text: "Boom! You get a KSH 100 Aviator Free Bet instantly.",
   },
   {
-    icon: CheckCircleIcon,
+    icon: "tabler:circle-check",
     text: "Click the Claim button that will popup inside aviator to redeem your free bet.",
   },
 ];
@@ -154,7 +145,7 @@ const steps = [
               </p>
             </div>
             <button class="popover-close" @click="showInvitePopover = false">
-              <XMarkIcon class="w-5 h-5" />
+              <Icon name="tabler:x" class="w-5 h-5" />
             </button>
           </div>
 
@@ -181,7 +172,8 @@ const steps = [
                   class="copy-input"
                 />
                 <button class="copy-btn" @click="copyLink(referralUrl)">
-                  <CheckCircleIcon
+                  <Icon
+                    name="tabler:circle-check"
                     v-if="linkCopied"
                     class="w-4 h-4 text-success"
                   />
@@ -196,7 +188,7 @@ const steps = [
               <ol class="steps-list">
                 <li v-for="(step, i) in steps" :key="i" class="step-item">
                   <span class="step-number">{{ i + 1 }}</span>
-                  <component :is="step.icon" class="step-icon" />
+                  <Icon :name="step.icon" class="step-icon" />
                   <span class="step-text">{{ step.text }}</span>
                 </li>
               </ol>
@@ -207,11 +199,11 @@ const steps = [
               <h4 class="section-label">Your Dashboard</h4>
 
               <div v-if="loading" class="dashboard-loading">
-                <ArrowPathIcon class="w-5 h-5 animate-spin text-gold-bright" />
+                <Icon name="tabler:refresh" class="w-5 h-5 animate-spin text-gold-bright" />
               </div>
 
               <div v-else-if="!referralDetails?.length" class="dashboard-empty">
-                <UserPlusIcon class="w-8 h-8 text-white/15" />
+                <Icon name="tabler:user-plus" class="w-8 h-8 text-white/15" />
                 <p>Invite friends to see your stats here</p>
               </div>
 
@@ -272,7 +264,8 @@ const steps = [
                             :disabled="redeemPending"
                             @click="redeemBonus"
                           >
-                            <ArrowPathIcon
+                            <Icon
+                              name="tabler:refresh"
                               v-if="redeemPending"
                               class="w-3 h-3 animate-spin"
                             />

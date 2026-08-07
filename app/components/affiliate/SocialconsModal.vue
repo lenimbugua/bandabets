@@ -6,8 +6,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
-
 import ShareToSocials from "@/components/community-bets/ShareToSocials.vue";
 import { useModalTypes } from "@/composables/useModalTypes";
 import { useModalStore } from "@/stores/modal";
@@ -15,7 +13,6 @@ import { storeToRefs } from "pinia";
 import { computed, ref } from "vue";
 
 import { useShareToSocials } from "@/composables/useShareToSocials";
-import { ClipboardDocumentIcon } from "@heroicons/vue/20/solid";
 import { useClipboard } from "@vueuse/core";
 import { useAffiliateStore } from "@/stores/affiliate";
 
@@ -72,7 +69,8 @@ const showShareBetModal = computed(() => {
                 class="flex w-full justify-between bg-white dark:bg-card border-b border-gray-200 dark:border-gray-900"
               >
                 <button class="p-2 py-1 outline-hidden" aria-label="Close" @click="closeModal">
-                  <XMarkIcon
+                  <Icon
+                    name="tabler:x"
                     class="w-5 h-5 text-gray-600 dark:text-slate-300 stroke-width-2 cursor-pointer"
                   />
                 </button>
@@ -82,7 +80,8 @@ const showShareBetModal = computed(() => {
                   Invite Friends
                 </DialogTitle>
                 <button ref="closeButtonRef" class="p-2 py-1 outline-hidden" aria-label="Close" @click="closeModal">
-                  <XMarkIcon
+                  <Icon
+                    name="tabler:x"
                     class="w-5 h-5 text-gray-600 dark:text-slate-300 stroke-width-2 cursor-pointer"
                   />
                 </button>
@@ -105,7 +104,7 @@ const showShareBetModal = computed(() => {
                       {{ affiliateUrl }}
                     </div>
                     <div class="py-3 px-2 flex items-center space-x-2">
-                      <ClipboardDocumentIcon class="w-5 h-5 text-red-500" />
+                      <Icon name="tabler:copy" class="w-5 h-5 text-red-500" />
                       <span v-if="copied" class="text-red-500">Copied!</span>
                       <span v-else>copy</span>
                     </div>

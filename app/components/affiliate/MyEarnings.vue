@@ -1,6 +1,5 @@
 <script setup>
 import formatStuff from "@/utilities/format-stuff";
-import { ArrowTrendingUpIcon } from "@heroicons/vue/24/solid";
 import { storeToRefs } from "pinia";
 import { useAffiliateStore } from "../../stores/affiliate";
 import TheButtonSpin from "../TheButtonSpin.vue";
@@ -15,7 +14,7 @@ const { withdrawAffiliateEarnings } = useAffiliateStore();
     <!-- Header -->
     <div class="flex items-center justify-between mb-4">
       <div class="flex items-center gap-2">
-        <ArrowTrendingUpIcon class="w-5 h-5 text-white/80" />
+        <Icon name="tabler:trending-up" class="w-5 h-5 text-white/80" />
         <h2 class="text-sm font-semibold text-white/90 uppercase tracking-wider">My Stats</h2>
       </div>
     </div>

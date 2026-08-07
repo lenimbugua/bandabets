@@ -1,6 +1,5 @@
 <script setup>
 // import { useMatchDetails } from "@/composables/useMatchDetails";
-// import { TraashIcon } from "@heroicons/vue/24/outline";
 // import { useRoute, useRouter } from "vue-router";
 import { useFormatDates } from "@/composables/useFormatDates";
 

@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 
 const faqs = ref([
   {
@@ -65,7 +64,8 @@ const toggle = (id) => {
           <span class="text-sm font-medium text-foreground pr-4">
             {{ faq.question }}
           </span>
-          <ChevronDownIcon
+          <Icon
+            name="tabler:chevron-down"
             class="w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-200"
             :class="{ 'rotate-180': openId === faq.id }"
           />

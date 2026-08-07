@@ -1,25 +1,19 @@
 <script setup>
-import {
-  CalendarIcon,
-  GiftIcon,
-  ViewfinderCircleIcon,
-} from "@heroicons/vue/24/outline";
-
 const stats = [
   {
-    icon: CalendarIcon,
+    icon: "tabler:calendar",
     label: "Period",
     value: "2026 Week 07",
     accent: false,
   },
   {
-    icon: ViewfinderCircleIcon,
+    icon: "tabler:focus-2",
     label: "Min Points to Win",
     value: "5 points",
     accent: false,
   },
   {
-    icon: GiftIcon,
+    icon: "tabler:gift",
     label: "Weekly Prize",
     value: "KES 30,000",
     accent: true,
@@ -52,7 +46,7 @@ const stats = [
               : 'bg-secondary text-muted-foreground',
           ]"
         >
-          <component :is="stat.icon" class="w-5 h-5" />
+          <Icon :name="stat.icon" class="w-5 h-5" />
         </div>
         <div>
           <p

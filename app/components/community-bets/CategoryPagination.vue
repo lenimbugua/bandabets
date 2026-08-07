@@ -1,5 +1,4 @@
 <script setup>
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/24/outline";
 import { useSwiper } from "swiper/vue";
 import { computed } from "vue";
 
@@ -17,7 +16,7 @@ const itsFirstPage = computed(() => swiper.value.isBeginning);
       class="flex items-center gap-0.5 text-xs font-medium text-brand-bright transition-colors"
       @click="swiper.slidePrev()"
     >
-      <ChevronLeftIcon class="w-4 h-4" />
+      <Icon name="tabler:chevron-left" class="w-4 h-4" />
       Prev
     </button>
 
@@ -32,7 +31,7 @@ const itsFirstPage = computed(() => swiper.value.isBeginning);
       @click="swiper.slideNext()"
     >
       Next
-      <ChevronRightIcon class="w-4 h-4" />
+      <Icon name="tabler:chevron-right" class="w-4 h-4" />
     </button>
   </div>
 </template>

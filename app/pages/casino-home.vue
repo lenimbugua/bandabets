@@ -16,7 +16,6 @@
 // bare /casino-home URL), which is correct: the categories are
 // client-side filters of the same content, not distinct indexable pages,
 // and this route is noindex regardless.
-import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { computed, nextTick, onMounted, ref } from "vue";
 
@@ -242,7 +241,8 @@ function clearSearch() {
           <div
             class="flex items-center bg-white dark:bg-surface-deepest rounded-xl border border-gray-300 dark:border-border-subtle focus-within:border-primary/50 transition-colors"
           >
-            <MagnifyingGlassIcon
+            <Icon
+              name="tabler:search"
               class="w-4 h-4 ml-3.5 text-gray-600 dark:text-muted-foreground shrink-0"
             />
             <input
@@ -259,7 +259,8 @@ function clearSearch() {
               class="mr-1.5 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-surface-sunken transition-colors"
               @click="clearSearch"
             >
-              <XMarkIcon
+              <Icon
+                name="tabler:x"
                 class="w-4 h-4 text-gray-600 dark:text-muted-foreground"
               />
             </button>
@@ -325,7 +326,8 @@ function clearSearch() {
               </div>
             </div>
             <div v-else class="flex flex-col items-center py-8">
-              <MagnifyingGlassIcon
+              <Icon
+                name="tabler:search"
                 class="w-8 h-8 text-gray-300 dark:text-muted-foreground mb-2"
               />
               <p class="text-gray-700 dark:text-muted-foreground text-sm">

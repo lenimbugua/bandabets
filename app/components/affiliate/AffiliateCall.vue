@@ -1,7 +1,3 @@
-<script setup>
-import { BoltIcon, UserGroupIcon } from "@heroicons/vue/24/solid";
-</script>
-
 <template>
   <div
     class="relative h-32 md:h-48 rounded-md overflow-hidden bg-linear-to-br from-brand-bright/10 via-gold-bright/10 to-brand-bright/5 dark:from-brand-bright/20 dark:via-gold-bright/10 dark:to-background"
@@ -31,11 +27,11 @@ import { BoltIcon, UserGroupIcon } from "@heroicons/vue/24/solid";
         class="flex items-center gap-4 md:gap-6 mt-2 md:mt-4"
       >
         <div class="flex items-center gap-1.5">
-          <BoltIcon class="w-4 h-4 md:w-5 md:h-5 text-gold-bright" />
+          <Icon name="tabler:bolt" class="w-4 h-4 md:w-5 md:h-5 text-gold-bright" />
           <span class="text-xs md:text-sm text-muted-foreground">Instant Payouts</span>
         </div>
         <div class="flex items-center gap-1.5">
-          <UserGroupIcon class="w-4 h-4 md:w-5 md:h-5 text-brand-bright" />
+          <Icon name="tabler:users-group" class="w-4 h-4 md:w-5 md:h-5 text-brand-bright" />
           <span class="text-xs md:text-sm text-muted-foreground">50K+ Members</span>
         </div>
       </div>

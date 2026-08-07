@@ -1,6 +1,5 @@
 <script setup>
 import { useShareToSocials } from "@/composables/useShareToSocials";
-import { LinkIcon } from "@heroicons/vue/24/outline";
 
 const { facebook, twitter, whatsapp, telegram, link } = useShareToSocials();
 
@@ -105,7 +104,7 @@ function showIcon(name) {
 
   <!-- link  -->
   <div v-if="showIcon(link)">
-    <LinkIcon class="w-8 h-8 text-sky-500" />
+    <Icon name="tabler:link" class="w-8 h-8 text-sky-500" />
   </div>
   <!-- end link -->
 </template>

@@ -1,20 +1,4 @@
 <script setup>
-import {
-  BanknotesIcon,
-  BellIcon,
-  CheckBadgeIcon,
-  ClipboardDocumentListIcon,
-  ClockIcon,
-  DocumentCurrencyDollarIcon,
-  GiftTopIcon,
-  LightBulbIcon,
-  LockClosedIcon,
-  QuestionMarkCircleIcon,
-  StarIcon,
-  UserPlusIcon,
-} from "@heroicons/vue/24/outline";
-// import { GiftIcon } from "@heroicons/vue/24/solid";
-
 const props = defineProps({
   icon: {
     type: String,
@@ -33,49 +17,60 @@ function showIcon(name) {
       v-if="showIcon('giftIcon')"
       class="h-6 w-6 fill-current text-amber-500"
     /> -->
-    <StarIcon
+    <Icon
+      name="tabler:star"
       v-if="showIcon('star')"
       class="h-6 w-6 fill-current text-yellow-500"
     />
-    <BellIcon v-if="showIcon('bell')" class="h-6 w-6 text-red-500" />
-    <ClockIcon
+    <Icon name="tabler:bell" v-if="showIcon('bell')" class="h-6 w-6 text-red-500" />
+    <Icon
+      name="tabler:clock"
       v-if="showIcon('clock')"
       class="h-6 w-6 fill-current text-red-500"
     />
-    <DocumentCurrencyDollarIcon
+    <Icon
+      name="tabler:file-dollar"
       v-if="showIcon('documentCurrencyDollarIcon')"
       class="h-6 w-6 text-amber-500"
     />
-    <GiftTopIcon
+    <Icon
+      name="tabler:gift"
       v-if="showIcon('giftTopIcon')"
       class="h-6 w-6 text-brand-bright"
     />
-    <ClipboardDocumentListIcon
+    <Icon
+      name="tabler:clipboard-list"
       v-if="showIcon('clipboardDocumentListIcon')"
       class="h-6 w-6 text-brand-bright"
     />
 
-    <BanknotesIcon
+    <Icon
+      name="tabler:cash-banknote"
       v-if="showIcon('banknotes')"
       class="h-6 w-6 fill-current text-gold-650"
     />
-    <UserPlusIcon
+    <Icon
+      name="tabler:user-plus"
       v-if="showIcon('userPlusIcon')"
       class="h-6 w-6 fill-current text-red-500"
     />
-    <QuestionMarkCircleIcon
+    <Icon
+      name="tabler:help-circle"
       v-if="showIcon('questionMarkCircleIcon')"
       class="h-6 w-6 text-reen-500"
     />
-    <LockClosedIcon
+    <Icon
+      name="tabler:lock"
       v-if="showIcon('lockClosedIcon')"
       class="h-6 w-6 text-red-500"
     />
-    <CheckBadgeIcon
+    <Icon
+      name="tabler:rosette-discount-check"
       v-if="showIcon('checkBadgeIcon')"
       class="h-6 w-6 text-red-500"
     />
-    <LightBulbIcon
+    <Icon
+      name="tabler:bulb"
       v-if="showIcon('lightBulbIcon')"
       class="h-6 w-6 text-red-500"
     />

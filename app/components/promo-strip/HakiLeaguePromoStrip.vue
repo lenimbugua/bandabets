@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { GiftIcon } from "@heroicons/vue/24/solid";
-</script>
-
 <template>
   <RouterLink
     class="px-2.5 py-1 bg-linear-to-r from-gold-muted via-gold-bright to-gold-muted flex items-center justify-between text-foreground font-bold text-xs"
@@ -10,7 +6,7 @@ import { GiftIcon } from "@heroicons/vue/24/solid";
     <div class="flex justify-between w-full items-center">
       <div class="flex space-x-2 items-center">
         <div class="">
-          <GiftIcon class="h-5 w-5 text-amber-700" />
+          <Icon name="tabler:gift" class="h-5 w-5 text-amber-700" />
         </div>
         <span>Congrats! Free Bet</span>
         <span class="text-amber-700 font-black">KES.20</span>

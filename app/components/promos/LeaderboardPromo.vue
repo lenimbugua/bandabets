@@ -1,18 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import {
-  FireIcon,
-  ArrowTrendingUpIcon,
-  CubeIcon,
-  BoltIcon,
-  StarIcon,
-  TrophyIcon,
-  GiftIcon,
-  ClockIcon,
-  ShieldCheckIcon,
-  ChevronDownIcon,
-  ExclamationTriangleIcon,
-} from "@heroicons/vue/24/outline";
 // import { usePopular } from "../../composables/usePopular";
 // import { useCasino } from "../../composables/useCasino";
 
@@ -132,7 +119,7 @@ const termsContent = [
         <div
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-bright/30 bg-brand-bright/10 dark:bg-brand-bright/20 mb-6"
         >
-          <FireIcon class="w-4 h-4 text-brand-bright" />
+          <Icon name="tabler:flame" class="w-4 h-4 text-brand-bright" />
           <span class="text-sm font-medium text-brand-bright">BANDABETS WEEKLY LEADERBOARD</span>
         </div>
 
@@ -186,7 +173,7 @@ const termsContent = [
           />
           <div class="relative">
             <div class="w-14 h-14 rounded-2xl bg-brand-bright/15 flex items-center justify-center mb-5">
-              <ArrowTrendingUpIcon class="w-7 h-7 text-brand-bright" />
+              <Icon name="tabler:trending-up" class="w-7 h-7 text-brand-bright" />
             </div>
             <h2 class="font-display text-2xl font-bold mb-2">Sportsbook Leaderboard</h2>
             <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">
@@ -206,8 +193,8 @@ const termsContent = [
                   <div
                     class="w-7 h-7 rounded-lg bg-brand-bright/10 flex items-center justify-center shrink-0 mt-0.5"
                   >
-                    <BoltIcon v-if="i === 1" class="w-3.5 h-3.5 text-brand-bright" />
-                    <StarIcon v-else-if="i === 2" class="w-3.5 h-3.5 text-brand-bright" />
+                    <Icon name="tabler:bolt" v-if="i === 1" class="w-3.5 h-3.5 text-brand-bright" />
+                    <Icon name="tabler:star" v-else-if="i === 2" class="w-3.5 h-3.5 text-brand-bright" />
                     <svg
                       v-else
                       xmlns="http://www.w3.org/2000/svg"
@@ -258,7 +245,7 @@ const termsContent = [
           />
           <div class="relative">
             <div class="w-14 h-14 rounded-2xl bg-gold-bright/15 flex items-center justify-center mb-5">
-              <CubeIcon class="w-7 h-7 text-gold-bright" />
+              <Icon name="tabler:box" class="w-7 h-7 text-gold-bright" />
             </div>
             <h2 class="font-display text-2xl font-bold mb-2">Casino Leaderboard</h2>
             <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Spin. Play. Get Paid.</p>
@@ -276,8 +263,8 @@ const termsContent = [
                   <div
                     class="w-7 h-7 rounded-lg bg-gold-bright/10 flex items-center justify-center shrink-0 mt-0.5"
                   >
-                    <BoltIcon v-if="i === 0" class="w-3.5 h-3.5 text-gold-bright" />
-                    <StarIcon v-else-if="i === 1" class="w-3.5 h-3.5 text-gold-bright" />
+                    <Icon name="tabler:bolt" v-if="i === 0" class="w-3.5 h-3.5 text-gold-bright" />
+                    <Icon name="tabler:star" v-else-if="i === 1" class="w-3.5 h-3.5 text-gold-bright" />
                     <svg
                       v-else
                       xmlns="http://www.w3.org/2000/svg"
@@ -329,7 +316,7 @@ const termsContent = [
           <div
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-bright/30 bg-gold-bright/10 dark:bg-gold-bright/20 mb-4"
           >
-            <GiftIcon class="w-4 h-4 text-gold-bright" />
+            <Icon name="tabler:gift" class="w-4 h-4 text-gold-bright" />
             <span class="text-sm font-medium text-gold-bright">PRIZE STRUCTURE</span>
           </div>
           <h2 class="font-display text-3xl md:text-4xl font-bold mb-2">
@@ -365,9 +352,10 @@ const termsContent = [
             }"
           >
             <div class="flex items-center gap-3">
-              <TrophyIcon v-if="row.highlight === 'gold'" class="w-5 h-5 text-gold-bright" />
-              <TrophyIcon v-else-if="row.highlight === 'silver'" class="w-5 h-5 text-gray-400" />
-              <TrophyIcon
+              <Icon name="tabler:trophy" v-if="row.highlight === 'gold'" class="w-5 h-5 text-gold-bright" />
+              <Icon name="tabler:trophy" v-else-if="row.highlight === 'silver'" class="w-5 h-5 text-gray-400" />
+              <Icon
+                name="tabler:trophy"
                 v-else-if="row.highlight === 'bronze'"
                 class="w-5 h-5 text-gold-bright/60"
               />
@@ -421,7 +409,7 @@ const termsContent = [
             <div
               class="w-16 h-16 rounded-2xl bg-brand-bright/15 flex items-center justify-center mx-auto mb-6"
             >
-              <ClockIcon class="w-8 h-8 text-brand-bright" />
+              <Icon name="tabler:clock" class="w-8 h-8 text-brand-bright" />
             </div>
             <h2 class="font-display text-2xl md:text-3xl font-bold mb-3">Winner Announcement</h2>
             <div
@@ -446,7 +434,7 @@ const termsContent = [
           <div
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-border-subtle bg-gray-50 dark:bg-surface-elevated/50 mb-4"
           >
-            <ShieldCheckIcon class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+            <Icon name="tabler:shield-check" class="w-4 h-4 text-gray-500 dark:text-gray-400" />
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400">
               TERMS AND CONDITIONS:
             </span>
@@ -464,7 +452,8 @@ const termsContent = [
               @click="toggleTerm(i)"
             >
               <span class="font-medium text-sm">{{ section.title }}</span>
-              <ChevronDownIcon
+              <Icon
+                name="tabler:chevron-down"
                 class="w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-300"
                 :class="{ 'rotate-180': openTerm === i }"
               />
@@ -490,7 +479,7 @@ const termsContent = [
     <footer class="border-t border-gray-200 dark:border-border-subtle py-8 px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div class="flex items-center justify-center gap-2 mb-3">
-          <ExclamationTriangleIcon class="w-4 h-4 text-gold-bright" />
+          <Icon name="tabler:alert-triangle" class="w-4 h-4 text-gold-bright" />
           <span class="text-sm font-medium text-gold-bright">18+ | Gamble Responsibly</span>
         </div>
         <p class="text-xs text-gray-500 dark:text-gray-400">

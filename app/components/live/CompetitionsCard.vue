@@ -2,7 +2,6 @@
 import { useFormatScores } from "@/composables/useFormatScores";
 import { useLiveMatchesStore } from "@/stores/live-matches";
 import { useMatches2Store } from "@/stores/matches2";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/vue/24/outline";
 import { ref, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import { useMatchDetails } from "../../composables/useMatchDetails";
@@ -53,8 +52,8 @@ const isOpened = ref(false);
       </div>
       <div class="flex gap-5 text-gray-500 dark:text-gray-300">
         <button type="button" :aria-label="isOpened ? 'Collapse competition' : 'Expand competition'" class="cursor-pointer" @click="isOpened = !isOpened">
-          <ChevronUpIcon v-if="!isOpened" class="h-5 w-5" />
-          <ChevronDownIcon v-else class="h-5 w-5" />
+          <Icon name="tabler:chevron-up" v-if="!isOpened" class="h-5 w-5" />
+          <Icon name="tabler:chevron-down" v-else class="h-5 w-5" />
         </button>
       </div>
     </div>

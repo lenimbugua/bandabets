@@ -9,7 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { useLoadCode } from "@/composables/useLoadCode";
 import { useBetslip } from "@/composables/useBetslip";
 import { useShareBetStore } from "@/stores/sharebet.js";
-import { ShareIcon, PlusIcon } from "@heroicons/vue/20/solid";
 import BookedSelection from "./BookedSelection.vue";
 
 const { setBookingCode } = useShareBetStore();
@@ -106,7 +105,7 @@ function openShare() {
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-bright/30 text-brand-bright text-xs font-semibold hover:bg-brand-bright/10 transition-colors"
           @click="openShare"
         >
-          <ShareIcon class="w-3.5 h-3.5" />
+          <Icon name="tabler:share" class="w-3.5 h-3.5" />
           Share
         </button>
         <button
@@ -115,7 +114,7 @@ function openShare() {
         >
           <TheButtonSpin v-if="loadSlipIsPending" />
           <template v-else>
-            <PlusIcon class="w-3.5 h-3.5" />
+            <Icon name="tabler:plus" class="w-3.5 h-3.5" />
             Add
           </template>
         </button>

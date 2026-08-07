@@ -64,9 +64,9 @@ const sizeClasses = computed(() => {
             sizeClasses.ringInset,
           ]"
         >
-          <component
-            :is="icon"
+          <Icon
             v-if="icon"
+            :name="icon"
             :class="[sizeClasses.icon, 'text-gray-400 dark:text-white/15']"
           />
         </div>

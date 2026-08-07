@@ -1,7 +1,6 @@
 <script setup>
 import { useNewLiveStore } from "@/stores/new-live";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { ref } from "vue";
 
 const { setSortBy, getLiveMatches } = useNewLiveStore();
@@ -27,7 +26,8 @@ const getMatches = (sortBy) => {
           class="sort-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-[0.65rem] font-semibold transition-all duration-150 cursor-pointer focus:outline-hidden"
         >
           <span class="text-gray-600 dark:text-white/55">Sort by</span>
-          <ChevronDownIcon
+          <Icon
+            name="tabler:chevron-down"
             class="h-3.5 w-3.5 text-gray-400 dark:text-white/35"
             aria-hidden="true"
           />

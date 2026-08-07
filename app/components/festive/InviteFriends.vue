@@ -1,8 +1,6 @@
 <script setup>
 import ShareToSocials from "@/components/community-bets/ShareToSocials.vue";
 import { useShareToSocials } from "@/composables/useShareToSocials";
-import { InformationCircleIcon } from "@heroicons/vue/20/solid";
-import { ArrowPathIcon } from "@heroicons/vue/24/solid";
 import { useClipboard } from "@vueuse/core";
 import { ref, toRefs } from "vue";
 import { useAffiliateV2Store } from "@/stores/affiliate-v2";
@@ -94,7 +92,7 @@ const handleSubmit = async () => {
                 style="line-height: 1"
               >
                 <div class="flex items-center space-x-2">
-                  <ArrowPathIcon v-if="pending" class="h-5 w-5 animate-spin" />
+                  <Icon name="tabler:refresh" v-if="pending" class="h-5 w-5 animate-spin" />
                   <span v-else>📤</span>
                   <span>Send Invite</span>
                 </div>
@@ -102,7 +100,7 @@ const handleSubmit = async () => {
             </div>
           </div>
           <div v-if="error" class="flex items-center pt-1">
-            <InformationCircleIcon class="h-5 w-5 text-red-600" />
+            <Icon name="tabler:info-circle" class="h-5 w-5 text-red-600" />
             <span class="text-xs text-red-600"
               >Only valid safaricom phone numbers are accepted.</span
             >

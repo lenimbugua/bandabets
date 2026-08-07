@@ -8,7 +8,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { storeToRefs } from "pinia";
 import { computed, ref } from "vue";
 import InviteFriends from "./InviteFriends.vue";
@@ -61,7 +60,8 @@ const showShareBetModal = computed(() => {
                 class="flex w-full justify-between bg-white dark:bg-card border-b dark:border-gray-900"
               >
                 <button class="p-2 py-1 outline-hidden" aria-label="Close" @click="closeModal">
-                  <XMarkIcon
+                  <Icon
+                    name="tabler:x"
                     class="w-5 h-5 dark:text-slate-300 stroke-width-2 cursor-pointer"
                   />
                 </button>
@@ -71,7 +71,8 @@ const showShareBetModal = computed(() => {
                   Invite Friends
                 </DialogTitle>
                 <button ref="closeButtonRef" class="p-2 py-1 outline-hidden" aria-label="Close" @click="closeModal">
-                  <XMarkIcon
+                  <Icon
+                    name="tabler:x"
                     class="w-5 h-5 dark:text-slate-300 stroke-width-2 cursor-pointer"
                   />
                 </button>

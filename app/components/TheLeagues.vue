@@ -1,6 +1,4 @@
 <script setup>
-import { h } from "vue";
-import { Icon } from "#components";
 import { storeToRefs } from "pinia";
 import {
   Listbox,
@@ -12,13 +10,6 @@ import {
 import { useMatchesStore } from "../stores/matches";
 
 const { competitions, meta } = storeToRefs(useMatchesStore());
-
-// BaseEmptyState (out of scope for this migration batch) renders its `icon`
-// prop via `<component :is="icon">`, which requires an actual component
-// reference rather than a Tabler name string — wrap the Tabler icon in a
-// tiny functional component so the existing dynamic-component contract
-// keeps working without touching BaseEmptyState.vue.
-const noLeaguesIcon = () => h(Icon, { name: "tabler:flag" });
 </script>
 <template>
   <div class="max-w-sm">
@@ -51,7 +42,7 @@ const noLeaguesIcon = () => h(Icon, { name: "tabler:flag" });
           >
             <BaseEmptyState
               v-if="!competitions || !competitions.length"
-              :icon="noLeaguesIcon"
+              icon="tabler:flag"
               title="No leagues"
               description="No competitions available"
               size="sm"

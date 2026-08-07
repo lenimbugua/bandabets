@@ -1,7 +1,6 @@
 <script setup>
 import MobileFooterV2 from "../components/mobile/MobileFooterV2.vue";
 import { usePromoStore } from "@/stores/promos";
-import { ChevronLeftIcon } from "@heroicons/vue/20/solid";
 import { computed, onBeforeUnmount, toRefs } from "vue";
 import DOMPurify from "dompurify";
 
@@ -112,7 +111,7 @@ onBeforeUnmount(() => {
       <div class="mb-4">
         <div class="flex items-center mt-4 space-x-2">
           <button aria-label="Go back" class="flex items-center cursor-pointer" @click="$router.go(-1)">
-            <ChevronLeftIcon class="h-7 w-7 cursor-pointer text-gray-900 dark:text-white" />
+            <Icon name="tabler:chevron-left" class="h-7 w-7 cursor-pointer text-gray-900 dark:text-white" />
           </button>
           <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Back</h3>
         </div>

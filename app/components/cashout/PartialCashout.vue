@@ -1,5 +1,4 @@
 <script setup>
-import { InformationCircleIcon } from "@heroicons/vue/24/solid";
 import { ref } from "vue";
 const partialCashoutValue = ref(0);
 </script>
@@ -8,7 +7,7 @@ const partialCashoutValue = ref(0);
     <div
       class="flex gap-2 items-center w-full justify-center text-gray-700 dark:text-slate-200 text-xl"
     >
-      <InformationCircleIcon class="h-6 w-6 text-red-600" />
+      <Icon name="tabler:info-circle" class="h-6 w-6 text-red-600" />
       <Span class="">Partial Cashout</Span>
       <span>
         <svg

@@ -2,7 +2,6 @@
 import SecondaryNavIcons from "@/components/SecondaryNavIcons.vue";
 import { useSports } from "@/composables/useSports";
 import { useModalStore } from "@/stores/modal";
-import { ChevronRightIcon } from "@heroicons/vue/20/solid";
 
 const { fetchMatches, games } = useSports();
 
@@ -40,7 +39,7 @@ function getMatches(sportId, name, icon, goToSports) {
           </div>
         </div>
         <div>
-          <ChevronRightIcon class="w-6 h-6 fill-current text-slate-500 dark:text-slate-400" />
+          <Icon name="tabler:chevron-right" class="w-6 h-6 fill-current text-slate-500 dark:text-slate-400" />
         </div>
       </div>
     </RowColorWrapper>

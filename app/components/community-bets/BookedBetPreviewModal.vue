@@ -11,8 +11,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { ShareIcon } from "@heroicons/vue/20/solid";
-import { ClipboardDocumentIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { useClipboard } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 import { computed, ref } from "vue";
@@ -83,7 +81,7 @@ function loadSlip() {
                   Shared Betslip
                 </DialogTitle>
                 <button ref="closeButtonRef" class="p-1 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors cursor-pointer outline-hidden" aria-label="Close" @click="closeModal">
-                  <XMarkIcon class="w-5 h-5" />
+                  <Icon name="tabler:x" class="w-5 h-5" />
                 </button>
               </div>
               <div
@@ -120,7 +118,8 @@ function loadSlip() {
                     >
                       <div v-if="!copied" class="space-x-1 flex items-center">
                         <span>{{ bookingCode }}</span>
-                        <ClipboardDocumentIcon
+                        <Icon
+                          name="tabler:copy"
                           class="w-4 h-4 mr-0.5 stroke-width-4"
                         />
                       </div>
@@ -144,7 +143,7 @@ function loadSlip() {
                   aria-label="Share bet"
                   @click="shareYourBet"
                 >
-                  <ShareIcon class="h-7 w-8" />
+                  <Icon name="tabler:share" class="h-7 w-8" />
                 </button>
                 <button
                   class="flex rounded-lg grow bg-brand-bright hover:bg-brand-bright/90 text-primary-foreground uppercase tracking-wide font-bold text-sm justify-center items-center shadow-sm px-2"

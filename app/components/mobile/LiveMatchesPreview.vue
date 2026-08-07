@@ -1,5 +1,4 @@
 <script setup>
-import { SignalIcon } from "@heroicons/vue/24/outline";
 import { useFormatScores } from "@/composables/useFormatScores";
 import { useMatchDetails } from "@/composables/useMatchDetails";
 import { useLiveMatchesStore } from "@/stores/live-matches";
@@ -273,7 +272,7 @@ function selectSport(sportId) {
       <!-- Empty state -->
       <BaseEmptyState
         v-else
-        :icon="SignalIcon"
+        icon="tabler:broadcast"
         title="No live matches"
         description="Live events will appear here"
         size="sm"

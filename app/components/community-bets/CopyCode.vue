@@ -1,6 +1,5 @@
 <script setup>
 import { useShareBetStore } from "@/stores/sharebet.js";
-import { ClipboardDocumentIcon } from "@heroicons/vue/20/solid";
 import { useClipboard } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 
@@ -20,7 +19,7 @@ async function copyCode() {
     <span class="text-gray-600 dark:text-slate-400 font-medium">Copy Booking Code</span>
     <div v-if="!copied" class="flex items-center space-x-2">
       <span class="text-gray-900 dark:text-slate-200 font-bold">{{ bookingCode }}</span>
-      <ClipboardDocumentIcon class="w-5 h-5 text-red-500" />
+      <Icon name="tabler:copy" class="w-5 h-5 text-red-500" />
     </div>
 
     <span v-if="copied" class="text-brand-bright font-bold">Copied!</span>

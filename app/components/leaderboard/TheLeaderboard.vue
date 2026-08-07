@@ -1,15 +1,14 @@
 <script setup>
 import { useLeaderboardStore } from "@/stores/leaderboard";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";
-import { TrophyIcon, PuzzlePieceIcon } from "@heroicons/vue/24/outline";
 import { ref, toRefs } from "vue";
 import EligibleCasinoGame from "./EligibleCasinoGame.vue";
 
 const { isSelected, categories } = toRefs(useLeaderboardStore());
 
 const casinoTabs = ref([
-  { name: "Leaderboard", icon: TrophyIcon },
-  { name: "Eligible Games", icon: PuzzlePieceIcon },
+  { name: "Leaderboard", icon: "tabler:trophy" },
+  { name: "Eligible Games", icon: "tabler:puzzle" },
 ]);
 
 const selectedCasinoTab = ref(casinoTabs.value[0].name);
@@ -48,7 +47,7 @@ const setSelectedCasinoTab = (tab) => (selectedCasinoTab.value = tab);
               ]"
               @click="setSelectedCasinoTab(tab.name)"
             >
-              <component :is="tab.icon" class="w-3.5 h-3.5" />
+              <Icon :name="tab.icon" class="w-3.5 h-3.5" />
               {{ tab.name }}
             </button>
           </Tab>

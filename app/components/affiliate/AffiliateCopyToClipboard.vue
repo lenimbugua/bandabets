@@ -1,6 +1,5 @@
 <script setup>
 import { useAffiliateStore } from "../../stores/affiliate";
-import { ClipboardDocumentIcon, CheckIcon } from "@heroicons/vue/20/solid";
 import { useClipboard } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 
@@ -30,8 +29,8 @@ const { copy, copied } = useClipboard({ affiliateUrl });
         class="flex items-center gap-1.5 px-4 py-3 border-l border-border text-sm font-medium transition-colors"
         :class="copied ? 'text-brand-bright' : 'text-primary group-hover:text-primary/80'"
       >
-        <CheckIcon v-if="copied" class="w-4 h-4" />
-        <ClipboardDocumentIcon v-else class="w-4 h-4" />
+        <Icon name="tabler:check" v-if="copied" class="w-4 h-4" />
+        <Icon name="tabler:copy" v-else class="w-4 h-4" />
         {{ copied ? "Copied!" : "Copy" }}
       </span>
     </button>

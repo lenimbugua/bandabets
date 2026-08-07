@@ -12,7 +12,6 @@ import DepositBonus from "./DepositBonus.vue";
 import JengaBetsPromotion from "./JengaBetsPromotion.vue";
 
 // import formatStuff from "@/utilities/format-stuff";
-import { ArrowLeftIcon } from "@heroicons/vue/20/solid";
 import InviteFriendsPromo from "./InviteFriendsPromo.vue";
 import LeaderboardPromo from "./LeaderboardPromo.vue";
 import PariLeagueWinBoost from "./PariLeagueWinBoost.vue";
@@ -87,7 +86,7 @@ function promoExistsInNewPromos() {
   <!-- Top bar -->
   <div class="detail-topbar">
     <button aria-label="Go back" class="detail-back" @click="$router.go(-1)">
-      <ArrowLeftIcon class="w-5 h-5" />
+      <Icon name="tabler:arrow-left" class="w-5 h-5" />
     </button>
     <h1 class="detail-page-title">Promotion Details</h1>
     <div class="w-5"></div>

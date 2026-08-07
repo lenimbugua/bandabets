@@ -1,5 +1,4 @@
 <script setup>
-import { ArrowDownOnSquareStackIcon, InformationCircleIcon } from "@heroicons/vue/24/outline";
 import { useLoadCode } from "@/composables/useLoadCode";
 
 const {
@@ -40,13 +39,13 @@ const {
     >
       <TheButtonSpin v-if="loadSlipIsPending" />
       <template v-else>
-        <ArrowDownOnSquareStackIcon class="w-4 h-4" />
+        <Icon name="tabler:download" class="w-4 h-4" />
         Load Code
       </template>
     </button>
 
     <div class="mt-4 flex items-start gap-2">
-      <InformationCircleIcon class="w-5 h-5 text-gold-bright shrink-0 mt-0.5" />
+      <Icon name="tabler:info-circle" class="w-5 h-5 text-gold-bright shrink-0 mt-0.5" />
       <p class="text-xs text-muted-foreground leading-relaxed">
         A booking code enables you to book a bet. Odds or availabilities may change.
       </p>

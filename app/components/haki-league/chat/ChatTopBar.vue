@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { XMarkIcon } from "@heroicons/vue/24/solid";
 import { useChatsStore } from "@/stores/chats";
 const { setDisplayChat } = useChatsStore();
 </script>
@@ -20,7 +19,7 @@ const { setDisplayChat } = useChatsStore();
       </span>
       <span>124</span>
       <button aria-label="Close chat" @click="setDisplayChat(false)">
-        <XMarkIcon class="h-4 w-6 text-slate-500 dark:text-slate-400" />
+        <Icon name="tabler:x" class="h-4 w-6 text-slate-500 dark:text-slate-400" />
       </button>
     </div>
   </div>

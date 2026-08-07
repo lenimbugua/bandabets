@@ -2,7 +2,6 @@
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { ChevronRightIcon } from "@heroicons/vue/20/solid";
 import { useMatches2Store } from "@/stores/matches2";
 import CalendarDropdown from "../CalendarDropdown.vue";
 import ColumnHeaderSearch from "../ColumnHeaderSearch.vue";
@@ -58,7 +57,7 @@ const outcomeLabels = computed(() => {
         class="flex items-center gap-0.5 text-xs font-medium text-brand-bright hover:text-gold transition-colors"
       >
         View All
-        <ChevronRightIcon class="w-3 h-3" />
+        <Icon name="tabler:chevron-right" class="w-3 h-3" />
       </button>
     </div>
 
