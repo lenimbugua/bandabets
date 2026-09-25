@@ -68,7 +68,7 @@ const games = ref([
   {
     name: "rugby",
     icon: rugby,
-    id: 73743,
+    id: 274791,
     link: "/",
   },
   {
